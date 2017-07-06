@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.4)  5 JUL 2017 23:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.4)  6 JUL 2017 14:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2085,13 +2085,13 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.05249> not available
 
  (./chapters/ChapterE.tex
 第六章
-<pics/djsql.png, id=783, 321.45094pt x 258.21469pt>
+<pics/djsql.png, id=786, 321.45094pt x 258.21469pt>
 File: pics/djsql.png Graphic file (type png)
  <use pics/djsql.png>
 Package pdftex.def Info: pics/djsql.png used on input line 11.
 (pdftex.def)             Requested size: 321.45015pt x 258.21405pt.
 
-<pics/jsql.png, id=785, 428.35031pt x 341.02406pt>
+<pics/jsql.png, id=788, 428.35031pt x 341.02406pt>
 File: pics/jsql.png Graphic file (type png)
  <use pics/jsql.png>
 Package pdftex.def Info: pics/jsql.png used on input line 15.
@@ -2196,13 +2196,13 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 76A0617E4D47A3B565F60A751DD51048;13722.
  ) 
 Here is how much of TeX's memory you used:
- 31121 strings out of 494875
- 508984 string characters out of 6179216
- 603363 words of memory out of 5000000
- 33118 multiletter control sequences out of 15000+600000
+ 31131 strings out of 494875
+ 509107 string characters out of 6179216
+ 603703 words of memory out of 5000000
+ 33125 multiletter control sequences out of 15000+600000
  109040 words of font info for 356 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 56i,12n,83p,10558b,826s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,12n,83p,10558b,966s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/s
 imhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS
 /fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:
@@ -2253,10 +2253,10 @@ WS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc><
 c:/WINDOWS/fonts/simsun.ttc><c:/texlive/2017/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmtt10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb
 ><c:/texlive/2017/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on thesis.pdf (28 pages, 665692 bytes).
+Output written on thesis.pdf (28 pages, 665759 bytes).
 PDF statistics:
- 1278 PDF objects out of 1440 (max. 8388607)
- 1026 compressed objects within 11 object streams
- 144 named destinations out of 1000 (max. 500000)
+ 1283 PDF objects out of 1440 (max. 8388607)
+ 1031 compressed objects within 11 object streams
+ 147 named destinations out of 1000 (max. 500000)
  1111 words of extra memory for PDF output out of 10000 (max. 10000000)
 
