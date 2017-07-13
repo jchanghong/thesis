@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.4)  7 JUL 2017 11:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.4)  13 JUL 2017 18:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1980,38 +1980,10 @@ File: c70rm.fd 2016/02/02 v2.3 Chinese font definition (CTEX)
 )
 Package CJKpunct Info: use punctuation spaces for family 'rm' with punctstyle (
 quanjiao) on input line 4.
-
-Overfull \hbox (21.20332pt too wide) in paragraph at lines 10--11
-[]\C70/rm/m/n/12.05/67 , \C70/rm/m/n/12.05/65 ‡ \C70/rm/m/n/12.05/99 – \C70/rm/
-m/n/12.05/51 H \C70/rm/m/n/12.05/4e Ë \C70/rm/m/n/12.05/7e Í \C70/rm/m/n/12.05/
-4e † \C70/rm/m/n/12.05/65 p \C70/rm/m/n/12.05/63 n \C70/rm/m/n/12.05/5e “ \C70/
-rm/m/n/12.05/54 Œ \C70/rm/m/n/12.05/52 ^^F \C70/rm/m/n/12.05/5e ^^C \C70/rm/m/n
-/12.05/5f ^^O \C70/rm/m/n/12.05/65 p \C70/rm/m/n/12.05/63 n \C70/rm/m/n/12.05/5
-e “ \C70/rm/m/n/12.05/76 „ ø \C70/rm/m/n/12.05/51 s \C70/rm/m/n/12.05/69 ‚ \C70
-/rm/m/n/12.05/5f õ \C70/rm/m/n/12.05/54 Œ \C70/rm/m/n/12.05/53 Ñ \C70/rm/m/n/12
-.05/5c U \C70/rm/m/n/12.05/73 ° \C70/rm/m/n/12.05/72 ¶|\C70/rm/m/n/12.05/ff ^^L
-| \C70/rm/m/n/12.05/5e v \C70/rm/m/n/12.05/5b ù ž \C70/rm/m/n/12.05/73 °\OT1/pt
-m/m/n/12.05 JSQL\C70/rm/m/n/12.05/8f Ç
- []
-
-
-Overfull \hbox (8.61087pt too wide) in paragraph at lines 12--13
-\C70/rm/m/n/12.05/65 p \C70/rm/m/n/12.05/63 n \C70/rm/m/n/12.05/5e “ \C70/rm/m/
-n/12.05/76 „ \C70/rm/m/n/12.05/66 ô \C70/rm/m/n/12.05/65 9 \C70/rm/m/n/12.05/60
- Å \C70/rm/m/n/12.05/51 µ|\C70/rm/m/n/12.05/ff ^^L| \C70/rm/m/n/12.05/4e å \C70
-/rm/m/n/12.05/53 ï \C70/rm/m/n/12.05/89 Æ \C70/rm/m/n/12.05/53 ^^V \C70/rm/m/n/
-12.05/76 „ \C70/rm/m/n/12.05/65 ¹ \C70/rm/m/n/12.05/5f ^^O \C70/rm/m/n/12.05/54
- ^^Q \C70/rm/m/n/12.05/75 ( \C70/rm/m/n/12.05/62 7 \C70/rm/m/n/12.05/5c U \C70/
-rm/m/n/12.05/79 :|\C70/rm/m/n/12.05/ff ^^[| \C70/rm/m/n/12.05/65 p \C70/rm/m/n/
-12.05/63 n \C70/rm/m/n/12.05/5e “ \C70/rm/m/n/12.05/5f ^^U \C70/rm/m/n/12.05/64
- Î \C70/rm/m/n/12.05/6a ! \C70/rm/m/n/12.05/57 W \C70/rm/m/n/12.05/52 ) \C70/rm
-/m/n/12.05/75 ( \C70/rm/m/n/12.05/4e †\OT1/ptm/m/n/12.05 orientdb\C70/rm/m/n/12
-.05/5f ^^@
- []
-
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12.05> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 15.
-) (./dependencies/tex/generic/ctex/zhwindowsfonts.tex
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
+)
+(./dependencies/tex/generic/ctex/zhwindowsfonts.tex
 File: zhwindowsfonts.tex 2016/02/02 v2.3 Windows font map loader for pdfTeX and
  DVIPDFMx (CTEX)
 ) [1
@@ -2046,14 +2018,11 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.23007> not available
 
 
 
-] [6])
+])
 \tf@toc=\write8
 \openout8 = `thesis.toc'.
 
- [7] [8
-
-
-] (./thesis.acr) (./thesis.gls)
+ [6] (./thesis.acr) (./thesis.gls)
 \tempsubpiccaptionbox=\box61
 \tempsubpiccaptionindent=\skip102
 \tempsubpiccaptionheadindent=\skip103
@@ -2071,23 +2040,25 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.05249> not available
 
 
 
+
+
 ]) [2]
 \openout2 = `chapters/Chapter2.aux'.
 
  (./chapters/Chapter2.tex
 ç¬¬äºŒç« 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12.045> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 31.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 21.
 [3
 
 
 
-] [4] [5] [6] [7]) [8]
+] [4] [5] [6] [7] [8]) [9]
 \openout2 = `chapters/Chapter3.aux'.
 
  (./chapters/Chapter3.tex
 ç¬¬ä¸‰ç« 
-) [9
+) [10
 
 
 
@@ -2096,13 +2067,13 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12.045> not available
 
  (./chapters/Chapter4.tex
 ç¬¬å››ç« 
-<pics/djsql.png, id=679, 321.45094pt x 258.21469pt>
+<pics/djsql.png, id=636, 321.45094pt x 258.21469pt>
 File: pics/djsql.png Graphic file (type png)
  <use pics/djsql.png>
 Package pdftex.def Info: pics/djsql.png used on input line 11.
 (pdftex.def)             Requested size: 321.45015pt x 258.21405pt.
 
-<pics/jsql.png, id=681, 428.35031pt x 341.02406pt>
+<pics/jsql.png, id=638, 428.35031pt x 341.02406pt>
 File: pics/jsql.png Graphic file (type png)
  <use pics/jsql.png>
 Package pdftex.def Info: pics/jsql.png used on input line 15.
@@ -2112,26 +2083,26 @@ Overfull \hbox (1.5579pt too wide) in paragraph at lines 15--15
  [][] 
  []
 
-[10
+[11
 
 
 
- <./pics/djsql.png>] [11 <./pics/jsql.png>] [12]) [13]
+ <./pics/djsql.png>] [12 <./pics/jsql.png>] [13]) [14]
 \openout2 = `chapters/Chapter5.aux'.
 
 
 (./chapters/Chapter5.tex
 ç¬¬äº”ç« 
-[14
+[15
 
 
 
-]) [15]
+]) [16]
 \openout2 = `chapters/Chapter6.aux'.
 
  (./chapters/Chapter6.tex
 ç¬¬å…­ç« 
-) [16
+) [17
 
 
 
@@ -2153,7 +2124,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 6.025pt
 (hyperref)                replaced by space on input line 14.
 
-(./contents/acknowledgements.tex) [17
+(./contents/acknowledgements.tex) [18
 
 
 ] (./thesis.bbl
@@ -2179,8 +2150,8 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 84.
 ) (./contents/appendix.tex)
-Package atenddvi Info: Last page = 26.
- [18
+Package atenddvi Info: Last page = 25.
+ [19
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 14.
@@ -2192,14 +2163,14 @@ Package atveryend Info: Executing hook `AfterLastShipout' on input line 14.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 14.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 14.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: AD448D0D0FAD32D24E99F423BD55BBBE;10023.
+(rerunfilecheck)             Checksum: AAFE2DE7E877028F4A28E03BECC13A01;8459.
  ) 
 Here is how much of TeX's memory you used:
- 31020 strings out of 494875
- 507498 string characters out of 6179216
- 599815 words of memory out of 5000000
- 33014 multiletter control sequences out of 15000+600000
- 112552 words of font info for 372 fonts, out of 8000000 for 9000
+ 30976 strings out of 494875
+ 506794 string characters out of 6179216
+ 598816 words of memory out of 5000000
+ 32969 multiletter control sequences out of 15000+600000
+ 111742 words of font info for 369 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  56i,12n,83p,10558b,564s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/s
@@ -2209,24 +2180,24 @@ imhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS
 .ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/font
 s/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WIND
 OWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf>
-<c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/sim
-sun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/f
-onts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/W
+<c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/sim
+sun.ttc><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/f
+onts/simsun.ttc><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/W
 INDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.t
-tf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/
-simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOW
-S/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c
+tf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/
+simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOW
+S/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc><c
 :/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhe
 i.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fon
 ts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WIN
-DOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf
-><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/si
-mhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/
-fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf>{c:/texlive/2017/texmf-dist/fonts
-/enc/dvips/base/8r.enc}<c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.tt
-f><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/s
-imsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS
-/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:
+DOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf
+><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/si
+mhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/
+fonts/simsun.ttc><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/
+WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.
+ttf><c:/WINDOWS/fonts/simhei.ttf>{c:/texlive/2017/texmf-dist/fonts/enc/dvips/ba
+se/8r.enc}<c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS
+/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc><c:
 /WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun
 .ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/font
 s/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WIND
@@ -2252,10 +2223,10 @@ WS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc><
 c:/WINDOWS/fonts/simsun.ttc><c:/texlive/2017/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmtt10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb
 ><c:/texlive/2017/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on thesis.pdf (26 pages, 648970 bytes).
+Output written on thesis.pdf (25 pages, 642039 bytes).
 PDF statistics:
- 1186 PDF objects out of 1200 (max. 8388607)
- 937 compressed objects within 10 object streams
- 152 named destinations out of 1000 (max. 500000)
- 919 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1142 PDF objects out of 1200 (max. 8388607)
+ 895 compressed objects within 9 object streams
+ 156 named destinations out of 1000 (max. 500000)
+ 831 words of extra memory for PDF output out of 10000 (max. 10000000)
 
