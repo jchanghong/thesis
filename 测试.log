@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.4)  19 JUL 2017 16:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.4)  19 JUL 2017 21:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -598,7 +598,7 @@ Package CJKpunct Info: use punctuation spaces for family 'rm' with punctstyle (
 quanjiao) on input line 14.
 <<c1916.cmap>><<c1915.cmap>><<c1907.cmap>><<c1978.cmap>><<c1925.cmap>><<c1917.c
 map>>
-Overfull \hbox (245.44002pt too wide) in paragraph at lines 20--27
+Overfull \hbox (245.44002pt too wide) in paragraph at lines 20--28
 \C19/rm/m/n/10.53937/76 > \C19/rm/m/n/10.53937/15 ^^A \C19/rm/m/n/10.53937/07 B
  \C19/rm/m/n/10.53937/78 ê \C19/rm/m/n/10.53937/40 ˛ |\C19/rm/m/n/10.53937/25 5
 |\C19/rm/m/n/10.53937/78 ê \C19/rm/m/n/10.53937/40 ˛ |\C19/rm/m/n/10.53937/25 5
@@ -608,29 +608,29 @@ Overfull \hbox (245.44002pt too wide) in paragraph at lines 20--27
  []
 
 
-Overfull \hbox (157.9635pt too wide) in paragraph at lines 20--27
+Overfull \hbox (157.9635pt too wide) in paragraph at lines 20--28
 \OT1/cmr/m/n/10.53937 111111111111111111111111111111111111111111111111 11111111
 111111111111111111111111111111111111111
  []
 
 
-Overfull \hbox (78.91801pt too wide) in paragraph at lines 20--27
+Overfull \hbox (78.91801pt too wide) in paragraph at lines 20--28
 \OT1/cmr/m/n/10.53937 111111111111111111111111111111111 11111111111111111111111
 111111111111111111111111
  []
 
 
-Overfull \hbox (2.80014pt too wide) in paragraph at lines 20--27
+Overfull \hbox (2.80014pt too wide) in paragraph at lines 20--28
 \OT1/cmr/m/n/10.53937 111111111111111111111111111111111111122222222222222222222
-222222222 
+222222222
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 28.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 44.
 (c:/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.53937> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 28.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 44.
  [5
 
 ] (./≤‚ ‘.aux) ) 
@@ -641,7 +641,7 @@ Here is how much of TeX's memory you used:
  15444 multiletter control sequences out of 15000+600000
  540822 words of font info for 60 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 42i,4n,56p,10439b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,6n,56p,10439b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/W
 INDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.t
 tc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/
@@ -653,7 +653,7 @@ i.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/texlive/201
 ist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2017/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmsy10.pfb>
-Output written on ≤‚ ‘.pdf (5 pages, 121060 bytes).
+Output written on ≤‚ ‘.pdf (5 pages, 121956 bytes).
 PDF statistics:
  123 PDF objects out of 1000 (max. 8388607)
  78 compressed objects within 1 object stream
