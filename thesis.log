@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.4)  20 JUL 2017 19:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.4)  20 JUL 2017 20:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2044,7 +2044,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.05249> not available
 
 
 ] [2] [3]
-Overfull \hbox (9.96048pt too wide) in paragraph at lines 118--121
+Overfull \hbox (9.96048pt too wide) in paragraph at lines 117--120
 \C70/rm/m/n/12.05/53 ^^E \C70/rm/m/n/12.05/62 ì \C70/rm/m/n/12.05/8d ^^_ \C70/r
 m/m/n/12.05/8f } \C70/rm/m/n/12.05/57 G \C70/rm/m/n/12.05/88 a \C70/rm/m/n/12.0
 5/62 € \C70/rm/m/n/12.05/67 /|\C70/rm/m/n/12.05/ff ^^L| \C70/rm/m/n/12.05/65 p 
@@ -2166,17 +2166,17 @@ rm/m/n/12.05/51 e \C70/rm/m/n/12.05/76 „ \C70/rm/m/n/12.05/7c { \C70/rm/m/n/12.
  []
 
 
-Overfull \hbox (17.69615pt too wide) in paragraph at lines 380--385
-[]\OT1/ptm/m/n/12.05 Javal|\C70/rm/m/n/12.05/ff ^^N| \OT1/ptm/m/n/12.05 1\C70/r
-m/m/n/12.05/72 H \C70/rm/m/n/12.05/67 , \C70/rm/m/n/12.05/5b ù \C70/rm/m/n/12.0
-5/57 ú \C70/rm/m/n/12.05/67 , \C70/rm/m/n/12.05/76 „\OT1/ptm/m/n/12.05 I\C70/rm
-/m/n/12.05/ff ^^O\OT1/ptm/m/n/12.05 O\C70/rm/m/n/12.05/6d A \C70/rm/m/n/12.05/7
-c { \C70/rm/m/n/12.05/5e “ \C70/rm/m/n/12.05/8f Û \C70/rm/m/n/12.05/88 L \C70/r
-m/m/n/12.05/4e † \C70/rm/m/n/12.05/67  \C70/rm/m/n/12.05/59 ' \C70/rm/m/n/12.0
-5/7a  \C70/rm/m/n/12.05/5e ¦ \C70/rm/m/n/12.05/76 „ \C70/rm/m/n/12.05/4f î \C7
-0/rm/m/n/12.05/65 9|\C70/rm/m/n/12.05/30 ^^B| \C70/rm/m/n/12.05/4e ^^@ \C70/rm/
-m/n/12.05/5f ^^@ \C70/rm/m/n/12.05/59 Ë \C70/rm/m/n/12.05/77  \C70/rm/m/n/12.0
-5/52 0 \OT1/ptm/m/n/12.05 Reader1\C70/rm/m/n/12.05/96 ^^E
+Overfull \hbox (9.86371pt too wide) in paragraph at lines 380--385
+[]\OT1/ptm/m/n/12.05 Javal.1\C70/rm/m/n/12.05/72 H \C70/rm/m/n/12.05/67 , \C70/
+rm/m/n/12.05/5b ù \C70/rm/m/n/12.05/57 ú \C70/rm/m/n/12.05/67 , \C70/rm/m/n/12.
+05/76 „\OT1/ptm/m/n/12.05 I\C70/rm/m/n/12.05/ff ^^O\OT1/ptm/m/n/12.05 O\C70/rm/
+m/n/12.05/6d A \C70/rm/m/n/12.05/7c { \C70/rm/m/n/12.05/5e “ \C70/rm/m/n/12.05/
+8f Û \C70/rm/m/n/12.05/88 L \C70/rm/m/n/12.05/4e † \C70/rm/m/n/12.05/67  \C70/
+rm/m/n/12.05/59 ' \C70/rm/m/n/12.05/7a  \C70/rm/m/n/12.05/5e ¦ \C70/rm/m/n/12.
+05/76 „ \C70/rm/m/n/12.05/4f î \C70/rm/m/n/12.05/65 9|\C70/rm/m/n/12.05/30 ^^B|
+ \C70/rm/m/n/12.05/4e ^^@ \C70/rm/m/n/12.05/5f ^^@ \C70/rm/m/n/12.05/59 Ë \C70/
+rm/m/n/12.05/77  \C70/rm/m/n/12.05/52 0 \OT1/ptm/m/n/12.05 Reader1\C70/rm/m/n/
+12.05/96 ^^E
  []
 
 
@@ -2570,10 +2570,10 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: B2B0F6695439D2E92FFBC23B6A5D4359;11971.
  ) 
 Here is how much of TeX's memory you used:
- 32212 strings out of 494875
- 521515 string characters out of 6179216
+ 32210 strings out of 494875
+ 521491 string characters out of 6179216
  610780 words of memory out of 5000000
- 34149 multiletter control sequences out of 15000+600000
+ 34147 multiletter control sequences out of 15000+600000
  107692 words of font info for 354 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  56i,12n,83p,10558b,542s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2586,8 +2586,8 @@ s/simsun.ttc><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WIND
 OWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf>
 <c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/sim
 hei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/f
-onts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/W
-INDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.t
+onts/simsun.ttc><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/W
+INDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.t
 tc><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/
 simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOW
 S/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c
@@ -2630,7 +2630,7 @@ nts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc><c:/WI
 NDOWS/fonts/simsun.ttc><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmtt10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/
 texlive/2017/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on thesis.pdf (45 pages, 869030 bytes).
+Output written on thesis.pdf (45 pages, 868539 bytes).
 PDF statistics:
  1419 PDF objects out of 1440 (max. 8388607)
  1134 compressed objects within 12 object streams
