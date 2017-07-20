@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.4)  20 JUL 2017 15:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.4)  20 JUL 2017 19:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2043,26 +2043,8 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.05249> not available
 
 
 
-] [2]
-Overfull \hbox (0.92223pt too wide) in paragraph at lines 104--105
-[]\C70/rm/m/n/12.05/5b û \C70/rm/m/n/12.05/73 ∞ \C70/rm/m/n/12.05/4e Ü\OT1/ptm/
-m/n/12.05 mysql\C70/rm/m/n/12.05/90 ^^Z \C70/rm/m/n/12.05/4f · \C70/rm/m/n/12.0
-5/53 O \C70/rm/m/n/12.05/8b Æ|\C70/rm/m/n/12.05/ff ^^L| \C70/rm/m/n/12.05/4f ^^
-? \C70/rm/m/n/12.05/5f ó \C70/rm/m/n/12.05/53 Ô \C70/rm/m/n/12.05/4e Â \C70/rm/
-m/n/12.05/90 ^^Z \C70/rm/m/n/12.05/8f «\OT1/ptm/m/n/12.05 mysql\C70/rm/m/n/12.0
-5/5b ¢ \C70/rm/m/n/12.05/67 ^^M \C70/rm/m/n/12.05/7a Ô \C70/rm/m/n/12.05/67 e \
-C70/rm/m/n/12.05/8f ﬁ \C70/rm/m/n/12.05/63 •\OT1/ptm/m/n/12.05 jsql\C70/rm/m/n/
-12.05/52 ^^F \C70/rm/m/n/12.05/5e ^^C \C70/rm/m/n/12.05/5f ^^O \C70/rm/m/n/12.0
-5/65 p \C70/rm/m/n/12.05/63 n \C70/rm/m/n/12.05/5e ì|\C70/rm/m/n/12.05/30 ^^B|
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 104--105
-
- []
-
-[3]
-Overfull \hbox (9.96048pt too wide) in paragraph at lines 114--117
+] [2] [3]
+Overfull \hbox (9.96048pt too wide) in paragraph at lines 118--121
 \C70/rm/m/n/12.05/53 ^^E \C70/rm/m/n/12.05/62 Ï \C70/rm/m/n/12.05/8d ^^_ \C70/r
 m/m/n/12.05/8f } \C70/rm/m/n/12.05/57 G \C70/rm/m/n/12.05/88 a \C70/rm/m/n/12.0
 5/62 Ä \C70/rm/m/n/12.05/67 /|\C70/rm/m/n/12.05/ff ^^L| \C70/rm/m/n/12.05/65 p 
@@ -2079,12 +2061,11 @@ rm/m/n/12.05/7e Ÿ \C70/rm/m/n/12.05/51 ˙ \C70/rm/m/n/12.05/4e Ü\OT1/ptm/m/n/12.
 ) [4]
 \openout2 = `chapters/Chapter2.aux'.
 
- (./chapters/Chapter2.tex [5
-
-
-]
+ (./chapters/Chapter2.tex
 Á¨¨‰∫åÁ´†
-[6
+[5
+
+
 
 ]
 Overfull \hbox (32.10803pt too wide) in paragraph at lines 57--59
@@ -2100,10 +2081,10 @@ e ß \C70/rm/m/n/12.05/75 ^^_ \C70/rm/m/n/12.05/53 — \C70/rm/m/n/12.05/5c U \C70
 0/rm/m/n/12.05/54 å\OT1/ptm/m/n/12.05 MySQL|\C70/rm/m/n/12.05/ff ^^L|
  []
 
-[7] [8] [9]
+[6] [7] [8]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12.045> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 170.
- [10] [11] [12]
+ [9] [10] [11]
 Overfull \hbox (3.92374pt too wide) in paragraph at lines 290--295
 []\C70/rm/m/n/12.05/7f Q \C70/rm/m/n/12.05/7e ‹ \C70/rm/m/n/12.05/9a ÿ \C70/rm/
 m/n/12.05/53 Ô \C70/rm/m/n/12.05/75 (\OT1/ptm/m/n/12.05 ,\C70/rm/m/n/12.05/75 1
@@ -2131,7 +2112,7 @@ rm/m/n/12.05/90 	 \C70/rm/m/n/12.05/62 È \C70/rm/m/n/12.05/4e Â \C70/rm/m/n/12.
 rm/m/n/12.05/53 O
  []
 
-[13]
+[12]
 Overfull \hbox (0.63379pt too wide) in paragraph at lines 329--338
 \C70/rm/m/n/12.05/5b ˘ ¢ \C70/rm/m/n/12.05/62 7 \C70/rm/m/n/12.05/76 Ñ\OT1/ptm/
 m/n/12.05 SYN\C70/rm/m/n/12.05/62 • \C70/rm/m/n/12.05/65 á \C70/rm/m/n/12.05/6b
@@ -2159,7 +2140,7 @@ rm/m/n/12.05/79 Õ \C70/rm/m/n/12.05/88 ´ \C70/rm/m/n/12.05/79  \C70/rm/m/n/12.
 \C70/rm/m/n/12.05/76 Ñ
  []
 
-[14]
+[13]
 Overfull \hbox (20.08069pt too wide) in paragraph at lines 360--379
 []\C70/rm/m/n/12.05/5c 1 \C70/rm/m/n/12.05/6d A \C70/rm/m/n/12.05/76 Ñ \C70/rm/
 m/n/12.05/8f – \C70/rm/m/n/12.05/52 ® \C70/rm/m/n/12.05/65 π \C70/rm/m/n/12.05/
@@ -2249,7 +2230,7 @@ rm/m/n/12.05/82 Ç \C70/rm/m/n/12.05/6d A|\C70/rm/m/n/12.05/ff ^^L| \C70/rm/m/n/
 n/12.05/5b W
  []
 
-[15]
+[14]
 Overfull \hbox (18.50304pt too wide) in paragraph at lines 405--415
 \C70/rm/m/n/12.05/53 — \C70/rm/m/n/12.05/90 ^^A \C70/rm/m/n/12.05/62 ^^V \C70/r
 m/m/n/12.05/63 • \C70/rm/m/n/12.05/53 ◊ \C70/rm/m/n/12.05/8f ﬁ \C70/rm/m/n/12.0
@@ -2326,7 +2307,7 @@ Overfull \hbox (25.4903pt too wide) in paragraph at lines 455--496
 /12.05/ff ^^N| \OT1/ptm/m/n/12.05 print1new
  []
 
-[16] [17] [18] [19]
+[15] [16] [17] [18]
 Overfull \hbox (48.40997pt too wide) in paragraph at lines 623--626
 []\OT1/ptm/m/n/12.05 Reactor\C70/rm/m/n/12.05/6a ! \C70/rm/m/n/12.05/5f ^^O \C7
 0/rm/m/n/12.05/97 ^^@ \C70/rm/m/n/12.05/89 Å \C70/rm/m/n/12.05/5e ï \C70/rm/m/n
@@ -2363,45 +2344,169 @@ m/m/n/12.05/64 Õ \C70/rm/m/n/12.05/4f \|\C70/rm/m/n/12.05/ff ^^L| \C70/rm/m/n/1
 ﬂ \C70/rm/m/n/12.05/76 Ñ\OT1/ptm/m/n/12.05 Thread-
  []
 
-[20] [21]) [22]
+[19] [20]) [21]
 \openout2 = `chapters/Chapter3.aux'.
 
  (./chapters/Chapter3.tex
 Á¨¨‰∏âÁ´†
-) [23
+
+Overfull \hbox (16.1294pt too wide) in paragraph at lines 25--26
+[]\C70/rm/m/n/12.05/62 @ \C70/rm/m/n/12.05/4e Â \C70/rm/m/n/12.05/7b Ä \C70/rm/
+m/n/12.05/53 U \C70/rm/m/n/12.05/76 Ñ \C70/rm/m/n/12.05/8b Ù|\C70/rm/m/n/12.05/
+ff ^^L| \C70/rm/m/n/12.05/89 Å \C70/rm/m/n/12.05/5b û \C70/rm/m/n/12.05/73 ∞\OT
+1/ptm/m/n/12.05 jsql\C70/rm/m/n/12.05/65 p \C70/rm/m/n/12.05/63 n \C70/rm/m/n/1
+2.05/5e ì|\C70/rm/m/n/12.05/ff ^^L| \C70/rm/m/n/12.05/5b ˘ \C70/rm/m/n/12.05/4e
+ é \C70/rm/m/n/12.05/75 ( \C70/rm/m/n/12.05/62 7 \C70/rm/m/n/12.05/67 e \C70/rm
+/m/n/12.05/8b Ù|\C70/rm/m/n/12.05/ff ^^L| \C70/rm/m/n/12.05/5c 1 \C70/rm/m/n/12
+.05/66 / \C70/rm/m/n/12.05/89 Å \C70/rm/m/n/12.05/5b û \C70/rm/m/n/12.05/73 ∞\O
+T1/ptm/m/n/12.05 mysql\C70/rm/m/n/12.05/65 / \C70/rm/m/n/12.05/63 ^^A \C70/rm/m
+/n/12.05/76 Ñ\OT1/ptm/m/n/12.05 sql\C70/rm/m/n/12.05/8b Ì
+ []
+
+[22
 
 
 
 ]
+Overfull \hbox (15.30989pt too wide) in paragraph at lines 43--45
+[]\OT1/ptm/m/n/12.05 Jsql\C70/rm/m/n/12.05/7c ˚ \C70/rm/m/n/12.05/7e ﬂ \C70/rm/
+m/n/12.05/66 / \C70/rm/m/n/12.05/4e ^^@ * \C70/rm/m/n/12.05/57 ˙ \C70/rm/m/n/12
+.05/4e é\OT1/ptm/m/n/12.05 java\C70/rm/m/n/12.05/8b Ì \C70/rm/m/n/12.05/8a ^^@ 
+\C70/rm/m/n/12.05/5b û \C70/rm/m/n/12.05/73 ∞ \C70/rm/m/n/12.05/76 Ñ \C70/rm/m/
+n/12.05/52 ^^F \C70/rm/m/n/12.05/5e ^^C \C70/rm/m/n/12.05/5f ^^O \C70/rm/m/n/12
+.05/65 p \C70/rm/m/n/12.05/63 n \C70/rm/m/n/12.05/5e ì|\C70/rm/m/n/12.05/30 ^^B
+| \C70/rm/m/n/12.05/5b É \C70/rm/m/n/12.05/91 « \C70/rm/m/n/12.05/75 ( \C70/rm/
+m/n/12.05/4e Ü \C70/rm/m/n/12.05/54 å\OT1/ptm/m/n/12.05 mysql\C70/rm/m/n/12.05/
+4e ^^@ \C70/rm/m/n/12.05/68 7 \C70/rm/m/n/12.05/76 Ñ\OT1/ptm/m/n/12.05 sql\C70/
+rm/m/n/12.05/8b Ì
+ []
+
+[23] [24] [25]
+Overfull \hbox (16.37056pt too wide) in paragraph at lines 190--200
+[]\C70/rm/m/n/12.05/8f Ÿ \C70/rm/m/n/12.05/79 Õ \C70/rm/m/n/12.05/65 π \C70/rm/
+m/n/12.05/5f ^^O \C70/rm/m/n/12.05/57 ( \C70/rm/m/n/12.05/7f ^^V \C70/rm/m/n/12
+.05/7a  \C70/rm/m/n/12.05/4e - \C70/rm/m/n/12.05/5b ˘\OT1/ptm/m/n/12.05 socket
+\C70/rm/m/n/12.05/8b æ \C70/rm/m/n/12.05/7f n\OT1/ptm/m/n/12.05 ONONBLOCK\C70/r
+m/m/n/12.05/53 s Ô|\C70/rm/m/n/12.05/30 ^^B| \C70/rm/m/n/12.05/4f F \C70/rm/m/n
+/12.05/6b d \C70/rm/m/n/12.05/65 π \C70/rm/m/n/12.05/5f ^^O \C70/rm/m/n/12.05/4
+e ≈ ≈ \C70/rm/m/n/12.05/94 à \C70/rm/m/n/12.05/5b ˘ \C70/rm/m/n/12.05/7f Q \C70
+/rm/m/n/12.05/7e ‹\OT1/ptm/m/n/12.05 IO\C70/rm/m/n/12.05/67 	
+ []
+
+[26] [27]
+Overfull \hbox (82.1152pt too wide) in paragraph at lines 276--282
+[]\C70/rm/m/n/12.05/4e 
+ \C70/rm/m/n/12.05/65 á \C70/rm/m/n/12.05/8b ≤ \C70/rm/m/n/12.05/8f  \C70/rm/m
+/n/12.05/4e Ü\OT1/ptm/m/n/12.05 UNIX\C70/rm/m/n/12.05/73 Ø \C70/rm/m/n/12.05/58
+ É \C70/rm/m/n/12.05/76 Ñ \C70/rm/m/n/12.05/4e î \C70/rm/m/n/12.05/79 Õ\OT1/ptm
+/m/n/12.05 IO\C70/rm/m/n/12.05/6a ! \C70/rm/m/n/12.05/57 ã|\C70/rm/m/n/12.05/30
+ ^^B| \C70/rm/m/n/12.05/57 ˙ \C70/rm/m/n/12.05/4e é \C70/rm/m/n/12.05/8f Ÿ \C70
+/rm/m/n/12.05/4e î \C70/rm/m/n/12.05/79 Õ \C70/rm/m/n/12.05/6a ! \C70/rm/m/n/12
+.05/57 ã|\C70/rm/m/n/12.05/ff ^^L| \C70/rm/m/n/12.05/57 (\OT1/ptm/m/n/12.05 Jav
+a\C70/rm/m/n/12.05/4e -|\C70/rm/m/n/12.05/ff ^^L| \C70/rm/m/n/12.05/96 è \C70/r
+m/m/n/12.05/77 @\OT1/ptm/m/n/12.05 NIO\C70/rm/m/n/12.05/54 å\OT1/ptm/m/n/12.05 
+NIO2.0(AIO)\C70/rm/m/n/12.05/76 Ñ
+ []
+
+
+Overfull \hbox (36.23973pt too wide) in paragraph at lines 293--310
+[]\OT1/ptm/m/n/12.05 JDK1.4\C70/rm/m/n/12.05/5f ^^@ \C70/rm/m/n/12.05/59 À \C70
+/rm/m/n/12.05/5f ^^U \C70/rm/m/n/12.05/51 e \C70/rm/m/n/12.05/4e Ü\OT1/ptm/m/n/
+12.05 NIO\C70/rm/m/n/12.05/7c { \C70/rm/m/n/12.05/5e ì|\C70/rm/m/n/12.05/ff ^^L
+| \C70/rm/m/n/12.05/8f Ÿ \C70/rm/m/n/12.05/91 Ã \C70/rm/m/n/12.05/76 Ñ\OT1/ptm/
+m/n/12.05 NIO\C70/rm/m/n/12.05/63 ^^G \C70/rm/m/n/12.05/76 Ñ \C70/rm/m/n/12.05/
+66 /\OT1/ptm/m/n/12.05 Non-blcok IO |\C70/rm/m/n/12.05/ff ^^L| \C70/rm/m/n/12.0
+5/4e ; \C70/rm/m/n/12.05/89 Å \C70/rm/m/n/12.05/66 / \C70/rm/m/n/12.05/4f ^^? \
+C70/rm/m/n/12.05/75 (\OT1/ptm/m/n/12.05 Selector\C70/rm/m/n/12.05/59 ^^Z
+ []
+
+[28]
+Overfull \hbox (10.45226pt too wide) in paragraph at lines 311--317
+\C70/rm/m/n/12.05/57 (\OT1/ptm/m/n/12.05 windows\C70/rm/m/n/12.05/4e 
+ \C70/rm/m/n/12.05/66 / \C70/rm/m/n/12.05/90 ^^Z \C70/rm/m/n/12.05/8f «\OT1/ptm
+/m/n/12.05 IOCP|\C70/rm/m/n/12.05/ff ^^L| \C70/rm/m/n/12.05/57 (\OT1/ptm/m/n/12
+.05 Linux\C70/rm/m/n/12.05/4e 
+ \C70/rm/m/n/12.05/66 / \C70/rm/m/n/12.05/90 ^^Z \C70/rm/m/n/12.05/8f «\OT1/ptm
+/m/n/12.05 epoll\C70/rm/m/n/12.05/67 e \C70/rm/m/n/12.05/5b û \C70/rm/m/n/12.05
+/73 ∞ \C70/rm/m/n/12.05/76 Ñ \OT1/ptm/m/n/12.05 (Lin-ux-As-yn-chronousChan-
+ []
+
+
+Overfull \hbox (133.26538pt too wide) in paragraph at lines 318--329
+[]\C70/rm/m/n/12.05/52 ^^[ \C70/rm/m/n/12.05/5e ˙\OT1/ptm/m/n/12.05 Asynchronou
+sServerSocketChannel |\C70/rm/m/n/12.05/ff ^^L| \C70/rm/m/n/12.05/7e — \C70/rm/
+m/n/12.05/5b ö \C70/rm/m/n/12.05/76 — \C70/rm/m/n/12.05/54 , \C70/rm/m/n/12.05/
+7a Ô \C70/rm/m/n/12.05/53 „ \C70/rm/m/n/12.05/8c ^^C \C70/rm/m/n/12.05/75 (\OT1
+/ptm/m/n/12.05 AsynchronousServerSocketChannel\C70/rm/m/n/12.05/76 Ñ\OT1/ptm/m/
+n/12.05 accpet\C70/rm/m/n/12.05/65 π
+ []
+
+
+Overfull \hbox (48.61417pt too wide) in paragraph at lines 318--329
+\C70/rm/m/n/12.05/56 ﬁ \C70/rm/m/n/12.05/8c ^^C\OT1/ptm/m/n/12.05 CompletionHan
+dler\C70/rm/m/n/12.05/76 Ñ\OT1/ptm/m/n/12.05 completed\C70/rm/m/n/12.05/65 π \C
+70/rm/m/n/12.05/6c ’|\C70/rm/m/n/12.05/ff ^^L| \C70/rm/m/n/12.05/57 ( \C70/rm/m
+/n/12.05/91 Ã \C70/rm/m/n/12.05/97 b|\C70/rm/m/n/12.05/ff ^^L| \C70/rm/m/n/12.0
+5/8c ^^C \C70/rm/m/n/12.05/75 (\OT1/ptm/m/n/12.05 AsynchronousSocketChannel\C70
+/rm/m/n/12.05/76 Ñ\OT1/ptm/m/n/12.05 read\C70/rm/m/n/12.05/65 π
+ []
+
+
+Overfull \hbox (74.34181pt too wide) in paragraph at lines 318--329
+\C70/rm/m/n/12.05/6c ’|\C70/rm/m/n/12.05/ff ^^L| \C70/rm/m/n/12.05/4f   \C70/rm
+/m/n/12.05/51 e \C70/rm/m/n/12.05/8d ^^_ # \C70/rm/m/n/12.05/59 ^^D \C70/rm/m/n
+/12.05/74 ^^F \C70/rm/m/n/12.05/65 p \C70/rm/m/n/12.05/63 n \C70/rm/m/n/12.05/7
+6 Ñ\OT1/ptm/m/n/12.05 CompletionHandler|\C70/rm/m/n/12.05/30 ^^B| \C70/rm/m/n/1
+2.05/65 p \C70/rm/m/n/12.05/63 n \C70/rm/m/n/12.05/5c 1 \C70/rm/m/n/12.05/7e Í|
+\C70/rm/m/n/12.05/ff ^^L| \C70/rm/m/n/12.05/89 Ê \C70/rm/m/n/12.05/53 — \C70/rm
+/m/n/12.05/8d ^^_ # \C70/rm/m/n/12.05/59 ^^D \C70/rm/m/n/12.05/74 ^^F \C70/rm/m
+/n/12.05/65 p \C70/rm/m/n/12.05/63 n \C70/rm/m/n/12.05/76 Ñ\OT1/ptm/m/n/12.05 C
+ompletionHandler
+ []
+
+
+Overfull \hbox (47.01282pt too wide) in paragraph at lines 318--329
+\C70/rm/m/n/12.05/76 Ñ\OT1/ptm/m/n/12.05 completed\C70/rm/m/n/12.05/65 π \C70/r
+m/m/n/12.05/6c ’|\C70/rm/m/n/12.05/30 ^^B| \C70/rm/m/n/12.05/7e Á Ì \C70/rm/m/n
+/12.05/50 Z \C70/rm/m/n/12.05/4e  ^^@ \C70/rm/m/n/12.05/6b e \C70/rm/m/n/12.05
+/59 ^^D \C70/rm/m/n/12.05/74 ^^F \C70/rm/m/n/12.05/53 s Ô|\C70/rm/m/n/12.05/30 
+^^B| \C70/rm/m/n/12.05/51 ô e \C70/rm/m/n/12.05/64 Õ \C70/rm/m/n/12.05/4f \ \C7
+0/rm/m/n/12.05/7c { \C70/rm/m/n/12.05/4f <|\C70/rm/m/n/12.05/ff ^^L| \C70/rm/m/
+n/12.05/4e _ \C70/rm/m/n/12.05/97 ^^@ \C70/rm/m/n/12.05/89 Å \C70/rm/m/n/12.05/
+4f   \C70/rm/m/n/12.05/51 e\OT1/ptm/m/n/12.05 CompletionHandler|\C70/rm/m/n/12.
+05/30 ^^B|
+ []
+
+) [29]
 \openout2 = `chapters/Chapter4.aux'.
 
  (./chapters/Chapter4.tex
 Á¨¨ÂõõÁ´†
-<pics/djsql.png, id=807, 321.45094pt x 258.21469pt>
+<pics/djsql.png, id=885, 321.45094pt x 258.21469pt>
 File: pics/djsql.png Graphic file (type png)
  <use pics/djsql.png>
 Package pdftex.def Info: pics/djsql.png used on input line 11.
 (pdftex.def)             Requested size: 321.45015pt x 258.21405pt.
 
-[24
+[30
 
 
 
- <./pics/djsql.png>] [25]) [26]
+ <./pics/djsql.png>] [31]) [32]
 \openout2 = `chapters/Chapter5.aux'.
 
  (./chapters/Chapter5.tex
 Á¨¨‰∫îÁ´†
-[27
+[33
 
 
 
-]) [28]
+]) [34]
 \openout2 = `chapters/Chapter6.aux'.
 
  (./chapters/Chapter6.tex
 Á¨¨ÂÖ≠Á´†
-) [29
+) [35
 
 
 
@@ -2423,7 +2528,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 6.025pt
 (hyperref)                replaced by space on input line 14.
 
-(./contents/acknowledgements.tex) [30
+(./contents/acknowledgements.tex) [36
 
 
 ] (./thesis.bbl
@@ -2449,8 +2554,8 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 84.
 ) (./contents/appendix.tex)
-Package atenddvi Info: Last page = 39.
- [31
+Package atenddvi Info: Last page = 45.
+ [37
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 14.
@@ -2462,44 +2567,44 @@ Package atveryend Info: Executing hook `AfterLastShipout' on input line 14.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 14.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 14.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 03746B8E5C8DF52B652125D18F101C79;10921.
+(rerunfilecheck)             Checksum: B2B0F6695439D2E92FFBC23B6A5D4359;11971.
  ) 
 Here is how much of TeX's memory you used:
- 31932 strings out of 494875
- 518063 string characters out of 6179216
+ 32212 strings out of 494875
+ 521515 string characters out of 6179216
  610780 words of memory out of 5000000
- 33889 multiletter control sequences out of 15000+600000
- 108772 words of font info for 358 fonts, out of 8000000 for 9000
+ 34149 multiletter control sequences out of 15000+600000
+ 107692 words of font info for 354 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 56i,12n,83p,10558b,545s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,12n,83p,10558b,542s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/s
-imhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS
-/fonts/simsun.ttc><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:
-/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simsun
-.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/font
-s/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WIND
-OWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simhei.ttf>
-<c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/sim
+imsun.ttc><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS
+/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc><c:
+/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei
+.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/font
+s/simsun.ttc><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WIND
+OWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf>
+<c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/sim
 hei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/f
-onts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simhei.ttf><c:/W
-INDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.t
-tc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/
+onts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/W
+INDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.t
+tc><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/
 simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOW
-S/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c
+S/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c
 :/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhe
-i.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fon
+i.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fon
 ts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WIN
-DOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc
-><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/si
-mhei.ttf><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/
-fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/
+DOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf
+><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/si
+mhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/
+fonts/simsun.ttc><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/
 WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.
-ttf><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts
-/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDO
-WS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf>{
-c:/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/WINDOWS/fonts/simhei
-.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/font
-s/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WIND
+ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts
+/simsun.ttc><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDO
+WS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><
+c:/WINDOWS/fonts/simhei.ttf>{c:/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r
+.enc}<c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/font
+s/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc><c:/WIND
 OWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc>
 <c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/sim
 sun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/f
@@ -2520,15 +2625,15 @@ ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts
 /simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDO
 WS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><
 c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/sims
-un.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fo
-nts/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/te
-xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/201
-7/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2017/texmf-dist/fonts
-/type1/urw/times/utmr8a.pfb>
-Output written on thesis.pdf (39 pages, 805277 bytes).
+un.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fo
+nts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc><c:/WI
+NDOWS/fonts/simsun.ttc><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmtt10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/
+texlive/2017/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on thesis.pdf (45 pages, 869030 bytes).
 PDF statistics:
- 1336 PDF objects out of 1440 (max. 8388607)
- 1060 compressed objects within 11 object streams
- 189 named destinations out of 1000 (max. 500000)
- 1002 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1419 PDF objects out of 1440 (max. 8388607)
+ 1134 compressed objects within 12 object streams
+ 211 named destinations out of 1000 (max. 500000)
+ 1070 words of extra memory for PDF output out of 10000 (max. 10000000)
 
