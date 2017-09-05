@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.4)  20 JUL 2017 20:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.4)  13 AUG 2017 15:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2492,21 +2492,21 @@ Package pdftex.def Info: pics/djsql.png used on input line 11.
 
 
 
- <./pics/djsql.png>] [31]) [32]
+ <./pics/djsql.png>] [31] [32]) [33]
 \openout2 = `chapters/Chapter5.aux'.
 
  (./chapters/Chapter5.tex
 第五章
-[33
+[34
 
 
 
-]) [34]
+]) [35]
 \openout2 = `chapters/Chapter6.aux'.
 
  (./chapters/Chapter6.tex
 第六章
-) [35
+) [36
 
 
 
@@ -2528,7 +2528,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 6.025pt
 (hyperref)                replaced by space on input line 14.
 
-(./contents/acknowledgements.tex) [36
+(./contents/acknowledgements.tex) [37
 
 
 ] (./thesis.bbl
@@ -2554,8 +2554,8 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 84.
 ) (./contents/appendix.tex)
-Package atenddvi Info: Last page = 45.
- [37
+Package atenddvi Info: Last page = 46.
+ [38
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 14.
@@ -2570,11 +2570,11 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: B2B0F6695439D2E92FFBC23B6A5D4359;11971.
  ) 
 Here is how much of TeX's memory you used:
- 32210 strings out of 494875
- 521491 string characters out of 6179216
+ 32214 strings out of 494875
+ 521560 string characters out of 6179216
  610780 words of memory out of 5000000
- 34147 multiletter control sequences out of 15000+600000
- 107692 words of font info for 354 fonts, out of 8000000 for 9000
+ 34148 multiletter control sequences out of 15000+600000
+ 108232 words of font info for 356 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  56i,12n,83p,10558b,542s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/s
@@ -2630,10 +2630,10 @@ nts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc><c:/WI
 NDOWS/fonts/simsun.ttc><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmtt10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/
 texlive/2017/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on thesis.pdf (45 pages, 868539 bytes).
+Output written on thesis.pdf (46 pages, 873020 bytes).
 PDF statistics:
- 1419 PDF objects out of 1440 (max. 8388607)
- 1134 compressed objects within 12 object streams
- 211 named destinations out of 1000 (max. 500000)
+ 1423 PDF objects out of 1440 (max. 8388607)
+ 1137 compressed objects within 12 object streams
+ 212 named destinations out of 1000 (max. 500000)
  1070 words of extra memory for PDF output out of 10000 (max. 10000000)
 
