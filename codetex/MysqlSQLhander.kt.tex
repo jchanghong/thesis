@@ -1,0 +1,69 @@
+\noindent
+\ttfamily
+\hlstd{}\hllin{01\ }\hlstd{}\hlcom{/{*}{*}}\\
+\hllin{02\ }\hlcom{\ {*}\ 处理sql语句的入口}\\
+\hllin{03\ }\hlcom{\ {*}/}\hlstd{}\\
+\hllin{04\ }\hlstd{}\hlkwc{@Component}\\
+\hllin{05\ }\hlstd{}\hlkwa{class\ }\hlstd{MysqlSQLhander\ }\hlopt{:\ }\hlstd{SQLHander\ }\hlopt{\symbol{123}}\\
+\hllin{06\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwc{@Autowired}\\
+\hllin{07\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{lateinit\ }\hlkwa{private\ var\ }\hlstd{allHanders}\hlopt{:\ }\hlstd{AllHanders}\hlslc{//所有的sql处理器容器}\\
+\hllin{08\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwc{@PostConstruct}\\
+\hllin{09\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{override\ fun\ }\hlstd{}\hlkwd{handle}\hlstd{}\hlopt{(}\hlstd{sql}\hlopt{:\ }\hlstd{}\hlkwb{String}\hlstd{}\hlopt{,\ }\hlstd{c}\hlopt{:\ }\hlstd{OConnection}\hlopt{)\ \symbol{123}}\hlstd{}\hlslc{//处理正常的sql语句，前端连接}\\
+\hllin{10\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{config}\hlopt{.}\hlstd{audit}\hlopt{)\ \symbol{123}}\\
+\hllin{11\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{SqlLog}\hlstd{}\hlopt{(}\hlstd{sql}\hlopt{,\ }\hlstd{c}\hlopt{.}\hlstd{user\ ?}\hlopt{:\ }\hlstd{}\hlstr{"null"}\hlstd{}\hlopt{,\ }\hlstd{c}\hlopt{.}\hlstd{host}\hlopt{).}\hlstd{}\hlkwd{sentoELServer}\hlstd{}\hlopt{()}\\
+\hllin{12\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{13\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{logger}\hlopt{.}\hlstd{}\hlkwd{info}\hlstd{}\hlopt{(}\hlstd{sql}\hlopt{)}\\
+\hllin{14\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{logger}\hlopt{.}\hlstd{isDebugEnabled}\hlopt{)\ \symbol{123}}\\
+\hllin{15\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{logger}\hlopt{.}\hlstd{}\hlkwd{debug}\hlstd{}\hlopt{(}\hlstd{sql}\hlopt{)}\\
+\hllin{16\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{17\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{sqlStatement}\hlopt{:\ }\hlstd{SQLStatement}\\
+\hllin{18\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{try\ }\hlstd{}\hlopt{\symbol{123}}\\
+\hllin{19\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{sqlStatement\ }\hlopt{=\ }\hlstd{sql}\hlopt{.}\hlstd{}\hlkwd{tosql}\hlstd{}\hlopt{()}\\
+\hllin{20\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{hander\ }\hlopt{=\ }\hlstd{allHanders}\hlopt{.}\hlstd{handerMap}\hlopt{{[}}\hlstd{sqlStatement}\hlopt{.}\hlstd{javaClass}\hlopt{{]}}\\
+\hllin{21\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{hander\ }\hlopt{!=\ }\hlstd{}\hlkwa{null}\hlstd{}\hlopt{)\ \symbol{123}}\\
+\hllin{22\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{hander}\hlopt{.}\hlstd{}\hlkwd{handle}\hlstd{}\hlopt{(}\hlstd{sqlStatement}\hlopt{,\ }\hlstd{c}\hlopt{)}\\
+\hllin{23\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlopt{\symbol{123}}\\
+\hllin{24\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{sqlStatement}\hlopt{.}\hlstd{}\hlkwd{accept}\hlstd{}\hlopt{(}\hlstd{}\hlkwd{MSQLvisitor}\hlstd{}\hlopt{(}\hlstd{c}\hlopt{))}\\
+\hllin{25\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{26\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{}\hlkwd{isupdatesql}\hlstd{}\hlopt{(}\hlstd{sql}\hlopt{))\ \symbol{123}}\\
+\hllin{27\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{config}\hlopt{.}\hlstd{distributed}\hlopt{)\ \symbol{123}}\\
+\hllin{28\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{myHazelcast}\hlopt{.}\hlstd{}\hlkwd{exeSql}\hlstd{}\hlopt{(}\hlstd{sql}\hlopt{,\ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{c}\hlopt{.}\hlstd{schema\ }\hlopt{==\ }\hlstd{}\hlkwa{null}\hlstd{}\hlopt{)\ }\hlstd{}\hlstr{""}\hlstd{\ }\hlkwa{else\ }\hlstd{c}\hlopt{.}\hlstd{schema}\hlopt{!!)}\\
+\hllin{29\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlopt{\symbol{123}}\\
+\hllin{30\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{myHazelcast}\hlopt{.}\hlstd{}\hlkwd{exesqlLocal}\hlstd{}\hlopt{(}\hlstd{sql}\hlopt{,\ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{c}\hlopt{.}\hlstd{schema\ }\hlopt{==\ }\hlstd{}\hlkwa{null}\hlstd{}\hlopt{)\ }\hlstd{}\hlstr{""}\hlstd{\ }\hlkwa{else\ }\hlstd{c}\hlopt{.}\hlstd{schema}\hlopt{!!)}\\
+\hllin{31\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{32\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{33\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return}\\
+\hllin{34\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwd{catch\ }\hlstd{}\hlopt{(}\hlstd{e}\hlopt{:\ }\hlstd{Exception}\hlopt{)\ \symbol{123}}\hlstd{}\hlslc{//如果不是合法的mysql语句，就报错}\\
+\hllin{35\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlslc{e.printStackTrace();}\\
+\hllin{36\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//druid支持的语句就用上面的方法语句处理，如果不支持，就会有异常，}\\
+\hllin{37\ }\hlstd{}\hlstd{\ \ \ \ \ \ }\hlstd{}\hlslc{//就自己写代码解析sql语句，处理。}\\
+\hllin{38\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//下面是drop\ event语句的例子，这个例子druid不支持，所以自己写}\\
+\hllin{39\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{handleotherStatement}\hlstd{}\hlopt{(}\hlstd{sql}\hlopt{,\ }\hlstd{c}\hlopt{,\ }\hlstd{e}\hlopt{)}\\
+\hllin{40\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{41\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{42\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{fun\ }\hlstd{}\hlkwd{handle}\hlstd{}\hlopt{(}\hlstd{sql}\hlopt{:\ }\hlstd{SqlUpdateLog}\hlopt{,\ }\hlstd{c}\hlopt{:\ }\hlstd{OConnection}\hlopt{)\ \symbol{123}}\hlstd{}\hlslc{//处理来自其他服务器的sql语句，同步，不需要前端连接}\\
+\hllin{43\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{logger}\hlopt{.}\hlstd{}\hlkwd{info}\hlstd{}\hlopt{(}\hlstd{sql}\hlopt{.}\hlstd{}\hlkwd{toString}\hlstd{}\hlopt{())}\\
+\hllin{44\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{logger}\hlopt{.}\hlstd{isDebugEnabled}\hlopt{)\ \symbol{123}}\\
+\hllin{45\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{logger}\hlopt{.}\hlstd{}\hlkwd{debug}\hlstd{}\hlopt{(}\hlstd{sql}\hlopt{.}\hlstd{}\hlkwd{toString}\hlstd{}\hlopt{())}\\
+\hllin{46\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{47\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{sqlStatement}\hlopt{:\ }\hlstd{SQLStatement}\\
+\hllin{48\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{try\ }\hlstd{}\hlopt{\symbol{123}}\\
+\hllin{49\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{parser\ }\hlopt{=\ }\hlstd{}\hlkwd{MySqlStatementParser}\hlstd{}\hlopt{(}\hlstd{sql}\hlopt{.}\hlstd{sql}\hlopt{)}\\
+\hllin{50\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{sqlStatement\ }\hlopt{=\ }\hlstd{parser}\hlopt{.}\hlstd{}\hlkwd{parseStatement}\hlstd{}\hlopt{()}\\
+\hllin{51\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{hander\ }\hlopt{=\ }\hlstd{allHanders}\hlopt{.}\hlstd{handerMap}\hlopt{{[}}\hlstd{sqlStatement}\hlopt{.}\hlstd{javaClass}\hlopt{{]}}\\
+\hllin{52\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{hander\ }\hlopt{!=\ }\hlstd{}\hlkwa{null}\hlstd{}\hlopt{)\ \symbol{123}}\\
+\hllin{53\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{hander}\hlopt{.}\hlstd{}\hlkwd{handle}\hlstd{}\hlopt{(}\hlstd{sqlStatement}\hlopt{,\ }\hlstd{c}\hlopt{)}\\
+\hllin{54\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlopt{\symbol{123}}\\
+\hllin{55\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{sqlStatement}\hlopt{.}\hlstd{}\hlkwd{accept}\hlstd{}\hlopt{(}\hlstd{}\hlkwd{MSQLvisitor}\hlstd{}\hlopt{(}\hlstd{c}\hlopt{))}\\
+\hllin{56\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{57\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return}\\
+\hllin{58\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwd{catch\ }\hlstd{}\hlopt{(}\hlstd{e}\hlopt{:\ }\hlstd{Exception}\hlopt{)\ \symbol{123}}\hlstd{}\hlslc{//如果不是合法的mysql语句，就报错}\\
+\hllin{59\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//druid支持的语句就用上面的方法语句处理，如果不支持，就会有异常，就自己写代码解析sql语句，处理。}\\
+\hllin{60\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//下面是drop\ event语句的例子，这个例子druid不支持，所以自己写}\\
+\hllin{61\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{handleotherStatement}\hlstd{}\hlopt{(}\hlstd{sql}\hlopt{.}\hlstd{sql}\hlopt{,\ }\hlstd{c}\hlopt{,\ }\hlstd{e}\hlopt{)}\\
+\hllin{62\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{63\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{64\ }\hlstd{}\hlopt{\symbol{125}}\hlstd{}
+\mbox{}
+\normalfont
+\normalsize

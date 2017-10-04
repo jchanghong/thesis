@@ -1,0 +1,55 @@
+\noindent
+\ttfamily
+\hlstd{}\hllin{01\ }\hlstd{}\hlcom{/{*}{*}}\\
+\hllin{02\ }\hlcom{\ {*}\ 前端认证处理器}\\
+\hllin{03\ }\hlcom{\ {*}\ 处理auth包}\\
+\hllin{04\ }\hlcom{\ {*}/}\hlstd{}\\
+\hllin{05\ }\hlstd{}\hlkwc{@Component}\\
+\hllin{06\ }\hlstd{}\hlkwa{open\ class\ }\hlstd{MysqlAuthHander\ }\hlopt{:\ }\hlstd{MysqlPacketHander\ }\hlopt{\symbol{123}}\\
+\hllin{07\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwc{@Autowired}\\
+\hllin{08\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{lateinit\ }\hlkwa{var\ }\hlstd{config}\hlopt{:\ }\hlstd{MyConfig}\\
+\hllin{09\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{private\ fun\ }\hlstd{}\hlkwd{handle0}\hlstd{}\hlopt{(}\hlstd{auth}\hlopt{:\ }\hlstd{AuthPacket}\hlopt{,\ }\hlstd{source}\hlopt{:\ }\hlstd{OConnection}\hlopt{)\ \symbol{123}}\\
+\hllin{10\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{source}\hlopt{.}\hlstd{schema\ }\hlopt{=\ }\hlstd{auth}\hlopt{.}\hlstd{database}\\
+\hllin{11\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//\ check\ password}\\
+\hllin{12\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(!}\hlstd{}\hlkwd{checkPassword}\hlstd{}\hlopt{(}\hlstd{auth}\hlopt{.}\hlstd{password}\hlopt{!!,\ }\hlstd{auth}\hlopt{.}\hlstd{user}\hlopt{!!))\ \symbol{123}}\\
+\hllin{13\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{config}\hlopt{.}\hlstd{audit}\hlopt{)\ \symbol{123}}\\
+\hllin{14\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{LoginLog}\hlstd{}\hlopt{(}\hlstd{auth}\hlopt{.}\hlstd{user\ ?}\hlopt{:\ }\hlstd{}\hlstr{"null"}\hlstd{}\hlopt{,\ }\hlstd{source}\hlopt{.}\hlstd{host}\hlopt{,\ }\hlstd{}\hlkwa{false}\hlstd{}\hlopt{).}\hlstd{}\hlkwd{sendesServer}\hlstd{}\hlopt{()}\\
+\hllin{15\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{16\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{failure}\hlstd{}\hlopt{(}\hlstd{ErrorCode}\hlopt{.}\hlstd{ER\symbol{95}ACCESS\symbol{95}DENIED\symbol{95}ERROR}\hlopt{,\ }\hlstd{}\hlstr{"Access\ denied\ for\ user\ '"}\hlstd{\ }\hlopt{+\ }\hlstd{auth}\hlopt{.}\hlstd{user\ }\hlopt{+\ }\hlstd{}\hlstr{"',\ because\ password\ is\ error\ "}\hlstd{}\hlopt{,\ }\hlstd{source}\hlopt{)}\\
+\hllin{17\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlopt{\symbol{123}}\\
+\hllin{18\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{success}\hlstd{}\hlopt{(}\hlstd{auth}\hlopt{,\ }\hlstd{source}\hlopt{)}\\
+\hllin{19\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{20\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{21\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{private\ fun\ }\hlstd{}\hlkwd{success}\hlstd{}\hlopt{(}\hlstd{auth}\hlopt{:\ }\hlstd{AuthPacket}\hlopt{,\ }\hlstd{source}\hlopt{:\ }\hlstd{OConnection}\hlopt{)\ \symbol{123}}\\
+\hllin{22\ }\hlstd{}\\
+\hllin{23\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{source}\hlopt{.}\hlstd{authenticated\ }\hlopt{=\ }\hlstd{}\hlkwa{true}\\
+\hllin{24\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{source}\hlopt{.}\hlstd{user\ }\hlopt{=\ }\hlstd{auth}\hlopt{.}\hlstd{user}\\
+\hllin{25\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{source}\hlopt{.}\hlstd{schema\ }\hlopt{=\ }\hlstd{auth}\hlopt{.}\hlstd{database}\\
+\hllin{26\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{source}\hlopt{.}\hlstd{charsetIndex\ }\hlopt{=\ }\hlstd{auth}\hlopt{.}\hlstd{charsetIndex}\\
+\hllin{27\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{source}\hlopt{.}\hlstd{charset\ }\hlopt{=\ }\hlstd{CharsetUtil}\hlopt{.}\hlstd{}\hlkwd{getCharset}\hlstd{}\hlopt{(}\hlstd{source}\hlopt{.}\hlstd{charsetIndex}\hlopt{)}\\
+\hllin{28\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{config}\hlopt{.}\hlstd{audit}\hlopt{)\ \symbol{123}}\\
+\hllin{29\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{LoginLog}\hlstd{}\hlopt{(}\hlstd{source}\hlopt{.}\hlstd{user\ ?}\hlopt{:\ }\hlstd{}\hlstr{"null"}\hlstd{}\hlopt{,\ }\hlstd{source}\hlopt{.}\hlstd{host}\hlopt{,\ }\hlstd{}\hlkwa{true}\hlstd{}\hlopt{).}\hlstd{}\hlkwd{sendesServer}\hlstd{}\hlopt{()}\\
+\hllin{30\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{31\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{LOGGER}\hlopt{.}\hlstd{isInfoEnabled}\hlopt{)\ \symbol{123}}\\
+\hllin{32\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{s\ }\hlopt{=\ }\hlstd{}\hlkwd{StringBuilder}\hlstd{}\hlopt{()}\\
+\hllin{33\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{s}\hlopt{.}\hlstd{}\hlkwd{append}\hlstd{}\hlopt{(}\hlstd{source}\hlopt{).}\hlstd{}\hlkwd{append}\hlstd{}\hlopt{(}\hlstd{}\hlstr{'}\hlesc{\symbol{92}'}\hlstr{'}\hlstd{}\hlopt{).}\hlstd{}\hlkwd{append}\hlstd{}\hlopt{(}\hlstd{auth}\hlopt{.}\hlstd{user}\hlopt{).}\hlstd{}\hlkwd{append}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"'\ login\ success"}\hlstd{}\hlopt{)}\\
+\hllin{34\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{extra\ }\hlopt{=\ }\hlstd{auth}\hlopt{.}\hlstd{extra}\\
+\hllin{35\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{extra\ }\hlopt{!=\ }\hlstd{}\hlkwa{null\ }\hlstd{}\hlopt{\&\&\ }\hlstd{extra}\hlopt{.}\hlstd{size\ }\hlopt{\symbol{62}\ }\hlstd{}\hlnum{0}\hlstd{}\hlopt{)\ \symbol{123}}\\
+\hllin{36\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{s}\hlopt{.}\hlstd{}\hlkwd{append}\hlstd{}\hlopt{(}\hlstd{}\hlstr{",extra:"}\hlstd{}\hlopt{).}\hlstd{}\hlkwd{append}\hlstd{}\hlopt{(}\hlstd{}\hlkwb{String}\hlstd{}\hlopt{(}\hlstd{extra}\hlopt{))}\\
+\hllin{37\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{38\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{LOGGER}\hlopt{.}\hlstd{}\hlkwd{info}\hlstd{}\hlopt{(}\hlstd{s}\hlopt{.}\hlstd{}\hlkwd{toString}\hlstd{}\hlopt{())}\\
+\hllin{39\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{40\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{source}\hlopt{.}\hlstd{}\hlkwd{write}\hlstd{}\hlopt{(}\hlstd{Unpooled}\hlopt{.}\hlstd{}\hlkwd{wrappedBuffer}\hlstd{}\hlopt{(}\hlstd{AUTH\symbol{95}OK}\hlopt{))}\\
+\hllin{41\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{42\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{private\ fun\ }\hlstd{}\hlkwd{failure}\hlstd{}\hlopt{(}\hlstd{errno}\hlopt{:\ }\hlstd{}\hlkwb{Int}\hlstd{}\hlopt{,\ }\hlstd{info}\hlopt{:\ }\hlstd{}\hlkwb{String}\hlstd{}\hlopt{,\ }\hlstd{source}\hlopt{:\ }\hlstd{OConnection}\hlopt{)\ \symbol{123}}\\
+\hllin{43\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{LOGGER}\hlopt{.}\hlstd{}\hlkwd{error}\hlstd{}\hlopt{(}\hlstd{source}\hlopt{.}\hlstd{}\hlkwd{toString}\hlstd{}\hlopt{()\ +\ }\hlstd{info}\hlopt{)}\\
+\hllin{44\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{source}\hlopt{.}\hlstd{}\hlkwd{writeErrMessage}\hlstd{}\hlopt{(}\hlstd{}\hlnum{2}\hlstd{}\hlopt{.}\hlstd{}\hlkwd{toByte}\hlstd{}\hlopt{(),\ }\hlstd{errno}\hlopt{,\ }\hlstd{info}\hlopt{)}\\
+\hllin{45\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{46\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{override\ fun\ }\hlstd{}\hlkwd{hander}\hlstd{}\hlopt{(}\hlstd{mySQLPacket}\hlopt{:\ }\hlstd{MySQLPacket}\hlopt{,\ }\hlstd{source}\hlopt{:\ }\hlstd{OConnection}\hlopt{)\ \symbol{123}}\\
+\hllin{47\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{println}\hlstd{}\hlopt{(}\hlstd{mySQLPacket}\hlopt{.}\hlstd{}\hlkwd{toString}\hlstd{}\hlopt{())}\\
+\hllin{48\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{handle0}\hlstd{}\hlopt{(}\hlstd{mySQLPacket\ }\hlkwa{as\ }\hlstd{AuthPacket}\hlopt{,\ }\hlstd{source}\hlopt{)}\\
+\hllin{49\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{50\ }\hlstd{}\hlopt{\symbol{125}}\hlstd{}
+\mbox{}
+\normalfont
+\normalsize

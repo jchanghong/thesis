@@ -1,0 +1,23 @@
+\noindent
+\ttfamily
+\hlstd{}\hllin{01\ }\hlstd{}\hlkwa{class\ }\hlstd{CommandPacket\ }\hlopt{:\ }\hlstd{}\hlkwd{MySQLPacket}\hlstd{}\hlopt{()\ \symbol{123}}\\
+\hllin{02\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{var\ }\hlstd{command}\hlopt{:\ }\hlstd{}\hlkwb{Byte\ }\hlstd{}\hlopt{=\ }\hlstd{}\hlnum{0}\\
+\hllin{03\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{var\ }\hlstd{arg}\hlopt{:\ }\hlstd{ByteArray?\ }\hlopt{=\ }\hlstd{}\hlkwa{null}\\
+\hllin{04\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{override\ fun\ }\hlstd{}\hlkwd{read}\hlstd{}\hlopt{(}\hlstd{data}\hlopt{:\ }\hlstd{ByteArray}\hlopt{)\ \symbol{123}}\\
+\hllin{05\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{mm\ }\hlopt{=\ }\hlstd{}\hlkwd{MySQLMessage}\hlstd{}\hlopt{(}\hlstd{data}\hlopt{)}\\
+\hllin{06\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{packetLength\ }\hlopt{=\ }\hlstd{mm}\hlopt{.}\hlstd{}\hlkwd{readUB3}\hlstd{}\hlopt{()}\\
+\hllin{07\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{packetId\ }\hlopt{=\ }\hlstd{mm}\hlopt{.}\hlstd{}\hlkwd{read}\hlstd{}\hlopt{()}\\
+\hllin{08\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{command\ }\hlopt{=\ }\hlstd{mm}\hlopt{.}\hlstd{}\hlkwd{read}\hlstd{}\hlopt{()}\\
+\hllin{09\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{arg\ }\hlopt{=\ }\hlstd{mm}\hlopt{.}\hlstd{}\hlkwd{readBytes}\hlstd{}\hlopt{()}\\
+\hllin{10\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{11\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwc{@Throws}\hlstd{}\hlopt{(}\hlstd{IOException}\hlopt{::}\hlstd{}\hlkwa{class}\hlstd{}\hlopt{)}\\
+\hllin{12\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{fun\ }\hlstd{}\hlkwd{write}\hlstd{}\hlopt{(}\hlstd{out}\hlopt{:\ }\hlstd{OutputStream}\hlopt{)\ \symbol{123}}\\
+\hllin{13\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{StreamUtil}\hlopt{.}\hlstd{}\hlkwd{writeUB3}\hlstd{}\hlopt{(}\hlstd{out}\hlopt{,\ }\hlstd{}\hlkwd{calcPacketSize}\hlstd{}\hlopt{())}\\
+\hllin{14\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{StreamUtil}\hlopt{.}\hlstd{}\hlkwd{write}\hlstd{}\hlopt{(}\hlstd{out}\hlopt{,\ }\hlstd{packetId}\hlopt{)}\\
+\hllin{15\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{StreamUtil}\hlopt{.}\hlstd{}\hlkwd{write}\hlstd{}\hlopt{(}\hlstd{out}\hlopt{,\ }\hlstd{command}\hlopt{)}\\
+\hllin{16\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{out}\hlopt{.}\hlstd{}\hlkwd{write}\hlstd{}\hlopt{(}\hlstd{arg}\hlopt{)}\\
+\hllin{17\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{18\ }\hlstd{}\hlopt{\symbol{125}}\hlstd{}
+\mbox{}
+\normalfont
+\normalsize

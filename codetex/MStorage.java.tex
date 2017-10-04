@@ -1,0 +1,45 @@
+\noindent
+\ttfamily
+\hlstd{}\hllin{01\ }\hlstd{}\hlcom{/{*}{*}}\\
+\hllin{02\ }\hlcom{\ {*}\ The\ type\ M\ storage.}\\
+\hllin{03\ }\hlcom{\ {*}\ 文件前面2m保留做头信息1024{*}1024{*}2/4096=512页面}\\
+\hllin{04\ }\hlcom{\ {*}/}\hlstd{}\\
+\hllin{05\ }\hlstd{}\hlkwa{class\ }\hlstd{MStorage\ }\hlopt{\symbol{123}}\\
+\hllin{06\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{public\ void\ }\hlstd{}\hlkwd{write}\hlstd{}\hlopt{(}\hlstd{}\hlkwa{long\ }\hlstd{pageNumber}\hlopt{,\ }\hlstd{ByteBuffer\ data}\hlopt{)\ }\hlstd{}\hlkwa{throws\ }\hlstd{IOException\ }\hlopt{\symbol{123}}\\
+\hllin{07\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{FileChannel\ f\ }\hlopt{=\ }\hlstd{}\hlkwd{getChannel}\hlstd{}\hlopt{(}\hlstd{pageNumber}\hlopt{);}\\
+\hllin{08\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{int\ }\hlstd{offsetInFile\ }\hlopt{=\ (}\hlstd{}\hlkwa{int}\hlstd{}\hlopt{)\ ((}\hlstd{Math}\hlopt{.}\hlstd{}\hlkwd{abs}\hlstd{}\hlopt{(}\hlstd{pageNumber}\hlopt{)\ \%\ }\hlstd{Pagesize}\hlopt{.}\hlstd{max\symbol{95}page\symbol{95}number}\hlopt{)\ {*}\ }\hlstd{Pagesize}\hlopt{.}\hlstd{page\symbol{95}size}\hlopt{);}\\
+\hllin{09\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{MappedByteBuffer\ b\ }\hlopt{=\ }\hlstd{buffers}\hlopt{.}\hlstd{}\hlkwd{get}\hlstd{}\hlopt{(}\hlstd{f}\hlopt{);}\\
+\hllin{10\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{b}\hlopt{.}\hlstd{}\hlkwd{limit}\hlstd{}\hlopt{()\ \symbol{60}=\ }\hlstd{offsetInFile}\hlopt{)\ \symbol{123}}\\
+\hllin{11\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{b\ }\hlopt{=\ }\hlstd{}\hlkwd{addfilesize}\hlstd{}\hlopt{(}\hlstd{f}\hlopt{,\ }\hlstd{offsetInFile}\hlopt{,\ }\hlstd{b}\hlopt{);}\\
+\hllin{12\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{13\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//write\ into\ buffer}\\
+\hllin{14\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{b}\hlopt{.}\hlstd{}\hlkwd{position}\hlstd{}\hlopt{(}\hlstd{offsetInFile}\hlopt{);}\\
+\hllin{15\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{data}\hlopt{.}\hlstd{}\hlkwd{rewind}\hlstd{}\hlopt{();}\\
+\hllin{16\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{b}\hlopt{.}\hlstd{}\hlkwd{put}\hlstd{}\hlopt{(}\hlstd{data}\hlopt{);}\\
+\hllin{17\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{18\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{public\ }\hlstd{ByteBuffer\ }\hlkwd{read}\hlstd{}\hlopt{(}\hlstd{}\hlkwa{long\ }\hlstd{pageNumber}\hlopt{)\ }\hlstd{}\hlkwa{throws\ }\hlstd{IOException\ }\hlopt{\symbol{123}}\\
+\hllin{19\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{FileChannel\ f\ }\hlopt{=\ }\hlstd{}\hlkwd{getChannel}\hlstd{}\hlopt{(}\hlstd{pageNumber}\hlopt{);}\\
+\hllin{20\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{int\ }\hlstd{offsetInFile\ }\hlopt{=\ (}\hlstd{}\hlkwa{int}\hlstd{}\hlopt{)\ ((}\hlstd{Math}\hlopt{.}\hlstd{}\hlkwd{abs}\hlstd{}\hlopt{(}\hlstd{pageNumber}\hlopt{)\ \%\ }\hlstd{Pagesize}\hlopt{.}\hlstd{max\symbol{95}page\symbol{95}number}\hlopt{)\ {*}\ }\hlstd{Pagesize}\hlopt{.}\hlstd{page\symbol{95}size}\hlopt{);}\\
+\hllin{21\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{MappedByteBuffer\ b\ }\hlopt{=\ }\hlstd{buffers}\hlopt{.}\hlstd{}\hlkwd{get}\hlstd{}\hlopt{(}\hlstd{f}\hlopt{);}\\
+\hllin{22\ }\hlstd{}\\
+\hllin{23\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{b\ }\hlopt{==\ }\hlstd{}\hlkwb{null}\hlstd{}\hlopt{)\ \symbol{123}\ }\hlstd{}\hlslc{//not\ mapped\ yet}\\
+\hllin{24\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{b\ }\hlopt{=\ }\hlstd{f}\hlopt{.}\hlstd{}\hlkwd{map}\hlstd{}\hlopt{(}\hlstd{FileChannel}\hlopt{.}\hlstd{MapMode}\hlopt{.}\hlstd{READ\symbol{95}WRITE}\hlopt{,\ }\hlstd{}\hlnum{0}\hlstd{}\hlopt{,\ }\hlstd{f}\hlopt{.}\hlstd{}\hlkwd{size}\hlstd{}\hlopt{());}\\
+\hllin{25\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{26\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//增加文件大小，64m为单位}\\
+\hllin{27\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{b}\hlopt{.}\hlstd{}\hlkwd{limit}\hlstd{}\hlopt{()\ \symbol{60}=\ }\hlstd{offsetInFile}\hlopt{)\ \symbol{123}}\\
+\hllin{28\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{b\ }\hlopt{=\ }\hlstd{}\hlkwd{addfilesize}\hlstd{}\hlopt{(}\hlstd{f}\hlopt{,\ }\hlstd{offsetInFile}\hlopt{,\ }\hlstd{b}\hlopt{);}\\
+\hllin{29\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{30\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{b}\hlopt{.}\hlstd{}\hlkwd{position}\hlstd{}\hlopt{(}\hlstd{offsetInFile}\hlopt{);}\\
+\hllin{31\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{ByteBuffer\ ret\ }\hlopt{=\ }\hlstd{b}\hlopt{.}\hlstd{}\hlkwd{slice}\hlstd{}\hlopt{();}\\
+\hllin{32\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{ret}\hlopt{.}\hlstd{}\hlkwd{limit}\hlstd{}\hlopt{(}\hlstd{Pagesize}\hlopt{.}\hlstd{page\symbol{95}size}\hlopt{);}\\
+\hllin{33\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(!}\hlstd{transactionsDisabled\ }\hlopt{\symbol{124}\symbol{124}\ }\hlstd{readonly}\hlopt{)\ \symbol{123}}\\
+\hllin{34\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//\ changes\ written\ into\ buffer\ will\ be\ directly\ written\ into\ file}\\
+\hllin{35\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//\ so\ we\ need\ to\ protect\ buffer\ from\ modifications}\\
+\hllin{36\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{ret\ }\hlopt{=\ }\hlstd{ret}\hlopt{.}\hlstd{}\hlkwd{asReadOnlyBuffer}\hlstd{}\hlopt{();}\\
+\hllin{37\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{38\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{ret}\hlopt{;}\\
+\hllin{39\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{40\ }\hlstd{}\hlopt{\symbol{125}}\hlstd{}
+\mbox{}
+\normalfont
+\normalsize

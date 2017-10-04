@@ -1,0 +1,39 @@
+\noindent
+\ttfamily
+\hlstd{}\hllin{01\ }\hlstd{}\hlcom{/{*}{*}}\\
+\hllin{02\ }\hlcom{\ {*}\ 所有的sql语句处理器必须是这个类的子类.}\\
+\hllin{03\ }\hlcom{\ {*}\ 比如Mupdate。Mselect}\\
+\hllin{04\ }\hlcom{\ {*}/}\hlstd{}\\
+\hllin{05\ }\hlstd{}\hlkwa{abstract\ class\ }\hlstd{SqlStatementHander\ }\hlopt{\symbol{123}}\\
+\hllin{06\ }\hlstd{}\\
+\hllin{07\ }\hlstd{}\hlstd{\ \ \ \ \ }\hlstd{}\hlopt{{*}\ }\hlstd{}\hlkwc{@param\ }\hlstd{sqlStatement\ the\ sql\ statement}\\
+\hllin{08\ }\hlstd{}\hlstd{\ \ \ \ \ }\hlstd{}\hlopt{{*}\ {*}}\\
+\hllin{09\ }\hlstd{}\hlstd{\ \ \ \ \ }\hlstd{}\hlopt{{*}\ }\hlstd{}\hlkwc{@return\ }\hlstd{the\ }\hlkwa{object\ }\hlstd{返回值只有}\hlnum{4}\hlstd{种可能，不然报错！！！}\\
+\hllin{10\ }\hlstd{}\hlstd{\ \ \ \ \ }\hlstd{}\hlopt{{*}\ {*}\ }\hlstd{一种是long类型，\ 一种是MyResultSet\ 一种是}\hlkwa{null\ }\hlstd{}\hlopt{,}\\
+\hllin{11\ }\hlstd{}\hlstd{\ \ \ }\hlstd{一种是string表示错误的消息}\\
+\hllin{12\ }\hlstd{}\hlstd{\ \ \ \ \ }\hlstd{}\hlopt{{*}\ {*}\ }\hlstd{返回其他对面都是错误的}\\
+\hllin{13\ }\hlstd{}\hlstd{\ \ \ \ \ }\hlstd{}\hlopt{{*}\ {*}}\\
+\hllin{14\ }\hlstd{}\hlstd{\ \ \ \ \ }\hlstd{}\hlopt{{*}\ }\hlstd{}\hlkwc{@throws\ }\hlstd{Exception\ the\ exception}\\
+\hllin{15\ }\hlstd{}\hlstd{\ \ \ \ \ }\hlstd{{*}/}\\
+\hllin{16\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwc{@Throws}\hlstd{}\hlopt{(}\hlstd{Exception}\hlopt{::}\hlstd{}\hlkwa{class}\hlstd{}\hlopt{)}\\
+\hllin{17\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{protected\ abstract\ fun\ }\hlstd{}\hlkwd{handle0}\hlstd{}\hlopt{(}\hlstd{sqlStatement}\hlopt{:\ }\hlstd{SQLStatement}\hlopt{,\ }\hlstd{c}\hlopt{:\ }\hlstd{OConnection}\hlopt{):\ }\hlstd{}\hlkwb{Any}\hlstd{?}\\
+\hllin{18\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{fun\ }\hlstd{}\hlkwd{handle}\hlstd{}\hlopt{(}\hlstd{sqlStatement}\hlopt{:\ }\hlstd{SQLStatement}\hlopt{,\ }\hlstd{connection}\hlopt{:\ }\hlstd{OConnection}\hlopt{)\ \symbol{123}}\\
+\hllin{19\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{try\ }\hlstd{}\hlopt{\symbol{123}}\\
+\hllin{20\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{result\ }\hlopt{=\ }\hlstd{}\hlkwd{handle0}\hlstd{}\hlopt{(}\hlstd{sqlStatement}\hlopt{,\ }\hlstd{connection}\hlopt{)}\\
+\hllin{21\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{when\ }\hlstd{}\hlopt{(}\hlstd{result}\hlopt{)\ \symbol{123}}\\
+\hllin{22\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{null\ }\hlstd{}\hlopt{{-}\symbol{62}\ }\hlstd{connection}\hlopt{.}\hlstd{}\hlkwd{writeok}\hlstd{}\hlopt{()}\\
+\hllin{23\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{is\ }\hlstd{MyResultSet\ }\hlopt{{-}\symbol{62}\ }\hlstd{}\hlkwd{onsuccess}\hlstd{}\hlopt{(}\hlstd{result}\hlopt{.}\hlstd{data}\hlopt{,\ }\hlstd{result}\hlopt{.}\hlstd{columns}\hlopt{,\ }\hlstd{connection}\hlopt{)}\\
+\hllin{24\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{is\ }\hlstd{}\hlkwb{Long\ }\hlstd{}\hlopt{{-}\symbol{62}\ }\hlstd{}\hlkwd{onsuccess}\hlstd{}\hlopt{(}\hlstd{result}\hlopt{,\ }\hlstd{connection}\hlopt{)}\\
+\hllin{25\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{is\ }\hlstd{}\hlkwb{String\ }\hlstd{}\hlopt{{-}\symbol{62}\ }\hlstd{connection}\hlopt{.}\hlstd{}\hlkwd{writeErrMessage}\hlstd{}\hlopt{(}\hlstd{result}\hlopt{)}\\
+\hllin{26\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlopt{{-}\symbol{62}\ }\hlstd{connection}\hlopt{.}\hlstd{}\hlkwd{writeok}\hlstd{}\hlopt{()}\\
+\hllin{27\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{28\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwd{catch\ }\hlstd{}\hlopt{(}\hlstd{e}\hlopt{:\ }\hlstd{Exception}\hlopt{)\ \symbol{123}}\\
+\hllin{29\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{e}\hlopt{.}\hlstd{}\hlkwd{printStackTrace}\hlstd{}\hlopt{()}\\
+\hllin{30\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{onerror}\hlstd{}\hlopt{(}\hlstd{e}\hlopt{,\ }\hlstd{connection}\hlopt{)}\\
+\hllin{31\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{32\ }\hlstd{}\\
+\hllin{33\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{34\ }\hlstd{}\hlopt{\symbol{125}}\hlstd{}
+\mbox{}
+\normalfont
+\normalsize
