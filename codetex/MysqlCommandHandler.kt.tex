@@ -6,64 +6,38 @@
 \hllin{04\ }\hlcom{\ {*}/}\hlstd{}\\
 \hllin{05\ }\hlstd{}\hlkwc{@Component}\\
 \hllin{06\ }\hlstd{}\hlkwa{class\ }\hlstd{MysqlCommandHandler\ }\hlopt{:\ }\hlstd{MysqlPacketHander\ }\hlopt{\symbol{123}}\\
-\hllin{07\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{override\ fun\ }\hlstd{}\hlkwd{hander}\hlstd{}\hlopt{(}\hlstd{mySQLPacket}\hlopt{:\ }\hlstd{MySQLPacket}\hlopt{,\ }\hlstd{source}\hlopt{:\ }\hlstd{OConnection}\hlopt{)\ \symbol{123}}\\
-\hllin{08\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{handle0}\hlstd{}\hlopt{(}\hlstd{mySQLPacket\ }\hlkwa{as\ }\hlstd{CommandPacket}\hlopt{,\ }\hlstd{source}\hlopt{)}\\
-\hllin{09\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{10\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{private\ fun\ }\hlstd{}\hlkwd{handle0}\hlstd{}\hlopt{(}\hlstd{data}\hlopt{:\ }\hlstd{CommandPacket}\hlopt{,\ }\hlstd{source}\hlopt{:\ }\hlstd{OConnection}\hlopt{)\ \symbol{123}}\\
-\hllin{11\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{logger}\hlopt{.}\hlstd{}\hlkwd{debug}\hlstd{}\hlopt{(}\hlstd{data}\hlopt{.}\hlstd{}\hlkwd{toString}\hlstd{}\hlopt{())}\\
-\hllin{12\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{logger}\hlopt{.}\hlstd{}\hlkwd{info}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"command\ info"}\hlstd{}\hlopt{)}\\
-\hllin{13\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{when\ }\hlstd{}\hlopt{(}\hlstd{data}\hlopt{.}\hlstd{command}\hlopt{)\ \symbol{123}}\\
-\hllin{14\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{MySQLPacket}\hlopt{.}\hlstd{COM\symbol{95}INIT\symbol{95}DB\ }\hlopt{{-}\symbol{62}\ }\hlstd{}\hlkwd{initDB}\hlstd{}\hlopt{(}\hlstd{data}\hlopt{,\ }\hlstd{source}\hlopt{)}\\
-\hllin{15\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{MySQLPacket}\hlopt{.}\hlstd{COM\symbol{95}QUERY\ }\hlopt{{-}\symbol{62}\ }\hlstd{}\hlkwd{query}\hlstd{}\hlopt{(}\hlstd{data}\hlopt{,\ }\hlstd{source}\hlopt{)}\\
-\hllin{16\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{MySQLPacket}\hlopt{.}\hlstd{COM\symbol{95}PING\ }\hlopt{{-}\symbol{62}\ }\hlstd{}\hlkwd{ping}\hlstd{}\hlopt{(}\hlstd{source}\hlopt{)}\\
-\hllin{17\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{MySQLPacket}\hlopt{.}\hlstd{COM\symbol{95}QUIT\ }\hlopt{{-}\symbol{62}\ }\hlstd{}\hlkwd{close}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"quit\ cmd"}\hlstd{}\hlopt{,\ }\hlstd{source}\hlopt{)}\\
-\hllin{18\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{MySQLPacket}\hlopt{.}\hlstd{COM\symbol{95}PROCESS\symbol{95}KILL\ }\hlopt{{-}\symbol{62}\ }\hlstd{}\hlkwd{kill}\hlstd{}\hlopt{(}\hlstd{data}\hlopt{,\ }\hlstd{source}\hlopt{)}\\
-\hllin{19\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{MySQLPacket}\hlopt{.}\hlstd{COM\symbol{95}STMT\symbol{95}PREPARE\ }\hlopt{{-}\symbol{62}\ }\hlstd{}\hlkwd{stmtPrepare}\hlstd{}\hlopt{(}\hlstd{data}\hlopt{,\ }\hlstd{source}\hlopt{)}\\
-\hllin{20\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{MySQLPacket}\hlopt{.}\hlstd{COM\symbol{95}STMT\symbol{95}SEND\symbol{95}LONG\symbol{95}DATA\ }\hlopt{{-}\symbol{62}\ }\hlstd{}\hlkwd{stmtSendLongData}\hlstd{}\hlopt{(}\hlstd{data}\hlopt{,\ }\hlstd{source}\hlopt{)}\\
-\hllin{21\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{MySQLPacket}\hlopt{.}\hlstd{COM\symbol{95}STMT\symbol{95}RESET\ }\hlopt{{-}\symbol{62}\ }\hlstd{}\hlkwd{stmtReset}\hlstd{}\hlopt{(}\hlstd{data}\hlopt{,\ }\hlstd{source}\hlopt{)}\\
-\hllin{22\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{MySQLPacket}\hlopt{.}\hlstd{COM\symbol{95}STMT\symbol{95}EXECUTE\ }\hlopt{{-}\symbol{62}\ }\hlstd{}\hlkwd{stmtExecute}\hlstd{}\hlopt{(}\hlstd{data}\hlopt{,\ }\hlstd{source}\hlopt{)}\\
-\hllin{23\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{MySQLPacket}\hlopt{.}\hlstd{COM\symbol{95}STMT\symbol{95}CLOSE\ }\hlopt{{-}\symbol{62}\ }\hlstd{}\hlkwd{stmtClose}\hlstd{}\hlopt{(}\hlstd{data}\hlopt{,\ }\hlstd{source}\hlopt{)}\\
-\hllin{24\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{MySQLPacket}\hlopt{.}\hlstd{COM\symbol{95}HEARTBEAT\ }\hlopt{{-}\symbol{62}\ }\hlstd{}\hlkwd{heartbeat}\hlstd{}\hlopt{(}\hlstd{data}\hlopt{,\ }\hlstd{source}\hlopt{)}\\
-\hllin{25\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlopt{{-}\symbol{62}\ }\hlstd{source}\hlopt{.}\hlstd{}\hlkwd{writeErrMessage}\hlstd{}\hlopt{(}\hlstd{ErrorCode}\hlopt{.}\hlstd{ER\symbol{95}UNKNOWN\symbol{95}COM\symbol{95}ERROR}\hlopt{,}\\
-\hllin{26\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{"Unknown\ command"}\hlstd{}\hlopt{)}\\
-\hllin{27\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{28\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{29\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{private\ fun\ }\hlstd{}\hlkwd{query}\hlstd{}\hlopt{(}\hlstd{data}\hlopt{:\ }\hlstd{CommandPacket}\hlopt{,\ }\hlstd{source}\hlopt{:\ }\hlstd{OConnection}\hlopt{)\ \symbol{123}}\\
-\hllin{30\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{mm\ }\hlopt{=\ }\hlstd{}\hlkwd{MySQLMessage}\hlstd{}\hlopt{(}\hlstd{data}\hlopt{.}\hlstd{arg}\hlopt{!!)}\\
-\hllin{31\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{mm}\hlopt{.}\hlstd{}\hlkwd{position}\hlstd{}\hlopt{(}\hlstd{}\hlnum{0}\hlstd{}\hlopt{)}\\
-\hllin{32\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{try\ }\hlstd{}\hlopt{\symbol{123}}\\
-\hllin{33\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{sql\ }\hlopt{=\ }\hlstd{mm}\hlopt{.}\hlstd{}\hlkwd{readString}\hlstd{}\hlopt{(}\hlstd{source}\hlopt{.}\hlstd{charset}\hlopt{)}\\
-\hllin{34\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{source}\hlopt{.}\hlstd{sqlHander}\hlopt{.}\hlstd{}\hlkwd{handle}\hlstd{}\hlopt{(}\hlstd{sql}\hlopt{!!,\ }\hlstd{source}\hlopt{)}\\
-\hllin{35\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwd{catch\ }\hlstd{}\hlopt{(}\hlstd{e}\hlopt{:\ }\hlstd{UnsupportedEncodingException}\hlopt{)\ \symbol{123}}\\
-\hllin{36\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{source}\hlopt{.}\hlstd{}\hlkwd{writeErrMessage}\hlstd{}\hlopt{(}\hlstd{ErrorCode}\hlopt{.}\hlstd{ER\symbol{95}UNKNOWN\symbol{95}CHARACTER\symbol{95}SET}\hlopt{,\ }\hlstd{}\hlstr{"Unknown\ charset\ '"}\hlstd{\ }\hlopt{+\ }\hlstd{source}\hlopt{.}\hlstd{charset\ }\hlopt{+\ }\hlstd{}\hlstr{"'"}\hlstd{}\hlopt{)}\\
-\hllin{37\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{e}\hlopt{.}\hlstd{}\hlkwd{printStackTrace}\hlstd{}\hlopt{()}\\
-\hllin{38\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{39\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{40\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{private\ fun\ }\hlstd{}\hlkwd{initDB}\hlstd{}\hlopt{(}\hlstd{data}\hlopt{:\ }\hlstd{CommandPacket}\hlopt{,\ }\hlstd{source}\hlopt{:\ }\hlstd{OConnection}\hlopt{)\ \symbol{123}}\\
-\hllin{41\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{mm\ }\hlopt{=\ }\hlstd{}\hlkwd{MySQLMessage}\hlstd{}\hlopt{(}\hlstd{data}\hlopt{.}\hlstd{arg}\hlopt{!!)}\\
-\hllin{42\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{mm}\hlopt{.}\hlstd{}\hlkwd{position}\hlstd{}\hlopt{(}\hlstd{}\hlnum{0}\hlstd{}\hlopt{)}\\
-\hllin{43\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{db\ }\hlopt{=\ }\hlstd{mm}\hlopt{.}\hlstd{}\hlkwd{readString}\hlstd{}\hlopt{()}\\
-\hllin{44\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//\ 检查schema的有效性}\\
-\hllin{45\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{try\ }\hlstd{}\hlopt{\symbol{123}}\\
-\hllin{46\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(!}\hlstd{OConnection}\hlopt{.}\hlstd{DB\symbol{95}ADMIN}\hlopt{.}\hlstd{}\hlkwd{getallDBs}\hlstd{}\hlopt{().}\hlstd{}\hlkwd{contains}\hlstd{}\hlopt{(}\hlstd{db}\hlopt{))\ \symbol{123}}\\
-\hllin{47\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{source}\hlopt{.}\hlstd{}\hlkwd{writeErrMessage}\hlstd{}\hlopt{(}\hlstd{ErrorCode}\hlopt{.}\hlstd{ER\symbol{95}BAD\symbol{95}DB\symbol{95}ERROR}\hlopt{,\ }\hlstd{}\hlstr{"Unknown\ database\ '}\hlipl{\$db}\hlstr{'"}\hlstd{}\hlopt{)}\\
-\hllin{48\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return}\\
-\hllin{49\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{50\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwd{catch\ }\hlstd{}\hlopt{(}\hlstd{e}\hlopt{:\ }\hlstd{StorageException}\hlopt{)\ \symbol{123}}\\
-\hllin{51\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{e}\hlopt{.}\hlstd{}\hlkwd{printStackTrace}\hlstd{}\hlopt{()}\\
-\hllin{52\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{source}\hlopt{.}\hlstd{}\hlkwd{writeErrMessage}\hlstd{}\hlopt{(}\hlstd{e}\hlopt{.}\hlstd{message}\hlopt{!!)}\\
-\hllin{53\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return}\\
-\hllin{54\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{55\ }\hlstd{}\\
-\hllin{56\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{source}\hlopt{.}\hlstd{schema\ }\hlopt{=\ }\hlstd{db}\\
-\hllin{57\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{source}\hlopt{.}\hlstd{}\hlkwd{writeok}\hlstd{}\hlopt{()}\\
-\hllin{58\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{59\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{companion\ }\hlkwa{object\ }\hlstd{}\hlopt{\symbol{123}}\\
-\hllin{60\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{var\ }\hlstd{logger\ }\hlopt{=\ }\hlstd{LoggerFactory}\hlopt{.}\hlstd{}\hlkwd{getLogger}\hlstd{}\hlopt{(}\hlstd{MysqlCommandHandler}\hlopt{::}\hlstd{}\hlkwa{class}\hlstd{}\hlopt{.}\hlstd{java}\hlopt{.}\hlstd{simpleName}\hlopt{)}\\
-\hllin{61\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{62\ }\hlstd{}\\
-\hllin{63\ }\hlstd{}\\
-\hllin{64\ }\hlstd{}\hlopt{\symbol{125}}\hlstd{}
+\hllin{07\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{private\ fun\ }\hlstd{}\hlkwd{handle0}\hlstd{}\hlopt{(}\hlstd{data}\hlopt{:\ }\hlstd{CommandPacket}\hlopt{,\ }\hlstd{source}\hlopt{:\ }\hlstd{OConnection}\hlopt{)\ \symbol{123}}\\
+\hllin{08\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{logger}\hlopt{.}\hlstd{}\hlkwd{debug}\hlstd{}\hlopt{(}\hlstd{data}\hlopt{.}\hlstd{}\hlkwd{toString}\hlstd{}\hlopt{())}\\
+\hllin{09\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{logger}\hlopt{.}\hlstd{}\hlkwd{info}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"command\ info"}\hlstd{}\hlopt{)}\\
+\hllin{10\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{when\ }\hlstd{}\hlopt{(}\hlstd{data}\hlopt{.}\hlstd{command}\hlopt{)\ \symbol{123}}\\
+\hllin{11\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{MySQLPacket}\hlopt{.}\hlstd{COM\symbol{95}INIT\symbol{95}DB\ }\hlopt{{-}\symbol{62}\ }\hlstd{}\hlkwd{initDB}\hlstd{}\hlopt{(}\hlstd{data}\hlopt{,\ }\hlstd{source}\hlopt{)}\\
+\hllin{12\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{MySQLPacket}\hlopt{.}\hlstd{COM\symbol{95}QUERY\ }\hlopt{{-}\symbol{62}\ }\hlstd{}\hlkwd{query}\hlstd{}\hlopt{(}\hlstd{data}\hlopt{,\ }\hlstd{source}\hlopt{)}\\
+\hllin{13\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{MySQLPacket}\hlopt{.}\hlstd{COM\symbol{95}PING\ }\hlopt{{-}\symbol{62}\ }\hlstd{}\hlkwd{ping}\hlstd{}\hlopt{(}\hlstd{source}\hlopt{)}\\
+\hllin{14\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{MySQLPacket}\hlopt{.}\hlstd{COM\symbol{95}QUIT\ }\hlopt{{-}\symbol{62}\ }\hlstd{}\hlkwd{close}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"quit\ cmd"}\hlstd{}\hlopt{,\ }\hlstd{source}\hlopt{)}\\
+\hllin{15\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{MySQLPacket}\hlopt{.}\hlstd{COM\symbol{95}PROCESS\symbol{95}KILL\ }\hlopt{{-}\symbol{62}\ }\hlstd{}\hlkwd{kill}\hlstd{}\hlopt{(}\hlstd{data}\hlopt{,\ }\hlstd{source}\hlopt{)}\\
+\hllin{16\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{MySQLPacket}\hlopt{.}\hlstd{COM\symbol{95}STMT\symbol{95}PREPARE\ }\hlopt{{-}\symbol{62}\ }\hlstd{}\hlkwd{stmtPrepare}\hlstd{}\hlopt{(}\hlstd{data}\hlopt{,\ }\hlstd{source}\hlopt{)}\\
+\hllin{17\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{MySQLPacket}\hlopt{.}\hlstd{COM\symbol{95}STMT\symbol{95}SEND\symbol{95}LONG\symbol{95}DATA}\hlopt{{-}\symbol{62}}\hlstd{}\hlkwd{stmtSendLongData}\hlstd{}\hlopt{(}\hlstd{data}\hlopt{,}\hlstd{source}\hlopt{)}\\
+\hllin{18\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{MySQLPacket}\hlopt{.}\hlstd{COM\symbol{95}STMT\symbol{95}RESET\ }\hlopt{{-}\symbol{62}\ }\hlstd{}\hlkwd{stmtReset}\hlstd{}\hlopt{(}\hlstd{data}\hlopt{,\ }\hlstd{source}\hlopt{)}\\
+\hllin{19\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{MySQLPacket}\hlopt{.}\hlstd{COM\symbol{95}STMT\symbol{95}EXECUTE\ }\hlopt{{-}\symbol{62}\ }\hlstd{}\hlkwd{stmtExecute}\hlstd{}\hlopt{(}\hlstd{data}\hlopt{,\ }\hlstd{source}\hlopt{)}\\
+\hllin{20\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{MySQLPacket}\hlopt{.}\hlstd{COM\symbol{95}STMT\symbol{95}CLOSE\ }\hlopt{{-}\symbol{62}\ }\hlstd{}\hlkwd{stmtClose}\hlstd{}\hlopt{(}\hlstd{data}\hlopt{,\ }\hlstd{source}\hlopt{)}\\
+\hllin{21\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{MySQLPacket}\hlopt{.}\hlstd{COM\symbol{95}HEARTBEAT\ }\hlopt{{-}\symbol{62}\ }\hlstd{}\hlkwd{heartbeat}\hlstd{}\hlopt{(}\hlstd{data}\hlopt{,\ }\hlstd{source}\hlopt{)}\\
+\hllin{22\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlopt{{-}\symbol{62}\ }\hlstd{source}\hlopt{.}\hlstd{}\hlkwd{writeErrMessage}\hlstd{}\hlopt{(}\hlstd{ErrorCode}\hlopt{.}\hlstd{ER\symbol{95}UNKNOWN\symbol{95}COM\symbol{95}ERROR}\hlopt{,}\\
+\hllin{23\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{"Unknown\ command"}\hlstd{}\hlopt{)}\\
+\hllin{24\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{25\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{26\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{private\ fun\ }\hlstd{}\hlkwd{query}\hlstd{}\hlopt{(}\hlstd{data}\hlopt{:\ }\hlstd{CommandPacket}\hlopt{,\ }\hlstd{source}\hlopt{:\ }\hlstd{OConnection}\hlopt{)\ \symbol{123}}\\
+\hllin{27\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{mm\ }\hlopt{=\ }\hlstd{}\hlkwd{MySQLMessage}\hlstd{}\hlopt{(}\hlstd{data}\hlopt{.}\hlstd{arg}\hlopt{!!)}\\
+\hllin{28\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{mm}\hlopt{.}\hlstd{}\hlkwd{position}\hlstd{}\hlopt{(}\hlstd{}\hlnum{0}\hlstd{}\hlopt{)}\\
+\hllin{29\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{try\ }\hlstd{}\hlopt{\symbol{123}}\\
+\hllin{30\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{sql\ }\hlopt{=\ }\hlstd{mm}\hlopt{.}\hlstd{}\hlkwd{readString}\hlstd{}\hlopt{(}\hlstd{source}\hlopt{.}\hlstd{charset}\hlopt{)}\\
+\hllin{31\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{source}\hlopt{.}\hlstd{sqlHander}\hlopt{.}\hlstd{}\hlkwd{handle}\hlstd{}\hlopt{(}\hlstd{sql}\hlopt{!!,\ }\hlstd{source}\hlopt{)}\\
+\hllin{32\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwd{catch\ }\hlstd{}\hlopt{(}\hlstd{e}\hlopt{:\ }\hlstd{UnsupportedEncodingException}\hlopt{)\ \symbol{123}}\\
+\hllin{33\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{source}\hlopt{.}\hlstd{}\hlkwd{writeErrMessage}\hlstd{}\hlopt{(}\hlstd{ErrorCode}\hlopt{.}\hlstd{ER\symbol{95}UNKNOWN\symbol{95}CHARACTER\symbol{95}SET}\hlopt{,\ }\hlstd{}\hlstr{"Unknown\ charset\ '"}\hlstd{\ }\hlopt{+}\\
+\hllin{34\ }\hlstd{}\hlstd{\ \ \ \ \ \ }\hlstd{source}\hlopt{.}\hlstd{charset\ }\hlopt{+\ }\hlstd{}\hlstr{"'"}\hlstd{}\hlopt{)}\\
+\hllin{35\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{e}\hlopt{.}\hlstd{}\hlkwd{printStackTrace}\hlstd{}\hlopt{()}\\
+\hllin{36\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{37\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{38\ }\hlstd{}\hlopt{\symbol{125}}\hlstd{}\\
 \mbox{}
 \normalfont
 \normalsize

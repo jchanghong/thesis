@@ -3,24 +3,18 @@
  * 比如Mupdate。Mselect
  */
 abstract class SqlStatementHander {
-
-     * @param sqlStatement the sql statement
-     * *
-     * @return the object 返回值只有4种可能，不然报错！！！
-     * * 一种是long类型， 一种是MyResultSet 一种是null ,
-	 一种是string表示错误的消息
-     * * 返回其他对面都是错误的
-     * *
-     * @throws Exception the exception
-     */
-    @Throws(Exception::class)
-    protected abstract fun handle0(sqlStatement: SQLStatement, c: OConnection): Any?
+   
+      //返回值只有4种可能，不然报错！！！
+      //一种是long类型， 一种是MyResultSet 一种是null ,
+	  // 一种是string表示错误的消息
+      //返回其他对面都是错误的
     fun handle(sqlStatement: SQLStatement, connection: OConnection) {
         try {
             val result = handle0(sqlStatement, connection)
             when (result) {
                 null -> connection.writeok()
-                is MyResultSet -> onsuccess(result.data, result.columns, connection)
+                is MyResultSet -> onsuccess(result.data, 
+				result.columns, connection)
                 is Long -> onsuccess(result, connection)
                 is String -> connection.writeErrMessage(result)
                 else -> connection.writeok()

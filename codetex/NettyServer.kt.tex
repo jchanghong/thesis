@@ -7,18 +7,18 @@
 \hllin{05\ }\hlstd{}\hlkwc{@Service}\\
 \hllin{06\ }\hlstd{}\hlkwa{class\ }\hlstd{NettyServer\ }\hlopt{\symbol{123}}\\
 \hllin{07\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{fun\ }\hlstd{}\hlkwd{start}\hlstd{}\hlopt{()\ \symbol{123}}\\
-\hllin{08\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{group\ }\hlopt{=\ }\hlstd{}\hlkwd{DefaultEventExecutorGroup}\hlstd{}\hlopt{(}\hlstd{Runtime}\hlopt{.}\hlstd{}\hlkwd{getRuntime}\hlstd{}\hlopt{().}\hlstd{}\hlkwd{availableProcessors}\hlstd{}\hlopt{())}\\
+\hllin{08\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{group\ }\hlopt{=\ }\hlstd{}\hlkwd{DefaultEventExecutorGroup}\hlstd{}\hlopt{(}\hlstd{}\hlnum{8}\hlstd{}\hlopt{)}\\
 \hllin{09\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{bossGroup\ }\hlopt{=\ }\hlstd{}\hlkwd{NioEventLoopGroup}\hlstd{}\hlopt{(}\hlstd{}\hlnum{1}\hlstd{}\hlopt{)}\\
 \hllin{10\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{workerGroup\ }\hlopt{=\ }\hlstd{}\hlkwd{NioEventLoopGroup}\hlstd{}\hlopt{()}\\
 \hllin{11\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{try\ }\hlstd{}\hlopt{\symbol{123}}\\
 \hllin{12\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{b\ }\hlopt{=\ }\hlstd{}\hlkwd{ServerBootstrap}\hlstd{}\hlopt{()}\\
 \hllin{13\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{b}\hlopt{.}\hlstd{}\hlkwd{group}\hlstd{}\hlopt{(}\hlstd{bossGroup}\hlopt{,\ }\hlstd{workerGroup}\hlopt{)}\\
-\hllin{14\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{.}\hlstd{}\hlkwd{channel}\hlstd{}\hlopt{(}\hlstd{NioServerSocketChannel}\hlopt{::}\hlstd{}\hlkwa{class}\hlstd{}\hlopt{.}\hlstd{java}\hlopt{)}\\
-\hllin{15\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{.}\hlstd{}\hlkwd{option}\hlstd{}\hlopt{(}\hlstd{ChannelOption}\hlopt{.}\hlstd{SO\symbol{95}BACKLOG}\hlopt{,\ }\hlstd{}\hlnum{100}\hlstd{}\hlopt{)}\\
-\hllin{16\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{.}\hlstd{}\hlkwd{childHandler}\hlstd{}\hlopt{(}\hlstd{}\hlkwa{object\ }\hlstd{}\hlopt{:\ }\hlstd{ChannelInitializer}\hlopt{\symbol{60}}\hlstd{SocketChannel}\hlopt{\symbol{62}()\ \symbol{123}}\\
-\hllin{17\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwc{@Throws}\hlstd{}\hlopt{(}\hlstd{Exception}\hlopt{::}\hlstd{}\hlkwa{class}\hlstd{}\hlopt{)}\\
-\hllin{18\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{public\ override\ fun\ }\hlstd{}\hlkwd{initChannel}\hlstd{}\hlopt{(}\hlstd{ch}\hlopt{:\ }\hlstd{SocketChannel}\hlopt{)\ \symbol{123}}\\
-\hllin{19\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{p\ }\hlopt{=\ }\hlstd{ch}\hlopt{.}\hlstd{}\hlkwd{pipeline}\hlstd{}\hlopt{()}\\
+\hllin{14\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{.}\hlstd{}\hlkwd{channel}\hlstd{}\hlopt{(}\hlstd{NioServerSocketChannel}\hlopt{::}\hlstd{}\hlkwa{class}\hlstd{}\hlopt{.}\hlstd{java}\hlopt{)}\\
+\hllin{15\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{.}\hlstd{}\hlkwd{option}\hlstd{}\hlopt{(}\hlstd{ChannelOption}\hlopt{.}\hlstd{SO\symbol{95}BACKLOG}\hlopt{,\ }\hlstd{}\hlnum{100}\hlstd{}\hlopt{)}\\
+\hllin{16\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{.}\hlstd{}\hlkwd{childHandler}\hlstd{}\hlopt{(}\hlstd{}\hlkwa{object\ }\hlstd{}\hlopt{:\ }\hlstd{ChannelInitializer}\hlopt{\symbol{60}}\hlstd{SocketChannel}\hlopt{\symbol{62}()\symbol{123}}\\
+\hllin{17\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwc{@Throws}\hlstd{}\hlopt{(}\hlstd{Exception}\hlopt{::}\hlstd{}\hlkwa{class}\hlstd{}\hlopt{)}\\
+\hllin{18\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{public\ override\ fun\ }\hlstd{}\hlkwd{initChannel}\hlstd{}\hlopt{(}\hlstd{ch}\hlopt{:\ }\hlstd{SocketChannel}\hlopt{)\ \symbol{123}}\\
+\hllin{19\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{p\ }\hlopt{=\ }\hlstd{ch}\hlopt{.}\hlstd{}\hlkwd{pipeline}\hlstd{}\hlopt{()}\\
 \hllin{20\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//p.addLast(new\ LoggingHandler(LogLevel.INFO));}\\
 \hllin{21\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{p}\hlopt{.}\hlstd{}\hlkwd{addLast}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"idle"}\hlstd{}\hlopt{,\ }\hlstd{}\hlkwd{IdleStateHandler}\hlstd{}\hlopt{(}\hlstd{}\hlnum{10}\hlstd{}\hlopt{,\ }\hlstd{}\hlnum{5}\hlstd{}\hlopt{,\ }\hlstd{}\hlnum{0}\hlstd{}\hlopt{))}\\
 \hllin{22\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{p}\hlopt{.}\hlstd{}\hlkwd{addLast}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"decoder"}\hlstd{}\hlopt{,\ }\hlstd{byteToMysqlDecoder}\hlopt{)}\\
@@ -40,7 +40,7 @@
 \hllin{38\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{workerGroup}\hlopt{.}\hlstd{}\hlkwd{shutdownGracefully}\hlstd{}\hlopt{()}\\
 \hllin{39\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
 \hllin{40\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{41\ }\hlstd{}\hlopt{\symbol{125}}\hlstd{}
+\hllin{41\ }\hlstd{}\hlopt{\symbol{125}}\hlstd{}\\
 \mbox{}
 \normalfont
 \normalsize

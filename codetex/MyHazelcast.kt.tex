@@ -1,231 +1,78 @@
 \noindent
 \ttfamily
-\hlstd{}\hllin{01\ }\hlstd{}\hlcom{/{*}{*}}\\
-\hllin{02\ }\hlcom{\ {*}\ Created\ by\ 长宏\ on\ 2017/5/5\ 0005.}\\
-\hllin{03\ }\hlcom{\ {*}\ sql队列}\\
-\hllin{04\ }\hlcom{\ {*}\ 复制队列}\\
-\hllin{05\ }\hlcom{\ {*}\ 命令队列。}\\
-\hllin{06\ }\hlcom{\ {*}\ 2个锁。}\\
-\hllin{07\ }\hlcom{\ {*}\ 发布}\\
-\hllin{08\ }\hlcom{\ {*}/}\hlstd{}\\
-\hllin{09\ }\hlstd{}\hlkwc{@Component}\\
-\hllin{10\ }\hlstd{}\hlkwa{class\ }\hlstd{MyHazelcast\ }\hlopt{:\ }\hlstd{ItemListener}\hlopt{\symbol{60}}\hlstd{SqlUpdateLog}\hlopt{\symbol{62}\ \symbol{123}}\\
-\hllin{11\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwc{@Volatile\ }\hlstd{}\hlkwa{private\ var\ }\hlstd{isreplicating}\hlopt{:\ }\hlstd{}\hlkwb{Boolean\ }\hlstd{}\hlopt{=\ }\hlstd{}\hlkwa{false}\\
-\hllin{12\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{private\ val\ }\hlstd{remotequenelister\ }\hlopt{=\ }\hlstd{}\hlkwd{replicationlister}\hlstd{}\hlopt{()}\\
-\hllin{13\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{var\ }\hlstd{hazelcastInstance}\hlopt{:\ }\hlstd{HazelcastInstance?\ }\hlopt{=\ }\hlstd{}\hlkwa{null}\\
-\hllin{14\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{private\ val\ }\hlstd{localquene\ }\hlopt{=\ }\hlstd{LinkedList}\hlopt{\symbol{60}}\hlstd{SqlUpdateLog}\hlopt{\symbol{62}()}\\
-\hllin{15\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{private\ val\ }\hlstd{localqueneReplication\ }\hlopt{=\ }\hlstd{LinkedList}\hlopt{\symbol{60}}\hlstd{SqlUpdateLog}\hlopt{\symbol{62}()}\\
-\hllin{16\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{private\ var\ }\hlstd{remotequene}\hlopt{:\ }\hlstd{IQueue}\hlopt{\symbol{60}}\hlstd{SqlUpdateLog}\hlopt{\symbol{62}}\hlstd{?\ }\hlopt{=\ }\hlstd{}\hlkwa{null}\\
-\hllin{17\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{private\ var\ }\hlstd{replicationQuene}\hlopt{:\ }\hlstd{IQueue}\hlopt{\symbol{60}}\hlstd{SqlUpdateLog}\hlopt{\symbol{62}}\hlstd{?\ }\hlopt{=\ }\hlstd{}\hlkwa{null}\\
-\hllin{18\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{private\ var\ }\hlstd{cmdiQueue}\hlopt{:\ }\hlstd{IQueue}\hlopt{\symbol{60}}\hlstd{ReplicationCMD}\hlopt{\symbol{62}}\hlstd{?\ }\hlopt{=\ }\hlstd{}\hlkwa{null}\\
-\hllin{19\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{private\ var\ }\hlstd{cmdItemListener}\hlopt{:\ }\hlstd{ItemListener}\hlopt{\symbol{60}}\hlstd{ReplicationCMD}\hlopt{\symbol{62}}\hlstd{?\ }\hlopt{=\ }\hlstd{}\hlkwa{null}\\
-\hllin{20\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{private\ var\ }\hlstd{idGenerator}\hlopt{:\ }\hlstd{IdGenerator?\ }\hlopt{=\ }\hlstd{}\hlkwa{null}\\
-\hllin{21\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{private\ var\ }\hlstd{id\symbol{95}froCMD}\hlopt{:\ }\hlstd{}\hlkwb{Long\ }\hlstd{}\hlopt{=\ {-}}\hlstd{}\hlnum{1}\\
-\hllin{22\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{internal\ var\ }\hlstd{iLockwrite}\hlopt{:\ }\hlstd{ILock?\ }\hlopt{=\ }\hlstd{}\hlkwa{null}\\
-\hllin{23\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{internal\ var\ }\hlstd{iLockread}\hlopt{:\ }\hlstd{ILock?\ }\hlopt{=\ }\hlstd{}\hlkwa{null}\\
-\hllin{24\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{internal\ var\ }\hlstd{ilockcmdquene}\hlopt{:\ }\hlstd{ILock?\ }\hlopt{=\ }\hlstd{}\hlkwa{null}\\
-\hllin{25\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwc{@Autowired}\\
-\hllin{26\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{internal\ var\ }\hlstd{logFile}\hlopt{:\ }\hlstd{LogFile?\ }\hlopt{=\ }\hlstd{}\hlkwa{null}\\
-\hllin{27\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{internal\ var\ }\hlstd{logger\ }\hlopt{=\ }\hlstd{LoggerFactory}\hlopt{.}\hlstd{}\hlkwd{getLogger}\hlstd{}\hlopt{(}\hlstd{MyHazelcast}\hlopt{::}\hlstd{}\hlkwa{class}\hlstd{}\hlopt{.}\hlstd{java}\hlopt{.}\hlstd{name}\hlopt{)}\\
-\hllin{28\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{private\ var\ }\hlstd{locals\symbol{95}maxlsn}\hlopt{:\ }\hlstd{}\hlkwb{Long\ }\hlstd{}\hlopt{=\ }\hlstd{}\hlnum{0}\\
-\hllin{29\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{private\ var\ }\hlstd{localmember}\hlopt{:\ }\hlstd{Member?\ }\hlopt{=\ }\hlstd{}\hlkwa{null}\\
-\hllin{30\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{private\ var\ }\hlstd{iAtomic\symbol{95}remote\symbol{95}lsn}\hlopt{:\ }\hlstd{IAtomicLong?\ }\hlopt{=\ }\hlstd{}\hlkwa{null}\\
-\hllin{31\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{internal\ var\ }\hlstd{oNullConnection}\hlopt{:\ }\hlstd{ONullConnection\ }\hlopt{=\ }\hlstd{}\hlkwd{ONullConnection}\hlstd{}\hlopt{()}\\
-\hllin{32\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwc{@Autowired}\\
-\hllin{33\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{internal\ var\ }\hlstd{applicationContext}\hlopt{:\ }\hlstd{ApplicationContext?\ }\hlopt{=\ }\hlstd{}\hlkwa{null}\\
-\hllin{34\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{internal\ var\ }\hlstd{sqLhander\ }\hlopt{=\ }\hlstd{}\hlkwd{MysqlSQLhander}\hlstd{}\hlopt{()}\\
-\hllin{35\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwc{@PostConstruct}\\
-\hllin{36\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{fun\ }\hlstd{}\hlkwd{myinit}\hlstd{}\hlopt{()\ \symbol{123}}\\
-\hllin{37\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{locals\symbol{95}maxlsn\ }\hlopt{=\ }\hlstd{logFile}\hlopt{!!.}\hlstd{}\hlkwd{maxLSN}\hlstd{}\hlopt{()}\\
-\hllin{38\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{39\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{fun\ }\hlstd{}\hlkwd{inits}\hlstd{}\hlopt{()\ \symbol{123}}\\
-\hllin{40\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{config\ }\hlopt{=\ }\hlstd{}\hlkwd{Config}\hlstd{}\hlopt{()}\\
-\hllin{41\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{hazelcastInstance\ }\hlopt{=\ }\hlstd{Hazelcast}\hlopt{.}\hlstd{}\hlkwd{newHazelcastInstance}\hlstd{}\hlopt{(}\hlstd{config}\hlopt{)}\\
-\hllin{42\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{localmember\ }\hlopt{=\ }\hlstd{hazelcastInstance}\hlopt{!!.}\hlstd{cluster}\hlopt{.}\hlstd{localMember}\\
-\hllin{43\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{remotequene\ }\hlopt{=\ }\hlstd{hazelcastInstance}\hlopt{!!.}\hlstd{getQueue}\hlopt{\symbol{60}}\hlstd{SqlUpdateLog}\hlopt{\symbol{62}(}\hlstd{}\hlstr{"sqls"}\hlstd{}\hlopt{)}\\
-\hllin{44\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{remotequene}\hlopt{!!.}\hlstd{}\hlkwd{addItemListener}\hlstd{}\hlopt{(}\hlstd{}\hlkwa{this}\hlstd{}\hlopt{,\ }\hlstd{}\hlkwa{true}\hlstd{}\hlopt{)}\\
-\hllin{45\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{replicationQuene\ }\hlopt{=\ }\hlstd{hazelcastInstance}\hlopt{!!.}\hlstd{getQueue}\hlopt{\symbol{60}}\hlstd{SqlUpdateLog}\hlopt{\symbol{62}(}\hlstd{}\hlstr{"sendingsqls"}\hlstd{}\hlopt{)}\\
-\hllin{46\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{replicationQuene}\hlopt{!!.}\hlstd{}\hlkwd{addItemListener}\hlstd{}\hlopt{(}\hlstd{remotequenelister}\hlopt{,\ }\hlstd{}\hlkwa{true}\hlstd{}\hlopt{)}\\
-\hllin{47\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{iLockwrite\ }\hlopt{=\ }\hlstd{hazelcastInstance}\hlopt{!!.}\hlstd{}\hlkwd{getLock}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"ilocakwrite"}\hlstd{}\hlopt{)}\\
-\hllin{48\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{iLockread\ }\hlopt{=\ }\hlstd{hazelcastInstance}\hlopt{!!.}\hlstd{}\hlkwd{getLock}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"ilockread"}\hlstd{}\hlopt{)}\\
-\hllin{49\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{iAtomic\symbol{95}remote\symbol{95}lsn\ }\hlopt{=\ }\hlstd{hazelcastInstance}\hlopt{!!.}\hlstd{}\hlkwd{getAtomicLong}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"lsn"}\hlstd{}\hlopt{)}\\
-\hllin{50\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{ilockcmdquene\ }\hlopt{=\ }\hlstd{hazelcastInstance}\hlopt{!!.}\hlstd{}\hlkwd{getLock}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"ilockcmdquene"}\hlstd{}\hlopt{)}\\
-\hllin{51\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{cmdiQueue\ }\hlopt{=\ }\hlstd{hazelcastInstance}\hlopt{!!.}\hlstd{getQueue}\hlopt{\symbol{60}}\hlstd{ReplicationCMD}\hlopt{\symbol{62}(}\hlstd{}\hlstr{"cmds"}\hlstd{}\hlopt{)}\\
-\hllin{52\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{cmdItemListener\ }\hlopt{=\ }\hlstd{}\hlkwd{cmdlister}\hlstd{}\hlopt{()}\\
-\hllin{53\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{idGenerator\ }\hlopt{=\ }\hlstd{hazelcastInstance}\hlopt{!!.}\hlstd{}\hlkwd{getIdGenerator}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"idgenerator"}\hlstd{}\hlopt{)}\\
-\hllin{54\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{cmdiQueue}\hlopt{!!.}\hlstd{}\hlkwd{addItemListener}\hlstd{}\hlopt{(}\hlstd{cmdItemListener}\hlopt{,\ }\hlstd{}\hlkwa{true}\hlstd{}\hlopt{)}\\
-\hllin{55\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{sqLhander\ }\hlopt{=\ }\hlstd{applicationContext}\hlopt{!!.}\hlstd{}\hlkwd{getBean}\hlstd{}\hlopt{(}\hlstd{MysqlSQLhander}\hlopt{::}\hlstd{}\hlkwa{class}\hlstd{}\hlopt{.}\hlstd{java}\hlopt{)}\\
-\hllin{56\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{init}\hlstd{}\hlopt{()}\\
-\hllin{57\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{58\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{internal\ }\hlstd{inner\ }\hlkwa{class\ }\hlstd{cmdlister\ }\hlopt{:\ }\hlstd{ItemListener}\hlopt{\symbol{60}}\hlstd{ReplicationCMD}\hlopt{\symbol{62}\ \symbol{123}}\\
-\hllin{59\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{override\ fun\ }\hlstd{}\hlkwd{itemAdded}\hlstd{}\hlopt{(}\hlstd{item}\hlopt{:\ }\hlstd{ItemEvent}\hlopt{\symbol{60}}\hlstd{ReplicationCMD}\hlopt{\symbol{62})\ \symbol{123}}\\
-\hllin{60\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{var\ }\hlstd{replicationCMD\ }\hlopt{=\ }\hlstd{item}\hlopt{.}\hlstd{item}\\
-\hllin{61\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{replicationCMD}\hlopt{.}\hlstd{id\ }\hlopt{==\ }\hlstd{id\symbol{95}froCMD}\hlopt{)\ \symbol{123}}\\
-\hllin{62\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return}\\
-\hllin{63\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{64\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{locals\symbol{95}maxlsn\ }\hlopt{\symbol{60}\ }\hlstd{replicationCMD}\hlopt{.}\hlstd{tolsn}\hlopt{)\ \symbol{123}}\\
-\hllin{65\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return}\\
-\hllin{66\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{67\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{ilockcmdquene}\hlopt{!!.}\hlstd{}\hlkwd{tryLock}\hlstd{}\hlopt{())\ \symbol{123}}\\
-\hllin{68\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{replicationCMD\ }\hlopt{=\ }\hlstd{cmdiQueue}\hlopt{!!.}\hlstd{}\hlkwd{poll}\hlstd{}\hlopt{()}\\
-\hllin{69\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{ilockcmdquene}\hlopt{!!.}\hlstd{}\hlkwd{unlock}\hlstd{}\hlopt{()}\\
-\hllin{70\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{sendlogdata}\hlstd{}\hlopt{(}\hlstd{replicationCMD}\hlopt{.}\hlstd{fromlsn}\hlopt{,\ }\hlstd{replicationCMD}\hlopt{.}\hlstd{tolsn}\hlopt{)}\\
-\hllin{71\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hlstd{}\hllin{01\ }\hlstd{}\hlslc{//sql队列\ 复制队列命令队列。2个锁。发布}\\
+\hllin{02\ }\hlstd{}\hlkwc{@Component}\\
+\hllin{03\ }\hlstd{}\hlkwa{class\ }\hlstd{MyHazelcast\ }\hlopt{:\ }\hlstd{ItemListener}\hlopt{\symbol{60}}\hlstd{SqlUpdateLog}\hlopt{\symbol{62}\ \symbol{123}}\\
+\hllin{04\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{private\ fun\ }\hlstd{}\hlkwd{exeSqlforReplication}\hlstd{}\hlopt{()\ \symbol{123}}\\
+\hllin{05\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{Collections}\hlopt{.}\hlstd{}\hlkwd{sort}\hlstd{}\hlopt{(}\hlstd{localqueneReplication}\hlopt{)}\\
+\hllin{06\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{var\ }\hlstd{log}\hlopt{:\ }\hlstd{SqlUpdateLog?\ }\hlopt{=\ }\hlstd{localqueneReplication}\hlopt{.}\hlstd{}\hlkwd{poll}\hlstd{}\hlopt{()}\\
+\hllin{07\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{var\ }\hlstd{lastlsn}\hlopt{:\ }\hlstd{}\hlkwb{Long\ }\hlstd{}\hlopt{=\ }\hlstd{}\hlnum{0}\\
+\hllin{08\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{while\ }\hlstd{}\hlopt{(}\hlstd{log\ }\hlopt{!=\ }\hlstd{}\hlkwa{null}\hlstd{}\hlopt{)\ \symbol{123}}\\
+\hllin{09\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{locals\symbol{95}maxlsn\ }\hlopt{=\ }\hlstd{log}\hlopt{.}\hlstd{LSN}\\
+\hllin{10\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{logger}\hlopt{.}\hlstd{}\hlkwd{info}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"exeSqlforReplication\ exe\ sql\ "}\hlstd{\ }\hlopt{+\ }\hlstd{log}\hlopt{)}\\
+\hllin{11\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{oNullConnection}\hlopt{!!.}\hlstd{schema\ }\hlopt{=\ }\hlstd{log}\hlopt{.}\hlstd{db}\\
+\hllin{12\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{sqLhander}\hlopt{.}\hlstd{}\hlkwd{handle}\hlstd{}\hlopt{(}\hlstd{log}\hlopt{,\ }\hlstd{oNullConnection}\hlopt{)}\\
+\hllin{13\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{logFile}\hlopt{!!.}\hlstd{}\hlkwd{write}\hlstd{}\hlopt{(}\hlstd{log}\hlopt{)}\\
+\hllin{14\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{lastlsn\ }\hlopt{=\ }\hlstd{log}\hlopt{.}\hlstd{LSN}\\
+\hllin{15\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{log\ }\hlopt{=\ }\hlstd{localqueneReplication}\hlopt{.}\hlstd{}\hlkwd{poll}\hlstd{}\hlopt{()}\\
+\hllin{16\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{17\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{isreplicating\ }\hlopt{=\ }\hlstd{}\hlkwa{false}\\
+\hllin{18\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{log\ }\hlopt{=\ }\hlstd{localquene}\hlopt{.}\hlstd{}\hlkwd{poll}\hlstd{}\hlopt{()}\\
+\hllin{19\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{remotel\ }\hlopt{=\ }\hlstd{iAtomic\symbol{95}remote\symbol{95}lsn}\hlopt{!!.}\hlstd{}\hlkwd{get}\hlstd{}\hlopt{()}\\
+\hllin{20\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{while\ }\hlstd{}\hlopt{(}\hlstd{log\ }\hlopt{!=\ }\hlstd{}\hlkwa{null}\hlstd{}\hlopt{)\ \symbol{123}}\\
+\hllin{21\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{locals\symbol{95}maxlsn\ }\hlopt{=\ }\hlstd{log}\hlopt{.}\hlstd{LSN}\\
+\hllin{22\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{logger}\hlopt{.}\hlstd{}\hlkwd{info}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"exe}\hlstd{\ \ }\hlstr{Sql\ :\ "}\hlstd{\ }\hlopt{+\ }\hlstd{log}\hlopt{)}\\
+\hllin{23\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{oNullConnection}\hlopt{!!.}\hlstd{schema\ }\hlopt{=\ }\hlstd{log}\hlopt{.}\hlstd{db}\\
+\hllin{24\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{sqLhander}\hlopt{.}\hlstd{}\hlkwd{handle}\hlstd{}\hlopt{(}\hlstd{log}\hlopt{,\ }\hlstd{oNullConnection}\hlopt{)}\\
+\hllin{25\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{logFile}\hlopt{!!.}\hlstd{}\hlkwd{write}\hlstd{}\hlopt{(}\hlstd{log}\hlopt{)}\\
+\hllin{26\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{lastlsn\ }\hlopt{=\ }\hlstd{log}\hlopt{.}\hlstd{LSN}\\
+\hllin{27\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{lastlsn\ }\hlopt{\symbol{62}\ }\hlstd{remotel}\hlopt{)\ \symbol{123}}\\
+\hllin{28\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{remotequene}\hlopt{!!.}\hlstd{}\hlkwd{offer}\hlstd{}\hlopt{(}\hlstd{log}\hlopt{)}\\
+\hllin{29\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{30\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{log\ }\hlopt{=\ }\hlstd{localqueneReplication}\hlopt{.}\hlstd{}\hlkwd{poll}\hlstd{}\hlopt{()}\\
+\hllin{31\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{32\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{lastlsn\ }\hlopt{\symbol{62}\ }\hlstd{remotel}\hlopt{)\ \symbol{123}}\\
+\hllin{33\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{iAtomic\symbol{95}remote\symbol{95}lsn}\hlopt{!!.}\hlstd{}\hlkwd{set}\hlstd{}\hlopt{(}\hlstd{lastlsn}\hlopt{)}\\
+\hllin{34\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{35\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{36\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlcom{/{*}{*}}\\
+\hllin{37\ }\hlcom{}\hlstd{\ \ \ \ \ }\hlcom{{*}}\hlstd{\ \ }\hlcom{本机发出的sql语句.记录到本地logfile。}\\
+\hllin{38\ }\hlcom{}\hlstd{\ \ \ }\hlcom{同时发布到其他服务器{*}/}\hlstd{}\\
+\hllin{39\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{fun\ }\hlstd{}\hlkwd{exeSql}\hlstd{}\hlopt{(}\hlstd{sql}\hlopt{:\ }\hlstd{}\hlkwb{String}\hlstd{}\hlopt{,\ }\hlstd{db}\hlopt{:\ }\hlstd{}\hlkwb{String}\hlstd{}\hlopt{)\ \symbol{123}}\\
+\hllin{40\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{isreplicating}\hlopt{)\ \symbol{123}}\\
+\hllin{41\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{l\ }\hlopt{=\ }\hlstd{iAtomic\symbol{95}remote\symbol{95}lsn}\hlopt{!!.}\hlstd{}\hlkwd{get}\hlstd{}\hlopt{()}\\
+\hllin{42\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{log\ }\hlopt{=\ }\hlstd{}\hlkwd{SqlUpdateLog}\hlstd{}\hlopt{(}\hlstd{l\ }\hlopt{+\ }\hlstd{}\hlnum{1}\hlstd{}\hlopt{,\ }\hlstd{sql}\hlopt{,\ }\hlstd{db}\hlopt{)}\\
+\hllin{43\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{localquene}\hlopt{.}\hlstd{}\hlkwd{addLast}\hlstd{}\hlopt{(}\hlstd{log}\hlopt{)}\\
+\hllin{44\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlopt{\symbol{123}}\\
+\hllin{45\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{locals\symbol{95}maxlsn}\hlopt{++}\\
+\hllin{46\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{l\ }\hlopt{=\ }\hlstd{iAtomic\symbol{95}remote\symbol{95}lsn}\hlopt{!!.}\hlstd{}\hlkwd{addAndGet}\hlstd{}\hlopt{(}\hlstd{}\hlnum{1}\hlstd{}\hlopt{)}\\
+\hllin{47\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{log\ }\hlopt{=\ }\hlstd{}\hlkwd{SqlUpdateLog}\hlstd{}\hlopt{(}\hlstd{l}\hlopt{,\ }\hlstd{sql}\hlopt{,\ }\hlstd{db}\hlopt{)}\\
+\hllin{48\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{logger}\hlopt{.}\hlstd{}\hlkwd{info}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"exe\ sql\ "}\hlstd{\ }\hlopt{+\ }\hlstd{log}\hlopt{)}\\
+\hllin{49\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{logFile}\hlopt{!!.}\hlstd{}\hlkwd{write}\hlstd{}\hlopt{(}\hlstd{log}\hlopt{)}\\
+\hllin{50\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{remotequene}\hlopt{!!.}\hlstd{}\hlkwd{offer}\hlstd{}\hlopt{(}\hlstd{log}\hlopt{)}\\
+\hllin{51\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{52\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{53\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{private\ fun\ }\hlstd{}\hlkwd{exesqlforremoteData}\hlstd{}\hlopt{()\ \symbol{123}}\\
+\hllin{54\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{Collections}\hlopt{.}\hlstd{}\hlkwd{sort}\hlstd{}\hlopt{(}\hlstd{localquene}\hlopt{)}\\
+\hllin{55\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{var\ }\hlstd{log}\hlopt{:\ }\hlstd{SqlUpdateLog?\ }\hlopt{=\ }\hlstd{localquene}\hlopt{.}\hlstd{}\hlkwd{poll}\hlstd{}\hlopt{()}\\
+\hllin{56\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{var\ }\hlstd{last}\hlopt{:\ }\hlstd{}\hlkwb{Long\ }\hlstd{}\hlopt{=\ }\hlstd{}\hlnum{0}\\
+\hllin{57\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{while\ }\hlstd{}\hlopt{(}\hlstd{log\ }\hlopt{!=\ }\hlstd{}\hlkwa{null}\hlstd{}\hlopt{)\ \symbol{123}}\\
+\hllin{58\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{locals\symbol{95}maxlsn\ }\hlopt{=\ }\hlstd{log}\hlopt{.}\hlstd{LSN}\\
+\hllin{59\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{logger}\hlopt{.}\hlstd{}\hlkwd{info}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"exesqlforremoteData()}\hlstd{\ \ }\hlstr{"}\hlstd{\ }\hlopt{+\ }\hlstd{log}\hlopt{)}\\
+\hllin{60\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{oNullConnection}\hlopt{!!.}\hlstd{schema\ }\hlopt{=\ }\hlstd{log}\hlopt{.}\hlstd{db}\\
+\hllin{61\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{sqLhander}\hlopt{.}\hlstd{}\hlkwd{handle}\hlstd{}\hlopt{(}\hlstd{log}\hlopt{,\ }\hlstd{oNullConnection}\hlopt{)}\\
+\hllin{62\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{logFile}\hlopt{!!.}\hlstd{}\hlkwd{write}\hlstd{}\hlopt{(}\hlstd{log}\hlopt{)}\\
+\hllin{63\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{last\ }\hlopt{=\ }\hlstd{log}\hlopt{.}\hlstd{LSN}\\
+\hllin{64\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{log\ }\hlopt{=\ }\hlstd{localquene}\hlopt{.}\hlstd{}\hlkwd{poll}\hlstd{}\hlopt{()}\\
+\hllin{65\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{66\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{l\ }\hlopt{=\ }\hlstd{iAtomic\symbol{95}remote\symbol{95}lsn}\hlopt{!!.}\hlstd{}\hlkwd{get}\hlstd{}\hlopt{()}\\
+\hllin{67\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{last\ }\hlopt{\symbol{62}\ }\hlstd{l}\hlopt{)\ \symbol{123}}\\
+\hllin{68\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{iAtomic\symbol{95}remote\symbol{95}lsn}\hlopt{!!.}\hlstd{}\hlkwd{set}\hlstd{}\hlopt{(}\hlstd{last}\hlopt{)}\\
+\hllin{69\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{70\ }\hlstd{}\\
+\hllin{71\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
 \hllin{72\ }\hlstd{}\\
-\hllin{73\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{74\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{override\ fun\ }\hlstd{}\hlkwd{itemRemoved}\hlstd{}\hlopt{(}\hlstd{item}\hlopt{:\ }\hlstd{ItemEvent}\hlopt{\symbol{60}}\hlstd{ReplicationCMD}\hlopt{\symbol{62})\ \symbol{123}}\\
-\hllin{75\ }\hlstd{}\\
-\hllin{76\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{77\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{78\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{internal\ }\hlstd{inner\ }\hlkwa{class\ }\hlstd{replicationlister\ }\hlopt{:\ }\hlstd{ItemListener}\hlopt{\symbol{60}}\hlstd{SqlUpdateLog}\hlopt{\symbol{62}\ \symbol{123}}\\
-\hllin{79\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{override\ fun\ }\hlstd{}\hlkwd{itemAdded}\hlstd{}\hlopt{(}\hlstd{item}\hlopt{:\ }\hlstd{ItemEvent}\hlopt{\symbol{60}}\hlstd{SqlUpdateLog}\hlopt{\symbol{62})\ \symbol{123}}\\
-\hllin{80\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(!}\hlstd{isreplicating}\hlopt{)\ \symbol{123}}\\
-\hllin{81\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return}\\
-\hllin{82\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{83\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{max\ }\hlopt{=\ }\hlstd{iAtomic\symbol{95}remote\symbol{95}lsn}\hlopt{!!.}\hlstd{}\hlkwd{get}\hlstd{}\hlopt{()}\\
-\hllin{84\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{item}\hlopt{.}\hlstd{item}\hlopt{.}\hlstd{LSN\ }\hlopt{==\ }\hlstd{max}\hlopt{)\ \symbol{123}}\\
-\hllin{85\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{localqueneReplication}\hlopt{.}\hlstd{}\hlkwd{addLast}\hlstd{}\hlopt{(}\hlstd{item}\hlopt{.}\hlstd{item}\hlopt{)}\\
-\hllin{86\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{exeSqlforReplication}\hlstd{}\hlopt{()}\\
-\hllin{87\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlopt{\symbol{123}}\\
-\hllin{88\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{item}\hlopt{.}\hlstd{item}\hlopt{.}\hlstd{LSN\ }\hlopt{\symbol{62}\ }\hlstd{locals\symbol{95}maxlsn}\hlopt{)\ \symbol{123}}\\
-\hllin{89\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{localqueneReplication}\hlopt{.}\hlstd{}\hlkwd{addLast}\hlstd{}\hlopt{(}\hlstd{item}\hlopt{.}\hlstd{item}\hlopt{)}\\
-\hllin{90\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{91\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{92\ }\hlstd{}\\
-\hllin{93\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{94\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{override\ fun\ }\hlstd{}\hlkwd{itemRemoved}\hlstd{}\hlopt{(}\hlstd{item}\hlopt{:\ }\hlstd{ItemEvent}\hlopt{\symbol{60}}\hlstd{SqlUpdateLog}\hlopt{\symbol{62})\ \symbol{123}}\\
-\hllin{95\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{96\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{97\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{private\ fun\ }\hlstd{}\hlkwd{exeSqlforReplication}\hlstd{}\hlopt{()\ \symbol{123}}\\
-\hllin{98\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{Collections}\hlopt{.}\hlstd{}\hlkwd{sort}\hlstd{}\hlopt{(}\hlstd{localqueneReplication}\hlopt{)}\\
-\hllin{99\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{var\ }\hlstd{log}\hlopt{:\ }\hlstd{SqlUpdateLog?\ }\hlopt{=\ }\hlstd{localqueneReplication}\hlopt{.}\hlstd{}\hlkwd{poll}\hlstd{}\hlopt{()}\\
-\hllin{100\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{var\ }\hlstd{lastlsn}\hlopt{:\ }\hlstd{}\hlkwb{Long\ }\hlstd{}\hlopt{=\ }\hlstd{}\hlnum{0}\\
-\hllin{101\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{while\ }\hlstd{}\hlopt{(}\hlstd{log\ }\hlopt{!=\ }\hlstd{}\hlkwa{null}\hlstd{}\hlopt{)\ \symbol{123}}\\
-\hllin{102\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlslc{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}\\
-\hllin{103\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{locals\symbol{95}maxlsn\ }\hlopt{=\ }\hlstd{log}\hlopt{.}\hlstd{LSN}\\
-\hllin{104\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{logger}\hlopt{.}\hlstd{}\hlkwd{info}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"exeSqlforReplication\ exe\ sql\ "}\hlstd{\ }\hlopt{+\ }\hlstd{log}\hlopt{)}\\
-\hllin{105\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{oNullConnection}\hlopt{!!.}\hlstd{schema\ }\hlopt{=\ }\hlstd{log}\hlopt{.}\hlstd{db}\\
-\hllin{106\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{sqLhander}\hlopt{.}\hlstd{}\hlkwd{handle}\hlstd{}\hlopt{(}\hlstd{log}\hlopt{,\ }\hlstd{oNullConnection}\hlopt{)}\\
-\hllin{107\ }\hlstd{}\\
-\hllin{108\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlslc{logfiletest.addLast(log);}\\
-\hllin{109\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{logFile}\hlopt{!!.}\hlstd{}\hlkwd{write}\hlstd{}\hlopt{(}\hlstd{log}\hlopt{)}\\
-\hllin{110\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{lastlsn\ }\hlopt{=\ }\hlstd{log}\hlopt{.}\hlstd{LSN}\\
-\hllin{111\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{log\ }\hlopt{=\ }\hlstd{localqueneReplication}\hlopt{.}\hlstd{}\hlkwd{poll}\hlstd{}\hlopt{()}\\
-\hllin{112\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{113\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{isreplicating\ }\hlopt{=\ }\hlstd{}\hlkwa{false}\\
-\hllin{114\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{log\ }\hlopt{=\ }\hlstd{localquene}\hlopt{.}\hlstd{}\hlkwd{poll}\hlstd{}\hlopt{()}\\
-\hllin{115\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{remotel\ }\hlopt{=\ }\hlstd{iAtomic\symbol{95}remote\symbol{95}lsn}\hlopt{!!.}\hlstd{}\hlkwd{get}\hlstd{}\hlopt{()}\\
-\hllin{116\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{while\ }\hlstd{}\hlopt{(}\hlstd{log\ }\hlopt{!=\ }\hlstd{}\hlkwa{null}\hlstd{}\hlopt{)\ \symbol{123}}\\
-\hllin{117\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlslc{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}\\
-\hllin{118\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{locals\symbol{95}maxlsn\ }\hlopt{=\ }\hlstd{log}\hlopt{.}\hlstd{LSN}\\
-\hllin{119\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{logger}\hlopt{.}\hlstd{}\hlkwd{info}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"exe}\hlstd{\ \ }\hlstr{Sql\ :\ "}\hlstd{\ }\hlopt{+\ }\hlstd{log}\hlopt{)}\\
-\hllin{120\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{oNullConnection}\hlopt{!!.}\hlstd{schema\ }\hlopt{=\ }\hlstd{log}\hlopt{.}\hlstd{db}\\
-\hllin{121\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{sqLhander}\hlopt{.}\hlstd{}\hlkwd{handle}\hlstd{}\hlopt{(}\hlstd{log}\hlopt{,\ }\hlstd{oNullConnection}\hlopt{)}\\
-\hllin{122\ }\hlstd{}\\
-\hllin{123\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlslc{logfiletest.addLast(log);}\\
-\hllin{124\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{logFile}\hlopt{!!.}\hlstd{}\hlkwd{write}\hlstd{}\hlopt{(}\hlstd{log}\hlopt{)}\\
-\hllin{125\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{lastlsn\ }\hlopt{=\ }\hlstd{log}\hlopt{.}\hlstd{LSN}\\
-\hllin{126\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{lastlsn\ }\hlopt{\symbol{62}\ }\hlstd{remotel}\hlopt{)\ \symbol{123}}\\
-\hllin{127\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{remotequene}\hlopt{!!.}\hlstd{}\hlkwd{offer}\hlstd{}\hlopt{(}\hlstd{log}\hlopt{)}\\
-\hllin{128\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{129\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{log\ }\hlopt{=\ }\hlstd{localqueneReplication}\hlopt{.}\hlstd{}\hlkwd{poll}\hlstd{}\hlopt{()}\\
-\hllin{130\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{131\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{lastlsn\ }\hlopt{\symbol{62}\ }\hlstd{remotel}\hlopt{)\ \symbol{123}}\\
-\hllin{132\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{iAtomic\symbol{95}remote\symbol{95}lsn}\hlopt{!!.}\hlstd{}\hlkwd{set}\hlstd{}\hlopt{(}\hlstd{lastlsn}\hlopt{)}\\
-\hllin{133\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{134\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{135\ }\hlstd{}\\
-\hllin{136\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{private\ fun\ }\hlstd{}\hlkwd{sendlogdata}\hlstd{}\hlopt{(}\hlstd{fromlsn}\hlopt{:\ }\hlstd{}\hlkwb{Long}\hlstd{}\hlopt{,\ }\hlstd{tolsn}\hlopt{:\ }\hlstd{}\hlkwb{Long}\hlstd{}\hlopt{)\ \symbol{123}}\\
-\hllin{137\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{logFile}\hlopt{!!.}\hlstd{}\hlkwd{getall}\hlstd{}\hlopt{().}\hlstd{forEach\ }\hlopt{\symbol{123}\ }\hlstd{a\ }\hlopt{{-}\symbol{62}}\\
-\hllin{138\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{a}\hlopt{.}\hlstd{LSN\ }\hlopt{\symbol{62}=\ }\hlstd{fromlsn\ }\hlopt{\&\&\ }\hlstd{a}\hlopt{.}\hlstd{LSN\ }\hlopt{\symbol{60}=\ }\hlstd{tolsn}\hlopt{)\ \symbol{123}}\\
-\hllin{139\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{replicationQuene}\hlopt{!!.}\hlstd{}\hlkwd{offer}\hlstd{}\hlopt{(}\hlstd{a}\hlopt{)}\\
-\hllin{140\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{logger}\hlopt{.}\hlstd{}\hlkwd{info}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"send\ log:"}\hlstd{\ }\hlopt{+\ }\hlstd{a}\hlopt{)}\\
-\hllin{141\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{142\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{143\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{logger}\hlopt{.}\hlstd{}\hlkwd{info}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"send\ log\ data\ 从}\hlipl{\$fromlsn\ }\hlstr{to\ }\hlipl{\$tolsn}\hlstr{"}\hlstd{}\hlopt{)}\\
-\hllin{144\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{145\ }\hlstd{}\\
-\hllin{146\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{private\ fun\ }\hlstd{}\hlkwd{init}\hlstd{}\hlopt{()\ \symbol{123}}\\
-\hllin{147\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{l\ }\hlopt{=\ }\hlstd{iAtomic\symbol{95}remote\symbol{95}lsn}\hlopt{!!.}\hlstd{}\hlkwd{get}\hlstd{}\hlopt{()}\\
-\hllin{148\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{logger}\hlopt{.}\hlstd{}\hlkwd{info}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"remote\ lsn\ is"}\hlstd{\ }\hlopt{+\ }\hlstd{l}\hlopt{)}\\
-\hllin{149\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{locals\symbol{95}maxlsn\ }\hlopt{\symbol{60}\ }\hlstd{l}\hlopt{)\ \symbol{123}}\\
-\hllin{150\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{isreplicating\ }\hlopt{=\ }\hlstd{}\hlkwa{true}\\
-\hllin{151\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{id\symbol{95}froCMD\ }\hlopt{=\ }\hlstd{idGenerator}\hlopt{!!.}\hlstd{}\hlkwd{newId}\hlstd{}\hlopt{()}\\
-\hllin{152\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{cmdiQueue}\hlopt{!!.}\hlstd{}\hlkwd{add}\hlstd{}\hlopt{(}\hlstd{}\hlkwd{ReplicationCMD}\hlstd{}\hlopt{(}\hlstd{locals\symbol{95}maxlsn\ }\hlopt{+\ }\hlstd{}\hlnum{1}\hlstd{}\hlopt{,\ }\hlstd{l}\hlopt{,\ }\hlstd{id\symbol{95}froCMD}\hlopt{))}\\
-\hllin{153\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlopt{\symbol{123}}\\
-\hllin{154\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{iAtomic\symbol{95}remote\symbol{95}lsn}\hlopt{!!.}\hlstd{}\hlkwd{set}\hlstd{}\hlopt{(}\hlstd{locals\symbol{95}maxlsn}\hlopt{)}\\
-\hllin{155\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{156\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{157\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlcom{/{*}{*}}\\
-\hllin{158\ }\hlcom{}\hlstd{\ \ \ \ \ }\hlcom{{*}}\hlstd{\ \ }\hlcom{本机发出的sql语句.记录到本地logfile。同时发布到其他服务器{*}/}\hlstd{}\\
-\hllin{159\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{fun\ }\hlstd{}\hlkwd{exeSql}\hlstd{}\hlopt{(}\hlstd{sql}\hlopt{:\ }\hlstd{}\hlkwb{String}\hlstd{}\hlopt{,\ }\hlstd{db}\hlopt{:\ }\hlstd{}\hlkwb{String}\hlstd{}\hlopt{)\ \symbol{123}}\\
-\hllin{160\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//}\hlstd{\ \ \ \ \ \ \ \ }\hlslc{if\ (isupdatesql(sql))\ \symbol{123}}\\
-\hllin{161\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{isreplicating}\hlopt{)\ \symbol{123}}\\
-\hllin{162\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{l\ }\hlopt{=\ }\hlstd{iAtomic\symbol{95}remote\symbol{95}lsn}\hlopt{!!.}\hlstd{}\hlkwd{get}\hlstd{}\hlopt{()}\\
-\hllin{163\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{log\ }\hlopt{=\ }\hlstd{}\hlkwd{SqlUpdateLog}\hlstd{}\hlopt{(}\hlstd{l\ }\hlopt{+\ }\hlstd{}\hlnum{1}\hlstd{}\hlopt{,\ }\hlstd{sql}\hlopt{,\ }\hlstd{db}\hlopt{)}\\
-\hllin{164\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{localquene}\hlopt{.}\hlstd{}\hlkwd{addLast}\hlstd{}\hlopt{(}\hlstd{log}\hlopt{)}\\
-\hllin{165\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlopt{\symbol{123}}\\
-\hllin{166\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{locals\symbol{95}maxlsn}\hlopt{++}\\
-\hllin{167\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{l\ }\hlopt{=\ }\hlstd{iAtomic\symbol{95}remote\symbol{95}lsn}\hlopt{!!.}\hlstd{}\hlkwd{addAndGet}\hlstd{}\hlopt{(}\hlstd{}\hlnum{1}\hlstd{}\hlopt{)}\\
-\hllin{168\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{log\ }\hlopt{=\ }\hlstd{}\hlkwd{SqlUpdateLog}\hlstd{}\hlopt{(}\hlstd{l}\hlopt{,\ }\hlstd{sql}\hlopt{,\ }\hlstd{db}\hlopt{)}\\
-\hllin{169\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{logger}\hlopt{.}\hlstd{}\hlkwd{info}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"exe\ sql\ "}\hlstd{\ }\hlopt{+\ }\hlstd{log}\hlopt{)}\\
-\hllin{170\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlslc{logfiletest.addLast(log);}\\
-\hllin{171\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{logFile}\hlopt{!!.}\hlstd{}\hlkwd{write}\hlstd{}\hlopt{(}\hlstd{log}\hlopt{)}\\
-\hllin{172\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{remotequene}\hlopt{!!.}\hlstd{}\hlkwd{offer}\hlstd{}\hlopt{(}\hlstd{log}\hlopt{)}\\
-\hllin{173\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{174\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//}\hlstd{\ \ \ \ \ \ \ \ }\hlslc{\symbol{125}}\\
-\hllin{175\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{176\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlcom{/{*}{*}}\\
-\hllin{177\ }\hlcom{}\hlstd{\ \ \ \ \ }\hlcom{{*}\ 只记录到本地logfile。不发布到其他服务器}\\
-\hllin{178\ }\hlcom{}\hlstd{\ \ \ \ \ }\hlcom{{*}\ {*}/}\hlstd{}\\
-\hllin{179\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{fun\ }\hlstd{}\hlkwd{exesqlLocal}\hlstd{}\hlopt{(}\hlstd{sql}\hlopt{:\ }\hlstd{}\hlkwb{String}\hlstd{}\hlopt{,\ }\hlstd{db}\hlopt{:\ }\hlstd{}\hlkwb{String}\hlstd{}\hlopt{)\ \symbol{123}}\\
-\hllin{180\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{var\ }\hlstd{l\ }\hlopt{=\ }\hlstd{locals\symbol{95}maxlsn}\\
-\hllin{181\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{log\ }\hlopt{=\ }\hlstd{}\hlkwd{SqlUpdateLog}\hlstd{}\hlopt{(}\hlstd{l\ }\hlopt{+\ }\hlstd{}\hlnum{1}\hlstd{}\hlopt{,\ }\hlstd{sql}\hlopt{,\ }\hlstd{db}\hlopt{)}\\
-\hllin{182\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{logFile}\hlopt{!!.}\hlstd{}\hlkwd{write}\hlstd{}\hlopt{(}\hlstd{log}\hlopt{)}\\
-\hllin{183\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{184\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{private\ fun\ }\hlstd{}\hlkwd{isupdatesql}\hlstd{}\hlopt{(}\hlstd{sql}\hlopt{:\ }\hlstd{}\hlkwb{String}\hlstd{}\hlopt{):\ }\hlstd{}\hlkwb{Boolean\ }\hlstd{}\hlopt{\symbol{123}}\\
-\hllin{185\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{sqll\ }\hlopt{=\ }\hlstd{sql}\hlopt{.}\hlstd{}\hlkwd{toLowerCase}\hlstd{}\hlopt{()}\\
-\hllin{186\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{list\ }\hlopt{=\ }\hlstd{Lists}\hlopt{.}\hlstd{}\hlkwd{newArrayList}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"delete"}\hlstd{}\hlopt{,\ }\hlstd{}\hlstr{"drop"}\hlstd{}\hlopt{,\ }\hlstd{}\hlstr{"create"}\hlstd{}\hlopt{,\ }\hlstd{}\hlstr{"insert"}\hlstd{}\hlopt{,\ }\hlstd{}\hlstr{"update"}\hlstd{}\hlopt{)}\\
-\hllin{187\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{for\ }\hlstd{}\hlopt{(}\hlstd{s\ }\hlkwa{in\ }\hlstd{list}\hlopt{)\ \symbol{123}}\\
-\hllin{188\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{sqll}\hlopt{.}\hlstd{}\hlkwd{contains}\hlstd{}\hlopt{(}\hlstd{s}\hlopt{))\ \symbol{123}}\\
-\hllin{189\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return\ true}\\
-\hllin{190\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{191\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{192\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return\ false}\\
-\hllin{193\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{194\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{override\ fun\ }\hlstd{}\hlkwd{itemAdded}\hlstd{}\hlopt{(}\hlstd{item}\hlopt{:\ }\hlstd{ItemEvent}\hlopt{\symbol{60}}\hlstd{SqlUpdateLog}\hlopt{\symbol{62})\ \symbol{123}}\\
-\hllin{195\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{item}\hlopt{.}\hlstd{item}\hlopt{.}\hlstd{LSN\ }\hlopt{\symbol{62}\ }\hlstd{locals\symbol{95}maxlsn}\hlopt{)\ \symbol{123}}\\
-\hllin{196\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{localquene}\hlopt{.}\hlstd{}\hlkwd{offer}\hlstd{}\hlopt{(}\hlstd{item}\hlopt{.}\hlstd{item}\hlopt{)}\\
-\hllin{197\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(!}\hlstd{isreplicating}\hlopt{)\ \symbol{123}}\\
-\hllin{198\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{exesqlforremoteData}\hlstd{}\hlopt{()}\\
-\hllin{199\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{200\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{201\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{202\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{private\ fun\ }\hlstd{}\hlkwd{exesqlforremoteData}\hlstd{}\hlopt{()\ \symbol{123}}\\
-\hllin{203\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{Collections}\hlopt{.}\hlstd{}\hlkwd{sort}\hlstd{}\hlopt{(}\hlstd{localquene}\hlopt{)}\\
-\hllin{204\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{var\ }\hlstd{log}\hlopt{:\ }\hlstd{SqlUpdateLog?\ }\hlopt{=\ }\hlstd{localquene}\hlopt{.}\hlstd{}\hlkwd{poll}\hlstd{}\hlopt{()}\\
-\hllin{205\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{var\ }\hlstd{last}\hlopt{:\ }\hlstd{}\hlkwb{Long\ }\hlstd{}\hlopt{=\ }\hlstd{}\hlnum{0}\\
-\hllin{206\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{while\ }\hlstd{}\hlopt{(}\hlstd{log\ }\hlopt{!=\ }\hlstd{}\hlkwa{null}\hlstd{}\hlopt{)\ \symbol{123}}\\
-\hllin{207\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlslc{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}\\
-\hllin{208\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{locals\symbol{95}maxlsn\ }\hlopt{=\ }\hlstd{log}\hlopt{.}\hlstd{LSN}\\
-\hllin{209\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{logger}\hlopt{.}\hlstd{}\hlkwd{info}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"exesqlforremoteData()}\hlstd{\ \ }\hlstr{"}\hlstd{\ }\hlopt{+\ }\hlstd{log}\hlopt{)}\\
-\hllin{210\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{oNullConnection}\hlopt{!!.}\hlstd{schema\ }\hlopt{=\ }\hlstd{log}\hlopt{.}\hlstd{db}\\
-\hllin{211\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{sqLhander}\hlopt{.}\hlstd{}\hlkwd{handle}\hlstd{}\hlopt{(}\hlstd{log}\hlopt{,\ }\hlstd{oNullConnection}\hlopt{)}\\
-\hllin{212\ }\hlstd{}\\
-\hllin{213\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlslc{logfiletest.offer(log);}\\
-\hllin{214\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{logFile}\hlopt{!!.}\hlstd{}\hlkwd{write}\hlstd{}\hlopt{(}\hlstd{log}\hlopt{)}\\
-\hllin{215\ }\hlstd{}\\
-\hllin{216\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{last\ }\hlopt{=\ }\hlstd{log}\hlopt{.}\hlstd{LSN}\\
-\hllin{217\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{log\ }\hlopt{=\ }\hlstd{localquene}\hlopt{.}\hlstd{}\hlkwd{poll}\hlstd{}\hlopt{()}\\
-\hllin{218\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{219\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{l\ }\hlopt{=\ }\hlstd{iAtomic\symbol{95}remote\symbol{95}lsn}\hlopt{!!.}\hlstd{}\hlkwd{get}\hlstd{}\hlopt{()}\\
-\hllin{220\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{last\ }\hlopt{\symbol{62}\ }\hlstd{l}\hlopt{)\ \symbol{123}}\\
-\hllin{221\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{iAtomic\symbol{95}remote\symbol{95}lsn}\hlopt{!!.}\hlstd{}\hlkwd{set}\hlstd{}\hlopt{(}\hlstd{last}\hlopt{)}\\
-\hllin{222\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{223\ }\hlstd{}\\
-\hllin{224\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{225\ }\hlstd{}\\
-\hllin{226\ }\hlstd{}\hlopt{\symbol{125}}\hlstd{}
+\hllin{73\ }\hlstd{}\hlopt{\symbol{125}}\hlstd{}\\
 \mbox{}
 \normalfont
 \normalsize

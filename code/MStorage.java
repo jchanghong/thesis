@@ -5,7 +5,8 @@
 class MStorage {
     public void write(long pageNumber, ByteBuffer data) throws IOException {
         FileChannel f = getChannel(pageNumber);
-        int offsetInFile = (int) ((Math.abs(pageNumber) % Pagesize.max_page_number) * Pagesize.page_size);
+        int offsetInFile = (int) ((Math.abs(pageNumber) % 
+		Pagesize.max_page_number) * Pagesize.page_size);
         MappedByteBuffer b = buffers.get(f);
         if (b.limit() <= offsetInFile) {
             b = addfilesize(f, offsetInFile, b);
@@ -17,9 +18,9 @@ class MStorage {
     }
     public ByteBuffer read(long pageNumber) throws IOException {
         FileChannel f = getChannel(pageNumber);
-        int offsetInFile = (int) ((Math.abs(pageNumber) % Pagesize.max_page_number) * Pagesize.page_size);
+        int offsetInFile = (int) ((Math.abs(pageNumber) % 
+		Pagesize.max_page_number) * Pagesize.page_size);
         MappedByteBuffer b = buffers.get(f);
-
         if (b == null) { //not mapped yet
             b = f.map(FileChannel.MapMode.READ_WRITE, 0, f.size());
         }

@@ -40,8 +40,8 @@ public class HTreeMap implements Map<String, Object> ,Serializable{
             int hashindex = hashcode % htreeNode.hashtable_size;
             htreeNode = htreeNode.childs[hashindex];
         }
-            int hashindex = hashcode % pre.hashtable_size;
-            pre.childs[hashindex] = new HtreeNode(pre.high + 1, key, value);
+        int hashindex = hashcode % pre.hashtable_size;
+        pre.childs[hashindex] = new HtreeNode(pre.high + 1, key, value);
         allnodes.add(pre.childs[hashindex]);
             return null;
     }

@@ -5,18 +5,18 @@
 @Service
 class NettyServer {
     fun start() {
-        val group = DefaultEventExecutorGroup(Runtime.getRuntime().availableProcessors())
+        val group = DefaultEventExecutorGroup(8)
         val bossGroup = NioEventLoopGroup(1)
         val workerGroup = NioEventLoopGroup()
         try {
             val b = ServerBootstrap()
             b.group(bossGroup, workerGroup)
-                    .channel(NioServerSocketChannel::class.java)
-                    .option(ChannelOption.SO_BACKLOG, 100)
-                    .childHandler(object : ChannelInitializer<SocketChannel>() {
-                        @Throws(Exception::class)
-                        public override fun initChannel(ch: SocketChannel) {
-                            val p = ch.pipeline()
+                   .channel(NioServerSocketChannel::class.java)
+                   .option(ChannelOption.SO_BACKLOG, 100)
+                   .childHandler(object : ChannelInitializer<SocketChannel>(){
+                       @Throws(Exception::class)
+                       public override fun initChannel(ch: SocketChannel) {
+                           val p = ch.pipeline()
                             //p.addLast(new LoggingHandler(LogLevel.INFO));
                             p.addLast("idle", IdleStateHandler(10, 5, 0))
                             p.addLast("decoder", byteToMysqlDecoder)

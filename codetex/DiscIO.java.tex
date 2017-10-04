@@ -1,243 +1,69 @@
 \noindent
 \ttfamily
 \hlstd{}\hllin{01\ }\hlstd{}\hlcom{/{*}{*}}\\
-\hllin{02\ }\hlcom{\ {*}\ 和内存指针差不多}\\
-\hllin{03\ }\hlcom{\ {*}\ new\ 后得到地址,这里地址是page\ index}\\
-\hllin{04\ }\hlcom{\ {*}\ 每个页面开始分别是type，记录大小，数据，页面后2个字节用来连接每个页面}\\
-\hllin{05\ }\hlcom{\ {*}\ 一个页面pagesize{-}2{-}4{-}4}\\
-\hllin{06\ }\hlcom{\ {*}/}\hlstd{}\\
-\hllin{07\ }\hlstd{}\hlkwa{public\ class\ }\hlstd{DiscIO\ }\hlkwa{implements\ }\hlstd{MdiscIO\ }\hlopt{\symbol{123}}\\
-\hllin{08\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{private\ static\ }\hlstd{DiscIO\ instn\ }\hlopt{=\ }\hlstd{}\hlkwb{null}\hlstd{}\hlopt{;}\\
-\hllin{09\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{String\ filename}\hlopt{;}\\
-\hllin{10\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{MStorage\ storage}\hlopt{;}\\
-\hllin{11\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{Pagemanager\ pagemanager}\hlopt{;}\\
-\hllin{12\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlcom{/{*}{*}}\\
-\hllin{13\ }\hlcom{}\hlstd{\ \ \ \ \ }\hlcom{{*}\ Write\ int.}\\
-\hllin{14\ }\hlcom{}\hlstd{\ \ \ \ \ }\hlcom{{*}\ @param\ o\ the\ o}\\
-\hllin{15\ }\hlcom{}\hlstd{\ \ \ \ \ }\hlcom{{*}\ @return\ the\ int\ 物理页面号！！！}\\
-\hllin{16\ }\hlcom{}\hlstd{\ \ \ \ \ }\hlcom{{*}/}\hlstd{}\\
-\hllin{17\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwc{@Override}\\
-\hllin{18\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{public\ int\ }\hlstd{}\hlkwd{write}\hlstd{}\hlopt{(}\hlstd{Object\ o}\hlopt{)\ \symbol{123}}\\
-\hllin{19\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{byte}\hlstd{}\hlopt{{[}{]}\ }\hlstd{bytes\ }\hlopt{=\ }\hlstd{ObjectSeriaer}\hlopt{.}\hlstd{}\hlkwd{getbytes}\hlstd{}\hlopt{(}\hlstd{o}\hlopt{);}\\
-\hllin{20\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{int}\hlstd{}\hlopt{{[}{]}\ }\hlstd{pages\ }\hlopt{=\ }\hlstd{pagemanager}\hlopt{.}\hlstd{}\hlkwd{getfreepanages}\hlstd{}\hlopt{(}\hlstd{bytes}\hlopt{.}\hlstd{length}\hlopt{);}\\
-\hllin{21\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{pages}\hlopt{.}\hlstd{length\ }\hlopt{==\ }\hlstd{}\hlnum{1}\hlstd{}\hlopt{)\ \symbol{123}}\\
-\hllin{22\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{DB}\hlopt{.}\hlstd{debug}\hlopt{)\ \symbol{123}}\\
-\hllin{23\ }\hlstd{}\\
-\hllin{24\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{System}\hlopt{.}\hlstd{out}\hlopt{.}\hlstd{}\hlkwd{println}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"写页面地址："}\hlstd{\ }\hlopt{+\ }\hlstd{pages}\hlopt{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlopt{{]}\ +\ }\hlstd{}\hlstr{"}\hlstd{\ \ \ }\hlstr{大小："}\hlstd{\ }\hlopt{+\ }\hlstd{bytes}\hlopt{.}\hlstd{length}\hlopt{);}\\
-\hllin{25\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{26\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{try\ }\hlstd{}\hlopt{\symbol{123}}\\
-\hllin{27\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{ByteBuffer\ buffer\ }\hlopt{=\ }\hlstd{storage}\hlopt{.}\hlstd{}\hlkwd{read}\hlstd{}\hlopt{(}\hlstd{pages}\hlopt{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlopt{{]});}\\
-\hllin{28\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{o\ }\hlkwa{instanceof\ }\hlstd{DHtree}\hlopt{)}\\
-\hllin{29\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{putShort}\hlstd{}\hlopt{(}\hlstd{Pagesize}\hlopt{.}\hlstd{pagehead\symbol{95}tree}\hlopt{);}\\
-\hllin{30\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{else\ if\ }\hlstd{}\hlopt{(}\hlstd{o\ }\hlkwa{instanceof\ }\hlstd{DHtreeNode}\hlopt{)\ \symbol{123}}\\
-\hllin{31\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{putShort}\hlstd{}\hlopt{(}\hlstd{Pagesize}\hlopt{.}\hlstd{pagehead\symbol{95}node}\hlopt{);}\\
-\hllin{32\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlopt{\symbol{123}}\\
-\hllin{33\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{putShort}\hlstd{}\hlopt{(}\hlstd{Pagesize}\hlopt{.}\hlstd{pagehead\symbol{95}other}\hlopt{);}\\
-\hllin{34\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{35\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{putInt}\hlstd{}\hlopt{(}\hlstd{bytes}\hlopt{.}\hlstd{length}\hlopt{);}\\
-\hllin{36\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{put}\hlstd{}\hlopt{(}\hlstd{bytes}\hlopt{);}\\
-\hllin{37\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{storage}\hlopt{.}\hlstd{}\hlkwd{write}\hlstd{}\hlopt{(}\hlstd{pages}\hlopt{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlopt{{]},\ }\hlstd{buffer}\hlopt{);}\\
-\hllin{38\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{ObjectMap}\hlopt{.}\hlstd{}\hlkwd{putorupdate}\hlstd{}\hlopt{(}\hlstd{o}\hlopt{,\ }\hlstd{pages}\hlopt{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlopt{{]});}\\
-\hllin{39\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{pages}\hlopt{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlopt{{]};}\\
-\hllin{40\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwa{catch\ }\hlstd{}\hlopt{(}\hlstd{IOException\ e}\hlopt{)\ \symbol{123}}\\
-\hllin{41\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{e}\hlopt{.}\hlstd{}\hlkwd{printStackTrace}\hlstd{}\hlopt{();}\\
-\hllin{42\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{43\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlopt{\symbol{123}}\\
-\hllin{44\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{}\hlkwd{writemorepage}\hlstd{}\hlopt{(}\hlstd{bytes}\hlopt{,\ }\hlstd{pages}\hlopt{,\ }\hlstd{o}\hlopt{);}\\
-\hllin{45\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{46\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{}\hlnum{0}\hlstd{}\hlopt{;}\\
-\hllin{47\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{48\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{private\ int\ }\hlstd{}\hlkwd{writemorepage}\hlstd{}\hlopt{(}\hlstd{}\hlkwa{byte}\hlstd{}\hlopt{{[}{]}\ }\hlstd{bytes}\hlopt{,\ }\hlstd{}\hlkwa{int}\hlstd{}\hlopt{{[}{]}\ }\hlstd{pages}\hlopt{,\ }\hlstd{Object\ o}\hlopt{)\ \symbol{123}}\\
-\hllin{49\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{int\ }\hlstd{sum\ }\hlopt{=\ }\hlstd{bytes}\hlopt{.}\hlstd{length}\hlopt{;}\\
-\hllin{50\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{int\ }\hlstd{byteindex\ }\hlopt{=\ }\hlstd{}\hlnum{0}\hlstd{}\hlopt{;}\\
-\hllin{51\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{for\ }\hlstd{}\hlopt{(}\hlstd{}\hlkwa{int\ }\hlstd{i\ }\hlopt{=\ }\hlstd{}\hlnum{0}\hlstd{}\hlopt{;\ }\hlstd{i\ }\hlopt{\symbol{60}\ }\hlstd{pages}\hlopt{.}\hlstd{length}\hlopt{;\ }\hlstd{i}\hlopt{++)\ \symbol{123}}\\
-\hllin{52\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{try\ }\hlstd{}\hlopt{\symbol{123}}\\
-\hllin{53\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{ByteBuffer\ buffer\ }\hlopt{=\ }\hlstd{storage}\hlopt{.}\hlstd{}\hlkwd{read}\hlstd{}\hlopt{(}\hlstd{pages}\hlopt{{[}}\hlstd{i}\hlopt{{]});}\\
-\hllin{54\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{o\ }\hlkwa{instanceof\ }\hlstd{DHtree}\hlopt{)}\\
-\hllin{55\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{putShort}\hlstd{}\hlopt{(}\hlstd{Pagesize}\hlopt{.}\hlstd{pagehead\symbol{95}tree}\hlopt{);}\\
-\hllin{56\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{else\ if\ }\hlstd{}\hlopt{(}\hlstd{o\ }\hlkwa{instanceof\ }\hlstd{DHtreeNode}\hlopt{)\ \symbol{123}}\\
-\hllin{57\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{putShort}\hlstd{}\hlopt{(}\hlstd{Pagesize}\hlopt{.}\hlstd{pagehead\symbol{95}node}\hlopt{);}\\
-\hllin{58\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlopt{\symbol{123}}\\
-\hllin{59\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{putShort}\hlstd{}\hlopt{(}\hlstd{Pagesize}\hlopt{.}\hlstd{pagehead\symbol{95}other}\hlopt{);}\\
-\hllin{60\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{61\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{putInt}\hlstd{}\hlopt{(}\hlstd{bytes}\hlopt{.}\hlstd{length}\hlopt{);}\\
-\hllin{62\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{i\ }\hlopt{\symbol{60}\ }\hlstd{pages}\hlopt{.}\hlstd{length\ }\hlopt{{-}\ }\hlstd{}\hlnum{1}\hlstd{}\hlopt{)\ \symbol{123}}\\
-\hllin{63\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{put}\hlstd{}\hlopt{(}\hlstd{bytes}\hlopt{,\ }\hlstd{byteindex}\hlopt{,\ }\hlstd{Pagesize}\hlopt{.}\hlstd{page\symbol{95}size\symbol{95}for\symbol{95}content}\hlopt{);}\\
-\hllin{64\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{byteindex\ }\hlopt{+=\ }\hlstd{Pagesize}\hlopt{.}\hlstd{page\symbol{95}size\symbol{95}for\symbol{95}content}\hlopt{;}\\
-\hllin{65\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{position}\hlstd{}\hlopt{(}\hlstd{Pagesize}\hlopt{.}\hlstd{page\symbol{95}size\ }\hlopt{{-}\ }\hlstd{}\hlnum{4}\hlstd{}\hlopt{);}\\
-\hllin{66\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{putInt}\hlstd{}\hlopt{(}\hlstd{pages}\hlopt{{[}}\hlstd{i\ }\hlopt{+\ }\hlstd{}\hlnum{1}\hlstd{}\hlopt{{]});}\\
-\hllin{67\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{DB}\hlopt{.}\hlstd{debug}\hlopt{)\ \symbol{123}}\\
-\hllin{68\ }\hlstd{}\\
-\hllin{69\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{System}\hlopt{.}\hlstd{out}\hlopt{.}\hlstd{}\hlkwd{println}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"写页面地址："}\hlstd{\ }\hlopt{+\ }\hlstd{pages}\hlopt{{[}}\hlstd{i}\hlopt{{]}\ +\ }\hlstd{}\hlstr{"}\hlstd{\ \ \ }\hlstr{大小："}\hlstd{\ }\hlopt{+\ }\hlstd{Pagesize}\hlopt{.}\hlstd{page\symbol{95}size\symbol{95}for\symbol{95}content}\hlopt{);}\\
-\hllin{70\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{71\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{sum\ }\hlopt{{-}=\ }\hlstd{Pagesize}\hlopt{.}\hlstd{page\symbol{95}size\symbol{95}for\symbol{95}content}\hlopt{;}\\
-\hllin{72\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlopt{\symbol{123}}\\
-\hllin{73\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{sum\ }\hlopt{\symbol{62}\ }\hlstd{}\hlnum{0}\hlstd{}\hlopt{)\ \symbol{123}}\\
-\hllin{74\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{DB}\hlopt{.}\hlstd{debug}\hlopt{)\ \symbol{123}}\\
-\hllin{75\ }\hlstd{}\\
-\hllin{76\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{System}\hlopt{.}\hlstd{out}\hlopt{.}\hlstd{}\hlkwd{println}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"写页面地址："}\hlstd{\ }\hlopt{+\ }\hlstd{pages}\hlopt{{[}}\hlstd{i}\hlopt{{]}\ +\ }\hlstd{}\hlstr{"}\hlstd{\ \ \ }\hlstr{大小："}\hlstd{\ }\hlopt{+\ }\hlstd{sum}\hlopt{);}\\
-\hllin{77\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{78\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{put}\hlstd{}\hlopt{(}\hlstd{bytes}\hlopt{,\ }\hlstd{byteindex}\hlopt{,\ }\hlstd{sum}\hlopt{);}\\
-\hllin{79\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{position}\hlstd{}\hlopt{(}\hlstd{Pagesize}\hlopt{.}\hlstd{page\symbol{95}size\ }\hlopt{{-}\ }\hlstd{}\hlnum{4}\hlstd{}\hlopt{);}\\
-\hllin{80\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{putInt}\hlstd{}\hlopt{(}\hlstd{}\hlnum{0}\hlstd{}\hlopt{);}\\
-\hllin{81\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{pages}\hlopt{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlopt{{]};}\\
-\hllin{82\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlopt{\symbol{123}}\\
-\hllin{83\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{pages}\hlopt{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlopt{{]};}\\
-\hllin{84\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{85\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{86\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{storage}\hlopt{.}\hlstd{}\hlkwd{write}\hlstd{}\hlopt{(}\hlstd{pages}\hlopt{{[}}\hlstd{i}\hlopt{{]},\ }\hlstd{buffer}\hlopt{);}\\
-\hllin{87\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwa{catch\ }\hlstd{}\hlopt{(}\hlstd{IOException\ e}\hlopt{)\ \symbol{123}}\\
-\hllin{88\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{e}\hlopt{.}\hlstd{}\hlkwd{printStackTrace}\hlstd{}\hlopt{();}\\
-\hllin{89\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{90\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{91\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{ObjectMap}\hlopt{.}\hlstd{}\hlkwd{putorupdate}\hlstd{}\hlopt{(}\hlstd{o}\hlopt{,\ }\hlstd{pages}\hlopt{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlopt{{]});}\\
-\hllin{92\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{pages}\hlopt{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlopt{{]};}\\
-\hllin{93\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{94\ }\hlstd{}\\
-\hllin{95\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwc{@Override}\\
-\hllin{96\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{public\ int\ }\hlstd{}\hlkwd{update}\hlstd{}\hlopt{(}\hlstd{Object\ o}\hlopt{,\ }\hlstd{}\hlkwa{int\ }\hlstd{recid}\hlopt{)\ \symbol{123}}\\
-\hllin{97\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(!}\hlstd{ObjectMap}\hlopt{.}\hlstd{map}\hlopt{.}\hlstd{}\hlkwd{containsKey}\hlstd{}\hlopt{(}\hlstd{recid}\hlopt{))\ \symbol{123}}\\
-\hllin{98\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{}\hlopt{{-}}\hlstd{}\hlnum{1}\hlstd{}\hlopt{;}\\
-\hllin{99\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{100\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{byte}\hlstd{}\hlopt{{[}{]}\ }\hlstd{bytes\ }\hlopt{=\ }\hlstd{ObjectSeriaer}\hlopt{.}\hlstd{}\hlkwd{getbytes}\hlstd{}\hlopt{(}\hlstd{o}\hlopt{);}\\
-\hllin{101\ }\hlstd{}\\
-\hllin{102\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{bytes}\hlopt{.}\hlstd{length\ }\hlopt{\symbol{60}=\ }\hlstd{Pagesize}\hlopt{.}\hlstd{page\symbol{95}size\symbol{95}for\symbol{95}content}\hlopt{)\ \symbol{123}}\\
-\hllin{103\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{DB}\hlopt{.}\hlstd{debug}\hlopt{)\ \symbol{123}}\\
-\hllin{104\ }\hlstd{}\\
-\hllin{105\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{System}\hlopt{.}\hlstd{out}\hlopt{.}\hlstd{}\hlkwd{println}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"更新页面地址："}\hlstd{\ }\hlopt{+\ }\hlstd{recid\ }\hlopt{+\ }\hlstd{}\hlstr{"}\hlstd{\ \ \ }\hlstr{大小："}\hlstd{\ }\hlopt{+\ }\hlstd{bytes}\hlopt{.}\hlstd{length}\hlopt{);}\\
-\hllin{106\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{107\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{try\ }\hlstd{}\hlopt{\symbol{123}}\\
-\hllin{108\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{ByteBuffer\ buffer\ }\hlopt{=\ }\hlstd{storage}\hlopt{.}\hlstd{}\hlkwd{read}\hlstd{}\hlopt{(}\hlstd{recid}\hlopt{);}\\
-\hllin{109\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{o\ }\hlkwa{instanceof\ }\hlstd{DHtree}\hlopt{)}\\
-\hllin{110\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{putShort}\hlstd{}\hlopt{(}\hlstd{Pagesize}\hlopt{.}\hlstd{pagehead\symbol{95}tree}\hlopt{);}\\
-\hllin{111\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{else\ if\ }\hlstd{}\hlopt{(}\hlstd{o\ }\hlkwa{instanceof\ }\hlstd{DHtreeNode}\hlopt{)\ \symbol{123}}\\
-\hllin{112\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{putShort}\hlstd{}\hlopt{(}\hlstd{Pagesize}\hlopt{.}\hlstd{pagehead\symbol{95}node}\hlopt{);}\\
-\hllin{113\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlopt{\symbol{123}}\\
-\hllin{114\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{putShort}\hlstd{}\hlopt{(}\hlstd{Pagesize}\hlopt{.}\hlstd{pagehead\symbol{95}other}\hlopt{);}\\
-\hllin{115\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{116\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{putInt}\hlstd{}\hlopt{(}\hlstd{bytes}\hlopt{.}\hlstd{length}\hlopt{);}\\
-\hllin{117\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{put}\hlstd{}\hlopt{(}\hlstd{bytes}\hlopt{);}\\
-\hllin{118\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{storage}\hlopt{.}\hlstd{}\hlkwd{write}\hlstd{}\hlopt{(}\hlstd{recid}\hlopt{,\ }\hlstd{buffer}\hlopt{);}\\
-\hllin{119\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{ObjectMap}\hlopt{.}\hlstd{}\hlkwd{putorupdate}\hlstd{}\hlopt{(}\hlstd{o}\hlopt{,\ }\hlstd{recid}\hlopt{);}\\
-\hllin{120\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{recid}\hlopt{;}\\
-\hllin{121\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwa{catch\ }\hlstd{}\hlopt{(}\hlstd{IOException\ e}\hlopt{)\ \symbol{123}}\\
-\hllin{122\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{e}\hlopt{.}\hlstd{}\hlkwd{printStackTrace}\hlstd{}\hlopt{();}\\
-\hllin{123\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{}\hlopt{{-}}\hlstd{}\hlnum{1}\hlstd{}\hlopt{;}\\
-\hllin{124\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{125\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlopt{\symbol{123}}\\
-\hllin{126\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{updatemoredata}\hlstd{}\hlopt{(}\hlstd{bytes}\hlopt{,\ }\hlstd{recid}\hlopt{,\ }\hlstd{o}\hlopt{);}\\
-\hllin{127\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{recid}\hlopt{;}\\
-\hllin{128\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{129\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{130\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{private\ void\ }\hlstd{}\hlkwd{updatemoredata}\hlstd{}\hlopt{(}\hlstd{}\hlkwa{byte}\hlstd{}\hlopt{{[}{]}\ }\hlstd{bytes}\hlopt{,\ }\hlstd{}\hlkwa{int\ }\hlstd{recid}\hlopt{,\ }\hlstd{Object\ o}\hlopt{)\ \symbol{123}}\\
-\hllin{131\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{int\ }\hlstd{sum\ }\hlopt{=\ }\hlstd{bytes}\hlopt{.}\hlstd{length}\hlopt{;}\\
-\hllin{132\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{int\ }\hlstd{pageid\ }\hlopt{=\ }\hlstd{recid}\hlopt{;}\\
-\hllin{133\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{int\ }\hlstd{byteindex\ }\hlopt{=\ }\hlstd{}\hlnum{0}\hlstd{}\hlopt{;}\\
-\hllin{134\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{while\ }\hlstd{}\hlopt{(}\hlstd{sum\ }\hlopt{\symbol{62}\ }\hlstd{}\hlnum{0\ }\hlstd{}\hlopt{\&\&\ }\hlstd{byteindex\ }\hlopt{\symbol{60}\ }\hlstd{bytes}\hlopt{.}\hlstd{length}\hlopt{)\ \symbol{123}}\\
-\hllin{135\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{try\ }\hlstd{}\hlopt{\symbol{123}}\\
-\hllin{136\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{ByteBuffer\ buffer\ }\hlopt{=\ }\hlstd{storage}\hlopt{.}\hlstd{}\hlkwd{read}\hlstd{}\hlopt{(}\hlstd{pageid}\hlopt{);}\\
-\hllin{137\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{putShort}\hlstd{}\hlopt{(}\hlstd{Pagesize}\hlopt{.}\hlstd{pagehead\symbol{95}node}\hlopt{);}\\
-\hllin{138\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{putInt}\hlstd{}\hlopt{(}\hlstd{bytes}\hlopt{.}\hlstd{length}\hlopt{);}\\
-\hllin{139\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{sum\ }\hlopt{\symbol{62}=\ }\hlstd{Pagesize}\hlopt{.}\hlstd{page\symbol{95}size\symbol{95}for\symbol{95}content}\hlopt{)\ \symbol{123}}\\
-\hllin{140\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{put}\hlstd{}\hlopt{(}\hlstd{bytes}\hlopt{,\ }\hlstd{byteindex}\hlopt{,\ }\hlstd{Pagesize}\hlopt{.}\hlstd{page\symbol{95}size\symbol{95}for\symbol{95}content}\hlopt{);}\\
-\hllin{141\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{byteindex\ }\hlopt{+=\ }\hlstd{Pagesize}\hlopt{.}\hlstd{page\symbol{95}size\symbol{95}for\symbol{95}content}\hlopt{;}\\
-\hllin{142\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{sum\ }\hlopt{{-}=\ }\hlstd{Pagesize}\hlopt{.}\hlstd{page\symbol{95}size\symbol{95}for\symbol{95}content}\hlopt{;}\\
-\hllin{143\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{position}\hlstd{}\hlopt{(}\hlstd{Pagesize}\hlopt{.}\hlstd{page\symbol{95}size\ }\hlopt{{-}\ }\hlstd{}\hlnum{4}\hlstd{}\hlopt{);}\\
-\hllin{144\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{pageid\ }\hlopt{=\ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{getInt}\hlstd{}\hlopt{();}\\
-\hllin{145\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{pageid\ }\hlopt{\symbol{60}=\ }\hlstd{}\hlnum{0}\hlstd{}\hlopt{)\ \symbol{123}}\\
-\hllin{146\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{ByteBuffer\ byteBuffer\ }\hlopt{=\ }\hlstd{ByteBuffer}\hlopt{.}\hlstd{}\hlkwd{wrap}\hlstd{}\hlopt{(}\hlstd{bytes}\hlopt{);}\\
-\hllin{147\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{byteBuffer}\hlopt{.}\hlstd{}\hlkwd{position}\hlstd{}\hlopt{(}\hlstd{byteindex}\hlopt{);}\\
-\hllin{148\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{int}\hlstd{}\hlopt{{[}{]}\ }\hlstd{ps\ }\hlopt{=\ }\hlstd{pagemanager}\hlopt{.}\hlstd{}\hlkwd{getfreepanages}\hlstd{}\hlopt{(}\hlstd{sum}\hlopt{);}\\
-\hllin{149\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{position}\hlstd{}\hlopt{(}\hlstd{Pagesize}\hlopt{.}\hlstd{page\symbol{95}size\ }\hlopt{{-}\ }\hlstd{}\hlnum{4}\hlstd{}\hlopt{);}\\
-\hllin{150\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{putInt}\hlstd{}\hlopt{(}\hlstd{ps}\hlopt{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlopt{{]});}\\
-\hllin{151\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{byte}\hlstd{}\hlopt{{[}{]}\ }\hlstd{news\ }\hlopt{=\ }\hlstd{}\hlkwa{new\ byte}\hlstd{}\hlopt{{[}}\hlstd{sum}\hlopt{{]};}\\
-\hllin{152\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{byteBuffer}\hlopt{.}\hlstd{}\hlkwd{get}\hlstd{}\hlopt{(}\hlstd{news}\hlopt{);}\\
-\hllin{153\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{writemorepage}\hlstd{}\hlopt{(}\hlstd{news}\hlopt{,\ }\hlstd{ps}\hlopt{,\ }\hlstd{o}\hlopt{);}\\
-\hllin{154\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return}\hlstd{}\hlopt{;}\\
-\hllin{155\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{156\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlopt{\symbol{123}}\\
-\hllin{157\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{sum\ }\hlopt{\symbol{62}\ }\hlstd{}\hlnum{0}\hlstd{}\hlopt{)\ \symbol{123}}\\
-\hllin{158\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{put}\hlstd{}\hlopt{(}\hlstd{bytes}\hlopt{,\ }\hlstd{byteindex}\hlopt{,\ }\hlstd{sum}\hlopt{);}\\
-\hllin{159\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{position}\hlstd{}\hlopt{(}\hlstd{Pagesize}\hlopt{.}\hlstd{page\symbol{95}size\ }\hlopt{{-}\ }\hlstd{}\hlnum{4}\hlstd{}\hlopt{);}\\
-\hllin{160\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{putInt}\hlstd{}\hlopt{(}\hlstd{}\hlnum{0}\hlstd{}\hlopt{);}\\
-\hllin{161\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{sum\ }\hlopt{{-}=\ }\hlstd{sum}\hlopt{;}\\
-\hllin{162\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlopt{\symbol{123}}\\
-\hllin{163\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return}\hlstd{}\hlopt{;}\\
-\hllin{164\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{165\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{166\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwa{catch\ }\hlstd{}\hlopt{(}\hlstd{IOException\ e}\hlopt{)\ \symbol{123}}\\
-\hllin{167\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{e}\hlopt{.}\hlstd{}\hlkwd{printStackTrace}\hlstd{}\hlopt{();}\\
-\hllin{168\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{169\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{170\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{171\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwc{@Override}\\
-\hllin{172\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{public\ }\hlstd{}\hlopt{\symbol{60}}\hlstd{T}\hlopt{\symbol{62}\ }\hlstd{T\ }\hlkwd{read}\hlstd{}\hlopt{(}\hlstd{}\hlkwa{int\ }\hlstd{id}\hlopt{)\ \symbol{123}}\\
-\hllin{173\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{try\ }\hlstd{}\hlopt{\symbol{123}}\\
-\hllin{174\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{ByteBuffer\ buffer\ }\hlopt{=\ }\hlstd{storage}\hlopt{.}\hlstd{}\hlkwd{read}\hlstd{}\hlopt{(}\hlstd{id}\hlopt{);}\\
-\hllin{175\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{short\ }\hlstd{type\ }\hlopt{=\ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{getShort}\hlstd{}\hlopt{();}\\
-\hllin{176\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{int\ }\hlstd{size\ }\hlopt{=\ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{getInt}\hlstd{}\hlopt{();}\\
-\hllin{177\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{byte}\hlstd{}\hlopt{{[}{]}\ }\hlstd{buff\ }\hlopt{=\ }\hlstd{}\hlkwa{new\ byte}\hlstd{}\hlopt{{[}}\hlstd{size}\hlopt{{]};}\\
-\hllin{178\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{size\ }\hlopt{\symbol{60}=\ }\hlstd{Pagesize}\hlopt{.}\hlstd{page\symbol{95}size\symbol{95}for\symbol{95}content}\hlopt{)\ \symbol{123}}\\
-\hllin{179\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{DB}\hlopt{.}\hlstd{debug}\hlopt{)\ \symbol{123}}\\
-\hllin{180\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{System}\hlopt{.}\hlstd{out}\hlopt{.}\hlstd{}\hlkwd{println}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"得到页面地址："}\hlstd{\ }\hlopt{+\ }\hlstd{id\ }\hlopt{+\ }\hlstd{}\hlstr{"}\hlstd{\ \ \ }\hlstr{大小："}\hlstd{\ }\hlopt{+\ }\hlstd{size}\hlopt{);}\\
-\hllin{181\ }\hlstd{}\\
-\hllin{182\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{183\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{get}\hlstd{}\hlopt{(}\hlstd{buff}\hlopt{);}\\
-\hllin{184\ }\hlstd{}\\
-\hllin{185\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlopt{\symbol{123}}\\
-\hllin{186\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{get}\hlstd{}\hlopt{(}\hlstd{buff}\hlopt{,\ }\hlstd{}\hlnum{0}\hlstd{}\hlopt{,\ }\hlstd{Pagesize}\hlopt{.}\hlstd{page\symbol{95}size\symbol{95}for\symbol{95}content}\hlopt{);}\\
-\hllin{187\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{DB}\hlopt{.}\hlstd{debug}\hlopt{)\ \symbol{123}}\\
-\hllin{188\ }\hlstd{}\\
-\hllin{189\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{System}\hlopt{.}\hlstd{out}\hlopt{.}\hlstd{}\hlkwd{println}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"得到页面地址："}\hlstd{\ }\hlopt{+\ }\hlstd{id\ }\hlopt{+\ }\hlstd{}\hlstr{"}\hlstd{\ \ \ }\hlstr{大小："}\hlstd{\ }\hlopt{+\ }\hlstd{Pagesize}\hlopt{.}\hlstd{page\symbol{95}size\symbol{95}for\symbol{95}content}\hlopt{);}\\
-\hllin{190\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{191\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{position}\hlstd{}\hlopt{(}\hlstd{Pagesize}\hlopt{.}\hlstd{page\symbol{95}size\ }\hlopt{{-}\ }\hlstd{}\hlnum{4}\hlstd{}\hlopt{);}\\
-\hllin{192\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{int\ }\hlstd{nextpage\ }\hlopt{=\ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{getInt}\hlstd{}\hlopt{();}\\
-\hllin{193\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{readmoredata}\hlstd{}\hlopt{(}\hlstd{nextpage}\hlopt{,\ }\hlstd{size\ }\hlopt{{-}\ }\hlstd{Pagesize}\hlopt{.}\hlstd{page\symbol{95}size\symbol{95}for\symbol{95}content}\hlopt{,\ }\hlstd{buff}\hlopt{);}\\
-\hllin{194\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{195\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{T\ object\ }\hlopt{=\ }\hlstd{ObjectSeriaer}\hlopt{.}\hlstd{}\hlkwd{getObject}\hlstd{}\hlopt{(}\hlstd{buff}\hlopt{);}\\
-\hllin{196\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{ObjectMap}\hlopt{.}\hlstd{}\hlkwd{putorupdate}\hlstd{}\hlopt{(}\hlstd{object}\hlopt{,\ }\hlstd{id}\hlopt{);}\\
-\hllin{197\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{object}\hlopt{;}\\
-\hllin{198\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwa{catch\ }\hlstd{}\hlopt{(}\hlstd{IOException\ e}\hlopt{)\ \symbol{123}}\\
-\hllin{199\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{e}\hlopt{.}\hlstd{}\hlkwd{printStackTrace}\hlstd{}\hlopt{();}\\
-\hllin{200\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{201\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{}\hlkwb{null}\hlstd{}\hlopt{;}\\
-\hllin{202\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{203\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlslc{//下个页面和剩下的大小,}\\
-\hllin{204\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{private\ void\ }\hlstd{}\hlkwd{readmoredata}\hlstd{}\hlopt{(}\hlstd{}\hlkwa{int\ }\hlstd{pagestartid}\hlopt{,\ }\hlstd{}\hlkwa{int\ }\hlstd{size}\hlopt{,\ }\hlstd{}\hlkwa{byte}\hlstd{}\hlopt{{[}{]}\ }\hlstd{buff}\hlopt{)\ \symbol{123}}\\
-\hllin{205\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{int\ }\hlstd{nextpage\ }\hlopt{=\ }\hlstd{pagestartid}\hlopt{;}\\
-\hllin{206\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{int\ }\hlstd{remain\ }\hlopt{=\ }\hlstd{size}\hlopt{;}\\
-\hllin{207\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{int\ }\hlstd{bytebuffindex\ }\hlopt{=\ }\hlstd{Pagesize}\hlopt{.}\hlstd{page\symbol{95}size\symbol{95}for\symbol{95}content}\hlopt{;}\\
-\hllin{208\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{while\ }\hlstd{}\hlopt{(}\hlstd{remain\ }\hlopt{\symbol{62}\ }\hlstd{}\hlnum{0\ }\hlstd{}\hlopt{\&\&\ }\hlstd{nextpage\ }\hlopt{\symbol{62}\ }\hlstd{}\hlnum{0\ }\hlstd{}\hlopt{\&\&\ }\hlstd{bytebuffindex\ }\hlopt{\symbol{60}\ }\hlstd{buff}\hlopt{.}\hlstd{length}\hlopt{)\ \symbol{123}}\\
-\hllin{209\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{try\ }\hlstd{}\hlopt{\symbol{123}}\\
-\hllin{210\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{ByteBuffer\ buffer\ }\hlopt{=\ }\hlstd{storage}\hlopt{.}\hlstd{}\hlkwd{read}\hlstd{}\hlopt{(}\hlstd{nextpage}\hlopt{);}\\
-\hllin{211\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{short\ }\hlstd{type\ }\hlopt{=\ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{getShort}\hlstd{}\hlopt{();}\\
-\hllin{212\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{int\ }\hlstd{s\ }\hlopt{=\ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{getInt}\hlstd{}\hlopt{();}\\
-\hllin{213\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{remain\ }\hlopt{\symbol{62}\ }\hlstd{Pagesize}\hlopt{.}\hlstd{page\symbol{95}size\symbol{95}for\symbol{95}content}\hlopt{)\ \symbol{123}}\\
-\hllin{214\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{DB}\hlopt{.}\hlstd{debug}\hlopt{)\ \symbol{123}}\\
-\hllin{215\ }\hlstd{}\\
-\hllin{216\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{System}\hlopt{.}\hlstd{out}\hlopt{.}\hlstd{}\hlkwd{println}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"得到页面地址："}\hlstd{\ }\hlopt{+\ }\hlstd{nextpage\ }\hlopt{+\ }\hlstd{}\hlstr{"}\hlstd{\ \ \ }\hlstr{大小："}\hlstd{\ }\hlopt{+\ }\hlstd{Pagesize}\hlopt{.}\hlstd{page\symbol{95}size\symbol{95}for\symbol{95}content}\hlopt{);}\\
-\hllin{217\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{218\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{get}\hlstd{}\hlopt{(}\hlstd{buff}\hlopt{,\ }\hlstd{bytebuffindex}\hlopt{,\ }\hlstd{Pagesize}\hlopt{.}\hlstd{page\symbol{95}size\symbol{95}for\symbol{95}content}\hlopt{);}\\
-\hllin{219\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{remain\ }\hlopt{{-}=\ }\hlstd{Pagesize}\hlopt{.}\hlstd{page\symbol{95}size\symbol{95}for\symbol{95}content}\hlopt{;}\\
-\hllin{220\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{bytebuffindex\ }\hlopt{+=\ }\hlstd{Pagesize}\hlopt{.}\hlstd{page\symbol{95}size\symbol{95}for\symbol{95}content}\hlopt{;}\\
-\hllin{221\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{position}\hlstd{}\hlopt{(}\hlstd{Pagesize}\hlopt{.}\hlstd{page\symbol{95}size\ }\hlopt{{-}\ }\hlstd{}\hlnum{4}\hlstd{}\hlopt{);}\\
-\hllin{222\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{nextpage\ }\hlopt{=\ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{getInt}\hlstd{}\hlopt{();}\\
-\hllin{223\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlopt{\symbol{123}}\\
-\hllin{224\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{get}\hlstd{}\hlopt{(}\hlstd{buff}\hlopt{,\ }\hlstd{bytebuffindex}\hlopt{,\ }\hlstd{remain}\hlopt{);}\\
-\hllin{225\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{DB}\hlopt{.}\hlstd{debug}\hlopt{)\ \symbol{123}}\\
-\hllin{226\ }\hlstd{}\\
-\hllin{227\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{System}\hlopt{.}\hlstd{out}\hlopt{.}\hlstd{}\hlkwd{println}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"得到页面地址："}\hlstd{\ }\hlopt{+\ }\hlstd{nextpage\ }\hlopt{+\ }\hlstd{}\hlstr{"}\hlstd{\ \ \ }\hlstr{大小："}\hlstd{\ }\hlopt{+\ }\hlstd{remain}\hlopt{);}\\
-\hllin{228\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{229\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return}\hlstd{}\hlopt{;}\\
-\hllin{230\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{231\ }\hlstd{}\\
-\hllin{232\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwa{catch\ }\hlstd{}\hlopt{(}\hlstd{IOException\ e}\hlopt{)\ \symbol{123}}\\
-\hllin{233\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{e}\hlopt{.}\hlstd{}\hlkwd{printStackTrace}\hlstd{}\hlopt{();}\\
-\hllin{234\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{235\ }\hlstd{}\\
-\hllin{236\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{237\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{238\ }\hlstd{}\hlopt{\symbol{125}}\hlstd{}
+\hllin{02\ }\hlcom{\ {*}\ 和内存指针差不多，new\ 后得到地址,这里地址是page\ index}\\
+\hllin{03\ }\hlcom{\ {*}\ 每个页面开始分别是type，记录大小，数据，页面后2个字节用来连接每个页面}\\
+\hllin{04\ }\hlcom{\ {*}\ 一个页面pagesize{-}2{-}4{-}4}\\
+\hllin{05\ }\hlcom{\ {*}/}\hlstd{}\\
+\hllin{06\ }\hlstd{}\hlkwa{public\ class\ }\hlstd{DiscIO\ }\hlkwa{implements\ }\hlstd{MdiscIO\ }\hlopt{\symbol{123}}\\
+\hllin{07\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwc{@Override}\\
+\hllin{08\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{public\ int\ }\hlstd{}\hlkwd{write}\hlstd{}\hlopt{(}\hlstd{Object\ o}\hlopt{)\ \symbol{123}}\\
+\hllin{09\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{byte}\hlstd{}\hlopt{{[}{]}\ }\hlstd{bytes\ }\hlopt{=\ }\hlstd{ObjectSeriaer}\hlopt{.}\hlstd{}\hlkwd{getbytes}\hlstd{}\hlopt{(}\hlstd{o}\hlopt{);}\\
+\hllin{10\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{int}\hlstd{}\hlopt{{[}{]}\ }\hlstd{pages\ }\hlopt{=\ }\hlstd{pagemanager}\hlopt{.}\hlstd{}\hlkwd{getfreepanages}\hlstd{}\hlopt{(}\hlstd{bytes}\hlopt{.}\hlstd{length}\hlopt{);}\\
+\hllin{11\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{pages}\hlopt{.}\hlstd{length\ }\hlopt{==\ }\hlstd{}\hlnum{1}\hlstd{}\hlopt{)\ \symbol{123}}\\
+\hllin{12\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{try\ }\hlstd{}\hlopt{\symbol{123}}\\
+\hllin{13\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{ByteBuffer\ buffer\ }\hlopt{=\ }\hlstd{storage}\hlopt{.}\hlstd{}\hlkwd{read}\hlstd{}\hlopt{(}\hlstd{pages}\hlopt{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlopt{{]});}\\
+\hllin{14\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{o\ }\hlkwa{instanceof\ }\hlstd{DHtree}\hlopt{)}\\
+\hllin{15\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{putShort}\hlstd{}\hlopt{(}\hlstd{Pagesize}\hlopt{.}\hlstd{pagehead\symbol{95}tree}\hlopt{);}\\
+\hllin{16\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{else\ if\ }\hlstd{}\hlopt{(}\hlstd{o\ }\hlkwa{instanceof\ }\hlstd{DHtreeNode}\hlopt{)\ \symbol{123}}\\
+\hllin{17\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{putShort}\hlstd{}\hlopt{(}\hlstd{Pagesize}\hlopt{.}\hlstd{pagehead\symbol{95}node}\hlopt{);}\\
+\hllin{18\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlopt{\symbol{123}}\\
+\hllin{19\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{putShort}\hlstd{}\hlopt{(}\hlstd{Pagesize}\hlopt{.}\hlstd{pagehead\symbol{95}other}\hlopt{);}\\
+\hllin{20\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{21\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{putInt}\hlstd{}\hlopt{(}\hlstd{bytes}\hlopt{.}\hlstd{length}\hlopt{);}\\
+\hllin{22\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{put}\hlstd{}\hlopt{(}\hlstd{bytes}\hlopt{);}\\
+\hllin{23\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{storage}\hlopt{.}\hlstd{}\hlkwd{write}\hlstd{}\hlopt{(}\hlstd{pages}\hlopt{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlopt{{]},\ }\hlstd{buffer}\hlopt{);}\\
+\hllin{24\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{ObjectMap}\hlopt{.}\hlstd{}\hlkwd{putorupdate}\hlstd{}\hlopt{(}\hlstd{o}\hlopt{,\ }\hlstd{pages}\hlopt{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlopt{{]});}\\
+\hllin{25\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{pages}\hlopt{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlopt{{]};}\\
+\hllin{26\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwa{catch\ }\hlstd{}\hlopt{(}\hlstd{IOException\ e}\hlopt{)\ \symbol{123}}\\
+\hllin{27\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{e}\hlopt{.}\hlstd{}\hlkwd{printStackTrace}\hlstd{}\hlopt{();}\\
+\hllin{28\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{29\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlopt{\symbol{123}}\\
+\hllin{30\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{}\hlkwd{writemorepage}\hlstd{}\hlopt{(}\hlstd{bytes}\hlopt{,\ }\hlstd{pages}\hlopt{,\ }\hlstd{o}\hlopt{);}\\
+\hllin{31\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{32\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{}\hlnum{0}\hlstd{}\hlopt{;}\\
+\hllin{33\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{34\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwc{@Override}\\
+\hllin{35\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{public\ int\ }\hlstd{}\hlkwd{update}\hlstd{}\hlopt{(}\hlstd{Object\ o}\hlopt{,\ }\hlstd{}\hlkwa{int\ }\hlstd{recid}\hlopt{)\ \symbol{123}}\\
+\hllin{36\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(!}\hlstd{ObjectMap}\hlopt{.}\hlstd{map}\hlopt{.}\hlstd{}\hlkwd{containsKey}\hlstd{}\hlopt{(}\hlstd{recid}\hlopt{))\ \symbol{123}}\\
+\hllin{37\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{}\hlopt{{-}}\hlstd{}\hlnum{1}\hlstd{}\hlopt{;}\\
+\hllin{38\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{39\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{byte}\hlstd{}\hlopt{{[}{]}\ }\hlstd{bytes\ }\hlopt{=\ }\hlstd{ObjectSeriaer}\hlopt{.}\hlstd{}\hlkwd{getbytes}\hlstd{}\hlopt{(}\hlstd{o}\hlopt{);}\\
+\hllin{40\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{bytes}\hlopt{.}\hlstd{length\ }\hlopt{\symbol{60}=\ }\hlstd{Pagesize}\hlopt{.}\hlstd{page\symbol{95}size\symbol{95}for\symbol{95}content}\hlopt{)\ \symbol{123}}\\
+\hllin{41\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{try\ }\hlstd{}\hlopt{\symbol{123}}\\
+\hllin{42\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{ByteBuffer\ buffer\ }\hlopt{=\ }\hlstd{storage}\hlopt{.}\hlstd{}\hlkwd{read}\hlstd{}\hlopt{(}\hlstd{recid}\hlopt{);}\\
+\hllin{43\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlopt{(}\hlstd{o\ }\hlkwa{instanceof\ }\hlstd{DHtree}\hlopt{)}\\
+\hllin{44\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{putShort}\hlstd{}\hlopt{(}\hlstd{Pagesize}\hlopt{.}\hlstd{pagehead\symbol{95}tree}\hlopt{);}\\
+\hllin{45\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{else\ if\ }\hlstd{}\hlopt{(}\hlstd{o\ }\hlkwa{instanceof\ }\hlstd{DHtreeNode}\hlopt{)\ \symbol{123}}\\
+\hllin{46\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{putShort}\hlstd{}\hlopt{(}\hlstd{Pagesize}\hlopt{.}\hlstd{pagehead\symbol{95}node}\hlopt{);}\\
+\hllin{47\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlopt{\symbol{123}}\\
+\hllin{48\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{putShort}\hlstd{}\hlopt{(}\hlstd{Pagesize}\hlopt{.}\hlstd{pagehead\symbol{95}other}\hlopt{);}\\
+\hllin{49\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{50\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{putInt}\hlstd{}\hlopt{(}\hlstd{bytes}\hlopt{.}\hlstd{length}\hlopt{);}\\
+\hllin{51\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{buffer}\hlopt{.}\hlstd{}\hlkwd{put}\hlstd{}\hlopt{(}\hlstd{bytes}\hlopt{);}\\
+\hllin{52\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{storage}\hlopt{.}\hlstd{}\hlkwd{write}\hlstd{}\hlopt{(}\hlstd{recid}\hlopt{,\ }\hlstd{buffer}\hlopt{);}\\
+\hllin{53\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{ObjectMap}\hlopt{.}\hlstd{}\hlkwd{putorupdate}\hlstd{}\hlopt{(}\hlstd{o}\hlopt{,\ }\hlstd{recid}\hlopt{);}\\
+\hllin{54\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{recid}\hlopt{;}\\
+\hllin{55\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwa{catch\ }\hlstd{}\hlopt{(}\hlstd{IOException\ e}\hlopt{)\ \symbol{123}}\\
+\hllin{56\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{e}\hlopt{.}\hlstd{}\hlkwd{printStackTrace}\hlstd{}\hlopt{();}\\
+\hllin{57\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{}\hlopt{{-}}\hlstd{}\hlnum{1}\hlstd{}\hlopt{;}\\
+\hllin{58\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{59\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlopt{\symbol{123}}\\
+\hllin{60\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{updatemoredata}\hlstd{}\hlopt{(}\hlstd{bytes}\hlopt{,\ }\hlstd{recid}\hlopt{,\ }\hlstd{o}\hlopt{);}\\
+\hllin{61\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{recid}\hlopt{;}\\
+\hllin{62\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{63\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{64\ }\hlstd{}\hlopt{\symbol{125}}\hlstd{}\\
 \mbox{}
 \normalfont
 \normalsize

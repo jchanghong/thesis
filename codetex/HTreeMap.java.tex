@@ -42,8 +42,8 @@
 \hllin{40\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{int\ }\hlstd{hashindex\ }\hlopt{=\ }\hlstd{hashcode\ }\hlopt{\%\ }\hlstd{htreeNode}\hlopt{.}\hlstd{hashtable\symbol{95}size}\hlopt{;}\\
 \hllin{41\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{htreeNode\ }\hlopt{=\ }\hlstd{htreeNode}\hlopt{.}\hlstd{childs}\hlopt{{[}}\hlstd{hashindex}\hlopt{{]};}\\
 \hllin{42\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{43\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{int\ }\hlstd{hashindex\ }\hlopt{=\ }\hlstd{hashcode\ }\hlopt{\%\ }\hlstd{pre}\hlopt{.}\hlstd{hashtable\symbol{95}size}\hlopt{;}\\
-\hllin{44\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{pre}\hlopt{.}\hlstd{childs}\hlopt{{[}}\hlstd{hashindex}\hlopt{{]}\ =\ }\hlstd{}\hlkwa{new\ }\hlstd{}\hlkwd{HtreeNode}\hlstd{}\hlopt{(}\hlstd{pre}\hlopt{.}\hlstd{high\ }\hlopt{+\ }\hlstd{}\hlnum{1}\hlstd{}\hlopt{,\ }\hlstd{key}\hlopt{,\ }\hlstd{value}\hlopt{);}\\
+\hllin{43\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{int\ }\hlstd{hashindex\ }\hlopt{=\ }\hlstd{hashcode\ }\hlopt{\%\ }\hlstd{pre}\hlopt{.}\hlstd{hashtable\symbol{95}size}\hlopt{;}\\
+\hllin{44\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{pre}\hlopt{.}\hlstd{childs}\hlopt{{[}}\hlstd{hashindex}\hlopt{{]}\ =\ }\hlstd{}\hlkwa{new\ }\hlstd{}\hlkwd{HtreeNode}\hlstd{}\hlopt{(}\hlstd{pre}\hlopt{.}\hlstd{high\ }\hlopt{+\ }\hlstd{}\hlnum{1}\hlstd{}\hlopt{,\ }\hlstd{key}\hlopt{,\ }\hlstd{value}\hlopt{);}\\
 \hllin{45\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{allnodes}\hlopt{.}\hlstd{}\hlkwd{add}\hlstd{}\hlopt{(}\hlstd{pre}\hlopt{.}\hlstd{childs}\hlopt{{[}}\hlstd{hashindex}\hlopt{{]});}\\
 \hllin{46\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{}\hlkwb{null}\hlstd{}\hlopt{;}\\
 \hllin{47\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
@@ -64,7 +64,7 @@
 \hllin{62\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
 \hllin{63\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{}\hlkwb{null}\hlstd{}\hlopt{;}\\
 \hllin{64\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
-\hllin{65\ }\hlstd{}\hlopt{\symbol{125}}\hlstd{}
+\hllin{65\ }\hlstd{}\hlopt{\symbol{125}}\hlstd{}\\
 \mbox{}
 \normalfont
 \normalsize
