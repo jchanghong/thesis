@@ -1,0 +1,38 @@
+\noindent
+\ttfamily
+\hlstd{}\hllin{01\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlkwa{fun\ }\hlstd{}\hlkwd{test}\hlstd{}\hlopt{()\ \symbol{123}}\\
+\hllin{02\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//sql执行次数}\\
+\hllin{03\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{sqlnumber\ }\hlopt{=\ }\hlstd{}\hlkwd{intArrayOf}\hlstd{}\hlopt{(}\hlstd{}\hlnum{10}\hlstd{}\hlopt{,\ }\hlstd{}\hlnum{100}\hlstd{}\hlopt{,\ }\hlstd{}\hlnum{1000}\hlstd{}\hlopt{,\ }\hlstd{}\hlnum{3000}\hlstd{}\hlopt{,\ }\hlstd{}\hlnum{5000}\hlstd{}\hlopt{,\ }\hlstd{}\hlnum{10000}\hlstd{}\hlopt{)}\\
+\hllin{04\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{mysql\ }\hlopt{=\ }\hlstd{}\hlstr{"jdbc:mysql://localhost:3306/changhong?"}\hlstd{\ }\hlopt{+\ }\hlstd{}\hlstr{"user=root\&"}\hlstd{\ }\hlopt{+}\\
+\hllin{05\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{"password=0000\&useUnicode="}\hlstd{\ }\hlopt{+\ }\hlstd{}\hlstr{"true\&characterEncoding=UTF8"}\hlstd{}\\
+\hllin{06\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{var\ }\hlstd{connection\ }\hlopt{=\ }\hlstd{DriverManager}\hlopt{.}\hlstd{}\hlkwd{getConnection}\hlstd{}\hlopt{(}\hlstd{mysql}\hlopt{)}\\
+\hllin{07\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{var\ }\hlstd{statement\ }\hlopt{=\ }\hlstd{connection}\hlopt{.}\hlstd{}\hlkwd{createStatement}\hlstd{}\hlopt{()}\\
+\hllin{08\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{println}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"mysql\ sqlnumber\ to\ times:"}\hlstd{}\hlopt{)}\\
+\hllin{09\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{for\ }\hlstd{}\hlopt{(}\hlstd{number\ }\hlkwa{in\ }\hlstd{sqlnumber}\hlopt{)\ \symbol{123}}\\
+\hllin{10\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{start\ }\hlopt{=\ }\hlstd{System}\hlopt{.}\hlstd{}\hlkwd{currentTimeMillis}\hlstd{}\hlopt{()}\\
+\hllin{11\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{for\ }\hlstd{}\hlopt{(}\hlstd{i\ }\hlkwa{in\ }\hlstd{}\hlnum{1}\hlstd{}\hlopt{..}\hlstd{number}\hlopt{)\ \symbol{123}}\\
+\hllin{12\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{statement}\hlopt{.}\hlstd{}\hlkwd{executeQuery}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"select\ {*}\ from\ test"}\hlstd{}\hlopt{)}\\
+\hllin{13\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{14\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{end\ }\hlopt{=\ }\hlstd{System}\hlopt{.}\hlstd{}\hlkwd{currentTimeMillis}\hlstd{}\hlopt{()}\\
+\hllin{15\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{println}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"}\hlipl{\$number}\hlstd{\ \ \ \ \ \ }\hlipl{\$\symbol{123}end\ {-}\ start\symbol{125}}\hlstr{"}\hlstd{}\hlopt{)}\\
+\hllin{16\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{17\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{connection}\hlopt{.}\hlstd{}\hlkwd{close}\hlstd{}\hlopt{()}\\
+\hllin{18\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{jsql\ }\hlopt{=\ }\hlstd{}\hlstr{"jdbc:mysql://localhost:9999/changhong?"}\hlstd{\ }\hlopt{+\ }\hlstd{}\hlstr{"user=root\&"}\hlstd{\ }\hlopt{+}\\
+\hllin{19\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlstr{"password=0000\&useUnicode="}\hlstd{\ }\hlopt{+\ }\hlstd{}\hlstr{"true\&characterEncoding=UTF8"}\hlstd{}\\
+\hllin{20\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{connection\ }\hlopt{=\ }\hlstd{DriverManager}\hlopt{.}\hlstd{}\hlkwd{getConnection}\hlstd{}\hlopt{(}\hlstd{jsql}\hlopt{)}\\
+\hllin{21\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{statement\ }\hlopt{=\ }\hlstd{connection}\hlopt{.}\hlstd{}\hlkwd{createStatement}\hlstd{}\hlopt{()}\\
+\hllin{22\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{println}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"jsql\ sqlnumber\ to\ times:"}\hlstd{}\hlopt{)}\\
+\hllin{23\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{for\ }\hlstd{}\hlopt{(}\hlstd{number\ }\hlkwa{in\ }\hlstd{sqlnumber}\hlopt{)\ \symbol{123}}\\
+\hllin{24\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{start\ }\hlopt{=\ }\hlstd{System}\hlopt{.}\hlstd{}\hlkwd{currentTimeMillis}\hlstd{}\hlopt{()}\\
+\hllin{25\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{for\ }\hlstd{}\hlopt{(}\hlstd{i\ }\hlkwa{in\ }\hlstd{}\hlnum{1}\hlstd{}\hlopt{..}\hlstd{number}\hlopt{)\ \symbol{123}}\\
+\hllin{26\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{statement}\hlopt{.}\hlstd{}\hlkwd{executeQuery}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"select\ {*}\ from\ test"}\hlstd{}\hlopt{)}\\
+\hllin{27\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{28\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{val\ }\hlstd{end\ }\hlopt{=\ }\hlstd{System}\hlopt{.}\hlstd{}\hlkwd{currentTimeMillis}\hlstd{}\hlopt{()}\\
+\hllin{29\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{println}\hlstd{}\hlopt{(}\hlstd{}\hlstr{"}\hlipl{\$number}\hlstd{\ \ \ \ \ \ }\hlipl{\$\symbol{123}end\ {-}\ start\symbol{125}}\hlstr{"}\hlstd{}\hlopt{)}\\
+\hllin{30\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{31\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{connection}\hlopt{.}\hlstd{}\hlkwd{close}\hlstd{}\hlopt{()}\\
+\hllin{32\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlopt{\symbol{125}}\\
+\hllin{33\ }\hlstd{}\hlopt{\symbol{125}}\hlstd{}
+\mbox{}
+\normalfont
+\normalsize

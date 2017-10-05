@@ -19,17 +19,193 @@
 \end{enumerate}
 \section{功能测试}
 \subsection{数据库功能测试}
+功能测试设计的细节非常多，项目繁杂。这里将给出几个关键的功能测试的
+条件、目的、步骤和结果。其他更为细节的，比如对失败的查询的测试，或其他
+类似的，比如与插入、更新类似的删除数据，删除表，由于篇幅原因，就不再细
+述。
 \begin{enumerate}
-	\item 测试1\\
-	dsdsds\\
-	dsadasd\\
-	dasdasdas
-	\item 小测试2
-\end{enumerate}
+
+	\item 系统启动测试
+	\begin{enumerate}
+		\item 测试条件：代码编码完成，系统功能正常
+		\item 测试步骤：
+		\begin{enumerate}
+			\item 启动系统
+			\item 用mysql客服端连接系统
+		\end{enumerate}
+	\item 	测试结果：系统能正常启动，而且mysql客服端也可以连接上系统
+	\end{enumerate}
+
+
+
+\item 工具语句测试
+\begin{enumerate}
+	\item 测试条件：系统启动成功，客服端连接上系统
+	\item 测试步骤：
+	\begin{enumerate}
+		\item 打开命令行客服端
+		\item 输入语句show databases，发送给服务器
+	\end{enumerate}
+	\item 	测试结果：系统返回当前所有的数据库。
+\end{enumerate}	
+
+
+\item 建表语句测试
+\begin{enumerate}
+	\item 测试条件：系统启动成功，客服端连接上系统
+	\item 测试步骤：
+	\begin{enumerate}
+		\item 打开命令行客服端
+		\item 输入语句create table test(id int,name	varchar(100))
+		\item 回头，发送命令给服务器
+	\end{enumerate}
+	\item 	测试结果：系统返回正确，而且文件系统里面多了一个文件。
+\end{enumerate}	
+
+
+\item 插入语句测试
+\begin{enumerate}
+	\item 测试条件：系统启动成功，客服端连接上系统
+	\item 测试步骤：
+	\begin{enumerate}
+		\item 打开命令行客服端
+		\item 输入语句insert into test(id,name) values(1,'changhong');
+		\item 回头，发送命令给服务器
+	\end{enumerate}
+	\item 	测试结果：系统返回正确
+\end{enumerate}	
+
+
+\item 查询语句测试
+\begin{enumerate}
+	\item 测试条件：系统启动成功，客服端连接上系统
+	\item 测试步骤：
+	\begin{enumerate}
+		\item 打开命令行客服端
+		\item 输入语句select * from test;
+		\item 回头，发送命令给服务器
+	\end{enumerate}
+	\item 	测试结果：系统返回一行数据。
+\end{enumerate}	
+
+
+
+\item 更新语句测试
+\begin{enumerate}
+	\item 测试条件：系统启动成功，客服端连接上系统
+	\item 测试步骤：
+	\begin{enumerate}
+		\item 打开命令行客服端
+		\item 输入语句update test set name='changhong1'
+		\item 回头，发送命令给服务器
+		\item 输入语句select * from test
+		\item 回头，发送命令给服务器
+	\end{enumerate}
+	\item 	测试结果：系统执行正确，返回一条数据，名字字段weichangohng1
+\end{enumerate}	
+
+
+\item 更新语句测试
+\begin{enumerate}
+	\item 测试条件：系统启动成功，客服端连接上系统
+	\item 测试步骤：
+	\begin{enumerate}
+		\item 打开命令行客服端
+		\item 输入语句delete from test
+		\item 回头，发送命令给服务器
+		\item 输入语句select * from test
+		\item 回头，发送命令给服务器
+	\end{enumerate}
+	\item 	测试结果：系统执行正确，没有返回数据
+\end{enumerate}	
+
+
+\end{enumerate}	
 \subsection{集群功能测试}
+集群的功能测试和单机版一样，考虑到不可能每条语句的测试。
+本次测试只测试最常用的insert语句：
+\begin{enumerate}
+	\item 测试条件：
+	\begin{enumerate}
+		\item 数据库1启动成功，没有任何数据
+		\item 数据库2启动成功，没有任何数据
+		\item 数据库1和数据库2都有一个test表
+	\end{enumerate}
+	\item 测试步骤：
+	\begin{enumerate}
+		\item 打开命令行客服端，连接数据库1
+		\item 输入语句insert into test(id,name) values(1,'changhong')并且执行;
+		\item 断开连接，连接数据库2
+		\item 输入语句select * from test;
+		\item 回头，发送命令给服务器
+	\end{enumerate}
+	\item 	测试结果
+	\begin{enumerate}
+		\item 数据库1执行语句正确
+		\item 语句2执行正确，并且返回一条数据
+	\end{enumerate}
+\end{enumerate}	
 \subsection{审计功能测试}
-……
+审计功能的测试主要是测试可视化的显示功能。
+\begin{enumerate}
+	\item 测试条件：
+	\begin{enumerate}
+		\item 数据库1启动成功，没有任何数据
+		\item 数据库1有一个test表
+	\end{enumerate}
+	\item 测试步骤：
+	\begin{enumerate}
+		\item 打开命令行客服端，连接数据库1
+		\item 输入语句insert into test(id,name) values(1,'changhong')并且执行;
+		\item 打开grafana web界面
+	\end{enumerate}
+	\item 	测试结果
+	\begin{enumerate}
+		\item 数据库1执行语句正确
+		\item 通过web界面可以观察到插入的数据和执行者的信息
+		\item 图\ref{testpdf/jietu1.pdf},图
+		\ref{testpdf/jietu2.pdf}和图
+		\ref{testpdf/jietu3.pdf}显示了监控的可视化结果
+	\end{enumerate}
+\end{enumerate}	
+
+   \pic[htbp]{监控可视化结果}{}{testpdf/jietu1.pdf}
+      \pic[htbp]{监控可视化结果}{}{testpdf/jietu2.pdf}
+         \pic[htbp]{监控可视化结果}{}{testpdf/jietu3.pdf}
 \section{性能测试}
-...
+数据库的更删改查是最常用的操作，其中又以查找使用的场景更多，
+所以本节主要测试数据库的查询性能。
+jsql和mysql都可以通过JDBC来连接，下面的源代码是测试代码，
+用来测试查询次数和执行时间的关系。执行结果如图\ref{testpdf/mysqltime.pdf}所示。
+
+\input{testpdf/JDBC.kt.tex}
+
+\pic[htbp]{mysql和jsql的性能比较}{}{testpdf/mysqltime.pdf}
+从图\ref{testpdf/mysqltime.pdf}可以看出，随着SQL执行次数的增加，mysql和jsql的执行时
+一般都响应的增加，在3000执行次数为3000以下时，jsql和mysql的性能相当，
+当执行次数大于5000时，mysql的性能小幅度的超过jsql。
+再从变化幅度来看，当执行语句是5000次数的时候，mysql的执行时候审计比执行3000次数的时候
+还要少，这点可能是因为mysql本身的缓存或者优化有关。
+而jsql就相对来说随着执行次数的增加，时间就随着增加，符合预期。
+
+除了jdbc的测试以外，本次测试还用了一个流行的测试框架JMeter。
+Apache JMeter是Apache组织开发的基于Java的压力测试工具。用于对软件做压力测试，
+它最初被设计用于Web应用测试，但后来扩展到其他测试领域。
+ 它可以用于测试静态和动态资源，例如静态文件、Java
+  小服务程序、CGI 脚本、Java 对象、数据库、FTP 服务器，
+   等等。JMeter 可以用于对服务器、网络或对象模拟巨大的负载
+   ，来自不同压力类别下测试它们的强度和分析整体性能
+   另外，JMeter能够对应用程序做功能/回归测试
+   ，通过创建带有断言的脚本来验证你的程序返回了你期望的结果。
+   为了最大限度的灵活性，JMeter允许使用正则表达式创建断言。
+   用JMeter测试jsql的结果如图\ref{testpdf/jmetjsql.pdf}所示。
+    用JMeter测试jsql的结果如图\ref{testpdf/jmetmysql.pdf}所示。
+   \pic[htbp]{jsql的JMeter性能测试}{}{testpdf/jmetjsql.pdf}
+   \pic[htbp]{mysql的JMeter性能测试}{}{testpdf/jmetmysql.pdf}
+   
+   从测试结果来看，jsql相对mysql的性能有一定的差距。其中一个原因是jsql是用
+   纯java语言开发的，而mysql用c语法开发，其中自然有一定的性能损耗。
 \section{本章小结}
-...
+本章对JSQL数据库系统进行测试，主要分为功能测试和性能测试，功能测试
+包括数据库功能测试，集群功能测试以及审计功能的测试。性能测试分为JDBC和JMeter测试
+两部分。
