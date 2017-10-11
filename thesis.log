@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.4)  11 OCT 2017 20:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.4)  11 OCT 2017 21:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3000,11 +3000,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 33067 strings out of 494875
- 534844 string characters out of 6179216
- 623505 words of memory out of 5000000
- 34733 multiletter control sequences out of 15000+600000
- 108595 words of font info for 359 fonts, out of 8000000 for 9000
+ 33113 strings out of 494875
+ 534809 string characters out of 6179216
+ 623626 words of memory out of 5000000
+ 34774 multiletter control sequences out of 15000+600000
+ 109675 words of font info for 363 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  56i,12n,83p,10555b,771s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/s
@@ -3064,10 +3064,10 @@ pe1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public
 m/cmsy10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.
 pfb><c:/texlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/20
 17/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on thesis.pdf (96 pages, 1988603 bytes).
+Output written on thesis.pdf (96 pages, 1993111 bytes).
 PDF statistics:
- 2877 PDF objects out of 2984 (max. 8388607)
- 2151 compressed objects within 22 object streams
- 386 named destinations out of 1000 (max. 500000)
+ 2878 PDF objects out of 2984 (max. 8388607)
+ 2152 compressed objects within 22 object streams
+ 387 named destinations out of 1000 (max. 500000)
  1051 words of extra memory for PDF output out of 10000 (max. 10000000)
 
