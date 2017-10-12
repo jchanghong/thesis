@@ -102,7 +102,7 @@ HTTP/1.1出现后，有了Http长连接，这样除了超时和指明特定关�
 当执行完读取/写入操作后，直接调用回调函数。
 
 Java对BIO、NIO、AIO的支持：
-\begin{itemize}
+\begin{enumerate}
 	\item Java BIO ： 同步并阻塞，服务器实现模式为一个连接一个线程，即客户端有连接请求时服务器端
 	就需要启动一个线程进行处理，如果这个连接不
 	做任何事情会造成不必要的线程开销，当然可以通过线程池机制改善。
@@ -111,16 +111,16 @@ Java对BIO、NIO、AIO的支持：
 连接有I/O请求时才启动一个线程进行处理。
 \item Java AIO(NIO.2) ： 异步非阻塞，服务器实现模式
 为一个有效请求一个线程，客户端的I/O请求都是由OS先完成了再通知服务器应用去启动线程进行处理，
-\end{itemize}
+\end{enumerate}
 BIO、NIO、AIO适用场景分析:
-\begin{itemize}
+\begin{enumerate}
 	\item BIO方式适用于连接数目比较小且固定的架构，这种方式对服务器资源要求比较高，
 	并发局限于应用中，JDK1.4以前的唯一选择，但程序直观简单易理解。
 \item NIO方式适用于连接数目多且连接比较短（轻操作）的架构，
 比如聊天服务器，并发局限于应用中，编程比较复杂，JDK1.4开始支持。
 \item AIO方式使用于连接数目多且连接比较长（重操作）的架构，
 比如相册服务器，充分调用OS参与并发操作，编程比较复杂，JDK7开始支持。
-\end{itemize}
+\end{enumerate}
 另外，I/O属于底层操作，需要操作系统支持，并发也需要操作系统的支持，所以性能方面不同操作系统差异会比较明显。
 
 在高性能的I/O设计中，有两个比较著名的模式Reactor和Proactor模式，其中Reactor模式用于同步I/O，而Proactor运用于异步I/O操作。
@@ -142,12 +142,12 @@ Netty是一个非阻塞框架。与阻塞IO相比，这导致高吞吐量。
 Netty使用事件驱动的应用程序范例，因此数据处理的流水线是一系列事件处理程序。
 事件和处理程序可以与入站和出站数据流相关联。入站事件可以如下：
 
-\begin{itemize}
+\begin{enumerate}
 	\item 通道激活和停用
 \item 阅读操作事件
 \item 异常事件
 \item 用户事件
-\end{itemize}
+\end{enumerate}
 出站事件更简单，通常与打开/关闭连接和写入/刷新数据有关。
 
 Netty应用程序由几个网络和应用程序逻辑事件及其处理程序组成
@@ -208,7 +208,7 @@ SQL包含四个部分：
 
 mysql支持的sql语句和标准的sql语句不全一样，它支持下面这几种语句类型：
 
-\begin{itemize}
+\begin{enumerate}
 	\item 数据定义语句     
 \item 数据操作语句     
 \item 交易和锁定声明     
@@ -217,7 +217,7 @@ mysql支持的sql语句和标准的sql语句不全一样，它支持下面这几
 \item 复合语句语法     
 \item 数据库管理语句     
 \item 效用声明  
-\end{itemize}   
+\end{enumerate}   
 其中每种语句类型又分为很多种sql语句，所以mysql支持的sql语句非常的多，因为本系统选择了兼容mysql的协议，所以我们
 也要解析这些不同的sql语句，解析sql语句是一种很麻烦的事情，所以我
 用了一个成熟的开源的sql解析框架Druid。
