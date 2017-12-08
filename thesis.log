@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.4)  12 OCT 2017 15:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.12.4)  8 DEC 2017 20:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **./thesis.tex
 (./thesis.tex
 LaTeX2e <2017-04-15>
-Babel <3.12> and hyphenation patterns for 6 language(s) loaded.
+Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
 (./uestcthesis.cls
 Document Class: uestcthesis 2016/10/22 v1.2.8 UESTC thesis class
 (./dependencies/tex/latex/ctex/ctexbook.cls
@@ -2070,102 +2070,32 @@ rm/m/n/12.05/7e Ÿ \C70/rm/m/n/12.05/51 ˙ \C70/rm/m/n/12.05/4e Ü\OT1/ptm/m/n/12.
  (./chapters/Chapter2.tex
 Á¨¨‰∫åÁ´†
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12.045> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 26.
-[5
-
-
-
-] [6]
-Overfull \hbox (25.02313pt too wide) in paragraph at lines 71--87
-[]\C70/rm/m/n/12.05/8f Ö \C70/rm/m/n/12.05/52 © \C70/rm/m/n/12.05/5b X \C70/rm/
-m/n/12.05/50 ® \C70/rm/m/n/12.05/56 h |\C70/rm/m/n/12.05/ff ^^H|\C70/rm/m/n/12.
-05/4e _ \C70/rm/m/n/12.05/79  \C70/rm/m/n/12.05/4e : \C70/rm/m/n/12.05/59 ^^V 
-\C70/rm/m/n/12.05/90 Ë \C70/rm/m/n/12.05/5b X \C70/rm/m/n/12.05/50 ® \C70/rm/m/
-n/12.05/56 h \C70/rm/m/n/12.05/62 ^^V \C70/rm/m/n/12.05/8f Ö \C70/rm/m/n/12.05/
-52 © \C70/rm/m/n/12.05/5b X \C70/rm/m/n/12.05/50 ® \C70/rm/m/n/12.05/56 h|\C70/
-rm/m/n/12.05/ff 	| \C70/rm/m/n/12.05/4e ^^N ; \C70/rm/m/n/12.05/5b X \C70/rm/m/
-n/12.05/50 ® \C70/rm/m/n/12.05/56 h \C70/rm/m/n/12.05/4e ^^M \C70/rm/m/n/12.05/
-54 ^^L \C70/rm/m/n/12.05/4e K \C70/rm/m/n/12.05/59 ^^D \C70/rm/m/n/12.05/57 ( \
-C70/rm/m/n/12.05/4e é\OT1/ptm/m/n/12.05 CPU\C70/rm/m/n/12.05/4e ^^M
- []
-
-[7] [8] [9] [10] [11] <pics/sjjghsb.pdf, id=657, 423.87065pt x 246.99088pt>
-File: pics/sjjghsb.pdf Graphic file (type pdf)
-
-<use pics/sjjghsb.pdf>
-Package pdftex.def Info: pics/sjjghsb.pdf used on input line 229.
-(pdftex.def)             Requested size: 423.86961pt x 246.99026pt.
- [12]
-<pics/sjjgbjs.pdf, id=663, 424.17921pt x 325.41818pt>
-File: pics/sjjgbjs.pdf Graphic file (type pdf)
- <use pics/sjjgbjs.pdf>
-Package pdftex.def Info: pics/sjjgbjs.pdf used on input line 231.
-(pdftex.def)             Requested size: 424.17818pt x 325.41737pt.
-
-Overfull \hbox (2.69792pt too wide) in paragraph at lines 232--241
-[]\OT1/ptm/m/n/12.05 B+\C70/rm/m/n/12.05/68 ^^Q$[]$\C70/rm/m/n/12.05/76 Ñ \C70/
-rm/m/n/12.05/7e ” \C70/rm/m/n/12.05/67 Ñ \C70/rm/m/n/12.05/59 Ç \C70/rm/m/n/12.
-05/56 ˛[]\OT1/ptm/m/n/12.05 2-2[]\C70/rm/m/n/12.05/62 @ \C70/rm/m/n/12.05/79 :|
-\C70/rm/m/n/12.05/30 ^^B|  \OT1/ptm/m/n/12.05 B+\C70/rm/m/n/12.05/68 ^^Q \C70/r
-m/m/n/12.05/66 / \C70/rm/m/n/12.05/4e ^^@ *\OT1/ptm/m/n/12.05 N\C70/rm/m/n/12.0
-5/8f € \C70/rm/m/n/12.05/52 6 \C70/rm/m/n/12.05/68 ^^Q \C70/rm/m/n/12.05/51 w \
-C70/rm/m/n/12.05/67 	 \C70/rm/m/n/12.05/53 Ô ÿ \C70/rm/m/n/12.05/76 Ñ \C70/rm/m
-/n/12.05/5b i P \C70/rm/m/n/12.05/82 Ç \C70/rm/m/n/12.05/70 π|\C70/rm/m/n/12.05
-/30 ^^B| \OT1/ptm/m/n/12.05 B+\C70/rm/m/n/12.05/68 ^^Q
- []
-
-[13 <./pics/sjjghsb.pdf>] [14 <./pics/sjjgbjs.pdf>] [15]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 295.
-
-
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 23.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 25.
 (./dependencies/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12.05> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 295.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 25.
+ [5
 
-Overfull \hbox (7.52602pt too wide) in paragraph at lines 306--314
-[]\C70/rm/m/n/12.05/57 ˙ \C70/rm/m/n/12.05/67 , \C70/rm/m/n/12.05/76 Ñ \C70/rm/
-m/n/12.05/51 s \C70/rm/m/n/12.05/7c ˚ \C70/rm/m/n/12.05/5e ˙ \C70/rm/m/n/12.05/
-90   \C70/rm/m/n/12.05/57 W \C70/rm/m/n/12.05/66 / \C70/rm/m/n/12.05/57 ﬂ \C70/
-rm/m/n/12.05/62 ^^V \C70/rm/m/n/12.05/80 ^^E \C70/rm/m/n/12.05/53 Î \C70/rm/m/n
-/12.05/65 p \C70/rm/m/n/12.05/63 n \C70/rm/m/n/12.05/7c { \C70/rm/m/n/12.05/57 
-ã|\C70/rm/m/n/12.05/30 ^^B| \C70/rm/m/n/12.05/51 C \C70/rm/m/n/12.05/7e ƒ \C70/
-rm/m/n/12.05/66 / \C70/rm/m/n/12.05/5c ^ \C70/rm/m/n/12.05/60 ' \C70/rm/m/n/12.
-05/76 Ñ \C70/rm/m/n/12.05/67 	 \C70/rm/m/n/12.05/5e è \C70/rm/m/n/12.05/59 ^^Z 
-\C70/rm/m/n/12.05/91 Õ \C70/rm/m/n/12.05/96 ∆ |\C70/rm/m/n/12.05/ff ^^H|\OT1/pt
-m/m/n/12.05 multiset|\C70/rm/m/n/12.05/ff 	||^^L|
+
+
+] [6] [7]
+Overfull \hbox (27.02347pt too wide) in paragraph at lines 158--161
+[]\C70/rm/m/n/12.05/65 ‡ \C70/rm/m/n/12.05/51 q \C70/rm/m/n/12.05/4e ´ \C70/rm/
+m/n/12.05/67 ∂ Ñ|\C70/rm/m/n/12.05/ff ^^Z| \C70/rm/m/n/12.05/76 ¯ \C70/rm/m/n/1
+2.05/5b ˘ \C70/rm/m/n/12.05/4e é \C70/rm/m/n/12.05/5c ^^F \C70/rm/m/n/12.05/62 
+@ \C70/rm/m/n/12.05/67 	 \C70/rm/m/n/12.05/65 p \C70/rm/m/n/12.05/63 n \C70/rm/
+m/n/12.05/5b X \C70/rm/m/n/12.05/50 ® \C70/rm/m/n/12.05/76 Ñ \C70/rm/m/n/12.05/
+5b X \C70/rm/m/n/12.05/50 ® \C70/rm/m/n/12.05/53 : \C70/rm/m/n/12.05/57 ﬂ \C70/
+rm/m/n/12.05/7f Q \C70/rm/m/n/12.05/7e ‹ \C70/rm/m/n/12.05/4e - \C70/rm/m/n/12.
+05/76 Ñ \C70/rm/m/n/12.05/51 h q \C70/rm/m/n/12.05/4e ´ \C70/rm/m/n/12.05/67 ∂ 
+Ñ|\C70/rm/m/n/12.05/30 ^^B| \OT1/ptm/m/n/12.05 NoSQL\C70/rm/m/n/12.05/5f Ä
  []
 
-[16] [17]
-Overfull \hbox (15.34682pt too wide) in paragraph at lines 356--380
-\C70/rm/m/n/12.05/65 ˆ\OT1/ptm/m/n/12.05 NoSQL\C70/rm/m/n/12.05/65 p \C70/rm/m/
-n/12.05/63 n \C70/rm/m/n/12.05/5e ì \C70/rm/m/n/12.05/4f ^^? \C70/rm/m/n/12.05/
-75 ( \C70/rm/m/n/12.05/76 Ñ \C70/rm/m/n/12.05/65 p \C70/rm/m/n/12.05/63 n \C70/
-rm/m/n/12.05/7e ” \C70/rm/m/n/12.05/67 Ñ \C70/rm/m/n/12.05/4e _ \C70/rm/m/n/12.
-05/88 ´ \C70/rm/m/n/12.05/89 ∆ \C70/rm/m/n/12.05/4e : \C70/rm/m/n/12.05/6b ‘ \C
-70/rm/m/n/12.05/51 s \C70/rm/m/n/12.05/7c ˚ \C70/rm/m/n/12.05/65 p \C70/rm/m/n/
-12.05/63 n \C70/rm/m/n/12.05/5e ì \C70/rm/m/n/12.05/88 h \C70/rm/m/n/12.05/66 Ù
- |\C70/rm/m/n/12.05/20 ^^\|\C70/rm/m/n/12.05/70 u \C70/rm/m/n/12.05/6d ;|\C70/r
-m/m/n/12.05/20 ^^]||\C70/rm/m/n/12.05/30 ^^B| \C70/rm/m/n/12.05/8b ∏ \C70/rm/m/
-n/12.05/59 ^^Z\OT1/ptm/m/n/12.05 NoSQL\C70/rm/m/n/12.05/5b X
- []
-
-[18] [19] [20] [21] [22]
-Overfull \hbox (40.73564pt too wide) in paragraph at lines 563--565
-[]\C70/rm/m/n/12.05/4e _ \C70/rm/m/n/12.05/67 	 \C70/rm/m/n/12.05/62 ä\OT1/ptm/
-m/n/12.05 undo\C70/rm/m/n/12.05/54 å\OT1/ptm/m/n/12.05 redo\C70/rm/m/n/12.05/7e
- ” \C70/rm/m/n/12.05/54 ^^H \C70/rm/m/n/12.05/8d w \C70/rm/m/n/12.05/67 e \C70/
-rm/m/n/12.05/76 Ñ \C70/rm/m/n/12.05/50 Z \C70/rm/m/n/12.05/6c ’|\C70/rm/m/n/12.
-05/ff ^^L| \C70/rm/m/n/12.05/53 Î \C70/rm/m/n/12.05/50 Z\OT1/ptm/m/n/12.05 Undo
-/Redo\C70/rm/m/n/12.05/65 Â \C70/rm/m/n/12.05/5f ◊|\C70/rm/m/n/12.05/ff ^^L| \C
-70/rm/m/n/12.05/57 ( \C70/rm/m/n/12.05/8f Ÿ \C70/rm/m/n/12.05/4e * \C70/rm/m/n/
-12.05/4f ã \C70/rm/m/n/12.05/5b P \C70/rm/m/n/12.05/4e -\OT1/ptm/m/n/12.05 Undo
-/Redo\C70/rm/m/n/12.05/65 Â
- []
-
-[23] [24] [25] [26] [27] [28] [29]
-Overfull \hbox (24.09523pt too wide) in paragraph at lines 808--818
+[8] [9] [10] [11] [12]
+Overfull \hbox (24.09523pt too wide) in paragraph at lines 316--336
 []\C70/rm/m/n/12.05/7b , \C70/rm/m/n/12.05/4e ^^@ \C70/rm/m/n/12.05/79 Õ \C70/r
 m/m/n/12.05/53 Î \C70/rm/m/n/12.05/4e ; Œ \C70/rm/m/n/12.05/59 ^^M \C70/rm/m/n/
 12.05/52 6|\C70/rm/m/n/12.05/30 ^^B| \C70/rm/m/n/12.05/4e ; Œ K \C70/rm/m/n/12.
@@ -2179,20 +2109,7 @@ m/n/12.05/30 ^^B| \C70/rm/m/n/12.05/4f ã \C70/rm/m/n/12.05/59 Ç\OT1/ptm/m/n/12.
  []
 
 
-Overfull \hbox (33.05936pt too wide) in paragraph at lines 824--830
-[]\C70/rm/m/n/12.05/53 Ê \C70/rm/m/n/12.05/4e ^^@ * \C70/rm/m/n/12.05/4f ã \C70
-/rm/m/n/12.05/5b P \C70/rm/m/n/12.05/67 e \C70/rm/m/n/12.05/81 Í \C70/rm/m/n/12
-.05/65 p \C70/rm/m/n/12.05/63 n \C70/rm/m/n/12.05/5e ì \C70/rm/m/n/12.05/9a ÿ \
-C70/rm/m/n/12.05/53 Ô \C70/rm/m/n/12.05/75 ( \C70/rm/m/n/12.05/8b æ °|\C70/rm/m
-/n/12.05/ff ^^L| \C70/rm/m/n/12.05/59 Ç \C70/rm/m/n/12.05/4e  \C70/rm/m/n/12.0
-5/66 /\OT1/ptm/m/n/12.05 Joyent\C70/rm/m/n/12.05/76 Ñ\OT1/ptm/m/n/12.05 Postgre
-SQL\C70/rm/m/n/12.05/9a ÿ \C70/rm/m/n/12.05/53 Ô \C70/rm/m/n/12.05/75 ( \C70/rm
-/m/n/12.05/65 π \C70/rm/m/n/12.05/68 H\OT1/ptm/m/n/12.05 manatee|\C70/rm/m/n/12
-.05/ff ^^L|
- []
-
-[30]
-Overfull \hbox (3.93564pt too wide) in paragraph at lines 847--853
+Overfull \hbox (3.93564pt too wide) in paragraph at lines 344--350
 \C70/rm/m/n/12.05/68 9 \C70/rm/m/n/12.05/63 n \C70/rm/m/n/12.05/5b ö \C70/rm/m/
 n/12.05/74 ^^F|\C70/rm/m/n/12.05/ff ^^L| \C70/rm/m/n/12.05/52 ^^F \C70/rm/m/n/1
 2.05/5e ^^C \C70/rm/m/n/12.05/5f ^^O \C70/rm/m/n/12.05/7c ˚ \C70/rm/m/n/12.05/7
@@ -2206,26 +2123,68 @@ m/m/n/12.05/30 ^^B| \C70/rm/m/n/12.05/74 ^^F \C70/rm/m/n/12.05/89 „\OT1/ptm/m/n
 /12.05 CAP\C70/rm/m/n/12.05/74 ^^F
  []
 
-[31] [32] [33]
-Overfull \hbox (10.7196pt too wide) in paragraph at lines 978--983
-[]\C70/rm/m/n/12.05/57 ( \C70/rm/m/n/12.05/8f « \C70/rm/m/n/12.05/53 ª A \C70/r
-m/m/n/12.05/5e t \C70/rm/m/n/12.05/91 Ã|\C70/rm/m/n/12.05/ff ^^L| \OT1/ptm/m/n/
-12.05 Paxos\C70/rm/m/n/12.05/57 ˙ \C70/rm/m/n/12.05/67 , \C70/rm/m/n/12.05/62 ^
-^P \C70/rm/m/n/12.05/4e : Ü \C70/rm/m/n/12.05/52 ^^F \C70/rm/m/n/12.05/5e ^^C \
-C70/rm/m/n/12.05/5f ^^O \C70/rm/m/n/12.05/98 Ü \C70/rm/m/n/12.05/57 ﬂ \C70/rm/m
-/n/12.05/51 Ö \C70/rm/m/n/12.05/4e ^^@ \C70/rm/m/n/12.05/81 Ù \C70/rm/m/n/12.05
-/60 ' \C70/rm/m/n/12.05/53 O \C70/rm/m/n/12.05/8b Æ \C70/rm/m/n/12.05/76 Ñ \C70
-/rm/m/n/12.05/4e „ \C70/rm/m/n/12.05/54 ^^M \C70/rm/m/n/12.05/8b Õ|\C70/rm/m/n/
-12.05/30 ^^B|  \OT1/ptm/m/n/12.05 Google\C70/rm/m/n/12.05/76 Ñ
- []
-
-[34] [35] [36]) [37]
+[13]) [14]
 \openout2 = `chapters/Chapter3.aux'.
 
  (./chapters/Chapter3.tex
 Á¨¨‰∏âÁ´†
+[15
 
-Overfull \hbox (29.7706pt too wide) in paragraph at lines 33--35
+
+
+] [16] <pic3/xuqiufenxi.pdf, id=730, 427.5975pt x 365.8765pt>
+File: pic3/xuqiufenxi.pdf Graphic file (type pdf)
+
+<use pic3/xuqiufenxi.pdf>
+Package pdftex.def Info: pic3/xuqiufenxi.pdf used on input line 76.
+(pdftex.def)             Requested size: 427.59645pt x 365.8756pt.
+
+Overfull \hbox (0.8051pt too wide) in paragraph at lines 76--76
+ [][] 
+ []
+
+<pic3/xinzeng.pdf, id=732, 426.03165pt x 202.99838pt>
+File: pic3/xinzeng.pdf Graphic file (type pdf)
+ <use pic3/xinzeng.pdf>
+Package pdftex.def Info: pic3/xinzeng.pdf used on input line 82.
+(pdftex.def)             Requested size: 426.03061pt x 202.99788pt.
+
+<pic3/chaxun.pdf, id=734, 427.95883pt x 148.07321pt>
+File: pic3/chaxun.pdf Graphic file (type pdf)
+ <use pic3/chaxun.pdf>
+Package pdftex.def Info: pic3/chaxun.pdf used on input line 85.
+(pdftex.def)             Requested size: 427.95778pt x 148.07285pt.
+
+Overfull \hbox (1.16643pt too wide) in paragraph at lines 85--85
+ [][] 
+ []
+
+<pic3/shanchu.pdf, id=736, 427.47702pt x 159.6364pt>
+File: pic3/shanchu.pdf Graphic file (type pdf)
+ <use pic3/shanchu.pdf>
+Package pdftex.def Info: pic3/shanchu.pdf used on input line 88.
+(pdftex.def)             Requested size: 427.47598pt x 159.636pt.
+
+Overfull \hbox (0.68463pt too wide) in paragraph at lines 88--88
+ [][] 
+ []
+
+[17 <./pic3/xuqiufenxi.pdf>] [18 <./pic3/xinzeng.pdf> <./pic3/chaxun.pdf
+
+pdfTeX warning: pdflatex.exe (file ./pic3/chaxun.pdf): PDF inclusion: multiple 
+pdfs with page group included in a single page
+>] <pic3/xiugai.pdf, id=990, 426.99527pt x 171.6814pt>
+File: pic3/xiugai.pdf Graphic file (type pdf)
+ <use pic3/xiugai.pdf>
+Package pdftex.def Info: pic3/xiugai.pdf used on input line 92.
+(pdftex.def)             Requested size: 426.99423pt x 171.68097pt.
+
+[19 <./pic3/shanchu.pdf> <./pic3/xiugai.pdf
+
+pdfTeX warning: pdflatex.exe (file ./pic3/xiugai.pdf): PDF inclusion: multiple 
+pdfs with page group included in a single page
+>]
+Overfull \hbox (29.7706pt too wide) in paragraph at lines 106--108
 []\C70/rm/m/n/12.05/62 @ \C70/rm/m/n/12.05/67 	 \C70/rm/m/n/12.05/76 Ñ \C70/rm/
 m/n/12.05/67 ^^M \C70/rm/m/n/12.05/52 ° \C70/rm/m/n/12.05/8f o \C70/rm/m/n/12.0
 5/4e ˆ \C70/rm/m/n/12.05/90 ˝ \C70/rm/m/n/12.05/97 ^^@ \C70/rm/m/n/12.05/89 Å \
@@ -2239,25 +2198,27 @@ tm/m/n/12.05 JSQL\C70/rm/m/n/12.05/75 (\OT1/ptm/m/n/12.05 java\C70/rm/m/n/12.05
 /8b Ì
  []
 
-[38
 
-
-
-] [39]
-Overfull \hbox (24.56439pt too wide) in paragraph at lines 76--84
-[]\OT1/ptm/m/n/12.05 HTTP/1.1\C70/rm/m/n/12.05/51 ˙ \C70/rm/m/n/12.05/73 ∞ \C70
-/rm/m/n/12.05/54 ^^N|\C70/rm/m/n/12.05/ff ^^L| \C70/rm/m/n/12.05/67 	 \C70/rm/m
-/n/12.05/4e Ü\OT1/ptm/m/n/12.05 Http\C70/rm/m/n/12.05/95 ^^? \C70/rm/m/n/12.05/
-8f ﬁ \C70/rm/m/n/12.05/63 •|\C70/rm/m/n/12.05/ff ^^L| \C70/rm/m/n/12.05/8f Ÿ \C
-70/rm/m/n/12.05/68 7 \C70/rm/m/n/12.05/96 d \C70/rm/m/n/12.05/4e Ü \C70/rm/m/n/
-12.05/8d Ö \C70/rm/m/n/12.05/65 ˆ \C70/rm/m/n/12.05/54 å \C70/rm/m/n/12.05/63 ^
-^G \C70/rm/m/n/12.05/66 ^^N \C70/rm/m/n/12.05/72 y \C70/rm/m/n/12.05/5b ö \C70/
-rm/m/n/12.05/51 s \C70/rm/m/n/12.05/95 Ì \C70/rm/m/n/12.05/76 Ñ\OT1/ptm/m/n/12.
-05 http header\C70/rm/m/n/12.05/59 ^^V|\C70/rm/m/n/12.05/ff ^^L|
+Overfull \hbox (26.83435pt too wide) in paragraph at lines 109--110
+[]\C70/rm/m/n/12.05/7f Q \C70/rm/m/n/12.05/7e ‹\OT1/ptm/m/n/12.05 IO\C70/rm/m/n
+/12.05/76 Ñ \C70/rm/m/n/12.05/65 π \C70/rm/m/n/12.05/5f ^^O \C70/rm/m/n/12.05/9
+0 ^^Z \C70/rm/m/n/12.05/5e 8 \C70/rm/m/n/12.05/52 ^^F \C70/rm/m/n/12.05/4e : \C
+70/rm/m/n/12.05/54 ^^L \C70/rm/m/n/12.05/6b e \C70/rm/m/n/12.05/96 ; \C70/rm/m/
+n/12.05/58 ^ \C70/rm/m/n/12.05/76 Ñ\OT1/ptm/m/n/12.05 BIO|\C70/rm/m/n/12.05/30 
+^^A| \C70/rm/m/n/12.05/54 ^^L \C70/rm/m/n/12.05/6b e \C70/rm/m/n/12.05/97 ^ \C7
+0/rm/m/n/12.05/96 ; \C70/rm/m/n/12.05/58 ^ \C70/rm/m/n/12.05/76 Ñ\OT1/ptm/m/n/1
+2.05 NIO\C70/rm/m/n/12.05/54 å \C70/rm/m/n/12.05/5f ^^B \C70/rm/m/n/12.05/6b e 
+\C70/rm/m/n/12.05/97 ^ \C70/rm/m/n/12.05/96 ; \C70/rm/m/n/12.05/58 ^ \C70/rm/m/
+n/12.05/76 Ñ\OT1/ptm/m/n/12.05 AIO$[]$|\C70/rm/m/n/12.05/30 ^^B|
  []
 
-[40]
-Overfull \hbox (40.036pt too wide) in paragraph at lines 126--134
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
+
+ []
+
+
+Overfull \hbox (40.036pt too wide) in paragraph at lines 130--140
 []\C70/rm/m/n/12.05/57 ( \C70/rm/m/n/12.05/9a ÿ \C70/rm/m/n/12.05/60 ' \C70/rm/
 m/n/12.05/80 ˝ \C70/rm/m/n/12.05/76 Ñ\OT1/ptm/m/n/12.05 I/O\C70/rm/m/n/12.05/8b
  æ ° \C70/rm/m/n/12.05/4e -|\C70/rm/m/n/12.05/ff ^^L| \C70/rm/m/n/12.05/67 	 \C
@@ -2269,73 +2230,25 @@ m/m/n/12.05/ff ^^L| \C70/rm/m/n/12.05/51 v \C70/rm/m/n/12.05/4e -\OT1/ptm/m/n/1
 2.05 Reactor\C70/rm/m/n/12.05/6a !
  []
 
-<pics/netty.pdf, id=889, 423.94319pt x 410.29019pt>
+<pics/netty.pdf, id=1164, 423.94319pt x 410.29019pt>
 File: pics/netty.pdf Graphic file (type pdf)
  <use pics/netty.pdf>
-Package pdftex.def Info: pics/netty.pdf used on input line 135.
+Package pdftex.def Info: pics/netty.pdf used on input line 144.
 (pdftex.def)             Requested size: 423.94214pt x 410.28917pt.
 
-Overfull \hbox (10.62346pt too wide) in paragraph at lines 136--139
-\C70/rm/m/n/12.05/79 ª \C70/rm/m/n/12.05/54 å \C70/rm/m/n/12.05/67 ~ \C70/rm/m/
-n/12.05/65 c \C70/rm/m/n/12.05/80 & \C70/rm/m/n/12.05/54 ^^H \C70/rm/m/n/12.05/
-7f Q \C70/rm/m/n/12.05/7e ‹ \C70/rm/m/n/12.05/54 å \C70/rm/m/n/12.05/4e ^^Z \C7
-0/rm/m/n/12.05/52 ° \C70/rm/m/n/12.05/90 ; \C70/rm/m/n/12.05/8f ë \C70/rm/m/n/1
-2.05/7e ƒ \C70/rm/m/n/12.05/4e ˆ|\C70/rm/m/n/12.05/30 ^^B| \C70/rm/m/n/12.05/5b
- É \C70/rm/m/n/12.05/53 Ô \C70/rm/m/n/12.05/80 ˝ \C70/rm/m/n/12.05/4f ^^Z \C70/
-rm/m/n/12.05/5b û \C70/rm/m/n/12.05/73 ∞ \C70/rm/m/n/12.05/4e ^^@ * \C70/rm/m/n
-/12.05/5e ^^? \C70/rm/m/n/12.05/4e : ∫ \C70/rm/m/n/12.05/77 Â \C70/rm/m/n/12.05
-/76 Ñ \C70/rm/m/n/12.05/53 O \C70/rm/m/n/12.05/8b Æ|\C70/rm/m/n/12.05/ff ^^L| \
-C70/rm/m/n/12.05/59 Ç\OT1/ptm/m/n/12.05 HTTP\C70/rm/m/n/12.05/62 ^^V
- []
-
-[41] [42 <./pics/netty.pdf>]
-Overfull \hbox (85.39134pt too wide) in paragraph at lines 153--155
-\C70/rm/m/n/12.05/59 ^^D \C70/rm/m/n/12.05/74 ^^F \C70/rm/m/n/12.05/7a  \C70/r
-m/m/n/12.05/5e è \C70/rm/m/n/12.05/76 Ñ \C70/rm/m/n/12.05/57 ˙ \C70/rm/m/n/12.0
-5/78 @ \C70/rm/m/n/12.05/63 • \C70/rm/m/n/12.05/53 „ \C70/rm/m/n/12.05/66 /\OT1
-/ptm/m/n/12.05 ChannelHandler\C70/rm/m/n/12.05/53   \C70/rm/m/n/12.05/51 v \C70
-/rm/m/n/12.05/79 V \C70/rm/m/n/12.05/51 H\OT1/ptm/m/n/12.05 ChannelOutboundHand
-ler\C70/rm/m/n/12.05/54 å\OT1/ptm/m/n/12.05 ChannelInboundHandler|\C70/rm/m/n/1
-2.05/30 ^^B|
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 153--155
-
- []
-
-
-Overfull \hbox (22.58669pt too wide) in paragraph at lines 156--160
-\C70/rm/m/n/12.05/5b û \C70/rm/m/n/12.05/73 ∞ \C70/rm/m/n/12.05/76 Ñ \C70/rm/m/
-n/12.05/90 ^^B \C70/rm/m/n/12.05/91 M \C70/rm/m/n/12.05/56 h|\C70/rm/m/n/12.05/
-ff ^^L| \C70/rm/m/n/12.05/4f ã \C70/rm/m/n/12.05/59 Ç\OT1/ptm/m/n/12.05 Channel
-InboundHandlerAdapter\C70/rm/m/n/12.05/54 å\OT1/ptm/m/n/12.05 ChannelOutboundHa
-ndlerAdapter|\C70/rm/m/n/12.05/30 ^^B|
- []
-
-
-Overfull \hbox (14.4411pt too wide) in paragraph at lines 165--170
-\OT1/ptm/m/n/12.05 Netty\C70/rm/m/n/12.05/51 w \C70/rm/m/n/12.05/67 	 \C70/rm/m
-/n/12.05/88 ´ \C70/rm/m/n/12.05/79  \C70/rm/m/n/12.05/4e : \C70/rm/m/n/12.05/7
-f ^^V \C70/rm/m/n/12.05/78 ^^A \C70/rm/m/n/12.05/56 h \C70/rm/m/n/12.05/76 Ñ\OT
-1/ptm/m/n/12.05 ChannelOutboundHandler\C70/rm/m/n/12.05/76 Ñ \C70/rm/m/n/12.05/
-62 i \C70/rm/m/n/12.05/5c U|\C70/rm/m/n/12.05/30 ^^B|  \OT1/ptm/m/n/12.05 Mes-s
-age-To-By-teEn-coder\C70/rm/m/n/12.05/66 /
- []
-
-<pics/mysqljh.pdf, id=1004, 423.94608pt x 435.11374pt>
+[20] <pics/mysqljh.pdf, id=1176, 423.94608pt x 435.11374pt>
 File: pics/mysqljh.pdf Graphic file (type pdf)
- <use pics/mysqljh.pdf>
-Package pdftex.def Info: pics/mysqljh.pdf used on input line 177.
-(pdftex.def)             Requested size: 423.94504pt x 435.11267pt.
 
-[43] [44 <./pics/mysqljh.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 209--210
+<use pics/mysqljh.pdf>
+Package pdftex.def Info: pics/mysqljh.pdf used on input line 154.
+(pdftex.def)             Requested size: 423.94504pt x 435.11267pt.
+ [21 <./pics/netty.pdf>] [22 <./pics/mysqljh.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 170--172
 
  []
 
 
-Overfull \hbox (13.98468pt too wide) in paragraph at lines 221--224
+Overfull \hbox (13.98468pt too wide) in paragraph at lines 181--186
 \C70/rm/m/n/12.05/4e : \C70/rm/m/n/12.05/67 , \C70/rm/m/n/12.05/7c ˚ \C70/rm/m/
 n/12.05/7e ﬂ \C70/rm/m/n/12.05/90 	 \C70/rm/m/n/12.05/62 È \C70/rm/m/n/12.05/4e
  Ü \C70/rm/m/n/12.05/51 | \C70/rm/m/n/12.05/5b π\OT1/ptm/m/n/12.05 mysql\C70/rm
@@ -2348,95 +2261,91 @@ rm/m/n/12.05/8f Ÿ \C70/rm/m/n/12.05/4e õ ^^M \C70/rm/m/n/12.05/54 ^^L \C70/rm/m
 tm/m/n/12.05 sql\C70/rm/m/n/12.05/8b Ì
  []
 
-[45] <pics/hashtree.pdf, id=1049, 426.80235pt x 334.56166pt>
-File: pics/hashtree.pdf Graphic file (type pdf)
 
-<use pics/hashtree.pdf>
-Package pdftex.def Info: pics/hashtree.pdf used on input line 265.
-(pdftex.def)             Requested size: 426.8013pt x 334.56084pt.
- [46] [47 <./pics/hashtree.pdf>] [48]
-Overfull \hbox (3.05579pt too wide) in paragraph at lines 327--328
-[]\C70/rm/m/n/12.05/5f 1 \C70/rm/m/n/12.05/62 ó \C70/rm/m/n/12.05/78 ∞ \C70/rm/
-m/n/12.05/64 û|\C70/rm/m/n/12.05/ff ^^Z| \C70/rm/m/n/12.05/5d Ú \C70/rm/m/n/12.
-05/77 Â \C70/rm/m/n/12.05/53 ü \C70/rm/m/n/12.05/65 p \C70/rm/m/n/12.05/63 n \C
-70/rm/m/n/12.05/54 å \C70/rm/m/n/12.05/51 v\OT1/ptm/m/n/12.05 MD5\C70/rm/m/n/12
-.05/50 <|\C70/rm/m/n/12.05/ff ^^L| \C70/rm/m/n/12.05/60 Û \C70/rm/m/n/12.05/62 
-~ \C70/rm/m/n/12.05/52 0 \C70/rm/m/n/12.05/4e ^^@ * \C70/rm/m/n/12.05/51 w \C70
-/rm/m/n/12.05/67 	 \C70/rm/m/n/12.05/76 ¯ \C70/rm/m/n/12.05/54 ^^L\OT1/ptm/m/n/
-12.05 MD5\C70/rm/m/n/12.05/50 < \C70/rm/m/n/12.05/76 Ñ \C70/rm/m/n/12.05/65 p \
-C70/rm/m/n/12.05/63 n |\C70/rm/m/n/12.05/ff ^^H|\C70/rm/m/n/12.05/53 s
+Overfull \hbox (26.68556pt too wide) in paragraph at lines 181--186
+\C70/rm/m/n/12.05/53 Â \C70/rm/m/n/12.05/66 / \C70/rm/m/n/12.05/4e ^^@ \C70/rm/
+m/n/12.05/79 Õ \C70/rm/m/n/12.05/5f à \C70/rm/m/n/12.05/9e ª \C70/rm/m/n/12.05/
+70 Ê \C70/rm/m/n/12.05/76 Ñ \C70/rm/m/n/12.05/4e ã \C70/rm/m/n/12.05/60 ≈|\C70/
+rm/m/n/12.05/ff ^^L| \C70/rm/m/n/12.05/62 @ \C70/rm/m/n/12.05/4e Â \C70/rm/m/n/
+12.05/62 ^^Q \C70/rm/m/n/12.05/75 ( \C70/rm/m/n/12.05/4e Ü ^^@ * \C70/rm/m/n/12
+.05/62 ^^P \C70/rm/m/n/12.05/71 ü \C70/rm/m/n/12.05/76 Ñ \C70/rm/m/n/12.05/5f ^
+^@ \C70/rm/m/n/12.05/6e ê \C70/rm/m/n/12.05/76 Ñ\OT1/ptm/m/n/12.05 sql\C70/rm/m
+/n/12.05/89 „ \C70/rm/m/n/12.05/67 ê \C70/rm/m/n/12.05/68 F \C70/rm/m/n/12.05/6
+7 ∂\OT1/ptm/m/n/12.05 Druid|\C70/rm/m/n/12.05/30 ^^B| \C70/rm/m/n/12.05/52 ) \C
+70/rm/m/n/12.05/75 (\OT1/ptm/m/n/12.05 Druid\C70/rm/m/n/12.05/53 Ô
  []
 
-
-Overfull \hbox (6.8389pt too wide) in paragraph at lines 330--338
-\C70/rm/m/n/12.05/5b ˘ \C70/rm/m/n/12.05/4e é \C70/rm/m/n/12.05/8d Ö \C70/rm/m/
-n/12.05/95 ^^? \C70/rm/m/n/12.05/5b W \C70/rm/m/n/12.05/7b & \C70/rm/m/n/12.05/
-4e 2|\C70/rm/m/n/12.05/ff ^^L| \C70/rm/m/n/12.05/62 ^^Q \C70/rm/m/n/12.05/4e Ï 
-\C70/rm/m/n/12.05/53 Ô \C70/rm/m/n/12.05/4e Â \C70/rm/m/n/12.05/75 (\OT1/ptm/m/
-n/12.05 MD5\C70/rm/m/n/12.05/7b ó \C70/rm/m/n/12.05/6c ’ \C70/rm/m/n/12.05/75 ^
-^_ \C70/rm/m/n/12.05/62 ^^P \C70/rm/m/n/12.05/4e ^^@ *\OT1/ptm/m/n/12.05 128bit
-\C70/rm/m/n/12.05/76 Ñ \C70/rm/m/n/12.05/65 t p|\C70/rm/m/n/12.05/ff ^^L| \C70/
-rm/m/n/12.05/71 6 \C70/rm/m/n/12.05/54 ^^N \C70/rm/m/n/12.05/75 (\OT1/ptm/m/n/1
-2.05 RadixTree(\C70/rm/m/n/12.05/7f ˚
- []
-
-[49]
-Overfull \hbox (9.96901pt too wide) in paragraph at lines 376--388
-\OT1/ptm/m/n/12.05 work|\C70/rm/m/n/12.05/ff ^^L| \OT1/ptm/m/n/12.05 C ++|\C70/
-rm/m/n/12.05/ff ^^L| \OT1/ptm/m/n/12.05 Python|\C70/rm/m/n/12.05/ff ^^L| \OT1/p
-tm/m/n/12.05 Node.js\C70/rm/m/n/12.05/54 å\OT1/ptm/m/n/12.05 Clojure\C70/rm/m/n
-/12.05/76 Ñ \C70/rm/m/n/12.05/7f ^^V \C70/rm/m/n/12.05/7a  \C70/rm/m/n/12.05/8
-b Ì \C70/rm/m/n/12.05/8a ^^@ \C70/rm/m/n/12.05/52 ^^[ \C70/rm/m/n/12.05/5e ˙ \C
-70/rm/m/n/12.05/4e Ü \C70/rm/m/n/12.05/5b ¢ \C70/rm/m/n/12.05/62 7 \C70/rm/m/n/
-12.05/7a Ô\OT1/ptm/m/n/12.05 API |\C70/rm/m/n/12.05/30 ^^B| \OT1/ptm/m/n/12.05 
-Java\C70/rm/m/n/12.05/54 å\OT1/ptm/m/n/12.05 Scala\C70/rm/m/n/12.05/53 Ô
- []
-
-[50]
-Overfull \hbox (11.43028pt too wide) in paragraph at lines 397--406
-\C70/rm/m/n/12.05/5e v \C70/rm/m/n/12.05/53 — \C70/rm/m/n/12.05/5e ^^C \C70/rm/
-m/n/12.05/4e : \C70/rm/m/n/12.05/5f ^^@ \C70/rm/m/n/12.05/65 > \C70/rm/m/n/12.0
-5/6e ê \C70/rm/m/n/12.05/4e „ \C70/rm/m/n/12.05/78 ^^A \C70/rm/m/n/12.05/4e  \
-C70/rm/m/n/12.05/76 Ñ \C70/rm/m/n/12.05/67 a \C70/rm/m/n/12.05/6b >\OT1/ptm/m/n
-/12.05 Apache\C70/rm/m/n/12.05/8b ∏ \C70/rm/m/n/12.05/53 Ô \C70/rm/m/n/12.05/8b
- ¡|\C70/rm/m/n/12.05/30 ^^B| \C70/rm/m/n/12.05/5b ò \C70/rm/m/n/12.05/65 π \C70
-/rm/m/n/12.05/5b ¢ \C70/rm/m/n/12.05/62 7 \C70/rm/m/n/12.05/53 Ô \C70/rm/m/n/12
-.05/4e Â \C70/rm/m/n/12.05/4f ^^? \C70/rm/m/n/12.05/75 (\OT1/ptm/m/n/12.05 Java
-|\C70/rm/m/n/12.05/ff ^^L| \OT1/ptm/m/n/12.05 .NET |\C70/rm/m/n/12.05/ff ^^H|\O
-T1/ptm/m/n/12.05 C\C70/rm/m/n/12.05/ff ^^C|	||^^L|
- []
-
-) [51]
+[23]) [24]
 \openout2 = `chapters/Chapter4.aux'.
 
  (./chapters/Chapter4.tex
 Á¨¨ÂõõÁ´†
-<pics/jgbst.pdf, id=1144, 427.59747pt x 323.13272pt>
-File: pics/jgbst.pdf Graphic file (type pdf)
- <use pics/jgbst.pdf>
-Package pdftex.def Info: pics/jgbst.pdf used on input line 7.
-(pdftex.def)             Requested size: 427.59642pt x 323.13193pt.
+<pic4/bushu.pdf, id=1315, 427.5975pt x 365.44981pt>
+File: pic4/bushu.pdf Graphic file (type pdf)
+ <use pic4/bushu.pdf>
+Package pdftex.def Info: pic4/bushu.pdf used on input line 31.
+(pdftex.def)             Requested size: 427.59645pt x 365.44891pt.
 
-Overfull \hbox (0.80507pt too wide) in paragraph at lines 7--7
+Overfull \hbox (0.8051pt too wide) in paragraph at lines 31--31
  [][] 
  []
 
-<pics/jgztmkt.pdf, id=1146, 427.58957pt x 358.64528pt>
-File: pics/jgztmkt.pdf Graphic file (type pdf)
- <use pics/jgztmkt.pdf>
-Package pdftex.def Info: pics/jgztmkt.pdf used on input line 27.
-(pdftex.def)             Requested size: 427.58852pt x 358.6444pt.
+<pic4/jiagou.pdf, id=1317, 427.56479pt x 366.65314pt>
+File: pic4/jiagou.pdf Graphic file (type pdf)
+ <use pic4/jiagou.pdf>
+Package pdftex.def Info: pic4/jiagou.pdf used on input line 50.
+(pdftex.def)             Requested size: 427.56374pt x 366.65222pt.
 
-Overfull \hbox (0.79716pt too wide) in paragraph at lines 27--27
+Overfull \hbox (0.77238pt too wide) in paragraph at lines 50--50
  [][] 
  []
 
-[52
+[25
 
 
 
- <./pics/jgbst.pdf>]
-Overfull \hbox (29.7706pt too wide) in paragraph at lines 30--35
+] [26 <./pic4/bushu.pdf>] [27 <./pic4/jiagou.pdf>]
+<pic4/mokuai.pdf, id=1633, 427.41223pt x 253.4735pt>
+File: pic4/mokuai.pdf Graphic file (type pdf)
+ <use pic4/mokuai.pdf>
+Package pdftex.def Info: pic4/mokuai.pdf used on input line 66.
+(pdftex.def)             Requested size: 427.4112pt x 253.47285pt.
+
+Overfull \hbox (0.61984pt too wide) in paragraph at lines 66--66
+ [][] 
+ []
+
+[28 <./pic4/mokuai.pdf>]
+<pic4/lianjielc.pdf, id=1789, 319.1925pt x 375.4025pt>
+File: pic4/lianjielc.pdf Graphic file (type pdf)
+
+<use pic4/lianjielc.pdf>
+Package pdftex.def Info: pic4/lianjielc.pdf used on input line 99.
+(pdftex.def)             Requested size: 319.19171pt x 375.40158pt.
+
+<pic4/fenbushiguanli.pdf, id=1791, 427.39153pt x 54.44847pt>
+File: pic4/fenbushiguanli.pdf Graphic file (type pdf)
+
+<use pic4/fenbushiguanli.pdf>
+Package pdftex.def Info: pic4/fenbushiguanli.pdf used on input line 113.
+(pdftex.def)             Requested size: 427.39049pt x 54.44833pt.
+
+Overfull \hbox (0.59914pt too wide) in paragraph at lines 113--113
+ [][] 
+ []
+
+[29] [30 <./pic4/lianjielc.pdf> <./pic4/fenbushiguanli.pdf
+
+pdfTeX warning: pdflatex.exe (file ./pic4/fenbushiguanli.pdf): PDF inclusion: m
+ultiple pdfs with page group included in a single page
+>] <pic4/shujuku.pdf, id=1978, 302.58868pt x 259.53174pt>
+File: pic4/shujuku.pdf Graphic file (type pdf)
+
+<use pic4/shujuku.pdf>
+Package pdftex.def Info: pic4/shujuku.pdf used on input line 138.
+(pdftex.def)             Requested size: 302.58794pt x 259.5311pt.
+
+Overfull \hbox (29.7706pt too wide) in paragraph at lines 141--146
 []\C70/rm/m/n/12.05/62 @ \C70/rm/m/n/12.05/67 	 \C70/rm/m/n/12.05/76 Ñ \C70/rm/
 m/n/12.05/67 ^^M \C70/rm/m/n/12.05/52 ° \C70/rm/m/n/12.05/8f o \C70/rm/m/n/12.0
 5/4e ˆ \C70/rm/m/n/12.05/90 ˝ \C70/rm/m/n/12.05/97 ^^@ \C70/rm/m/n/12.05/89 Å \
@@ -2452,10 +2361,10 @@ tm/m/n/12.05 JSQL\C70/rm/m/n/12.05/75 (\OT1/ptm/m/n/12.05 java\C70/rm/m/n/12.05
 
 File: pics/mysqljh.pdf Graphic file (type pdf)
 <use pics/mysqljh.pdf>
-Package pdftex.def Info: pics/mysqljh.pdf used on input line 40.
+Package pdftex.def Info: pics/mysqljh.pdf used on input line 151.
 (pdftex.def)             Requested size: 423.94504pt x 435.11267pt.
 
-Overfull \hbox (1.68054pt too wide) in paragraph at lines 36--41
+Overfull \hbox (1.68054pt too wide) in paragraph at lines 147--152
 \C70/rm/m/n/12.05/60 '|\C70/rm/m/n/12.05/30 ^^B| \OT1/ptm/m/n/12.05 jsql\C70/rm
 /m/n/12.05/91 « \C70/rm/m/n/12.05/75 (\OT1/ptm/m/n/12.05 mysql\C70/rm/m/n/12.05
 /76 Ñ \C70/rm/m/n/12.05/90 ^^Z \C70/rm/m/n/12.05/4f · \C70/rm/m/n/12.05/53 O \C
@@ -2463,44 +2372,44 @@ Overfull \hbox (1.68054pt too wide) in paragraph at lines 36--41
 /n/12.05/68 7 \C70/rm/m/n/12.05/5c 1 \C70/rm/m/n/12.05/4e ^^M \C70/rm/m/n/12.05
 /75 ( \C70/rm/m/n/12.05/81 Í \C70/rm/m/n/12.05/5d Ò \C70/rm/m/n/12.05/5f ^^@ \C
 70/rm/m/n/12.05/53 — O \C70/rm/m/n/12.05/8b Æ \C70/rm/m/n/12.05/4e Ü|\C70/rm/m/
-n/12.05/30 ^^B| \C70/rm/m/n/12.05/56 ˛[]\OT1/ptm/m/n/12.05 4-3[]\C70/rm/m/n/12.
+n/12.05/30 ^^B| \C70/rm/m/n/12.05/56 ˛[]\OT1/ptm/m/n/12.05 4-7[]\C70/rm/m/n/12.
 05/66 > \C70/rm/m/n/12.05/79 : \C70/rm/m/n/12.05/4e Ü \OT1/ptm/m/n/12.05 mysql\
 C70/rm/m/n/12.05/53 O
  []
 
-[53 <./pics/jgztmkt.pdf>] <pics/sqljx.pdf, id=1193, 51.83232pt x 9.75716pt>
+<pics/sqljx.pdf, id=1981, 51.83232pt x 9.75716pt>
 File: pics/sqljx.pdf Graphic file (type pdf)
-
-<use pics/sqljx.pdf>
-Package pdftex.def Info: pics/sqljx.pdf used on input line 45.
+ <use pics/sqljx.pdf>
+Package pdftex.def Info: pics/sqljx.pdf used on input line 156.
 (pdftex.def)             Requested size: 51.83218pt x 9.75711pt.
- [54 <./pics/sqljx.pdf>]
-<pics/hazelcast.pdf, id=1209, 423.91599pt x 303.47429pt>
+ [31]
+<pics/hazelcast.pdf, id=1993, 423.91599pt x 303.47429pt>
 File: pics/hazelcast.pdf Graphic file (type pdf)
 
 <use pics/hazelcast.pdf>
-Package pdftex.def Info: pics/hazelcast.pdf used on input line 57.
+Package pdftex.def Info: pics/hazelcast.pdf used on input line 168.
 (pdftex.def)             Requested size: 423.91495pt x 303.47354pt.
- [55 <./pics/hazelcast.pdf>]
-<pics/jiankong.pdf, id=1233, 408.23746pt x 293.26785pt>
+ [32 <./pic4/shujuku.pdf>] [33 <./pics/sqljx.pdf>]
+[34 <./pics/hazelcast.pdf>]
+<pics/jiankong.pdf, id=2123, 408.23746pt x 293.26785pt>
 File: pics/jiankong.pdf Graphic file (type pdf)
 
 <use pics/jiankong.pdf>
-Package pdftex.def Info: pics/jiankong.pdf used on input line 72.
+Package pdftex.def Info: pics/jiankong.pdf used on input line 186.
 (pdftex.def)             Requested size: 408.23645pt x 293.26714pt.
-) [56 <./pics/jiankong.pdf>]
+) [35 <./pics/jiankong.pdf>]
 \openout2 = `chapters/Chapter5.aux'.
 
  (./chapters/Chapter5.tex
 Á¨¨‰∫îÁ´†
-<codepdf/allpackage.pdf, id=1257, 425.30891pt x 190.2307pt>
+<codepdf/allpackage.pdf, id=2150, 425.30891pt x 190.2307pt>
 File: codepdf/allpackage.pdf Graphic file (type pdf)
 
 <use codepdf/allpackage.pdf>
 Package pdftex.def Info: codepdf/allpackage.pdf used on input line 11.
 (pdftex.def)             Requested size: 425.30788pt x 190.23022pt.
 
-<codepdf/config.pdf, id=1258, 428.92245pt x 81.94615pt>
+<codepdf/config.pdf, id=2151, 428.92245pt x 81.94615pt>
 File: codepdf/config.pdf Graphic file (type pdf)
 
 <use codepdf/config.pdf>
@@ -2511,13 +2420,13 @@ Overfull \hbox (2.13004pt too wide) in paragraph at lines 12--12
  [][] 
  []
 
-<codepdf/sql.pdf, id=1261, 423.86356pt x 38.58415pt>
+<codepdf/sql.pdf, id=2154, 423.86356pt x 38.58415pt>
 File: codepdf/sql.pdf Graphic file (type pdf)
  <use codepdf/sql.pdf>
 Package pdftex.def Info: codepdf/sql.pdf used on input line 20.
 (pdftex.def)             Requested size: 423.86252pt x 38.58403pt.
 
-[57
+[36
 
 
 
@@ -2525,7 +2434,7 @@ Package pdftex.def Info: codepdf/sql.pdf used on input line 20.
 
 pdfTeX warning: pdflatex.exe (file ./codepdf/config.pdf): PDF inclusion: multip
 le pdfs with page group included in a single page
->] <codepdf/netty.pdf, id=1414, 422.05681pt x 68.45575pt>
+>] <codepdf/netty.pdf, id=2307, 422.05681pt x 68.45575pt>
 File: codepdf/netty.pdf Graphic file (type pdf)
 
 <use codepdf/netty.pdf>
@@ -2585,18 +2494,18 @@ Overfull \hbox (1.05898pt too wide) in paragraph at lines 1--31
 ps to terminate all threads.[] 
  []
 
-[58 <./codepdf/sql.pdf> <./codepdf/netty.pdf
+[37 <./codepdf/sql.pdf> <./codepdf/netty.pdf
 
 pdfTeX warning: pdflatex.exe (file ./codepdf/netty.pdf): PDF inclusion: multipl
 e pdfs with page group included in a single page
->] <codepdf/mysql.pdf, id=1523, 414.46846pt x 162.88855pt>
+>] <codepdf/mysql.pdf, id=2416, 414.46846pt x 162.88855pt>
 File: codepdf/mysql.pdf Graphic file (type pdf)
 
 <use codepdf/mysql.pdf>
 Package pdftex.def Info: codepdf/mysql.pdf used on input line 35.
 (pdftex.def)             Requested size: 414.46744pt x 162.88814pt.
- [59]
-<codepdf/mysqlmysql.pdf, id=1531, 411.33673pt x 311.31305pt>
+ [38]
+<codepdf/mysqlmysql.pdf, id=2423, 411.33673pt x 311.31305pt>
 File: codepdf/mysqlmysql.pdf Graphic file (type pdf)
 
 <use codepdf/mysqlmysql.pdf>
@@ -2616,7 +2525,7 @@ A \C70/rm/m/n/12.05/88 ≈ \C70/rm/m/n/12.05/5b ˘ \C70/rm/m/n/12.05/8c a|\C70/rm/
 m/n/12.05/30 ^^B|   \OT1/ptm/m/n/12.05 mysql\C70/rm/m/n/12.05/91 Ã
  []
 
-(./codetex/CommandPacket.kt.tex) [60 <./codepdf/mysql.pdf>] [61 <./codepdf/mysq
+(./codetex/CommandPacket.kt.tex) [39 <./codepdf/mysql.pdf>] [40 <./codepdf/mysq
 lmysql.pdf>] (./codetex/MysqlAuthHander.kt.tex)
 Overfull \hbox (63.06627pt too wide) in paragraph at lines 1--50
 []\OT1/cmtt/m/n/12.05 12 [][][][]            [][][][]LoginLog[][][][]([][]auth[
@@ -2663,7 +2572,7 @@ Overfull \hbox (25.8619pt too wide) in paragraph at lines 1--55
 sage[][][][]([][]ErrorCode[][].[][]ER_UNKNOWN_CHARACTER_SET[][],
  []
 
-[62] [63] <codepdf/jsqlsql.pdf, id=1721, 423.50221pt x 68.45575pt>
+[41] [42] <codepdf/jsqlsql.pdf, id=2614, 423.50221pt x 68.45575pt>
 File: codepdf/jsqlsql.pdf Graphic file (type pdf)
 
 <use codepdf/jsqlsql.pdf>
@@ -2695,13 +2604,13 @@ Overfull \hbox (19.66116pt too wide) in paragraph at lines 1--61
 llHanders[][].[][]handerMap[][][[][]sqlStatement[][].[][]javaClass[][]][] 
  []
 
-[64 <./codepdf/jsqlsql.pdf>] [65] (./codetex/SqlStatementHander.kt.tex)
+[43 <./codepdf/jsqlsql.pdf>] [44] (./codetex/SqlStatementHander.kt.tex)
 Overfull \hbox (7.2597pt too wide) in paragraph at lines 1--63
 []\OT1/cmtt/m/n/12.05 11 [][][][]    [][][][]fun [][][][]handle[][][][]([][]sql
 Statement[][]: [][]SQLStatement[][], [][]connection[][]: [][]OConnection[][])
  []
 
-[66] <codepdf/sqljiexi.pdf, id=1758, 420.49097pt x 122.41734pt>
+[45] <codepdf/sqljiexi.pdf, id=2650, 420.49097pt x 122.41734pt>
 File: codepdf/sqljiexi.pdf Graphic file (type pdf)
 
 <use codepdf/sqljiexi.pdf>
@@ -2721,36 +2630,36 @@ m/m/n/12.05/4e ^^M \C70/rm/m/n/12.05/54 ^^L \C70/rm/m/n/12.05/76 Ñ \C70/rm/m/n/
 Ü\OT1/ptm/m/n/12.05 sql\C70/rm/m/n/12.05/6a !
  []
 
-<codepdf/sqlddm.pdf, id=1760, 420.49097pt x 176.37895pt>
+<codepdf/sqlddm.pdf, id=2652, 420.49097pt x 176.37895pt>
 File: codepdf/sqlddm.pdf Graphic file (type pdf)
 
 <use codepdf/sqlddm.pdf>
 Package pdftex.def Info: codepdf/sqlddm.pdf used on input line 71.
 (pdftex.def)             Requested size: 420.48993pt x 176.37851pt.
 
-<codepdf/storage.pdf, id=1762, 425.79073pt x 41.47495pt>
+<codepdf/storage.pdf, id=2654, 425.79073pt x 41.47495pt>
 File: codepdf/storage.pdf Graphic file (type pdf)
 
 <use codepdf/storage.pdf>
 Package pdftex.def Info: codepdf/storage.pdf used on input line 75.
 (pdftex.def)             Requested size: 425.78969pt x 41.47482pt.
- <codepdf/db.pdf, id=1764, 425.06805pt x 162.88855pt>
+ <codepdf/db.pdf, id=2656, 425.06805pt x 162.88855pt>
 File: codepdf/db.pdf Graphic file (type pdf)
 
 <use codepdf/db.pdf>
 Package pdftex.def Info: codepdf/db.pdf used on input line 77.
 (pdftex.def)             Requested size: 425.06702pt x 162.88814pt.
- <codepdf/table.pdf, id=1766, 422.89996pt x 81.94615pt>
+ <codepdf/table.pdf, id=2658, 422.89996pt x 81.94615pt>
 File: codepdf/table.pdf Graphic file (type pdf)
 
 <use codepdf/table.pdf>
 Package pdftex.def Info: codepdf/table.pdf used on input line 79.
 (pdftex.def)             Requested size: 422.89893pt x 81.94594pt.
- [67 <./codepdf/sqljiexi.pdf> <./codepdf/sqlddm.pdf
+ [46 <./codepdf/sqljiexi.pdf> <./codepdf/sqlddm.pdf
 
 pdfTeX warning: pdflatex.exe (file ./codepdf/sqlddm.pdf): PDF inclusion: multip
 le pdfs with page group included in a single page
->] (./codetex/HtreeNode.java.tex) [68 <./codepdf/storage.pdf> <./codepdf/db.pdf
+>] (./codetex/HtreeNode.java.tex) [47 <./codepdf/storage.pdf> <./codepdf/db.pdf
 
 
 pdfTeX warning: pdflatex.exe (file ./codepdf/db.pdf): PDF inclusion: multiple p
@@ -2772,7 +2681,7 @@ ex[][]] = [][][][]new [][][][]HtreeNode[][][][]([][]pre[][].[][]high [][]+ [][]
 [][]1[][][][], [][]key[][], [][]value[][]);[] 
  []
 
-[69] [70] (./codetex/MStorage.java.tex)
+[48] [49] (./codetex/MStorage.java.tex)
 Overfull \hbox (50.66481pt too wide) in paragraph at lines 1--94
 []\OT1/cmtt/m/n/12.05 06 [][][][]    [][][][]public void [][][][]write[][][][](
 [][][][]long [][]pageNumber[][], [][]ByteBuffer data[][]) [][][][]throws [][]IO
@@ -2792,8 +2701,8 @@ Overfull \hbox (7.2597pt too wide) in paragraph at lines 1--94
 ffer will be directly written
  []
 
-[71] (./codetex/DiscIO.java.tex) [72] [73]
-<codepdf/hazelcast.pdf, id=2017, 425.79073pt x 68.45575pt>
+[50] (./codetex/DiscIO.java.tex) [51] [52]
+<codepdf/hazelcast.pdf, id=2909, 425.79073pt x 68.45575pt>
 File: codepdf/hazelcast.pdf Graphic file (type pdf)
 
 <use codepdf/hazelcast.pdf>
@@ -2812,29 +2721,29 @@ C70/rm/m/n/12.05/4e - \C70/rm/m/n/12.05/76 Ñ \C70/rm/m/n/12.05/52 ü \C70/rm/m/n
 elcast\C70/rm/m/n/12.05/53 ^^E
  []
 
-(./codetex/MyHazelcast.kt.tex) [74] [75 <./codepdf/hazelcast.pdf>] [76]
-<codepdf/audit.pdf, id=2099, 418.20238pt x 54.96535pt>
+(./codetex/MyHazelcast.kt.tex) [53] [54 <./codepdf/hazelcast.pdf>] [55]
+<codepdf/audit.pdf, id=2992, 418.20238pt x 54.96535pt>
 File: codepdf/audit.pdf Graphic file (type pdf)
  <use codepdf/audit.pdf>
 Package pdftex.def Info: codepdf/audit.pdf used on input line 110.
 (pdftex.def)             Requested size: 418.20135pt x 54.9652pt.
-) [77 <./codepdf/audit.pdf>] [78]
+) [56 <./codepdf/audit.pdf>] [57]
 \openout2 = `chapters/Chapter6.aux'.
 
  (./chapters/Chapter6.tex
 Á¨¨ÂÖ≠Á´†
-[79
+[58
 
 
 
-] [80] [81] <testpdf/jietu1.pdf, id=2258, 426.7371pt x 150.86897pt>
+] [59] [60] <testpdf/jietu1.pdf, id=3150, 426.7371pt x 150.86897pt>
 File: testpdf/jietu1.pdf Graphic file (type pdf)
 
 <use testpdf/jietu1.pdf>
 Package pdftex.def Info: testpdf/jietu1.pdf used on input line 172.
 (pdftex.def)             Requested size: 426.73605pt x 150.86859pt.
 
-<testpdf/jietu2.pdf, id=2259, 427.93056pt x 179.58826pt>
+<testpdf/jietu2.pdf, id=3151, 427.93056pt x 179.58826pt>
 File: testpdf/jietu2.pdf Graphic file (type pdf)
 
 <use testpdf/jietu2.pdf>
@@ -2845,7 +2754,7 @@ Overfull \hbox (1.13817pt too wide) in paragraph at lines 173--173
  [][] 
  []
 
-<testpdf/jietu3.pdf, id=2260, 427.41122pt x 118.95987pt>
+<testpdf/jietu3.pdf, id=3152, 427.41122pt x 118.95987pt>
 File: testpdf/jietu3.pdf Graphic file (type pdf)
 
 <use testpdf/jietu3.pdf>
@@ -2887,12 +2796,12 @@ Overfull \hbox (56.86554pt too wide) in paragraph at lines 1--182
 ode="[][] [][]+ [][][][]"true&characterEncoding=UTF8"[][][] 
  []
 
-[82 <./testpdf/jietu1.pdf> <./testpdf/jietu2.pdf
+[61 <./testpdf/jietu1.pdf> <./testpdf/jietu2.pdf
 
 pdfTeX warning: pdflatex.exe (file ./testpdf/jietu2.pdf): PDF inclusion: multip
 le pdfs with page group included in a single page
->] [83 <./testpdf/jietu3.pdf>]
-<testpdf/mysqltime.pdf, id=2291, 397.72592pt x 95.43655pt>
+>] [62 <./testpdf/jietu3.pdf>]
+<testpdf/mysqltime.pdf, id=3181, 397.72592pt x 95.43655pt>
 File: testpdf/mysqltime.pdf Graphic file (type pdf)
 
 <use testpdf/mysqltime.pdf>
@@ -2912,14 +2821,14 @@ rm/m/n/12.05/5f S \C70/rm/m/n/12.05/62 g \C70/rm/m/n/12.05/88 L \C70/rm/m/n/12.
 0/rm/m/n/12.05/6b !
  []
 
-<testpdf/jmetjsql.pdf, id=2295, 427.19168pt x 235.24802pt>
+<testpdf/jmetjsql.pdf, id=3185, 427.19168pt x 235.24802pt>
 File: testpdf/jmetjsql.pdf Graphic file (type pdf)
 
 <use testpdf/jmetjsql.pdf>
 Package pdftex.def Info: testpdf/jmetjsql.pdf used on input line 203.
 (pdftex.def)             Requested size: 427.19064pt x 235.24744pt.
 
-<testpdf/jmetmysql.pdf, id=2296, 427.5975pt x 233.32597pt>
+<testpdf/jmetmysql.pdf, id=3186, 427.5975pt x 233.32597pt>
 File: testpdf/jmetmysql.pdf Graphic file (type pdf)
 
 <use testpdf/jmetmysql.pdf>
@@ -2945,17 +2854,17 @@ d K \C70/rm/m/n/12.05/8b ’|\C70/rm/m/n/12.05/30 ^^B| \C70/rm/m/n/12.05/60 ' \C7
 \OT1/ptm/m/n/12.05 JMeter\C70/rm/m/n/12.05/6d K
  []
 
-[84 <./testpdf/mysqltime.pdf>] [85 <./testpdf/jmetjsql.pdf> <./testpdf/jmetmysq
+[63 <./testpdf/mysqltime.pdf>] [64 <./testpdf/jmetjsql.pdf> <./testpdf/jmetmysq
 l.pdf
 
 pdfTeX warning: pdflatex.exe (file ./testpdf/jmetmysql.pdf): PDF inclusion: mul
 tiple pdfs with page group included in a single page
->] [86]
+>] [65]
 \openout2 = `chapters/Chapter7.aux'.
 
  (./chapters/Chapter7.tex
 Á¨¨‰∏ÉÁ´†
-) [87
+) [66
 
 
 
@@ -2977,18 +2886,18 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 6.025pt
 (hyperref)                replaced by space on input line 18.
 
-(./contents/acknowledgements.tex) [88
+(./contents/acknowledgements.tex) [67
 
 
 ] (./thesis.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 17--19
+Underfull \hbox (badness 10000) in paragraph at lines 89--91
 []\OT1/ptm/m/n/10.53937 Wikipedia. Log-structured merge-tree [EB/OL]. https://e
 n.wikipedia.org/wiki/Log-
  []
 
 ) (./contents/appendix.tex)
-Package atenddvi Info: Last page = 97.
- [89
+Package atenddvi Info: Last page = 76.
+ [68
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 18.
@@ -3000,49 +2909,49 @@ Package atveryend Info: Executing hook `AfterLastShipout' on input line 18.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 18.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 18.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 1EEE8E00E80A081F49B39C3D67E5FB83;8945.
+(rerunfilecheck)             Checksum: 9B20014CA820A4A2D96FE85033EF2876;9502.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 33221 strings out of 494875
- 536117 string characters out of 6179216
- 622623 words of memory out of 5000000
- 34818 multiletter control sequences out of 15000+600000
- 110485 words of font info for 366 fonts, out of 8000000 for 9000
- 36 hyphenation exceptions out of 8191
- 56i,12n,83p,10555b,771s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/s
+ 32667 strings out of 492995
+ 528886 string characters out of 6136402
+ 624353 words of memory out of 5000000
+ 34561 multiletter control sequences out of 15000+600000
+ 108358 words of font info for 359 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 56i,12n,83p,10555b,772s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/s
 imhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS
-/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc><c:
+/fonts/simsun.ttc><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:
 /WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei
-.ttf><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/font
-s/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WIND
-OWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc>
+.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/font
+s/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simhei.ttf><c:/WIND
+OWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf>
 <c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/sim
-hei.ttf><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/f
-onts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/W
-INDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.t
-tc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/
+sun.ttc><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/f
+onts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc><c:/W
+INDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.t
+tf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/
 simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOW
-S/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c
-:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhe
+S/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c
+:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simhe
 i.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fon
-ts/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simhei.ttf><c:/WIN
-DOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf
-><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/si
-mhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/
-fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simhei.ttf><c:/
-WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.
-ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts
-/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simhei.ttf><c:/WINDO
-WS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><
-c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf>{c:/texlive/2017/texmf
--dist/fonts/enc/dvips/base/8r.enc}<c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/font
-s/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WIND
-OWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc>
+ts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WIN
+DOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf
+><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/si
+mhei.ttf><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/
+fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/
+WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.
+ttc><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts
+/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc><c:/WINDO
+WS/fonts/simsun.ttc><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><
+c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simh
+ei.ttf><c:/WINDOWS/fonts/simhei.ttf>{c:/texlive/2017/texmf-dist/fonts/enc/dvips
+/base/8r.enc}<c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WIND
+OWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simsun.ttc>
 <c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/sim
 sun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/f
 onts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/W
@@ -3063,18 +2972,16 @@ ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts
 WS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><
 c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/sims
 un.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fo
-nts/simsun.ttc><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WI
-NDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/texlive/2017/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2017/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr8.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.
-pfb><c:/texlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/20
-17/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on thesis.pdf (97 pages, 2004848 bytes).
+nts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WINDOWS/fonts/simsun.ttc><c:/WI
+NDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simhei.ttf><c:/WINDOWS/fonts/simsun.tt
+c><c:/WINDOWS/fonts/simsun.ttc><c:/texlive/2017/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmtt12.pfb><c:/texlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/t
+exlive/2017/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on thesis.pdf (76 pages, 2044461 bytes).
 PDF statistics:
- 2945 PDF objects out of 2984 (max. 8388607)
- 2217 compressed objects within 23 object streams
- 434 named destinations out of 1000 (max. 500000)
- 1059 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3826 PDF objects out of 4296 (max. 8388607)
+ 2776 compressed objects within 28 object streams
+ 388 named destinations out of 1000 (max. 500000)
+ 1105 words of extra memory for PDF output out of 10000 (max. 10000000)
 
