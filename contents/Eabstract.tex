@@ -1,35 +1,30 @@
 % !Mode:: "TeX:UTF-8"
 
-\begin{Eabstract}{mysql}{java}{mysql}{java}{mysql}
-Database, operating system and compiler and called the three systems, can be said that the cornerstone of the entire computer software. Which is closer to the application layer database, is a lot of business support. This field after decades of development,
-There are new developments. From the beginning of the hierarchy database and relational database, to the recent hot Nosql database, and then to the recent Google Spanner and F1 as the representative of the NewSql database.
+\begin{Eabstract}{Distributed database}{relational database}{security audit}{Mysql}{Non-relational database}
+With the rapid development of Internet application and computer technology, the database has gradually become the core of information system
+Points and widely used in enterprises, financial institutions, government and national defense and other fields.
+However, the traditional relational database is facing increasing
+When exposed to a large number of data a lot of problems, can not be efficient and real-time processing. The new needs of the system
+Seeking, the traditional relational database can not be solved very well.
+Non-relational database is to make up for the lack of relational database, the OrientDB database
+Is a non-relational database. At present, the existing non-relational database has great ability to handle large amounts of data
+But in many key areas, relational databases are non-relational databases that can not be replaced.
+How to combine the advantages of relational databases and non-relational databases has become the key issue in the current database area.
 
-In the Internet age, the storage and access of massive data becomes the bottleneck of system design and use. For mass data processing,
-King, divided into two types: online transaction processing (OLTP) and online analytical processing (OLAP).
+Through the study of distributed theory, relational database theory and non-relational database technology,
+This article based on the Java language to achieve a distributed relational database JSQL, JSQL is a relational database technology,
+The combination of non-relational database technology and distributed technology. JSQL common client-server - server architecture, divided into customer service and server-side,
+Server-side is divided into distributed management nodes and distributed database nodes.
+Distributed management nodes to achieve a database server load balancing and monitoring and management functions. Distributed database node contains five major modules,
+The network module accepts the connection request of the front-end application, authenticates and authorizes the client-end, and manages the connection,
+And realize the communication protocol based on Mysql, so easy to migrate to Mysql users to the system;
+Sql parsing and execution module to accept the client's SQL request, and then parse and execute the database stored call,
+Return the execution result
+The audit module is to store and analyze all changes to the database, the distributed management node to provide audit data;
+The database engine module makes use of the non-relational OrientDB database engine for reliable data storage;
+Distributed modules use hazlcast to implement a database cluster.
+Based on the above functional modules, JSQL has high availability, scalability, load balancing and other characteristics, while taking into account the database security audit needs from the bottom of the database,
+Joined the data audit graphical interface shows the audit results.
 
-Relational database is based on the relational model of the database, which by means of aggregation algebra and other mathematical concepts and methods to deal with the database
-data. Which is the most popular mysql, mysql is an open source relational database, the advantage lies in the open source code, any business and individuals can according to their own needs to modify the source code mysql.
-
-NoSQL database, called Not Only SQL, meaning that when the relational database is used when the relational database, not applicable
-There is no need to use relational database is not necessary, you can consider the use of more appropriate data storage.
-
-Oracle, mysql and other traditional relational database is very mature and has been large-scale commercial, why use NoSQL database? mainly
-With the development of the Internet, the amount of data is growing, the performance requirements are getting higher and higher, the traditional database of congenital defects, namely stand-alone (single
-Library) performance bottlenecks, and difficult to expand. This is a stand-alone single library bottleneck, but difficult to expand, naturally unable to meet the growing mass of data storage
-And its performance requirements, so there will be a variety of different NoSQL products.
-
-Although in the cloud computing era, the traditional database there are congenital defects, but NoSQL database can not be replaced, NoSQL can only
-For the traditional data supplement can not be replaced, so to avoid the shortcomings of traditional databases is the current era of large data must be resolved.
-
-In order to solve these problems, such as mysql and other relational database, this article describes how to design and implement a compatible mysql protocol distributed database. He can automatically find the distributed database cluster nodes,
-Automatically allocate data to support massive data storage. Taking into account the increasingly important security of the database, from time to time the occurrence of database administrators or other attackers malicious changes in the database data,
-So the database developed by the database from the bottom of the database to join the audit function.
-
-The main work of this paper is as follows:
-
-Based on the realization of java language compatible mysql communication protocol database;
-
-The realization of the database cluster, to achieve the database of high availability, scalability, load balancing and other characteristics;
-
-From the bottom of the database to consider the database security, joined the data audit and other features.
+The thesis has carried on the function and the performance test to the system. The result of function test shows that the system conforms to the basic requirements of distributed database functionally, and the function of auditing system also meets the requirements of this dissertation. Papers through the performance test results analysis, that the performance of the system basically meet the requirements of this paper. However, the system of complex SQL statement support is not perfect, and finally proposed an improved program.
 \end{Eabstract}
