@@ -41,9 +41,8 @@ SQL包下面的类主要是作为数据库管理类，
 网络模块主要是用了Netty来实现的，所有和网络有关的代码都在netty包下面。表\ref{codepdf/netty}描述了每个类的
 功能。
 \pictable[htbp]{网络模块中各个类的作用}{}{codepdf/netty}
-下面的代码是netty包下面主要的代码，用来启动网络服务器，接受用户的连接请求。
-
-\input{codetex/NettyServer.kt.tex}
+网络处理流程如图\ref{pic5/wangluo}所示。网络模块收到客服端的套接字连接以后需要包网络字节包装成Mysql的消息包格式，如果错误就说明客服端不是我们的客服端或者客服端发送了其他的错误。当截取到消息包格式以后，还需要解析成我们的数据结构，如果解析成功就包数据结构发送到解析模块，如果解析错误，就断开连接。
+\pic[htbp]{网络模块功能图}{}{pic5/wangluo}
 
 除了实现网络模块以外，我们还要实现通信协议，系统
 采用了和mysql一样的通信协议，在mysql包下面实现了mysql的通信协议。
@@ -53,29 +52,22 @@ SQL包下面的类主要是作为数据库管理类，
 网络服务器接受到客服端的连接以后，就要解析mysql的通信协议，
 包每一个包封装到具体的对象里面，表\ref{codepdf/mysqlmysql}描述了所有的mysql通信协议的封装对象。
 \pictable[htbp]{mysql所有协议包的封装对象}{}{codepdf/mysqlmysql}
-mysql里面有很多的包，每个包都需要一个类来实现，下面是命令包的源代码，
+mysql里面有很多的包，每个包都需要一个类来实现，图\ref{pic5/woshou}是握手包的类图，
 其他包的实现大体相同。
-
-\input{codetex/CommandPacket.kt.tex}
-
+\pic[htbp]{握手包实现类图}{}{pic5/woshou}
 协议主要有2个阶段，一个是认证阶段，一个是命令阶段，认证阶段就是
 接受客服端的请求，然后检查用户的认证信息，比如用户名和密码，
-下面代码主要用来实现用户认证的功能。
-
-\input{codetex/MysqlAuthHander.kt.tex}
+图\ref{pic5/renzheng}显示了认证流程过程。
+\pic[htbp]{认证流程图}{}{pic5/renzheng}
 
 认证成功以后就是命令阶段，服务器接受客服端的命令，然后处理，
-下面是命令处理的具体代码。
-
-\input{codetex/MysqlCommandHandler.kt.tex}
+图\ref{pic5/mingling}显示了命令处理流程。
+\pic[htbp]{命令处理流程图}{}{pic5/mingling}
 \subsection{SQL解析模块}
 \pictable[htbp]{SQL前端连接模块相关的类}{}{codepdf/jsqlsql}
 sql解析主要用到了druid开源的框架，解析sql以后就要做具体的数据处理，
-下面的代码主要用处理用户的sql语句。
-
-\input{codetex/MysqlSQLhander.kt.tex}
-
-\input{codetex/SqlStatementHander.kt.tex}
+图\ref{pic5/sqlchuli}显示了SQL模块的处理流程图。
+\pic[htbp]{SQL处理流程图}{}{pic5/sqlchuli}
 
 mysql当中的sql语句有很多种，每一种语句都要做不同的处理，
 \ref{codepdf/sqljiexi}描述了sql模块下实现的各种类型的
@@ -94,22 +86,9 @@ storage包下面各种文件的功能。
 和表有关的接口如表\ref{codepdf/table}所示。
 \pictable[htbp]{数据库引擎和表有关功能的接口}{}{codepdf/table}
 
-前面说过，本系统实现的存储引擎用的是哈希树这种数据结构。
-哈希树的实现主要有2个类，一个类实现哈希树的节点，一个类实现哈希树
-给外部模块提供调用接口。
-下面是其中实现的关键代码。
-
-\input{codetex/HtreeNode.java.tex}
-
-\input{codetex/HTreeMap.java.tex}
-
-除了实现数据结构以外还要实现存储引擎，也就是把数据存储在文件系统当中，
-其中主要用到内存映射文件，下面是其中的关键代码。
-
-\input{codetex/MStorage.java.tex}
-
-\input{codetex/DiscIO.java.tex}
-
+存储引擎利用非关系型数据存储，为上面模块提供操作接口。其中有关数据库操作的接口如图\ref{pic5/db}b所示，有关表操作的接口如图\ref{pic5/table}所示。
+\pic[htbp]{数据库操作接口类图}{}{pic5/db}
+\pic[htbp]{表操作接口类图}{}{pic5/table}
 \section{集群架构的实现}
 集群功能主要是利用了开源的hazelcast框架来实现，
 其中的功能全在hazelcast包下面实现，表\ref{codepdf/hazelcast}给出了
