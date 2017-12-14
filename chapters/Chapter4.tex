@@ -30,16 +30,32 @@
 简化调整。系统的网络拓扑结构如图\ref{pic4/bushu}所示。
 \pic[htbp]{系统网络拓扑结构图}{}{pic4/bushu}
 在系统网络拓扑图中，主要有下面几种节点：
-\begin{enumerate}
-	\item 客服端节点\\
+
+
+	\begin{enumerate}
+		\item 客服端节点
+	\end{enumerate}
+
 	客服端节点作为连接分布式数据库服务器的代理，发送SQL命令请求到数据库服务器，请求数据，客服端节点可以是原生的Mysql节点，也可以是自己开发的具有负载均衡的JDBC客服端。如果是用Mysql客服端，就可以直接连接分布式数据库节点，可以任意选择一台分布式数据库节点执行数据库操作命令，其中数据库会自动同步到其他数据库节点。当用自己开发的JDBC客服端的时候，客服端就会首先连接分布式管理节点，得到具体的分布式数据库节点后，才能连接数据库节点执行具体的数据库命令。
-	\item 分布式管理节点\\
+
+	\begin{enumerate}[resume]
+		\item 分布式管理节点
+	\end{enumerate}
+
 	分布式管理节点管理分布式数据库节点的元数据和负载均衡算法。管理计算机通过连接分布式管理节点，可以对分布式节点进行管理，也可以选择适合的负载均衡算法。这样当客服端请求到来的适合，分布式管理节点就可以返回适合的分布式数据库节点，从而达到负载均衡的效果。
-	\item 分布式数据库节点\\
+
+	\begin{enumerate}[resume]
+		\item 分布式数据库节点
+	\end{enumerate}
+
 	分布式节点存储具体的数据，数据库系统功能主要在这个节点上面执行，响应客服端的增删改查的命令请求。当客服端连接分布式数据库节点以后，会检查客服端的权限，只有有权限的用户才能执行命令。
-	\item 管理计算机\\
+
+	\begin{enumerate}[resume]
+		\item 管理计算机
+	\end{enumerate}
+
 	管理员通过管理计算机管理分布式数据库几点和负载均衡算法。也可以通过管理计算机来查看审计信息，设置监控报警功能。
-\end{enumerate}
+
 
 在系统网络拓扑结构图中，客户端模拟负责发送命令的终端设备，各个
 分布式数据库节点和分布式管理节点构成了系统的服务器端。其中，分布
@@ -78,7 +94,7 @@
 以下对图\ref{pic4/mokuai}中服务器端各个模块的功能进行简要说明。
 分布式管理节点按逻辑功能划分为两个子模块，元数据管理模块、审计界面模块。
 下面分别对两个子模块的功能作介绍。
-\begin{enumerate}
+\begin{enumerate}[fullwidth,itemindent=2em,listparindent=2em]
 	\item 元数据管理模块管理服务器的所有元数据，包括每个数据库节点的
 	IP地址和端口号。分布式管理节点利用这些元数据和适当的负载均衡算法来为客服端选择合适的
 	分布式数据库节点。
@@ -89,7 +105,7 @@
 
 分布式数据库节点由审计数据库模块、数据库功能模块、集群功能模块组成，
  下面分别对 3 个模块的功能进行介绍。
- \begin{enumerate}
+ \begin{enumerate}[fullwidth,itemindent=2em,listparindent=2em]
  	\item 审计数据库模块用来收集所有的日志信息，作为审计使用。
  	所有的数据库节点在接受到数据更改请求以后，就会把这些日志信息发送到审计数据库。
  	然后分布式管理节点就能利用这个数据为管理员提供审计功能。
@@ -112,7 +128,7 @@
 客服端连接的流程图如图\ref{pic4/lianjielc}所示。
 \pic[htbp]{客服端连接流程图}{}{pic4/lianjielc}
 每个流程解释如下：
-\begin{enumerate}
+\begin{enumerate}[fullwidth,itemindent=2em,listparindent=2em]
 	\item 首先客服端连接到分布式管理节点，管理节点返回给客服端
 	正确的数据库节点的地址。
 	\item 然后客服端连接到正确的数据库节点。
@@ -164,7 +180,7 @@ JSQL用java语言开发，主要用到的是java的网络开发模块。
 线程池的规划都按照Netty的建议来开发。Netty的线程模型如图\ref{netty}所示。
 \pic[htbp]{Netty线程模型}{}{netty}
 根据图\ref{netty}所示，netty主要有三种线程：
-\begin{enumerate}
+\begin{enumerate}[fullwidth,itemindent=2em,listparindent=2em]
 	\item 主线程池主要接受客服端的网络连接请求，当主线程接受到客服端的请求以后，就可以把客服端的请求交个从线程池来处理。这样主线程就可以接受更多的其他客服端的连接请求。使得服务器的吞吐量大大的提高。
 	\item 从线程从主线程得到客服端的连接以后，执行具体的读取操作。如果需要执行其他的事务逻辑，比如说读取磁盘，那么就需要把这个请求发送给工作线程来处理，这样客服端才不会因为从线程的忙碌而堵塞。
 	\item 工作线程主要用来执行时间消耗比较大的任何，比如任何和磁盘文件有关的操作都应该放在工作线程来处理。
@@ -182,7 +198,7 @@ JSQL用java语言开发，主要用到的是java的网络开发模块。
 MySQL客户端与服务器的交互主要分为两个阶段：握手认证阶段和命令执
 行阶段。
 
-\begin{enumerate}
+\begin{enumerate}[fullwidth,itemindent=2em,listparindent=2em]
 	\item 握手认证阶段\\
 	握手认证阶段为客户端与服务器建立连接后进行，交互过程如下：
 	\begin{enumerate}
@@ -197,6 +213,7 @@ MySQL客户端与服务器的交互主要分为两个阶段：握手认证阶段
 		\item 服务器发送给客服端命令执行结果。
 	\end{enumerate}
 \end{enumerate}
+
 MySQL客户端与服务器之间的完整交互过程如图\ref{mysqljh}所示。
 \pic[htbp]{协议交互流程图}{}{mysqljh}
 
@@ -237,7 +254,7 @@ hazelcast分布式原理如图\ref{pic4/fenbusyl}所示。
 \section{审计模块详细设计}
 审计模块部署在管理计算机和分布式管理节点上面。管理员通过管理计算机连接分布式管理节点就可以管理所有的数据。监控所有数据的更改情况。
 图\ref{jiankong}显示了审计模块的实现结构图。从上大下一共可以分为下面4个模块：
-\begin{enumerate}
+\begin{enumerate}[fullwidth,itemindent=2em,listparindent=2em]
 	\item grafana可视化和报警模块，主要用到了开源的图形框架，来显示底层的审计数据，
 	同时也可以让用户设定预警数据，
 	这样以后就可以在一定的情况下向用户报警。
