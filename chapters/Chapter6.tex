@@ -23,7 +23,7 @@
 \section{功能测试}
 功能测试就是按照前面需求分析阶段的结果对系统进行功能性验证，验证所开发的系统是否满足需求分析中所述的功能要求。作为一个分布式多模型数据库系统，其系统规模大，功能点非常多，本测试主要是测试系统的结构化数据存储功能上，这个功能是关系型数据库的基本功能，选择测试这个功能也方便和其他主要关系数据库系统进行对比。
 \subsection{数据库功能测试}
-作为一个分布式数据库系统，其首要的功能就是能存储数据，根据用户的操作请求对数据进行增加、删除和更改等操作。
+作为一个分布式数据库系统，其首要的功能就是存储数据，根据用户的操作请求对数据进行增加、删除和更改等操作。
 这里将给出几个关键的功能测试的
 条件、目的、步骤和结果。其他更为细节的，比如对失败的查询的测试，或其他
 类似的，比如与插入、更新类似的删除数据，删除表或者数据库等功能，由于篇幅原因，就不再细
@@ -32,24 +32,24 @@
 
 	\item 系统启动测试
 	\begin{enumerate}
-		\item 测试条件：代码编码完成，系统功能正常
+		\item 测试条件：代码编码完成，系统功能正常。
 		\item 测试步骤：
 		\begin{enumerate}
-			\item 启动系统
-			\item 用mysql客户端连接系统
+			\item 启动系统。
+			\item 用mysql客户端连接系统。
 		\end{enumerate}
-	\item 	测试结果：系统能正常启动，而且mysql客户端也可以连接上系统
+	\item 	测试结果：系统能正常启动，而且mysql客户端也可以连接上系统。
 	\end{enumerate}
 
 
 
 \item 工具语句测试
 \begin{enumerate}
-	\item 测试条件：系统启动成功，客户端连接上系统
+	\item 测试条件：系统启动成功，客户端连接上系统。
 	\item 测试步骤：
 	\begin{enumerate}
-		\item 打开命令行客户端
-		\item 输入语句show databases，发送给服务器
+		\item 打开命令行客户端。
+		\item 输入语句show databases，发送给服务器。
 	\end{enumerate}
 	\item 	测试结果：系统返回当前所有的数据库。
 \end{enumerate}	
@@ -57,38 +57,38 @@
 
 \item 建表语句测试
 \begin{enumerate}
-	\item 测试条件：系统启动成功，客户端连接上系统
+	\item 测试条件：系统启动成功，客户端连接上系统。
 	\item 测试步骤：
 	\begin{enumerate}
-		\item 打开命令行客户端
-		\item 输入语句create table test(id int,name	varchar(100))
-		\item 回头，发送命令给服务器
+		\item 打开命令行客户端。
+		\item 输入语句create table test(id int,name	varchar(100))。
+		\item 回头，发送命令给服务器。
 	\end{enumerate}
-	\item 	测试结果：系统返回正确，而且文件系统里面多了一个文件。
+	\item 	测试结果：系统返回正确，而且文件系统里面多了一些数据库系统文件。
 \end{enumerate}	
 
 
 \item 插入语句测试
 \begin{enumerate}
-	\item 测试条件：系统启动成功，客户端连接上系统
+	\item 测试条件：系统启动成功，客户端连接上系统，test表已存在。
 	\item 测试步骤：
 	\begin{enumerate}
-		\item 打开命令行客户端
-		\item 输入语句insert into test(id,name) values(1,'changhong');
-		\item 回头，发送命令给服务器
+		\item 打开命令行客户端。
+		\item 输入语句insert into test(id,name) values(1,'changhong')。
+		\item 回头，发送命令给服务器。
 	\end{enumerate}
-	\item 	测试结果：系统返回正确
+	\item 	测试结果：系统返回正确。
 \end{enumerate}	
 
 
 \item 查询语句测试
 \begin{enumerate}
-	\item 测试条件：系统启动成功，客户端连接上系统
+	\item 测试条件：系统启动成功，客户端连接上系统，系统中已插入数据。
 	\item 测试步骤：
 	\begin{enumerate}
-		\item 打开命令行客户端
-		\item 输入语句select * from test;
-		\item 回头，发送命令给服务器
+		\item 打开命令行客户端。
+		\item 输入语句select * from test。
+		\item 回头，发送命令给服务器。
 	\end{enumerate}
 	\item 	测试结果：系统返回一行数据。
 \end{enumerate}	
@@ -97,34 +97,32 @@
 
 \item 更新语句测试
 \begin{enumerate}
-	\item 测试条件：系统启动成功，客户端连接上系统
+	\item 测试条件：系统启动成功，客户端连接上系统，数据已经存在。
 	\item 测试步骤：
 	\begin{enumerate}
-		\item 打开命令行客户端
-		\item 输入语句update test set name='changhong1'
-		\item 回头，发送命令给服务器
-		\item 输入语句select * from test
-		\item 回头，发送命令给服务器
+		\item 打开命令行客户端。
+		\item 输入语句update test set name='changhong1'。
+		\item 回头，发送命令给服务器。
+		\item 输入语句select * from test。
+		\item 回头，发送命令给服务器。
 	\end{enumerate}
-	\item 	测试结果：系统执行正确，返回一条数据，名字字段weichangohng1
+	\item 	测试结果：系统执行正确，返回一条数据，名字字段weichangohng1。
 \end{enumerate}	
 
 
 \item 更新语句测试
 \begin{enumerate}
-	\item 测试条件：系统启动成功，客户端连接上系统
+	\item 测试条件：系统启动成功，客户端连接上系统，数据已经存在。
 	\item 测试步骤：
 	\begin{enumerate}
-		\item 打开命令行客户端
-		\item 输入语句delete from test
-		\item 回头，发送命令给服务器
-		\item 输入语句select * from test
-		\item 回头，发送命令给服务器
+		\item 打开命令行客户端。
+		\item 输入语句delete from test。
+		\item 回头，发送命令给服务器。
+		\item 输入语句select * from test。
+		\item 回头，发送命令给服务器。
 	\end{enumerate}
-	\item 	测试结果：系统执行正确，没有返回数据
+	\item 	测试结果：系统执行正确，没有返回数据。
 \end{enumerate}	
-
-
 \end{enumerate}	
 \subsection{集群功能测试}
 分布式系统的测试是最难的测试步骤，好在本系统采用java语言开发，一个java虚拟机就可以当做一个分布式数据库服务器节点，这非常方便对系统进行集群功能测试。
@@ -134,22 +132,22 @@
 \begin{enumerate}
 	\item 测试条件：
 	\begin{enumerate}
-		\item 数据库1启动成功，没有任何数据
-		\item 数据库2启动成功，没有任何数据
-		\item 数据库1和数据库2都有一个test表
+		\item 数据库1启动成功，没有任何数据。
+		\item 数据库2启动成功，没有任何数据。
+		\item 数据库1和数据库2都有一个test表。
 	\end{enumerate}
 	\item 测试步骤：
 	\begin{enumerate}
-		\item 打开命令行客户端，连接数据库1
-		\item 输入语句insert into test(id,name) values(1,'changhong')并且执行;
-		\item 断开连接，连接数据库2
-		\item 输入语句select * from test;
-		\item 回头，发送命令给服务器
+		\item 打开命令行客户端，连接数据库1。
+		\item 输入语句insert into test(id,name) values(1,'changhong')并且执行。
+		\item 断开连接，连接数据库2。
+		\item 输入语句select * from test。
+		\item 回车，发送命令给服务器。
 	\end{enumerate}
-	\item 	测试结果
+	\item 	测试结果：
 	\begin{enumerate}
-		\item 数据库1执行语句正确
-		\item 语句2执行正确，并且返回一条数据
+		\item 数据库1执行语句正确。
+		\item 语句2执行正确，并且返回一条数据。
 	\end{enumerate}
 \end{enumerate}	
 \subsection{审计功能测试}
@@ -158,19 +156,19 @@
 \begin{enumerate}
 	\item 测试条件：
 	\begin{enumerate}
-		\item 数据库1启动成功，没有任何数据
-		\item 数据库1有一个test表
+		\item 数据库1启动成功，没有任何数据。
+		\item 数据库1有一个test表。
 	\end{enumerate}
 	\item 测试步骤：
 	\begin{enumerate}
-		\item 打开命令行客户端，连接数据库1
-		\item 输入语句insert into test(id,name) values(1,'changhong')并且执行;
-		\item 打开grafana web界面
+		\item 打开命令行客户端，连接数据库1。
+		\item 输入语句insert into test(id,name) values(1,'changhong')并且执行。
+		\item 打开grafana审计web界面。
 	\end{enumerate}
-	\item 	测试结果
+	\item 	测试结果：
 	\begin{enumerate}
-		\item 数据库1执行语句正确
-		\item 通过web界面可以观察到插入的数据和执行者的信息
+		\item 数据库1执行语句正确。
+		\item 通过web界面可以观察到插入的数据和执行者的信息。
 		\item 图\ref{testpdf/jietu1.pdf}、图
 		\ref{testpdf/jietu2.pdf}和图
 		\ref{testpdf/jietu3.pdf}显示了监控的可视化结果
@@ -181,16 +179,17 @@
       \pic[htbp]{监控可视化结果}{}{testpdf/jietu2.pdf}
          \pic[htbp]{监控可视化结果}{}{testpdf/jietu3.pdf}
  
- 通过可视化结果可以看到，本系统的审计功能能正确的显示出用户的登陆和命令操作情况。对所有时间段的命令执行情况进行了记录。方便管理员随时查看数据库的状态。
+ 通过可视化结果可以看到，本系统的审计功能能正确的显示出用户的登陆和命令操作情况。对所有时间段的命令执行情况进行了记录，方便管理员随时查看数据库的当前状态。
 \section{性能测试}
 数据库的更删改查是最常用的操作，其中又以查找使用的场景更多，
-所以本节主要测试数据库的查询性能。
-jsql和mysql都可以通过JDBC来连接，下面的源代码是测试代码，
-用来测试查询次数和执行时间的关系。执行结果如图\ref{testpdf/mysqltime.pdf}所示。
+所以本节主要测试数据库的查询性能。本次测试一般的查询性能，对于特定的查询，后面对比部分会继续实验。
+jsql和mysql都可以通过JDBC来连接，
+本节用它来测试每个数据库系统查询次数和执行时间的关系。为了方便自动化测试，作者写了如下的代码：
 
 \input{testpdf/JDBC.kt.tex}
 
 \pic[htbp]{mysql和jsql的性能比较}{}{testpdf/mysqltime.pdf}
+执行结果如图\ref{testpdf/mysqltime.pdf}所示。
 从图\ref{testpdf/mysqltime.pdf}可以看出，随着SQL执行次数的增加，mysql和jsql的执行时
 一般都相应的增加，在3000执行次数为3000以下时，jsql和mysql的性能相当，
 当执行次数大于5000时，mysql的性能小幅度的超过jsql。
@@ -206,16 +205,58 @@ Apache JMeter是用java语言开发的测试框架，其主要用来对软件进
    \pic[htbp]{mysql的JMeter性能测试}{}{testpdf/jmetmysql.pdf}
    
    从测试结果来看，在执行简单的SQL语句的时候，jsql相对mysql的性能有一定的差距。其中一个原因是jsql是用
-   纯java语言开发的，而mysql用c语法开发，其中自然有一定的性能损耗；另一个原因是jsql数据库引擎在存储数据的时候还要直接存储数据直接的关系，所以在检查的数据模型的测试下，其性能优势并不能表现出来。当关系表直接的连接非常多的时候，关系型数据库mysql就会因为join操作变着缓慢，而jsql的性能优势才会显示出来。因为实验室没有生产数据可以测试，本章只对简单的语句进行测试。
+   纯java语言开发的，而mysql用c语法开发，其中自然有一定的性能损耗；另一个原因是jsql数据库引擎在存储数据的时候还要直接存储数据直接的关系，所以在检查的数据模型的测试下，其性能优势并不能表现出来。当关系表直接的连接非常多的时候，关系型数据库mysql就会因为join操作变着缓慢，而jsql的性能优势才会显示出来。因为实验室没有生产数据可以测试，本节只对简单的语句进行测试，对于更特殊条件下的查询，下面继续对其进行试验。
 \section{测试对比}
-在这个部分论文选择和OceanBase进行对比，
-阿里巴巴OceanBase是淘宝开发的一个的分布式数据库系统，其实现了分布式的事务，支持大量数据的存储。是一个分布式的关系数据库系统。测试对比项目可以有很多，常用的有读写和更新速度，数据库存储占用空间容量。本次测试对比选择对JSQL和OceanBase的数据存储占用空间进行对比测试。在当今数据量越来越大的今天，相同数据记录占用的存储空间更小的数据库系统显然有其优势。本次测试的数据库表结构如表\ref{test/duibitable}所示。JSQL的测试电脑为实验室个人台式计算机，OceanBase因为没有开源，选择阿里云上的分布式数据库系统OceanBase。测试过程为逐渐往这两个数据库系统中写入数据，然后比较JSQL的本地磁盘占用量和阿里云的存储空间。
-\pictable[htbp]{对比测试所用表结构}{}{testpdf/duibitable}
+本节将论文设计开发的分布式数据库系统JSQL和MYSQL集群的搜索性能进行对比测试，
+验证本文设计的分布式管理系统在有些场景下具有较高的性能，具有实际应用价值。
 
-测试结果如表\ref{testpdf/duibijieguo}所示。随着记录数量的增多，数据库系统的存储空间自然也变得更多，当数据记录量达到18万的时候，JSQL存储量达到4.02G，而阿里云存储空间已经不够，在记录数据量继续增多的时候，JSQL还能继续存储，而阿里云已经没有空间写入数据。测试结果表明，在相同数据记录条数的时候，JSQL存储占用量明显低于阿里云分布式数据库OceanBase，在应用程序数据越来越多的今天，存储容量的降低无疑是JSQL相比OceanBase的优势。在测试中，之所以JSQL的存储量这么少，是因为在存储引擎层已经对数据进行了压缩处理，使得存储空间占用量降低。
-\pictable[htbp]{数据空间占用对比}{}{testpdf/duibijieguo}
+MYSQL集群是MYSQL在分布式网络环境下的部署系统，其一般采用主从分布式架构，由一个主数据库和多个从数据库集群组成，可以实现读写分离和负载均衡，扩展单机MYSQL数据库的性能。由于实验室机器限制，本次对比测试只有一个主数据库和一个从数据库。
+
+\begin{enumerate}
+	\item 测试目的
+\end{enumerate}
+
+
+本次测试验证论文所设计的分布式管理系统在查询搜索命令执行性能上能和主流数据库管理系统相比，在一些特殊命令下，其性能甚至会超过主流数据库系统，
+从而表面本论文设计的分布式管理系统在实践中是可行的。
+
+\begin{enumerate}[resume]
+	\item 测试方法
+\end{enumerate}
+
+在两个数据库系统中建立相同的表结构，然后随机插入相同的数据。记录下每个数据库系统在不同数据记录条数下，搜索命令执行完成所需要的时间。
+
+\begin{enumerate}[resume]
+	\item 测试步骤
+\end{enumerate}
+
+首先，分别在JSQL和MYSQL数据库里面建立数据库表test，其表结构如表\ref{testpdf/duibitable}所示。
+\pictable[htbp]{测试表结构}{}{testpdf/duibitable}
+
+然后，在每个数据库系统里面随机增加5000条记录，用客户端分别执行如下命令：
+SELECT xmlContent FROM test WHERE xmlContent LIKE "\%random\_word1\%" 
+AND xmlContent LIKE "\% random\_word2\%" AND xmlContent LIKE "\% random\_word3\%"。其中random\_word为每次命令执行时随机选择的单词。
+每个数据库系统执行50次相同的命令，记录下每次命令执行时间，去掉最高和最低值以后取平均值。再依次增加数据记录条数，重复上面的测试过程。
+\begin{enumerate}[resume]
+	\item 测试结果
+\end{enumerate}
+
+本次对比测试的实验结果如图\ref{testpdf/duibi2}所示。
+\pic[htbp]{对比测试结果}{}{testpdf/duibi2}
+
+\begin{enumerate}[resume]
+	\item 结果分析
+\end{enumerate}
+
+从图\ref{testpdf/duibi2}可以看出，随着记录条数的增加，JSQL和MYSQL的命令执行时间都相应的增加，在增长速度上，MYSQL高于JSQL，表明随着记录数量的增加，MYSQL执行时间比JSQL增加的更快。从图中也可以看出，MYSQL的命令执行时间是JSQL的5倍左右，表明JSQL的性能更高。测试结果和之前的性能测试有出入，之所以会出现这样的结果是因为MYSQL数据库系统存储引擎用的是inbodb，而innodb存储引擎底层的数据结构采用的是B+树，这种数据结构适合前缀搜索，但是不适合全文搜索，所以采用inbodb存储引擎的MYSQL在执行LIKE命令的时候，效率非常低下。JSQL结合关系型和非关系数据库的优点，在本次测试中选择elasticsearch作为底层的层次引擎，而elasticsearch选择倒排索引数据结构，所以其全文搜索性能比innodb高效，所以LIKE命令的执行时间会比MYSQL少。
+
+\begin{enumerate}[resume]
+	\item 测试结论
+\end{enumerate}
+
+通过与MYSQL集群对比，发现论文所设计和开发的分布式管理系统在查询搜索命令下比MYSQL有更高的性能，表面本系统在实践中运用的可行性。
 \section{本章小结}
 本章为系统的测试部分，在对系统的测试环境和测试方法介绍以后，对系统进行了功能测试和性能测试，
 功能测试
 包括数据库功能测试、集群功能测试以及审计功能的测试，其中数据库功能测试选择测试系统对结构化数据存储的测试。性能测试分为JDBC和JMeter测试
-两部分，对每个部分的测试结构进行分析。在本章后面对阿里巴巴的分布式数据库系统OceanBase和JSQL进行了存储空间占用的对比测试，测试结构表明，在选择压缩后的存储引擎以后，JSQL的存储空间占用明显低于OceanBase。
+两部分，对每个部分的测试结构进行分析。在本章后面对MYSQL集群和JSQL进行了搜索性能的对比测试，测试结果表明，JSQL在LIKE命令下，有比MYSQL更好的查询性能，验证本系统实践的可行性。
