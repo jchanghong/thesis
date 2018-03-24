@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="processonSvg1000"
+   viewBox="279.59999084472656 103.5999984741211 412.40000915527344 210.4000015258789"
+   width="412.40000915527344"
+   height="210.4000015258789"
+   version="1.1"
+   sodipodi:docname="多主分布式架构原理图.svg"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
+  <metadata
+     id="metadata1822">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     id="namedview1820"
+     showgrid="false"
+     inkscape:zoom="2.2433461"
+     inkscape:cx="211.63724"
+     inkscape:cy="75.247731"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="ProcessOnG1004" />
+  <defs
+     id="ProcessOnDefs1001">
+    <marker
+       id="ProcessOnMarker1023"
+       markerUnits="userSpaceOnUse"
+       orient="auto"
+       markerWidth="16.23606797749979"
+       markerHeight="10.550836550532098"
+       viewBox="-1.0 -1.3763819204711736 16.23606797749979 10.550836550532098"
+       refX="-1.0"
+       refY="3.8990363547948754">
+      <path
+         id="ProcessOnPath1024"
+         d="M12.0 3.8990363547948754L0.0 7.798072709589751V0.0Z"
+         stroke="#323232"
+         stroke-width="2.0"
+         fill="#323232"
+         transform="matrix(1.0,0.0,0.0,1.0,0.0,0.0)" />
+    </marker>
+    <marker
+       id="ProcessOnMarker1030"
+       markerUnits="userSpaceOnUse"
+       orient="auto"
+       markerWidth="16.23606797749979"
+       markerHeight="10.550836550532098"
+       viewBox="-1.0 -1.3763819204711736 16.23606797749979 10.550836550532098"
+       refX="-1.0"
+       refY="3.8990363547948754">
+      <path
+         id="ProcessOnPath1031"
+         d="M12.0 3.8990363547948754L0.0 7.798072709589751V0.0Z"
+         stroke="#323232"
+         stroke-width="2.0"
+         fill="#323232"
+         transform="matrix(1.0,0.0,0.0,1.0,0.0,0.0)" />
+    </marker>
+    <marker
+       id="ProcessOnMarker1037"
+       markerUnits="userSpaceOnUse"
+       orient="auto"
+       markerWidth="16.23606797749979"
+       markerHeight="10.550836550532098"
+       viewBox="-1.0 -1.3763819204711736 16.23606797749979 10.550836550532098"
+       refX="-1.0"
+       refY="3.8990363547948754">
+      <path
+         id="ProcessOnPath1038"
+         d="M12.0 3.8990363547948754L0.0 7.798072709589751V0.0Z"
+         stroke="#323232"
+         stroke-width="2.0"
+         fill="#323232"
+         transform="matrix(1.0,0.0,0.0,1.0,0.0,0.0)" />
+    </marker>
+    <marker
+       id="ProcessOnMarker1052"
+       markerUnits="userSpaceOnUse"
+       orient="auto"
+       markerWidth="16.23606797749979"
+       markerHeight="10.550836550532098"
+       viewBox="-1.0 -1.3763819204711736 16.23606797749979 10.550836550532098"
+       refX="-1.0"
+       refY="3.8990363547948754">
+      <path
+         id="ProcessOnPath1053"
+         d="M12.0 3.8990363547948754L0.0 7.798072709589751V0.0Z"
+         stroke="#323232"
+         stroke-width="2.0"
+         fill="#323232"
+         transform="matrix(1.0,0.0,0.0,1.0,0.0,0.0)" />
+    </marker>
+    <marker
+       id="ProcessOnMarker1059"
+       markerUnits="userSpaceOnUse"
+       orient="auto"
+       markerWidth="16.23606797749979"
+       markerHeight="10.550836550532098"
+       viewBox="-1.0 -1.3763819204711736 16.23606797749979 10.550836550532098"
+       refX="-1.0"
+       refY="3.8990363547948754">
+      <path
+         id="ProcessOnPath1060"
+         d="M12.0 3.8990363547948754L0.0 7.798072709589751V0.0Z"
+         stroke="#323232"
+         stroke-width="2.0"
+         fill="#323232"
+         transform="matrix(1.0,0.0,0.0,1.0,0.0,0.0)" />
+    </marker>
+  </defs>
+  <g
+     id="ProcessOnG1002">
+    <path
+       id="ProcessOnPath1003"
+       d="M279.59999084472656 103.5999984741211H692.0V314.0H279.59999084472656V103.5999984741211Z"
+       fill="none" />
+    <g
+       id="ProcessOnG1004">
+      <g
+         id="ProcessOnG1005"
+         transform="matrix(1.0,0.0,0.0,1.0,439.39998626708984,241.89999771118164)"
+         opacity="1.0">
+        <path
+           id="ProcessOnPath1006"
+           d="M0.0 0.0L80.40000915527344 0.0L80.40000915527344 52.10000228881836L0.0 52.10000228881836Z"
+           stroke="#323232"
+           stroke-width="2.0"
+           stroke-dasharray="none"
+           opacity="1.0"
+           fill="#ffffff" />
+        <g
+           id="ProcessOnG1007"
+           transform="matrix(1.0,0.0,0.0,1.0,10.0,17.30000114440918)">
+          <text
+             id="ProcessOnText1008"
+             fill="#000000"
+             font-size="14"
+             x="29.20000457763672"
+             y="14.350000000000001"
+             font-family="宋体"
+             font-weight="normal"
+             font-style="normal"
+             text-decoration="none"
+             family="宋体"
+             text-anchor="middle"
+             size="14">主服务器</text>
+        </g>
+      </g>
+      <g
+         id="ProcessOnG1009"
+         transform="matrix(1.0,0.0,0.0,1.0,299.59999084472656,244.39999771118164)"
+         opacity="1.0">
+        <path
+           id="ProcessOnPath1010"
+           d="M0.0 0.0L78.40000915527344 0.0L78.40000915527344 48.400001525878906L0.0 48.400001525878906Z"
+           stroke="#323232"
+           stroke-width="2.0"
+           stroke-dasharray="none"
+           opacity="1.0"
+           fill="#ffffff" />
+        <g
+           id="ProcessOnG1011"
+           transform="matrix(1.0,0.0,0.0,1.0,10.0,15.450000762939453)">
+          <text
+             id="ProcessOnText1012"
+             fill="#000000"
+             font-size="14"
+             x="28.20000457763672"
+             y="14.350000000000001"
+             font-family="宋体"
+             font-weight="normal"
+             font-style="normal"
+             text-decoration="none"
+             family="宋体"
+             text-anchor="middle"
+             size="14">主服务器</text>
+        </g>
+      </g>
+      <g
+         id="ProcessOnG1013"
+         transform="matrix(1.0,0.0,0.0,1.0,444.59999084472656,123.5999984741211)"
+         opacity="1.0">
+        <path
+           id="ProcessOnPath1014"
+           d="M0.0 35.0C0.0 -11.666666666666666 70.0 -11.666666666666666 70.0 35.0C70.0 81.66666666666667 0.0 81.66666666666667 0.0 35.0Z"
+           stroke="#323232"
+           stroke-width="2.0"
+           stroke-dasharray="none"
+           opacity="1.0"
+           fill="#ffffff" />
+        <g
+           id="ProcessOnG1015"
+           transform="matrix(1.0,0.0,0.0,1.0,10.0,26.25)">
+          <text
+             id="ProcessOnText1016"
+             fill="#000000"
+             font-size="14"
+             x="24.0"
+             y="14.350000000000001"
+             font-family="宋体"
+             font-weight="normal"
+             font-style="normal"
+             text-decoration="none"
+             family="宋体"
+             text-anchor="middle"
+             size="14">客户端</text>
+        </g>
+      </g>
+      <g
+         id="ProcessOnG1017"
+         transform="matrix(1.0,0.0,0.0,1.0,593.0,244.39999771118164)"
+         opacity="1.0">
+        <path
+           id="ProcessOnPath1018"
+           d="M0.0 0.0L79.0 0.0L79.0 47.10000228881836L0.0 47.10000228881836Z"
+           stroke="#323232"
+           stroke-width="2.0"
+           stroke-dasharray="none"
+           opacity="1.0"
+           fill="#ffffff" />
+        <g
+           id="ProcessOnG1019"
+           transform="matrix(1.0,0.0,0.0,1.0,10.0,14.80000114440918)">
+          <text
+             id="ProcessOnText1020"
+             fill="#000000"
+             font-size="14"
+             x="28.5"
+             y="14.350000000000001"
+             font-family="宋体"
+             font-weight="normal"
+             font-style="normal"
+             text-decoration="none"
+             family="宋体"
+             text-anchor="middle"
+             size="14">主服务器</text>
+        </g>
+      </g>
+      <g
+         id="ProcessOnG1021">
+        <path
+           id="ProcessOnPath1022"
+           d="M479.59999084472656 193.5999984741211L479.59999084472656 217.74999809265137L479.59999084472656 217.74999809265137L479.59999084472656 226.66392973368184"
+           stroke="#323232"
+           stroke-width="2.0"
+           stroke-dasharray="none"
+           fill="none"
+           marker-end="url(#ProcessOnMarker1023)" />
+        <g
+           id="ProcessOnG1025"
+           transform="matrix(1.0,0.0,0.0,1.0,479.59999084472656,201.38196410390145)">
+          <path
+             id="ProcessOnPath1026"
+             d="M0 0H28.0V17.5H0Z"
+             fill="#fff"
+             transform="matrix(1.0,0.0,0.0,1.0,-14.0,0.0)" />
+          <text
+             id="ProcessOnText1027"
+             fill="#000000"
+             font-size="14"
+             x="0.0"
+             y="14.350000000000001"
+             font-family="宋体"
+             font-weight="normal"
+             font-style="normal"
+             text-decoration="none"
+             family="宋体"
+             text-anchor="middle"
+             size="14">更新</text>
+        </g>
+      </g>
+      <g
+         id="ProcessOnG1028">
+        <path
+           id="ProcessOnPath1029"
+           d="M519.7999954223633 267.9499988555908L556.3999977111816 267.9499988555908L556.3999977111816 267.9499988555908L577.7639320225002 267.9499988555908"
+           stroke="#323232"
+           stroke-width="2.0"
+           stroke-dasharray="none"
+           fill="none"
+           marker-end="url(#ProcessOnMarker1030)" />
+        <g
+           id="ProcessOnG1032"
+           transform="matrix(1.0,0.0,0.0,1.0,548.7819637224318,259.1999988555908)">
+          <path
+             id="ProcessOnPath1033"
+             d="M0 0H28.0V17.5H0Z"
+             fill="#fff"
+             transform="matrix(1.0,0.0,0.0,1.0,-14.0,0.0)" />
+          <text
+             id="ProcessOnText1034"
+             fill="#000000"
+             font-size="14"
+             x="0.0"
+             y="14.350000000000001"
+             font-family="宋体"
+             font-weight="normal"
+             font-style="normal"
+             text-decoration="none"
+             family="宋体"
+             text-anchor="middle"
+             size="14">同步</text>
+        </g>
+      </g>
+      <g
+         id="ProcessOnG1035">
+        <path
+           id="ProcessOnPath1036"
+           d="M439.39998626708984 267.9499988555908L408.6999931335449 267.9499988555908L408.6999931335449 268.5999984741211L393.2360679774998 268.5999984741211"
+           stroke="#323232"
+           stroke-width="2.0"
+           stroke-dasharray="none"
+           fill="none"
+           marker-end="url(#ProcessOnMarker1037)" />
+        <g
+           id="ProcessOnG1039"
+           transform="matrix(1.0,0.0,0.0,1.0,415.99302731302964,259.1999988555908)">
+          <path
+             id="ProcessOnPath1040"
+             d="M0 0H28.0V17.5H0Z"
+             fill="#fff"
+             transform="matrix(1.0,0.0,0.0,1.0,-14.0,0.0)" />
+          <text
+             id="ProcessOnText1041"
+             fill="#000000"
+             font-size="14"
+             x="0.0"
+             y="14.350000000000001"
+             font-family="宋体"
+             font-weight="normal"
+             font-style="normal"
+             text-decoration="none"
+             family="宋体"
+             text-anchor="middle"
+             size="14">复制</text>
+        </g>
+      </g>
+      <g
+         id="ProcessOnG1042"
+         transform="matrix(1.0,0.0,0.0,1.0,303.7999954223633,123.5999984741211)"
+         opacity="1.0">
+        <path
+           id="ProcessOnPath1043"
+           d="M0.0 35.0C0.0 -11.666666666666666 70.0 -11.666666666666666 70.0 35.0C70.0 81.66666666666667 0.0 81.66666666666667 0.0 35.0Z"
+           stroke="#323232"
+           stroke-width="2.0"
+           stroke-dasharray="none"
+           opacity="1.0"
+           fill="#ffffff" />
+        <g
+           id="ProcessOnG1044"
+           transform="matrix(1.0,0.0,0.0,1.0,10.0,26.25)">
+          <text
+             id="ProcessOnText1045"
+             fill="#000000"
+             font-size="14"
+             x="24.0"
+             y="14.350000000000001"
+             font-family="宋体"
+             font-weight="normal"
+             font-style="normal"
+             text-decoration="none"
+             family="宋体"
+             text-anchor="middle"
+             size="14">客户端</text>
+        </g>
+      </g>
+      <g
+         id="ProcessOnG1046"
+         transform="matrix(1.0,0.0,0.0,1.0,590.0,123.5999984741211)"
+         opacity="1.0">
+        <path
+           id="ProcessOnPath1047"
+           d="M0.0 35.0C0.0 -11.666666666666666 70.0 -11.666666666666666 70.0 35.0C70.0 81.66666666666667 0.0 81.66666666666667 0.0 35.0Z"
+           stroke="#323232"
+           stroke-width="2.0"
+           stroke-dasharray="none"
+           opacity="1.0"
+           fill="#ffffff" />
+        <g
+           id="ProcessOnG1048"
+           transform="matrix(1.0,0.0,0.0,1.0,10.0,26.25)">
+          <text
+             id="ProcessOnText1049"
+             fill="#000000"
+             font-size="14"
+             x="24.0"
+             y="14.350000000000001"
+             font-family="宋体"
+             font-weight="normal"
+             font-style="normal"
+             text-decoration="none"
+             family="宋体"
+             text-anchor="middle"
+             size="14">客户端</text>
+        </g>
+      </g>
+      <g
+         id="ProcessOnG1050">
+        <path
+           id="ProcessOnPath1051"
+           d="M625.0 193.5999984741211L625.0 219.29999923706055L625.0 219.29999923706055L625.0 229.7639320225002"
+           stroke="#323232"
+           stroke-width="2.0"
+           stroke-dasharray="none"
+           fill="none"
+           marker-end="url(#ProcessOnMarker1052)" />
+        <g
+           id="ProcessOnG1054"
+           transform="matrix(1.0,0.0,0.0,1.0,625.0,203.55696524831063)">
+          <path
+             id="ProcessOnPath1055"
+             d="M0 0H26.0V16.25H0Z"
+             fill="#fff"
+             transform="matrix(1.0,0.0,0.0,1.0,-13.0,0.0)" />
+          <text
+             id="ProcessOnText1056"
+             fill="#000000"
+             font-size="13"
+             x="0.0"
+             y="13.325"
+             font-family="微软雅黑"
+             font-weight="normal"
+             font-style="normal"
+             text-decoration="none"
+             family="微软雅黑"
+             text-anchor="middle"
+             size="13"
+             style="-inkscape-font-specification:'宋体';font-family:'宋体';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:14px;">更新</text>
+        </g>
+      </g>
+      <g
+         id="ProcessOnG1057">
+        <path
+           id="ProcessOnPath1058"
+           d="M338.7999954223633 193.5999984741211L338.7999954223633 218.99999809265137L338.7999954223633 218.99999809265137L338.7999954223633 229.16392973368184"
+           stroke="#323232"
+           stroke-width="2.0"
+           stroke-dasharray="none"
+           fill="none"
+           marker-end="url(#ProcessOnMarker1059)" />
+        <g
+           id="ProcessOnG1061"
+           transform="matrix(1.0,0.0,0.0,1.0,338.7999954223633,203.25696410390145)">
+          <path
+             id="ProcessOnPath1062"
+             d="M0 0H26.0V16.25H0Z"
+             fill="#fff"
+             transform="matrix(1.0,0.0,0.0,1.0,-13.0,0.0)" />
+          <text
+             id="ProcessOnText1063"
+             fill="#000000"
+             font-size="13"
+             x="0.0"
+             y="13.325"
+             font-family="微软雅黑"
+             font-weight="normal"
+             font-style="normal"
+             text-decoration="none"
+             family="微软雅黑"
+             text-anchor="middle"
+             size="13"
+             style="-inkscape-font-specification:'宋体';font-family:'宋体';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:14px;">更新</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

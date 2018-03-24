@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.12.11)  16 MAR 2018 10:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.12.11)  16 MAR 2018 18:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1344,9 +1344,9 @@ Package: multibib 2008/12/10 v1.4 Multiple bibliographies for one document.
 \mb@biblabelwidth=\count177
 )
 \@auxoutpublications=\write3
-
-No file publications.aux.
+ (./publications.aux)
 \openout3 = `publications.aux'.
+
 
 (./dependencies/tex/latex/footmisc/footmisc.sty
 Package: footmisc 2011/06/06 v5.5b a miscellany of footnote facilities
@@ -1770,8 +1770,17 @@ File: UTF8.enc 2015/04/18 4.8.4
 )
 (./dependencies/tex/latex/cjk/texinput/utf8/UTF8.chr
 File: UTF8.chr 2015/04/18 4.8.4
+) (./thesis.aux
+(./contents/Cabstract.aux) (./contents/Eabstract.aux) (./chapters/Chapter1.aux)
+(./chapters/Chapter2.aux) (./chapters/Chapter3.aux) (./chapters/Chapter4.aux
+
+LaTeX Warning: Label `netty' multiply defined.
+
+
+LaTeX Warning: Label `mysqljh' multiply defined.
+
+) (./chapters/Chapter5.aux) (./chapters/Chapter6.aux) (./chapters/Chapter7.aux)
 )
-No file thesis.aux.
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
@@ -1857,7 +1866,7 @@ LaTeX Font Info:    ... okay on input line 11.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 11.
-(./dependencies/tex/latex/psnfss/ot1ptm.fd
+ (./dependencies/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )<<ot1.cmap>>
 ABD: EverySelectfont initializing macros
@@ -1959,16 +1968,18 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 11.
 LaTeX Info: Redefining \pageref on input line 11.
 LaTeX Info: Redefining \nameref on input line 11.
+ (./thesis.out)
+(./thesis.out)
 \@outlinefile=\write7
 \openout7 = `thesis.out'.
 
 \openout2 = `contents/Cabstract.aux'.
 
-
-(./contents/Cabstract.tex
+ (./contents/Cabstract.tex
 LaTeX Font Info:    Try loading font information for C70+zhhei on input line 3.
 
- (./dependencies/tex/latex/zhmetrics/c70zhhei.fd
+
+(./dependencies/tex/latex/zhmetrics/c70zhhei.fd
 File: c70zhhei.fd 2009/09/23 4.8.2
 )
 LaTeX Font Info:    Try loading font information for C70+rm on input line 4.
@@ -1981,9 +1992,6 @@ quanjiao) on input line 4.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12.05> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 13.
 )
-
-LaTeX Warning: Reference `LastPage' on page I undefined on input line 11.
-
 (./dependencies/tex/generic/ctex/zhwindowsfonts.tex
 File: zhwindowsfonts.tex 2016/02/02 v2.3 Windows font map loader for pdfTeX and
  DVIPDFMx (CTEX)
@@ -2007,29 +2015,26 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <15.05624> not available
 ) [3
 
 
-] [4]
-\tf@toc=\write8
-\openout8 = `thesis.toc'.
-
+] [4] (./thesis.toc
+LaTeX Font Info:    Calculating math sizes for size <12.05> on input line 1.
+<<oml.cmap>><<oms.cmap>><<omx.cmap>>
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8.91705> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.23007> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
  [5
 
 
 
 
-] [6
+] [6])
+\tf@toc=\write8
+\openout8 = `thesis.toc'.
+
+ [7] [8
 
 
-]
-No file thesis.acr.
-[7] [8
-
-
-]
-No file thesis.gls.
-[9] [10
-
-
-]
+] (./thesis.acr) (./thesis.gls)
 \tempsubpiccaptionbox=\box61
 \tempsubpiccaptionindent=\skip102
 \tempsubpiccaptionheadindent=\skip103
@@ -2040,80 +2045,15 @@ No file thesis.gls.
 Á¨¨‰∏ÄÁ´†
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.05249> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
-LaTeX Font Info:    Calculating math sizes for size <12.05> on input line 20.
-<<oml.cmap>><<oms.cmap>><<omx.cmap>>
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8.91705> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 20.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.23007> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 20.
-
-
-Package natbib Warning: Citation `Won1982' on page 1 undefined on input line 20
-.
-
-
-Package natbib Warning: Citation `huangxianli2010' on page 1 undefined on input
- line 20.
-
-
-Package natbib Warning: Citation `fanqunhua2002' on page 1 undefined on input l
-ine 21.
-
-
-Package natbib Warning: Citation `liula2009' on page 1 undefined on input line 
-21.
-
-
-Package natbib Warning: Citation `wangwanfei2003' on page 1 undefined on input 
-line 21.
-
-
-Package natbib Warning: Citation `zhanxin2015' on page 1 undefined on input lin
-e 22.
-
-
-Package natbib Warning: Citation `jintiansong2008' on page 1 undefined on input
- line 22.
-
-
-Package natbib Warning: Citation `chenyaodong2006' on page 1 undefined on input
- line 22.
-
 [1
 
 
-]
-
-Package natbib Warning: Citation `chengjinshui2006' on page 2 undefined on inpu
-t line 24.
 
 
-Package natbib Warning: Citation `wangshan1998' on page 2 undefined on input li
-ne 24.
 
 
-Package natbib Warning: Citation `qiyong2001' on page 2 undefined on input line
- 24.
-
-
-Package natbib Warning: Citation `wangyuanzhuo2013' on page 2 undefined on inpu
-t line 24.
-
-
-Package natbib Warning: Citation `Date1982guide' on page 2 undefined on input l
-ine 31.
-
-
-Package natbib Warning: Citation `xuejun2003' on page 2 undefined on input line
- 45.
-
-[2]
-
-Package natbib Warning: Citation `Eckel2007Thinking' on page 3 undefined on inp
-ut line 64.
-
-
-Overfull \hbox (0.78722pt too wide) in paragraph at lines 64--65
+] [2]
+Overfull \hbox (2.48148pt too wide) in paragraph at lines 64--65
 []\C70/rm/m/n/12.05/67 , \C70/rm/m/n/12.05/65 á \C70/rm/m/n/12.05/8b æ ° \C70/r
 m/m/n/12.05/54 å \C70/rm/m/n/12.05/5b û \C70/rm/m/n/12.05/73 ∞ \C70/rm/m/n/12.0
 5/76 Ñ \C70/rm/m/n/12.05/52 ^^F \C70/rm/m/n/12.05/5e ^^C \C70/rm/m/n/12.05/5f ^
@@ -2125,36 +2065,7 @@ m/m/n/12.05/54 å \C70/rm/m/n/12.05/5b û \C70/rm/m/n/12.05/73 ∞ \C70/rm/m/n/12.0
 .05/80 ^^L\OT1/ptm/m/n/12.05 JAVA\C70/rm/m/n/12.05/66 /
  []
 
-
-Package natbib Warning: Citation `wubofeng2006' on page 3 undefined on input li
-ne 71.
-
-
-Package natbib Warning: Citation `huangzhiguo2006' on page 3 undefined on input
- line 71.
-
-[3]
-
-Package natbib Warning: Citation `xiayuping2007' on page 4 undefined on input l
-ine 79.
-
-
-Package natbib Warning: Citation `zuofengchao2001' on page 4 undefined on input
- line 79.
-
-
-Package natbib Warning: Citation `saopeiying2005' on page 4 undefined on input 
-line 81.
-
-
-Package natbib Warning: Citation `han2011survey' on page 4 undefined on input l
-ine 82.
-
-
-Package natbib Warning: Citation `shunjianliang2013' on page 4 undefined on inp
-ut line 82.
-
-[4]
+[3] [4]
 Overfull \hbox (2.73058pt too wide) in paragraph at lines 84--87
 \C70/rm/m/n/12.05/73 ∞|\C70/rm/m/n/12.05/30 ^^B| \C70/rm/m/n/12.05/54 å \C70/rm
 /m/n/12.05/51 s \C70/rm/m/n/12.05/7c ˚ \C70/rm/m/n/12.05/57 ã \C70/rm/m/n/12.05
@@ -2169,30 +2080,8 @@ n/12.05/ff ^^L| \C70/rm/m/n/12.05/97 ^ \C70/rm/m/n/12.05/51 s \C70/rm/m/n/12.05
 .05 CAP\C70/rm/m/n/12.05/74 ^^F
  []
 
-[5]
-
-Package natbib Warning: Citation `Corbett2013Spanner' on page 6 undefined on in
-put line 99.
-
-
-Package natbib Warning: Citation `Yang2014The' on page 6 undefined on input lin
-e 110.
-
-[6]
-
-Package natbib Warning: Citation `Redkar2009SQL' on page 7 undefined on input l
-ine 121.
-
-
-Package natbib Warning: Citation `Tesoriero2013Getting' on page 7 undefined on 
-input line 133.
-
-
-Package natbib Warning: Citation `Gormley2015Elasticsearch' on page 7 undefined
- on input line 133.
-
-
-Overfull \hbox (3.1806pt too wide) in paragraph at lines 133--134
+[5] [6]
+Overfull \hbox (6.56912pt too wide) in paragraph at lines 133--134
 []\C70/rm/m/n/12.05/52 ) \C70/rm/m/n/12.05/75 (\OT1/ptm/m/n/12.05 OrientDB$[]$\
 C70/rm/m/n/12.05/54 å\OT1/ptm/m/n/12.05 ElasticSearch$[]$\C70/rm/m/n/12.05/7b I
  \C70/rm/m/n/12.05/97 ^ \C70/rm/m/n/12.05/51 s \C70/rm/m/n/12.05/7c ˚ \C70/rm/m
@@ -2202,17 +2091,8 @@ f ^^U \C70/rm/m/n/12.05/64 Œ \C70/rm/m/n/12.05/8b æ ° \C70/rm/m/n/12.05/54 å \C
 12.05 JSQL\C70/rm/m/n/12.05/65 p
  []
 
-
-Package natbib Warning: Citation `Widenius2002Mysql' on page 7 undefined on inp
-ut line 134.
-
 [7]
-
-Package natbib Warning: Citation `Johns2013Getting' on page 8 undefined on inpu
-t line 137.
-
-
-Overfull \hbox (3.04022pt too wide) in paragraph at lines 137--138
+Overfull \hbox (4.73448pt too wide) in paragraph at lines 137--138
 \C70/rm/m/n/12.05/80 ˝ \C70/rm/m/n/12.05/59 ^^_ \C70/rm/m/n/12.05/52 ® \C70/rm/
 m/n/12.05/60 ^^A \C70/rm/m/n/12.05/62 i \C70/rm/m/n/12.05/5c U \C70/rm/m/n/12.0
 5/52 ^^F \C70/rm/m/n/12.05/5e ^^C \C70/rm/m/n/12.05/5f ^^O \C70/rm/m/n/12.05/65
@@ -2230,14 +2110,6 @@ $\C70/rm/m/n/12.05/5b û
 
  (./chapters/Chapter2.tex
 Á¨¨‰∫åÁ´†
-
-Package natbib Warning: Citation `wangshan1998' on page 10 undefined on input l
-ine 7.
-
-
-Package natbib Warning: Citation `Won1982' on page 10 undefined on input line 1
-2.
-
 [10
 
 
@@ -2245,49 +2117,17 @@ Package natbib Warning: Citation `Won1982' on page 10 undefined on input line 1
 ]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12.045> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 20.
-
-
-Package natbib Warning: Citation `xiaomeiyang2006' on page 11 undefined on inpu
-t line 36.
-
-[11] [12] [13] [14]
-
-Package natbib Warning: Citation `saopeiying2005' on page 15 undefined on input
- line 117.
-
-[15]
-
-Package natbib Warning: Citation `chenlang1998' on page 16 undefined on input l
-ine 154.
-
-[16] [17] [18] [19] [20]
-
-Package natbib Warning: Citation `Dashti2016Repairing' on page 21 undefined on 
-input line 263.
-
-) [21]
+ [11] [12] [13] [14] [15] [16] [17] [18] [19] [20]) [21]
 \openout2 = `chapters/Chapter3.aux'.
 
- (./chapters/Chapter3.tex
+
+(./chapters/Chapter3.tex
 Á¨¨‰∏âÁ´†
-
-Package natbib Warning: Citation `biexiaofan2013' on page 22 undefined on input
- line 5.
-
 [22
 
 
 
-] [23]
-
-Package natbib Warning: Citation `biexiaofan2013' on page 24 undefined on input
- line 58.
-
-
-LaTeX Warning: Reference `pic3/xuqiufenxi' on page 24 undefined on input line 6
-0.
-
-<pic3/xuqiufenxi.pdf, id=435, 427.5975pt x 365.8765pt>
+] [23] <pic3/xuqiufenxi.pdf, id=877, 427.5975pt x 365.8765pt>
 File: pic3/xuqiufenxi.pdf Graphic file (type pdf)
 
 <use pic3/xuqiufenxi.pdf>
@@ -2300,26 +2140,18 @@ Overfull \hbox (0.8051pt too wide) in paragraph at lines 62--62
 
 [24 <./pic3/xuqiufenxi.pdf>]
 
-LaTeX Warning: Reference `pic3/xinzeng' on page 25 undefined on input line 66.
-
-
-
 pdfTeX warning: pdflatex.exe (file ./pic3/xinzeng.pdf): PDF inclusion: found PD
 F version <1.6>, but at most version <1.5> allowed
-<pic3/xinzeng.pdf, id=534, 426.03165pt x 202.99838pt>
+<pic3/xinzeng.pdf, id=976, 426.03165pt x 202.99838pt>
 File: pic3/xinzeng.pdf Graphic file (type pdf)
  <use pic3/xinzeng.pdf>
 Package pdftex.def Info: pic3/xinzeng.pdf used on input line 67.
 (pdftex.def)             Requested size: 426.03061pt x 202.99788pt.
 
 
-LaTeX Warning: Reference `pic3/chaxun' on page 25 undefined on input line 68.
-
-
-
 pdfTeX warning: pdflatex.exe (file ./pic3/chaxun.pdf): PDF inclusion: found PDF
  version <1.6>, but at most version <1.5> allowed
-<pic3/chaxun.pdf, id=535, 427.95883pt x 148.07321pt>
+<pic3/chaxun.pdf, id=978, 427.95883pt x 148.07321pt>
 File: pic3/chaxun.pdf Graphic file (type pdf)
  <use pic3/chaxun.pdf>
 Package pdftex.def Info: pic3/chaxun.pdf used on input line 69.
@@ -2330,13 +2162,10 @@ Overfull \hbox (1.16643pt too wide) in paragraph at lines 69--69
  []
 
 
-LaTeX Warning: Reference `pic3/shanchu' on page 25 undefined on input line 70.
-
-
 
 pdfTeX warning: pdflatex.exe (file ./pic3/shanchu.pdf): PDF inclusion: found PD
 F version <1.6>, but at most version <1.5> allowed
-<pic3/shanchu.pdf, id=536, 427.47702pt x 159.6364pt>
+<pic3/shanchu.pdf, id=980, 427.47702pt x 159.6364pt>
 File: pic3/shanchu.pdf Graphic file (type pdf)
  <use pic3/shanchu.pdf>
 Package pdftex.def Info: pic3/shanchu.pdf used on input line 71.
@@ -2347,13 +2176,10 @@ Overfull \hbox (0.68463pt too wide) in paragraph at lines 71--71
  []
 
 
-LaTeX Warning: Reference `pic3/xiugai' on page 25 undefined on input line 72.
-
-
 
 pdfTeX warning: pdflatex.exe (file ./pic3/xiugai.pdf): PDF inclusion: found PDF
  version <1.6>, but at most version <1.5> allowed
-<pic3/xiugai.pdf, id=537, 426.99527pt x 171.6814pt>
+<pic3/xiugai.pdf, id=982, 426.99527pt x 171.6814pt>
 File: pic3/xiugai.pdf Graphic file (type pdf)
  <use pic3/xiugai.pdf>
 Package pdftex.def Info: pic3/xiugai.pdf used on input line 73.
@@ -2380,11 +2206,7 @@ n/12.05 JAVA\C70/rm/m/n/12.05/5f ^^@
  []
 
 
-Package natbib Warning: Citation `Hitchens2002Java' on page 27 undefined on inp
-ut line 96.
-
-
-Overfull \hbox (14.09059pt too wide) in paragraph at lines 96--97
+Overfull \hbox (15.78485pt too wide) in paragraph at lines 96--97
 []\OT1/ptm/m/n/12.05 NIO\C70/rm/m/n/12.05/7f ^^V \C70/rm/m/n/12.05/7a  \C70/rm
 /m/n/12.05/6a ! \C70/rm/m/n/12.05/57 ã$[]$\C70/rm/m/n/12.05/5c 1 \C70/rm/m/n/12
 .05/66 / \C70/rm/m/n/12.05/4e : Ü \C70/rm/m/n/12.05/89 „ \C70/rm/m/n/12.05/51 ≥
@@ -2397,20 +2219,14 @@ m/n/12.05/53 — \C70/rm/m/n/12.05/66 ^^N \C70/rm/m/n/12.05/76 Ñ|\C70/rm/m/n/12.0
 5/ff ^^L| \C70/rm/m/n/12.05/57 (\OT1/ptm/m/n/12.05 NIO\C70/rm/m/n/12.05/7f ^^V
  []
 
-
-LaTeX Warning: Reference `netty' on page 27 undefined on input line 101.
-
-<pics/netty.pdf, id=722, 423.94319pt x 410.29019pt>
+<pics/netty.pdf, id=1166, 423.94319pt x 410.29019pt>
 File: pics/netty.pdf Graphic file (type pdf)
  <use pics/netty.pdf>
 Package pdftex.def Info: pics/netty.pdf used on input line 102.
 (pdftex.def)             Requested size: 423.94214pt x 410.28917pt.
 
 [27] [28 <./pics/netty.pdf>]
-
-LaTeX Warning: Reference `mysqljh' on page 29 undefined on input line 129.
-
-<pics/mysqljh.pdf, id=831, 423.94608pt x 435.11374pt>
+<pics/mysqljh.pdf, id=1277, 423.94608pt x 435.11374pt>
 File: pics/mysqljh.pdf Graphic file (type pdf)
  <use pics/mysqljh.pdf>
 Package pdftex.def Info: pics/mysqljh.pdf used on input line 130.
@@ -2449,14 +2265,7 @@ m/n/12.05 SQL\C70/rm/m/n/12.05/8b Ì
 
  (./chapters/Chapter4.tex
 Á¨¨ÂõõÁ´†
-
-Package natbib Warning: Citation `wangxianbing1997' on page 34 undefined on inp
-ut line 10.
-
-
-LaTeX Warning: Reference `pic4/bushu' on page 34 undefined on input line 21.
-
-<pic4/bushu.pdf, id=900, 424.48836pt x 369.32924pt>
+<pic4/bushu.pdf, id=1343, 424.48836pt x 369.32924pt>
 File: pic4/bushu.pdf Graphic file (type pdf)
  <use pic4/bushu.pdf>
 Package pdftex.def Info: pic4/bushu.pdf used on input line 22.
@@ -2471,25 +2280,16 @@ t line 30.
 
 
 ] [35 <./pic4/bushu.pdf>]
-
-LaTeX Warning: Reference `pic4/bushu' on page 36 undefined on input line 57.
-
-
-LaTeX Warning: Reference `pic4/jiagou' on page 36 undefined on input line 63.
-
-<pic4/jiagou.pdf, id=1184, 402.0152pt x 324.46149pt>
+<pic4/jiagou.pdf, id=1627, 402.0152pt x 324.46149pt>
 File: pic4/jiagou.pdf Graphic file (type pdf)
  <use pic4/jiagou.pdf>
 Package pdftex.def Info: pic4/jiagou.pdf used on input line 64.
 (pdftex.def)             Requested size: 402.0142pt x 324.46068pt.
 
-[36]
-
-LaTeX Warning: Reference `pic4/mokuai' on page 37 undefined on input line 72.
-
-<pic4/mokuai.pdf, id=1192, 427.41223pt x 253.4735pt>
+[36] <pic4/mokuai.pdf, id=1636, 427.41223pt x 253.4735pt>
 File: pic4/mokuai.pdf Graphic file (type pdf)
- <use pic4/mokuai.pdf>
+
+<use pic4/mokuai.pdf>
 Package pdftex.def Info: pic4/mokuai.pdf used on input line 73.
 (pdftex.def)             Requested size: 427.4112pt x 253.47285pt.
 
@@ -2497,26 +2297,15 @@ Overfull \hbox (0.61984pt too wide) in paragraph at lines 73--73
  [][] 
  []
 
-
-LaTeX Warning: Reference `pic4/mokuai' on page 37 undefined on input line 75.
-
 [37 <./pic4/jiagou.pdf>] [38 <./pic4/mokuai.pdf>]
-
-LaTeX Warning: Reference `pic4/lianjielc' on page 39 undefined on input line 10
-1.
-
-<pic4/lianjielc.pdf, id=1462, 319.1925pt x 375.4025pt>
+<pic4/lianjielc.pdf, id=1907, 319.1925pt x 375.4025pt>
 File: pic4/lianjielc.pdf Graphic file (type pdf)
 
 <use pic4/lianjielc.pdf>
 Package pdftex.def Info: pic4/lianjielc.pdf used on input line 102.
 (pdftex.def)             Requested size: 319.19171pt x 375.40158pt.
 
-
-LaTeX Warning: Reference `pic4/fenbushiguanli' on page 39 undefined on input li
-ne 117.
-
-<pic4/fenbushiguanli.pdf, id=1463, 427.39153pt x 54.44847pt>
+<pic4/fenbushiguanli.pdf, id=1909, 427.39153pt x 54.44847pt>
 File: pic4/fenbushiguanli.pdf Graphic file (type pdf)
 
 <use pic4/fenbushiguanli.pdf>
@@ -2531,32 +2320,16 @@ Overfull \hbox (0.59914pt too wide) in paragraph at lines 118--118
 
 pdfTeX warning: pdflatex.exe (file ./pic4/fenbushiguanli.pdf): PDF inclusion: m
 ultiple pdfs with page group included in a single page
->]
-
-LaTeX Warning: Reference `pic4/shujuku' on page 41 undefined on input line 143.
-
-
-<pic4/shujuku.pdf, id=1650, 302.58868pt x 259.53174pt>
+>] <pic4/shujuku.pdf, id=2095, 302.58868pt x 259.53174pt>
 File: pic4/shujuku.pdf Graphic file (type pdf)
- <use pic4/shujuku.pdf>
+
+<use pic4/shujuku.pdf>
 Package pdftex.def Info: pic4/shujuku.pdf used on input line 144.
 (pdftex.def)             Requested size: 302.58794pt x 259.5311pt.
-
-
-Package natbib Warning: Citation `NettyNetty' on page 41 undefined on input lin
-e 150.
-
-
-LaTeX Warning: Reference `netty' on page 41 undefined on input line 151.
-
 File: pics/netty.pdf Graphic file (type pdf)
-<use pics/netty.pdf>
+ <use pics/netty.pdf>
 Package pdftex.def Info: pics/netty.pdf used on input line 152.
 (pdftex.def)             Requested size: 423.94214pt x 410.28917pt.
-
-
-LaTeX Warning: Reference `netty' on page 41 undefined on input line 153.
-
 
 Overfull \hbox (29.7706pt too wide) in paragraph at lines 147--154
 []\C70/rm/m/n/12.05/62 @ \C70/rm/m/n/12.05/67 	 \C70/rm/m/n/12.05/76 Ñ \C70/rm/
@@ -2572,49 +2345,26 @@ rm/m/n/12.05/80 ˝ \C70/rm/m/n/12.05/8f ﬁ \C70/rm/m/n/12.05/63 • \C70/rm/m/n/12.
 b Ì
  []
 
-[41]
-
-Package natbib Warning: Citation `anyanwen2016' on page 42 undefined on input l
-ine 162.
-
-[42 <./pic4/shujuku.pdf>] [43]
-
-LaTeX Warning: Reference `mysqljh' on page 44 undefined on input line 180.
-
+[41] [42 <./pic4/shujuku.pdf>] [43]
 File: pics/mysqljh.pdf Graphic file (type pdf)
-<use pics/mysqljh.pdf>
+ <use pics/mysqljh.pdf>
 Package pdftex.def Info: pics/mysqljh.pdf used on input line 181.
 (pdftex.def)             Requested size: 423.94504pt x 435.11267pt.
 
-
-LaTeX Warning: Reference `pic4/sqljx' on page 44 undefined on input line 189.
-
-<pic4/sqljx.pdf, id=1783, 423.01599pt x 228.94666pt>
+<pic4/sqljx.pdf, id=2231, 423.01599pt x 228.94666pt>
 File: pic4/sqljx.pdf Graphic file (type pdf)
  <use pic4/sqljx.pdf>
 Package pdftex.def Info: pic4/sqljx.pdf used on input line 190.
 (pdftex.def)             Requested size: 423.01495pt x 228.94609pt.
 
-[44] [45]
-
-Package natbib Warning: Citation `dangyongxing2014' on page 46 undefined on inp
-ut line 195.
-
-
-LaTeX Warning: Reference `hazelcast' on page 46 undefined on input line 201.
-
-<pics/hazelcast.pdf, id=1803, 423.91599pt x 303.47429pt>
+[44] [45] <pics/hazelcast.pdf, id=2251, 423.91599pt x 303.47429pt>
 File: pics/hazelcast.pdf Graphic file (type pdf)
 
 <use pics/hazelcast.pdf>
 Package pdftex.def Info: pics/hazelcast.pdf used on input line 202.
 (pdftex.def)             Requested size: 423.91495pt x 303.47354pt.
  [46 <./pic4/sqljx.pdf>] [47 <./pics/hazelcast.pdf>]
-
-LaTeX Warning: Reference `pic4/fenbusyl' on page 48 undefined on input line 207
-.
-
-<pic4/fenbusyl.pdf, id=1952, 455.87766pt x 277.47543pt>
+<pic4/fenbusyl.pdf, id=2400, 455.87766pt x 277.47543pt>
 File: pic4/fenbusyl.pdf Graphic file (type pdf)
 
 <use pic4/fenbusyl.pdf>
@@ -2625,15 +2375,8 @@ Overfull \hbox (29.08517pt too wide) in paragraph at lines 208--208
  [][] 
  []
 
-
-LaTeX Warning: Reference `jiankong' on page 48 undefined on input line 215.
-
-
-Package natbib Warning: Citation `Betke2017Real' on page 48 undefined on input 
-line 217.
-
 [48 <./pic4/fenbusyl.pdf>]
-<pics/jiankong.pdf, id=2221, 408.23746pt x 293.26785pt>
+<pics/jiankong.pdf, id=2672, 408.23746pt x 293.26785pt>
 File: pics/jiankong.pdf Graphic file (type pdf)
 
 <use pics/jiankong.pdf>
@@ -2645,22 +2388,14 @@ Package pdftex.def Info: pics/jiankong.pdf used on input line 228.
 
 (./chapters/Chapter5.tex
 Á¨¨‰∫îÁ´†
-
-LaTeX Warning: Reference `codepdf/allpackage' on page 51 undefined on input lin
-e 10.
-
-<codepdf/allpackage.pdf, id=2251, 425.30891pt x 190.2307pt>
+<codepdf/allpackage.pdf, id=2702, 425.30891pt x 190.2307pt>
 File: codepdf/allpackage.pdf Graphic file (type pdf)
 
 <use codepdf/allpackage.pdf>
 Package pdftex.def Info: codepdf/allpackage.pdf used on input line 14.
 (pdftex.def)             Requested size: 425.30788pt x 190.23022pt.
 
-
-LaTeX Warning: Reference `codepdf/config' on page 51 undefined on input line 17
-.
-
-<codepdf/config.pdf, id=2252, 428.92245pt x 81.94615pt>
+<codepdf/config.pdf, id=2704, 428.92245pt x 81.94615pt>
 File: codepdf/config.pdf Graphic file (type pdf)
 
 <use codepdf/config.pdf>
@@ -2676,11 +2411,7 @@ Overfull \hbox (2.13004pt too wide) in paragraph at lines 19--19
 
 
  <./codepdf/allpackage.pdf>]
-
-LaTeX Warning: Reference `pic5/kefuduan' on page 52 undefined on input line 28.
-
-
-<pic5/kefuduan.pdf, id=2386, 427.47093pt x 200.28654pt>
+<pic5/kefuduan.pdf, id=2837, 427.47093pt x 200.28654pt>
 File: pic5/kefuduan.pdf Graphic file (type pdf)
 
 <use pic5/kefuduan.pdf>
@@ -2695,69 +2426,39 @@ Overfull \hbox (0.67853pt too wide) in paragraph at lines 29--29
 
 pdfTeX warning: pdflatex.exe (file ./pic5/kefuduan.pdf): PDF inclusion: multipl
 e pdfs with page group included in a single page
->]
-
-LaTeX Warning: Reference `pic5/fuzai1' on page 53 undefined on input line 55.
-
-<pic5/fuzai1.pdf, id=2514, 359.81659pt x 341.35483pt>
+>] <pic5/fuzai1.pdf, id=2964, 359.81659pt x 341.35483pt>
 File: pic5/fuzai1.pdf Graphic file (type pdf)
  <use pic5/fuzai1.pdf>
 Package pdftex.def Info: pic5/fuzai1.pdf used on input line 56.
 (pdftex.def)             Requested size: 359.81569pt x 341.35399pt.
 
-
-LaTeX Warning: Reference `fuzai2' on page 53 undefined on input line 61.
-
-
-LaTeX Warning: Reference `fuzai3' on page 53 undefined on input line 67.
-
 [53] [54 <./pic5/fuzai1.pdf>]
-
-LaTeX Warning: Reference `pic5/fuzai2' on page 55 undefined on input line 79.
-
-<pic5/fuzai2.pdf, id=2637, 389.6754pt x 401.25273pt>
+<pic5/fuzai2.pdf, id=3089, 389.6754pt x 401.25273pt>
 File: pic5/fuzai2.pdf Graphic file (type pdf)
  <use pic5/fuzai2.pdf>
 Package pdftex.def Info: pic5/fuzai2.pdf used on input line 80.
 (pdftex.def)             Requested size: 389.67444pt x 401.25175pt.
 
-
-LaTeX Warning: Reference `pic5/jiagouzc' on page 55 undefined on input line 92.
-
-
-<pic5/jiagouzc.pdf, id=2638, 408.77719pt x 226.59656pt>
+<pic5/jiagouzc.pdf, id=3091, 408.77719pt x 226.59656pt>
 File: pic5/jiagouzc.pdf Graphic file (type pdf)
 
 <use pic5/jiagouzc.pdf>
 Package pdftex.def Info: pic5/jiagouzc.pdf used on input line 94.
 (pdftex.def)             Requested size: 408.77618pt x 226.596pt.
  [55] [56 <./pic5/fuzai2.pdf>]
-
-LaTeX Warning: Reference `pic5/jiagoudz' on page 57 undefined on input line 97.
-
-
-<pic5/jiagoudz.pdf, id=2799, 408.77719pt x 226.59656pt>
+<pic5/jiagoudz.pdf, id=3252, 408.77719pt x 226.59656pt>
 File: pic5/jiagoudz.pdf Graphic file (type pdf)
 
 <use pic5/jiagoudz.pdf>
 Package pdftex.def Info: pic5/jiagoudz.pdf used on input line 100.
 (pdftex.def)             Requested size: 408.77618pt x 226.596pt.
- <pic5/insertr.pdf, id=2800, 408.77719pt x 267.54955pt>
+ <pic5/insertr.pdf, id=3253, 408.77719pt x 267.54955pt>
 File: pic5/insertr.pdf Graphic file (type pdf)
 
 <use pic5/insertr.pdf>
 Package pdftex.def Info: pic5/insertr.pdf used on input line 106.
 (pdftex.def)             Requested size: 408.77618pt x 267.54889pt.
-
-
-LaTeX Warning: Reference `pic5/insertr' on page 57 undefined on input line 107.
-
-
-
-LaTeX Warning: Reference `pic5/insertre' on page 57 undefined on input line 108
-.
-
-<pic5/insertre.pdf, id=2801, 380.17032pt x 238.94269pt>
+ <pic5/insertre.pdf, id=3256, 380.17032pt x 238.94269pt>
 File: pic5/insertre.pdf Graphic file (type pdf)
 
 <use pic5/insertre.pdf>
@@ -2767,50 +2468,14 @@ Package pdftex.def Info: pic5/insertre.pdf used on input line 109.
 
 pdfTeX warning: pdflatex.exe (file ./pic5/insertr.pdf): PDF inclusion: multiple
  pdfs with page group included in a single page
->]
-
-LaTeX Warning: Reference `pic5/jiagouleitu' on page 59 undefined on input line 
-112.
-
-<pic5/jiagouleitu.pdf, id=2860, 353.06906pt x 225.09094pt>
+>] <pic5/jiagouleitu.pdf, id=3314, 353.06906pt x 225.09094pt>
 File: pic5/jiagouleitu.pdf Graphic file (type pdf)
 
 <use pic5/jiagouleitu.pdf>
 Package pdftex.def Info: pic5/jiagouleitu.pdf used on input line 113.
 (pdftex.def)             Requested size: 353.06819pt x 225.09038pt.
 
-Overfull \hbox (38.87929pt too wide) in paragraph at lines 112--114
-\OT1/ptm/m/n/12.05 LSN\C70/rm/m/n/12.05/4e : \C70/rm/m/n/12.05/65 Â \C70/rm/m/n
-/12.05/5f ◊ \C70/rm/m/n/12.05/5e è \C70/rm/m/n/12.05/52 ^^W \C70/rm/m/n/12.05/5
-3 ˜|\C70/rm/m/n/12.05/ff ^^L| \OT1/ptm/m/n/12.05 sql\C70/rm/m/n/12.05/4e : \C70
-/rm/m/n/12.05/64 Õ \C70/rm/m/n/12.05/4f \ \C70/rm/m/n/12.05/54 } \C70/rm/m/n/12
-.05/4e ‰ \C70/rm/m/n/12.05/8b Ì \C70/rm/m/n/12.05/53 Â|\C70/rm/m/n/12.05/ff ^^L
-| \OT1/ptm/m/n/12.05 db\C70/rm/m/n/12.05/4e : \C70/rm/m/n/12.05/5f S \C70/rm/m/
-n/12.05/52 M \C70/rm/m/n/12.05/64 Õ \C70/rm/m/n/12.05/4f \ \C70/rm/m/n/12.05/76
- Ñ \C70/rm/m/n/12.05/90 ; \C70/rm/m/n/12.05/8f ë \C70/rm/m/n/12.05/65 p \C70/rm
-/m/n/12.05/63 n \C70/rm/m/n/12.05/5e ì|\C70/rm/m/n/12.05/ff ^^[| \OT1/ptm/m/n/1
-2.05 ReplicationCMD\C70/rm/m/n/12.05/5b ˘
- []
-
-
-Overfull \hbox (7.92351pt too wide) in paragraph at lines 112--114
-\C70/rm/m/n/12.05/97 ^^@ \C70/rm/m/n/12.05/89 Å \C70/rm/m/n/12.05/53 — \C70/rm/
-m/n/12.05/90 ^^A \C70/rm/m/n/12.05/59 ^^M \C70/rm/m/n/12.05/52 6 \C70/rm/m/n/12
-.05/54 } \C70/rm/m/n/12.05/4e ‰ \C70/rm/m/n/12.05/7e Ÿ \C70/rm/m/n/12.05/51 v \
-C70/rm/m/n/12.05/4e ÷ \C70/rm/m/n/12.05/67 ^^M \C70/rm/m/n/12.05/52 ° \C70/rm/m
-/n/12.05/56 h|\C70/rm/m/n/12.05/ff ^^L| \C70/rm/m/n/12.05/4f ^^? \C70/rm/m/n/12
-.05/5f ó \C70/rm/m/n/12.05/51 v \C70/rm/m/n/12.05/65 p \C70/rm/m/n/12.05/63 n \
-C70/rm/m/n/12.05/53 Ô \C70/rm/m/n/12.05/4e Â \C70/rm/m/n/12.05/54 å \C70/rm/m/n
-/12.05/96 ∆ \C70/rm/m/n/12.05/7f § \C70/rm/m/n/12.05/4f › \C70/rm/m/n/12.05/5b 
-X \C70/rm/m/n/12.05/4e ^^@ \C70/rm/m/n/12.05/81 Ù|\C70/rm/m/n/12.05/ff ^^[| \OT
-1/ptm/m/n/12.05 MyHazelcast\C70/rm/m/n/12.05/7c {
- []
-
-
-LaTeX Warning: Reference `pic5/jiagoucsh' on page 59 undefined on input line 11
-6.
-
-<pic5/jiagoucsh.pdf, id=2861, 361.72641pt x 434.37282pt>
+<pic5/jiagoucsh.pdf, id=3316, 361.72641pt x 434.37282pt>
 File: pic5/jiagoucsh.pdf Graphic file (type pdf)
 
 <use pic5/jiagoucsh.pdf>
@@ -2830,32 +2495,20 @@ rm/m/n/12.05/5f ◊ \C70/rm/m/n/12.05/5e è \C70/rm/m/n/12.05/52 ^^W \C70/rm/m/n/1
  []
 
 [60 <./pic5/jiagouleitu.pdf>] [61 <./pic5/jiagoucsh.pdf>]
-
-LaTeX Warning: Reference `pic5/jiagoucsh' on page 62 undefined on input line 13
-1.
-
-<pic5/jiagouml.pdf, id=2923, 365.49046pt x 490.83376pt>
+<pic5/jiagouml.pdf, id=3380, 365.49046pt x 490.83376pt>
 File: pic5/jiagouml.pdf Graphic file (type pdf)
 
 <use pic5/jiagouml.pdf>
 Package pdftex.def Info: pic5/jiagouml.pdf used on input line 132.
 (pdftex.def)             Requested size: 365.48956pt x 490.83255pt.
-
-
-LaTeX Warning: Reference `codepdf/sql' on page 62 undefined on input line 151.
-
-<codepdf/sql.pdf, id=2924, 423.86356pt x 38.58415pt>
+ <codepdf/sql.pdf, id=3382, 423.86356pt x 38.58415pt>
 File: codepdf/sql.pdf Graphic file (type pdf)
- <use codepdf/sql.pdf>
+
+<use codepdf/sql.pdf>
 Package pdftex.def Info: codepdf/sql.pdf used on input line 152.
 (pdftex.def)             Requested size: 423.86252pt x 38.58403pt.
-
-[62] [63 <./pic5/jiagouml.pdf>]
-
-LaTeX Warning: Reference `codepdf/netty' on page 64 undefined on input line 162
-.
-
-<codepdf/netty.pdf, id=2959, 422.05681pt x 68.45575pt>
+ [62] [63 <./pic5/jiagouml.pdf>]
+<codepdf/netty.pdf, id=3415, 422.05681pt x 68.45575pt>
 File: codepdf/netty.pdf Graphic file (type pdf)
  <use codepdf/netty.pdf>
 Package pdftex.def Info: codepdf/netty.pdf used on input line 164.
@@ -2874,55 +2527,37 @@ m/m/n/12.05/74 ^^F \C70/rm/m/n/12.05/6a ! \C70/rm/m/n/12.05/57 W \C70/rm/m/n/12
 C70/rm/m/n/12.05/4e Ü\OT1/ptm/m/n/12.05 Netty\C70/rm/m/n/12.05/67 e
  []
 
-
-LaTeX Warning: Reference `pic5/wangluo' on page 64 undefined on input line 172.
-
-
-<pic5/wangluo.pdf, id=2960, 325.47379pt x 474.48949pt>
+<pic5/wangluo.pdf, id=3417, 325.47379pt x 474.48949pt>
 File: pic5/wangluo.pdf Graphic file (type pdf)
  <use pic5/wangluo.pdf>
 Package pdftex.def Info: pic5/wangluo.pdf used on input line 173.
 (pdftex.def)             Requested size: 325.47298pt x 474.48833pt.
 
+[64 <./codepdf/sql.pdf> <./codepdf/netty.pdf
 
-LaTeX Warning: Reference `codepdf/mysql' on page 64 undefined on input line 178
-.
-
-<codepdf/mysql.pdf, id=2961, 414.46846pt x 162.88855pt>
+pdfTeX warning: pdflatex.exe (file ./codepdf/netty.pdf): PDF inclusion: multipl
+e pdfs with page group included in a single page
+>] [65 <./pic5/wangluo.pdf>]
+<codepdf/mysql.pdf, id=3670, 414.46846pt x 162.88855pt>
 File: codepdf/mysql.pdf Graphic file (type pdf)
 
 <use codepdf/mysql.pdf>
 Package pdftex.def Info: codepdf/mysql.pdf used on input line 179.
 (pdftex.def)             Requested size: 414.46744pt x 162.88814pt.
- [64 <./codepdf/sql.pdf> <./codepdf/netty.pdf
-
-pdfTeX warning: pdflatex.exe (file ./codepdf/netty.pdf): PDF inclusion: multipl
-e pdfs with page group included in a single page
->] [65 <./pic5/wangluo.pdf>]
-
-LaTeX Warning: Reference `pic5/woshou' on page 66 undefined on input line 186.
-
-<pic5/woshou.pdf, id=3213, 285.24387pt x 190.16258pt>
+ <pic5/woshou.pdf, id=3672, 285.24387pt x 190.16258pt>
 File: pic5/woshou.pdf Graphic file (type pdf)
- <use pic5/woshou.pdf>
+
+<use pic5/woshou.pdf>
 Package pdftex.def Info: pic5/woshou.pdf used on input line 187.
 (pdftex.def)             Requested size: 285.24316pt x 190.16211pt.
-
-
-LaTeX Warning: Reference `pic5/renzheng' on page 66 undefined on input line 193
-.
-
-<pic5/renzheng.pdf, id=3214, 305.5078pt x 463.18587pt>
+ <pic5/renzheng.pdf, id=3674, 305.5078pt x 463.18587pt>
 File: pic5/renzheng.pdf Graphic file (type pdf)
- <use pic5/renzheng.pdf>
+
+<use pic5/renzheng.pdf>
 Package pdftex.def Info: pic5/renzheng.pdf used on input line 194.
 (pdftex.def)             Requested size: 305.50703pt x 463.18474pt.
 
-
-LaTeX Warning: Reference `pic5/mingling' on page 66 undefined on input line 198
-.
-
-<pic5/mingling.pdf, id=3215, 319.23364pt x 356.83313pt>
+<pic5/mingling.pdf, id=3676, 319.23364pt x 356.83313pt>
 File: pic5/mingling.pdf Graphic file (type pdf)
 
 <use pic5/mingling.pdf>
@@ -2933,33 +2568,21 @@ Package pdftex.def Info: pic5/mingling.pdf used on input line 199.
 pdfTeX warning: pdflatex.exe (file ./pic5/woshou.pdf): PDF inclusion: multiple 
 pdfs with page group included in a single page
 >] [67 <./pic5/renzheng.pdf>]
-
-LaTeX Warning: Reference `codepdf/jsqlsql' on page 68 undefined on input line 2
-04.
-
-<codepdf/jsqlsql.pdf, id=3407, 423.50221pt x 68.45575pt>
+<codepdf/jsqlsql.pdf, id=3868, 423.50221pt x 68.45575pt>
 File: codepdf/jsqlsql.pdf Graphic file (type pdf)
 
 <use codepdf/jsqlsql.pdf>
 Package pdftex.def Info: codepdf/jsqlsql.pdf used on input line 205.
 (pdftex.def)             Requested size: 423.50116pt x 68.45557pt.
 
-
-LaTeX Warning: Reference `pic5/sqlchuli' on page 68 undefined on input line 207
-.
-
-<pic5/sqlchuli.pdf, id=3408, 393.00926pt x 408.02437pt>
+<pic5/sqlchuli.pdf, id=3870, 393.00926pt x 408.02437pt>
 File: pic5/sqlchuli.pdf Graphic file (type pdf)
 
 <use pic5/sqlchuli.pdf>
 Package pdftex.def Info: pic5/sqlchuli.pdf used on input line 208.
 (pdftex.def)             Requested size: 393.00829pt x 408.02338pt.
 
-
-LaTeX Warning: Reference `codepdf/sqlddm' on page 68 undefined on input line 21
-4.
-
-<codepdf/sqlddm.pdf, id=3409, 420.49097pt x 176.37895pt>
+<codepdf/sqlddm.pdf, id=3872, 420.49097pt x 176.37895pt>
 File: codepdf/sqlddm.pdf Graphic file (type pdf)
 
 <use codepdf/sqlddm.pdf>
@@ -2969,56 +2592,37 @@ Package pdftex.def Info: codepdf/sqlddm.pdf used on input line 217.
 
 pdfTeX warning: pdflatex.exe (file ./pic5/sqlchuli.pdf): PDF inclusion: multipl
 e pdfs with page group included in a single page
->]
-
-LaTeX Warning: Reference `codepdf/storage' on page 70 undefined on input line 2
-24.
-
-<codepdf/storage.pdf, id=3709, 425.79073pt x 41.47495pt>
+>] <codepdf/storage.pdf, id=4171, 425.79073pt x 41.47495pt>
 File: codepdf/storage.pdf Graphic file (type pdf)
 
 <use codepdf/storage.pdf>
 Package pdftex.def Info: codepdf/storage.pdf used on input line 226.
 (pdftex.def)             Requested size: 425.78969pt x 41.47482pt.
-
-
-LaTeX Warning: Reference `codepdf/db' on page 70 undefined on input line 227.
-
-<codepdf/db.pdf, id=3710, 425.06805pt x 162.88855pt>
+ <codepdf/db.pdf, id=4173, 425.06805pt x 162.88855pt>
 File: codepdf/db.pdf Graphic file (type pdf)
- <use codepdf/db.pdf>
+
+<use codepdf/db.pdf>
 Package pdftex.def Info: codepdf/db.pdf used on input line 228.
 (pdftex.def)             Requested size: 425.06702pt x 162.88814pt.
-
-
-LaTeX Warning: Reference `codepdf/table' on page 70 undefined on input line 229
-.
-
-<codepdf/table.pdf, id=3711, 422.89996pt x 81.94615pt>
+ <codepdf/table.pdf, id=4175, 422.89996pt x 81.94615pt>
 File: codepdf/table.pdf Graphic file (type pdf)
- <use codepdf/table.pdf>
+
+<use codepdf/table.pdf>
 Package pdftex.def Info: codepdf/table.pdf used on input line 230.
 (pdftex.def)             Requested size: 422.89893pt x 81.94594pt.
-
-
-LaTeX Warning: Reference `pic5/db' on page 70 undefined on input line 232.
-
-
-LaTeX Warning: Reference `pic5/table' on page 70 undefined on input line 232.
-
-<pic5/db.pdf, id=3712, 387.69844pt x 191.9672pt>
+ <pic5/db.pdf, id=4178, 387.69844pt x 191.9672pt>
 File: pic5/db.pdf Graphic file (type pdf)
- <use pic5/db.pdf>
+
+<use pic5/db.pdf>
 Package pdftex.def Info: pic5/db.pdf used on input line 234.
 (pdftex.def)             Requested size: 387.69748pt x 191.96672pt.
-
-<pic5/table.pdf, id=3713, 426.10622pt x 139.28464pt>
+ <pic5/table.pdf, id=4179, 426.10622pt x 139.28464pt>
 File: pic5/table.pdf Graphic file (type pdf)
- <use pic5/table.pdf>
+
+<use pic5/table.pdf>
 Package pdftex.def Info: pic5/table.pdf used on input line 235.
 (pdftex.def)             Requested size: 426.10516pt x 139.28429pt.
-
-[70 <./codepdf/sqlddm.pdf> <./codepdf/storage.pdf
+ [70 <./codepdf/sqlddm.pdf> <./codepdf/storage.pdf
 
 pdfTeX warning: pdflatex.exe (file ./codepdf/storage.pdf): PDF inclusion: multi
 ple pdfs with page group included in a single page
@@ -3026,23 +2630,16 @@ ple pdfs with page group included in a single page
 
 pdfTeX warning: pdflatex.exe (file ./codepdf/table.pdf): PDF inclusion: multipl
 e pdfs with page group included in a single page
->]
-
-LaTeX Warning: Reference `codepdf/audit' on page 72 undefined on input line 239
-.
-
-<codepdf/audit.pdf, id=3882, 418.20238pt x 54.96535pt>
+>] <codepdf/audit.pdf, id=4349, 418.20238pt x 54.96535pt>
 File: codepdf/audit.pdf Graphic file (type pdf)
- <use codepdf/audit.pdf>
+
+<use codepdf/audit.pdf>
 Package pdftex.def Info: codepdf/audit.pdf used on input line 241.
 (pdftex.def)             Requested size: 418.20135pt x 54.9652pt.
-
-
-LaTeX Warning: Reference `pic5/shenji' on page 72 undefined on input line 244.
-
-<pic5/shenji.pdf, id=3883, 427.54591pt x 274.13516pt>
+ <pic5/shenji.pdf, id=4351, 427.54591pt x 274.13516pt>
 File: pic5/shenji.pdf Graphic file (type pdf)
- <use pic5/shenji.pdf>
+
+<use pic5/shenji.pdf>
 Package pdftex.def Info: pic5/shenji.pdf used on input line 245.
 (pdftex.def)             Requested size: 427.54486pt x 274.13448pt.
 
@@ -3054,16 +2651,7 @@ Overfull \hbox (0.75351pt too wide) in paragraph at lines 245--245
 
 pdfTeX warning: pdflatex.exe (file ./pic5/table.pdf): PDF inclusion: multiple p
 dfs with page group included in a single page
->] [73 <./codepdf/audit.pdf> <./pic5/shenji.pdf
-
-pdfTeX warning: pdflatex.exe (file ./pic5/shenji.pdf): PDF inclusion: multiple 
-pdfs with page group included in a single page
->]
-
-LaTeX Warning: Reference `codepdf/audit' on page 74 undefined on input line 252
-.
-
-)
+>])
 Overfull \hbox (23.91435pt too wide) in paragraph at lines 262--16
 []\C70/rm/m/n/12.05/5b ˘ \C70/rm/m/n/12.05/7c ˚ \C70/rm/m/n/12.05/7e ﬂ \C70/rm/
 m/n/12.05/8f € \C70/rm/m/n/12.05/88 L \C70/rm/m/n/12.05/8b Ê \C70/rm/m/n/12.05/
@@ -3077,7 +2665,11 @@ rm/m/n/12.05/7c ˚ \C70/rm/m/n/12.05/7e ﬂ\OT1/ptm/m/n/12.05 JSQL\C70/rm/m/n/12.0
 /ptm/m/n/12.05 JAVA\C70/rm/m/n/12.05/8b Ì
  []
 
-[74]
+[73 <./codepdf/audit.pdf> <./pic5/shenji.pdf
+
+pdfTeX warning: pdflatex.exe (file ./pic5/shenji.pdf): PDF inclusion: multiple 
+pdfs with page group included in a single page
+>] [74]
 \openout2 = `chapters/Chapter6.aux'.
 
  (./chapters/Chapter6.tex
@@ -3100,27 +2692,14 @@ C70/rm/m/n/12.05/7c ˚ \C70/rm/m/n/12.05/7e ﬂ \C70/rm/m/n/12.05/91 « \C70/rm/m/n
 70/rm/m/n/12.05/4e ^^@ *\OT1/ptm/m/n/12.05 java\C70/rm/m/n/12.05/86 Z
  []
 
-[77] [78]
-
-LaTeX Warning: Reference `testpdf/jietu1.pdf' on page 79 undefined on input lin
-e 172.
-
-
-LaTeX Warning: Reference `testpdf/jietu2.pdf' on page 79 undefined on input lin
-e 173.
-
-
-LaTeX Warning: Reference `testpdf/jietu3.pdf' on page 79 undefined on input lin
-e 174.
-
-<testpdf/jietu1.pdf, id=4228, 426.7371pt x 150.86897pt>
+[77] [78] <testpdf/jietu1.pdf, id=4691, 426.7371pt x 150.86897pt>
 File: testpdf/jietu1.pdf Graphic file (type pdf)
 
 <use testpdf/jietu1.pdf>
 Package pdftex.def Info: testpdf/jietu1.pdf used on input line 178.
 (pdftex.def)             Requested size: 426.73605pt x 150.86859pt.
 
-<testpdf/jietu2.pdf, id=4229, 427.93056pt x 179.58826pt>
+<testpdf/jietu2.pdf, id=4692, 427.93056pt x 179.58826pt>
 File: testpdf/jietu2.pdf Graphic file (type pdf)
 
 <use testpdf/jietu2.pdf>
@@ -3131,7 +2710,7 @@ Overfull \hbox (1.13817pt too wide) in paragraph at lines 179--179
  [][] 
  []
 
-<testpdf/jietu3.pdf, id=4230, 427.41122pt x 118.95987pt>
+<testpdf/jietu3.pdf, id=4693, 427.41122pt x 118.95987pt>
 File: testpdf/jietu3.pdf Graphic file (type pdf)
 
 <use testpdf/jietu3.pdf>
@@ -3181,51 +2760,34 @@ ode="[][] [][]+ [][][][]"true&characterEncoding=UTF8"[][][]
  []
 
 [80 <./testpdf/jietu3.pdf>]
-<testpdf/mysqltime.pdf, id=4260, 397.72592pt x 95.43655pt>
+<testpdf/mysqltime.pdf, id=4722, 397.72592pt x 95.43655pt>
 File: testpdf/mysqltime.pdf Graphic file (type pdf)
 
 <use testpdf/mysqltime.pdf>
 Package pdftex.def Info: testpdf/mysqltime.pdf used on input line 191.
 (pdftex.def)             Requested size: 397.72495pt x 95.43631pt.
 
-
-LaTeX Warning: Reference `testpdf/mysqltime.pdf' on page 81 undefined on input 
-line 192.
-
-
-LaTeX Warning: Reference `testpdf/mysqltime.pdf' on page 81 undefined on input 
-line 193.
-
-
-Overfull \hbox (24.82957pt too wide) in paragraph at lines 192--199
+Overfull \hbox (32.85478pt too wide) in paragraph at lines 192--199
 []\C70/rm/m/n/12.05/62 g \C70/rm/m/n/12.05/88 L \C70/rm/m/n/12.05/7e ” \C70/rm/
-m/n/12.05/67 ú \C70/rm/m/n/12.05/59 Ç \C70/rm/m/n/12.05/56 ˛[]\C70/rm/m/n/12.05
-/62 @ \C70/rm/m/n/12.05/79 :|\C70/rm/m/n/12.05/30 ^^B| \C70/rm/m/n/12.05/4e Œ \
-C70/rm/m/n/12.05/56 ˛[]\C70/rm/m/n/12.05/53 Ô \C70/rm/m/n/12.05/4e Â \C70/rm/m/
-n/12.05/77  \C70/rm/m/n/12.05/51 ˙|\C70/rm/m/n/12.05/ff ^^L| \C70/rm/m/n/12.05
-/96 è \C70/rm/m/n/12.05/77 @\OT1/ptm/m/n/12.05 SQL\C70/rm/m/n/12.05/62 g \C70/r
-m/m/n/12.05/88 L \C70/rm/m/n/12.05/6b ! \C70/rm/m/n/12.05/65 p \C70/rm/m/n/12.0
-5/76 Ñ \C70/rm/m/n/12.05/58 û \C70/rm/m/n/12.05/52 †|\C70/rm/m/n/12.05/ff ^^L| 
-\OT1/ptm/m/n/12.05 mysql\C70/rm/m/n/12.05/54 å\OT1/ptm/m/n/12.05 jsql\C70/rm/m/
-n/12.05/76 Ñ
+m/n/12.05/67 ú \C70/rm/m/n/12.05/59 Ç \C70/rm/m/n/12.05/56 ˛[]\OT1/ptm/m/n/12.0
+5 6-4[]\C70/rm/m/n/12.05/62 @ \C70/rm/m/n/12.05/79 :|\C70/rm/m/n/12.05/30 ^^B| 
+\C70/rm/m/n/12.05/4e Œ \C70/rm/m/n/12.05/56 ˛[]\OT1/ptm/m/n/12.05 6-4[]\C70/rm/
+m/n/12.05/53 Ô \C70/rm/m/n/12.05/4e Â \C70/rm/m/n/12.05/77  \C70/rm/m/n/12.05/
+51 ˙|\C70/rm/m/n/12.05/ff ^^L| \C70/rm/m/n/12.05/96 è \C70/rm/m/n/12.05/77 @\OT
+1/ptm/m/n/12.05 SQL\C70/rm/m/n/12.05/62 g \C70/rm/m/n/12.05/88 L \C70/rm/m/n/12
+.05/6b ! \C70/rm/m/n/12.05/65 p \C70/rm/m/n/12.05/76 Ñ \C70/rm/m/n/12.05/58 û \
+C70/rm/m/n/12.05/52 †|\C70/rm/m/n/12.05/ff ^^L| \OT1/ptm/m/n/12.05 mysql\C70/rm
+/m/n/12.05/54 å\OT1/ptm/m/n/12.05 jsql\C70/rm/m/n/12.05/76 Ñ
  []
 
-
-LaTeX Warning: Reference `testpdf/jmetjsql.pdf' on page 81 undefined on input l
-ine 202.
-
-
-LaTeX Warning: Reference `testpdf/jmetmysql.pdf' on page 81 undefined on input 
-line 203.
-
-<testpdf/jmetjsql.pdf, id=4261, 427.19168pt x 235.24802pt>
+<testpdf/jmetjsql.pdf, id=4727, 427.19168pt x 235.24802pt>
 File: testpdf/jmetjsql.pdf Graphic file (type pdf)
 
 <use testpdf/jmetjsql.pdf>
 Package pdftex.def Info: testpdf/jmetjsql.pdf used on input line 204.
 (pdftex.def)             Requested size: 427.19064pt x 235.24744pt.
 
-<testpdf/jmetmysql.pdf, id=4262, 427.5975pt x 233.32597pt>
+<testpdf/jmetmysql.pdf, id=4728, 427.5975pt x 233.32597pt>
 File: testpdf/jmetmysql.pdf Graphic file (type pdf)
 
 <use testpdf/jmetmysql.pdf>
@@ -3241,30 +2803,12 @@ l.pdf
 
 pdfTeX warning: pdflatex.exe (file ./testpdf/jmetmysql.pdf): PDF inclusion: mul
 tiple pdfs with page group included in a single page
->]
-
-LaTeX Warning: Reference `testpdf/duibitable' on page 83 undefined on input lin
-e 233.
-
-<testpdf/duibitable.pdf, id=4327, 423.60257pt x 116.01341pt>
+>] <testpdf/duibitable.pdf, id=4794, 423.60257pt x 116.01341pt>
 File: testpdf/duibitable.pdf Graphic file (type pdf)
 
 <use testpdf/duibitable.pdf>
 Package pdftex.def Info: testpdf/duibitable.pdf used on input line 234.
 (pdftex.def)             Requested size: 423.60153pt x 116.0131pt.
-
-Overfull \hbox (6.60994pt too wide) in paragraph at lines 233--235
-[]\C70/rm/m/n/12.05/99 ñ \C70/rm/m/n/12.05/51 H|\C70/rm/m/n/12.05/ff ^^L| \C70/
-rm/m/n/12.05/52 ^^F + \C70/rm/m/n/12.05/57 (\OT1/ptm/m/n/12.05 JSQL\C70/rm/m/n/
-12.05/54 å\OT1/ptm/m/n/12.05 MYSQL\C70/rm/m/n/12.05/65 p \C70/rm/m/n/12.05/63 n
- \C70/rm/m/n/12.05/5e ì \C70/rm/m/n/12.05/91 Ã \C70/rm/m/n/12.05/97 b \C70/rm/m
-/n/12.05/5e ˙ \C70/rm/m/n/12.05/7a À \C70/rm/m/n/12.05/65 p \C70/rm/m/n/12.05/6
-3 n \C70/rm/m/n/12.05/5e ì \C70/rm/m/n/12.05/88 h\OT1/ptm/m/n/12.05 test|\C70/r
-m/m/n/12.05/ff ^^L| \C70/rm/m/n/12.05/51 v \C70/rm/m/n/12.05/88 h \C70/rm/m/n/1
-2.05/7e ” \C70/rm/m/n/12.05/67 Ñ \C70/rm/m/n/12.05/59 Ç \C70/rm/m/n/12.05/88 h[
-]\C70/rm/m/n/12.05/62 @
- []
-
 
 Overfull \hbox (7.7497pt too wide) in paragraph at lines 236--240
 \C70/rm/m/n/12.05/54 } \C70/rm/m/n/12.05/4e ‰|\C70/rm/m/n/12.05/ff ^^Z|  \OT1/p
@@ -3279,15 +2823,170 @@ IKE "% ran-dom[]word3%"|\C70/rm/m/n/12.05/30 ^^B|
  []
 
 [83 <./testpdf/duibitable.pdf>]
+<testpdf/duibi2.pdf, id=4930, 427.5975pt x 237.8063pt>
+File: testpdf/duibi2.pdf Graphic file (type pdf)
 
-LaTeX Warning: Reference `testpdf/duibi2' on page 84 undefined on input line 24
-4.
+<use testpdf/duibi2.pdf>
+Package pdftex.def Info: testpdf/duibi2.pdf used on input line 245.
+(pdftex.def)             Requested size: 427.59645pt x 237.80571pt.
+
+Overfull \hbox (0.8051pt too wide) in paragraph at lines 245--245
+ [][] 
+ []
 
 
-! LaTeX Error: File `testpdf/duibi2' not found.
+Overfull \hbox (29.63751pt too wide) in paragraph at lines 251--252
+\C70/rm/m/n/12.05/76 ¯ \C70/rm/m/n/12.05/5e î \C70/rm/m/n/12.05/76 Ñ \C70/rm/m/
+n/12.05/58 û \C70/rm/m/n/12.05/52 †|\C70/rm/m/n/12.05/ff ^^L| \C70/rm/m/n/12.05
+/57 ( \C70/rm/m/n/12.05/58 û \C70/rm/m/n/12.05/95 ^^? \C70/rm/m/n/12.05/90 ^^_ 
+\C70/rm/m/n/12.05/5e ¶ \C70/rm/m/n/12.05/4e 
+|\C70/rm/m/n/12.05/ff ^^L| \OT1/ptm/m/n/12.05 MYSQL\C70/rm/m/n/12.05/9a ÿ \C70/
+rm/m/n/12.05/4e é\OT1/ptm/m/n/12.05 JSQL|\C70/rm/m/n/12.05/ff ^^L| \C70/rm/m/n/
+12.05/88 h \C70/rm/m/n/12.05/66 ^^N \C70/rm/m/n/12.05/96 è \C70/rm/m/n/12.05/77
+ @ \C70/rm/m/n/12.05/8b ∞ \C70/rm/m/n/12.05/5f U \C70/rm/m/n/12.05/65 p \C70/rm
+/m/n/12.05/91 œ \C70/rm/m/n/12.05/76 Ñ \C70/rm/m/n/12.05/58 û \C70/rm/m/n/12.05
+/52 †|\C70/rm/m/n/12.05/ff ^^L| \OT1/ptm/m/n/12.05 MYSQL\C70/rm/m/n/12.05/62 g
+ []
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.245 ...bp]{ÂØπÊØîÊµãËØïÁªìÊûú}{}{testpdf/duibi2
+
+Overfull \hbox (23.34758pt too wide) in paragraph at lines 251--252
+\C70/rm/m/n/12.05/88 L \C70/rm/m/n/12.05/65 ˆ \C70/rm/m/n/12.05/95 Ù \C70/rm/m/
+n/12.05/6b ‘\OT1/ptm/m/n/12.05 JSQL\C70/rm/m/n/12.05/58 û \C70/rm/m/n/12.05/52 
+† \C70/rm/m/n/12.05/76 Ñ \C70/rm/m/n/12.05/66 Ù \C70/rm/m/n/12.05/5f Î|\C70/rm/
+m/n/12.05/30 ^^B| \C70/rm/m/n/12.05/4e Œ \C70/rm/m/n/12.05/56 ˛ \C70/rm/m/n/12.
+05/4e - _ \C70/rm/m/n/12.05/53 Ô \C70/rm/m/n/12.05/4e Â \C70/rm/m/n/12.05/77  
+\C70/rm/m/n/12.05/51 ˙|\C70/rm/m/n/12.05/ff ^^L| \OT1/ptm/m/n/12.05 MYSQL\C70/r
+m/m/n/12.05/76 Ñ \C70/rm/m/n/12.05/54 } \C70/rm/m/n/12.05/4e ‰ \C70/rm/m/n/12.0
+5/62 g \C70/rm/m/n/12.05/88 L \C70/rm/m/n/12.05/65 ˆ \C70/rm/m/n/12.05/95 Ù \C7
+0/rm/m/n/12.05/66 /\OT1/ptm/m/n/12.05 JSQL\C70/rm/m/n/12.05/76 Ñ\OT1/ptm/m/n/12
+.05 5\C70/rm/m/n/12.05/50 ^^M
+ []
+
+[84 <./testpdf/duibi2.pdf>]) [85]
+\openout2 = `chapters/Chapter7.aux'.
+
+ (./chapters/Chapter7.tex
+Á¨¨‰∏ÉÁ´†
+[86
+
+
+
+] [87]) [88]
+\tf@thm=\write9
+\openout9 = `thesis.thm'.
+
+
+
+Package natbib Warning: There were undefined citations.
+
+
+Package hyperref Warning: Option `pdflang' has already been used,
+(hyperref)                setting the option has no effect on input line 19.
+
+
+Package hyperref Warning: Option `pdfpagelayout' has already been used,
+(hyperref)                setting the option has no effect on input line 19.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 6.025pt
+(hyperref)                replaced by space on input line 19.
+
+(./contents/acknowledgements.tex) [89
+
+
+] (./thesis.bbl [90
+
+])
+(./contents/appendix.tex)
+Package atenddvi Info: Last page = 99.
+ [91]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 19.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 19.
+ (./thesis.aux (./contents/Cabstract.aux)
+(./contents/Eabstract.aux) (./chapters/Chapter1.aux) (./chapters/Chapter2.aux)
+(./chapters/Chapter3.aux) (./chapters/Chapter4.aux) (./chapters/Chapter5.aux)
+(./chapters/Chapter6.aux) (./chapters/Chapter7.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 19.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 19.
+Package rerunfilecheck Info: File `thesis.out' has not changed.
+(rerunfilecheck)             Checksum: 623DB5391ECCB7649D22080B2F771A86;10819.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 32982 strings out of 492995
+ 534124 string characters out of 6136401
+ 619888 words of memory out of 5000000
+ 34736 multiletter control sequences out of 15000+600000
+ 109702 words of font info for 360 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 56i,12n,83p,10555b,761s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/s
+imsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows
+/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:
+/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei
+.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simsun.ttc><c:/Windows/font
+s/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Wind
+ows/fonts/simhei.ttf><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simhei.ttf>
+<c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/sim
+hei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/f
+onts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/W
+indows/fonts/simhei.ttf><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simhei.t
+tf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/
+simsun.ttc><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Window
+s/fonts/simhei.ttf><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c
+:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsu
+n.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simhei.ttf><c:/Windows/fon
+ts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Win
+dows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf
+><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/si
+mhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/
+fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simsun.ttc><c:/
+Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simsun.
+ttc><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts
+/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simsun.ttc><c:/Windo
+ws/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><
+c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simh
+ei.ttf>{c:/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/Windows/font
+s/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Wind
+ows/fonts/simhei.ttf><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc>
+<c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/sim
+sun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/f
+onts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/W
+indows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.t
+tc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/
+simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Window
+s/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c
+:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsu
+n.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fon
+ts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Win
+dows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc
+><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/si
+msun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/
+fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/
+Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.
+ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts
+/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windo
+ws/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><
+c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/sims
+un.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fo
+nts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Wi
+ndows/fonts/simsun.ttc><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.tt
+f><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/texlive/2017/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2017/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2017/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr12.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.
+pfb><c:/texlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/20
+17/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on thesis.pdf (99 pages, 2738215 bytes).
+PDF statistics:
+ 5659 PDF objects out of 6186 (max. 8388607)
+ 4012 compressed objects within 41 object streams
+ 532 named destinations out of 1000 (max. 500000)
+ 1255 words of extra memory for PDF output out of 10000 (max. 10000000)
+
